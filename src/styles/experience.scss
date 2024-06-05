@@ -1,0 +1,100 @@
+@import "../styles/main.scss";
+
+.section_music_performance{
+    padding-top: 80px;
+    .music_performance_banner{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .mp_image{
+        width: 55%;
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+    .mp_info{
+        width: 45%;
+        background: $purple url('../assets/home/wave_green.png') no-repeat bottom center / contain;
+        .mpi_box{
+            padding:40px 60px;
+            color:#fff;
+            font-size: 16px;
+        }
+        .sub_title{
+            font-size: 14px;
+            display: block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        h3{
+            font-size: 48px;
+            line-height: 48px;
+            margin-bottom: 20px;
+            font-family: 'Antique Olive Std Black';
+            text-transform: capitalize;
+        }
+    }
+}
+.artist_list{
+    background: #F0EBE6;
+    padding: 60px 0 0;
+    .container{
+        max-width: 1130px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #000;
+    }
+}
+.more_experience{
+    background: #F0EBE6;
+    padding: 60px 0;
+    .container{
+        max-width: 1130px;
+        margin: 0 auto;
+        h3{
+            font-size: 40px;
+            font-family: 'Antique Olive Std Black';
+            margin-bottom: 40px;
+        }
+        .row_flex{
+            display: flex;
+            flex-wrap: wrap; 
+        }
+        .me_box{
+            width: calc((100% - 50px)/3);
+            margin-right: 25px;
+            padding: 120px 25px 25px;
+            position: relative;
+            &:first-child{
+                background: $yellow url('../assets/main/square_wave_yellow.png') no-repeat top left / 65px;
+            }
+            &:nth-child(2){
+                background: $blue url('../assets/main/square_wave_orange.png') no-repeat top left / 65px;
+            }
+            &:last-child{
+                background: $green url('../assets/main/square_wave_green.png') no-repeat top left / 65px;
+                margin-right: 0;
+            }
+            h4{
+                font-size: 32px;
+                font-family: 'Antique Olive Std Black';
+                line-height: normal;
+            }
+            .button{
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                border:1px solid #000;
+                background: url('../assets/home/arrow_black.png') no-repeat center / 27px;
+                text-indent: -9999px;
+                position: absolute;
+                bottom: 25px;
+                right: 25px;
+                left: auto;
+            }
+        }
+    }
+}
