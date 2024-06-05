@@ -1,6 +1,6 @@
 import "./globals.css";
 import "../fonts/style.css";
-import { Header, Footer } from "@/components/";
+import { Header, Footer } from "@/components";
 
 export const metadata = {
   title: "Ombak Festival 2024",
