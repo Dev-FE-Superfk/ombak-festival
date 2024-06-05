@@ -1,0 +1,113 @@
+@import '../styles/main.scss';
+
+.section_artist_detail{
+    padding:80px 0;
+    background: #F0EBE6;
+    .back_button{
+        padding: 20px 0;
+        font-size: 16px;
+    }
+    .container{
+        width: 100%;
+        max-width: 1130px;
+        margin: 0 auto;
+    }
+    .artist_detail{
+        display:flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #000;
+        padding-bottom: 60px;
+        .detail_left{
+            width:650px;
+        }
+        .dl_top{
+            display: flex;
+            flex-wrap: wrap;
+            background: $purple;
+        }
+        .dlt_left{
+            width: 195px;
+        }
+        .dlt_right{
+            width: calc(100% - 195px);
+            height: 390px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+        .dltl_top{
+            width: 195px;
+            height: 195px;
+            display: block;
+            background: url('../assets/main/tribal_wave1.png') no-repeat center / cover;
+        }
+        .dltl_bottom{
+            width: 195px;
+            height: 195px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#fff;
+            span{
+                display: block;
+            }
+        }
+        .dl_bottom{
+            background: $purple;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .dlb_left{
+            width: 195px;
+            height: 195px;
+            display: block;
+            overflow: hidden;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+        .dlb_right{
+            width: calc(100% - 195px);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .dlbr_left{
+            width:calc(100% - 195px);
+            display: flex;
+            color:#fff;
+            justify-content: center;
+            align-items: center;
+        }
+        .dlbr_right{
+            width: 195px;
+            height: 195px;
+            background: url('../assets/main/tribal_wave2.png') no-repeat center / cover;
+        }
+        .detail_right{
+            width:calc(100% - 650px);
+            padding: 0 0 0 30px;
+            h3{
+                font-size: 48px;
+                margin-bottom: 20px;
+                font-family: 'Antique Olive Std Black';
+            }
+        }
+    }
+    .discover_artist{
+        padding-top: 60px;
+        h2{
+            font-size: 40px;
+            font-family: 'Antique Olive Std Black';
+            margin-bottom: 20px;
+        }
+        .content{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+export { default as LogoWhite } from './Ombak_Festival_Logo_RGB_White.png';
+export { default as LogoYellow } from './Ombak_Festival_Logo_RGB_Yellow.png';
+export { default as LogoOrange } from './Ombak_Festival_Logo_RGB_Coral.png';
+export { default as IconFacebook } from './icon-facebook.png';
+export { default as IconInstagram } from './icon-instagram.png';
+export { default as IconTwitter } from './icon-twitterx.png';
+export { default as IconYoutube } from './icon-youtube.png';
+export { default as IconTiktok } from './icon-tiktok.png';
+export { default as LogoDesaru } from './desaru_coast_logo.png';
+export { default as LogoDRH } from './drh_logo.png';
