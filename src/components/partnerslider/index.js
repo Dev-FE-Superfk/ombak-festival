@@ -1,1 +1,1 @@
-export { default as PartnerSlider } from './partnerslider';
+export { default as PartnerSlider } from './PartnerSlider';
