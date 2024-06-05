@@ -109,17 +109,19 @@ export default function Home() {
           </Link>
         </div>
         <div className="category_box">
-          <div className="category_image">
-            <Image src={Category2} alt="Visual Arts and Craft"></Image>
-          </div>
-          <div className="category_text">
-            <div className="category_title">
-              Visual Arts
-              <br />
-              &amp; Craft
+          <Link href="/visual-artsand-craft">
+            <div className="category_image">
+              <Image src={Category2} alt="Visual Arts and Craft"></Image>
             </div>
-            <Image src={WaveYellow} alt="Wave Yelow"></Image>
-          </div>
+            <div className="category_text">
+              <div className="category_title">
+                Visual Arts
+                <br />
+                &amp; Craft
+              </div>
+              <Image src={WaveYellow} alt="Wave Yelow"></Image>
+            </div>
+          </Link>
         </div>
         <div className="category_box">
           <Link href="/ombak-kids">
@@ -137,16 +139,18 @@ export default function Home() {
           </Link>
         </div>
         <div className="category_box">
-          <div className="category_image">
-            <Image src={Category4} alt="Culinary"></Image>
-          </div>
-          <div className="category_text">
-            <div className="category_title">
-              Culinary
-              <br /> &amp; Cuisine
+          <Link href="/culinary-and-cuisine">
+            <div className="category_image">
+              <Image src={Category4} alt="Culinary"></Image>
             </div>
-            <Image src={WaveDarkGreen} alt="Wave Dark Green"></Image>
-          </div>
+            <div className="category_text">
+              <div className="category_title">
+                Culinary
+                <br /> &amp; Cuisine
+              </div>
+              <Image src={WaveDarkGreen} alt="Wave Dark Green"></Image>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="section_four">
@@ -161,18 +165,26 @@ export default function Home() {
             <div className="button">Explore</div>
           </div>
           <div className="box_right">
-            <div className="resorts_box">
-              <Image src={Hardrock} alt="Hardrock"></Image>
-            </div>
-            <div className="resorts_box">
-              <Image src={Onenonly} alt="One n Only"></Image>
-            </div>
-            <div className="resorts_box">
-              <Image src={TheWestin} alt="The Westin"></Image>
-            </div>
-            <div className="resorts_box">
-              <Image src={Anantara} alt="Anantara"></Image>
-            </div>
+            <Link href="/resort/hard-rock-hotel">
+              <div className="resorts_box">
+                <Image src={Hardrock} alt="Hardrock"></Image>
+              </div>
+            </Link>
+            <Link href="/resort/one-and-only-hotel">
+              <div className="resorts_box">
+                <Image src={Onenonly} alt="One n Only"></Image>
+              </div>
+            </Link>
+            <Link href="/resort/the-westin-hotel">
+              <div className="resorts_box">
+                <Image src={TheWestin} alt="The Westin"></Image>
+              </div>
+            </Link>
+            <Link href="/resort/anantara-hotel">
+              <div className="resorts_box">
+                <Image src={Anantara} alt="Anantara"></Image>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -183,31 +195,41 @@ export default function Home() {
           </h2>
           <div className="artist_wrapper">
             <div className="artist_box">
-              <div className="artist_image">
-                <Image src={Artist1} alt="Aisyah Aziz"></Image>
-              </div>
-              <div className="artist_name">Aisyah Aziz</div>
+              <Link href="../music-and-performances/asiyah-asiz">
+                <div className="artist_image">
+                  <Image src={Artist1} alt="Aisyah Aziz"></Image>
+                </div>
+                <div className="artist_name">Aisyah Aziz</div>
+              </Link>
             </div>
             <div className="artist_box">
-              <div className="artist_image">
-                <Image src={Artist2} alt="Alena Murang"></Image>
-              </div>
-              <div className="artist_name">Alena Murang</div>
+              <Link href="../music-and-performances/alena-murang">
+                <div className="artist_image">
+                  <Image src={Artist2} alt="Alena Murang"></Image>
+                </div>
+                <div className="artist_name">Alena Murang</div>
+              </Link>
             </div>
             <div className="artist_box">
-              <div className="artist_image">
-                <Image src={Artist3} alt="Bunga"></Image>
-              </div>
-              <div className="artist_name">Bunga</div>
+              <Link href="../music-and-performances/bunga">
+                <div className="artist_image">
+                  <Image src={Artist3} alt="Bunga"></Image>
+                </div>
+                <div className="artist_name">Bunga</div>
+              </Link>
             </div>
             <div className="artist_box">
-              <div className="artist_image">
-                <Image src={Artist4} alt="Masdo"></Image>
-              </div>
-              <div className="artist_name">Masdo</div>
+              <Link href="../music-and-performances/masdo">
+                <div className="artist_image">
+                  <Image src={Artist4} alt="Masdo"></Image>
+                </div>
+                <div className="artist_name">Masdo</div>
+              </Link>
             </div>
           </div>
-          <div className="button">See More</div>
+          <Link href="../music-and-performances">
+            <div className="button">See More</div>
+          </Link>
         </div>
         <Image src={WaveGreenLong}></Image>
       </div>

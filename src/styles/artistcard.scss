@@ -20,15 +20,16 @@
         font-size: 32px;
         margin-bottom: 10px;
     }
-}
-.button{
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    border:1px solid #000;
-    background: url('../assets/home/arrow_black.png') no-repeat center / 27px;
-    position: absolute;
-    bottom: 0;
-    left: 40px;
-    text-indent: -9999px;
+    .button{
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        border:1px solid #000;
+        background: url('../assets/home/arrow_black.png') no-repeat center / 27px;
+        position: absolute;
+        bottom: 0;
+        left: 40px;
+        text-indent: -9999px;
+        cursor: pointer;
+    }
 }
