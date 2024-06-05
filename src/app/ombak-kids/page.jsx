@@ -37,7 +37,7 @@ export default function OmbakKids() {
         console.error("Error fetching data: ", error);
       });
   }, []);
-
+  let counter = 1; // Initialize the counter
   return (
     <div className="section_ombak_kids">
       <div className="ombak_kids_banner">
@@ -72,7 +72,12 @@ export default function OmbakKids() {
                             ) ? (
                               <div className="festival_box">
                                 <div className="box_text">
-                                  <h3>{contentData.v_page_element_section}</h3>
+                                  <h3>
+                                    <span>
+                                      {String(counter++).padStart(2, "0")}
+                                    </span>
+                                    {contentData.v_page_element_section}
+                                  </h3>
                                   {contentData.items[0].v_page_element_text &&
                                   typeof contentData.items[0]
                                     .v_page_element_text === "string"
@@ -80,9 +85,15 @@ export default function OmbakKids() {
                                         contentData.items[0].v_page_element_text
                                       )
                                     : null}
-                                  <button>
-                                    {contentData.v_page_element_button_label}
-                                  </button>
+                                  {contentData.items[0]
+                                    .v_page_element_button_label && (
+                                    <button>
+                                      {parse(
+                                        contentData.items[0]
+                                          .v_page_element_button_label
+                                      )}
+                                    </button>
+                                  )}
                                 </div>
                                 <div className="box_image">
                                   <img
@@ -99,7 +110,12 @@ export default function OmbakKids() {
                             ) : (
                               <div className="festival_box reverse">
                                 <div className="box_text">
-                                  <h3>{contentData.v_page_element_section}</h3>
+                                  <h3>
+                                    <span>
+                                      {String(counter++).padStart(2, "0")}
+                                    </span>
+                                    {contentData.v_page_element_section}
+                                  </h3>
                                   {contentData.items[0].v_page_element_text &&
                                   typeof contentData.items[0]
                                     .v_page_element_text === "string"
@@ -107,9 +123,15 @@ export default function OmbakKids() {
                                         contentData.items[0].v_page_element_text
                                       )
                                     : null}
-                                  <button>
-                                    {contentData.v_page_element_button_label}
-                                  </button>
+                                  {contentData.items[0]
+                                    .v_page_element_button_label && (
+                                    <button>
+                                      {parse(
+                                        contentData.items[0]
+                                          .v_page_element_button_label
+                                      )}
+                                    </button>
+                                  )}
                                 </div>
                                 <div className="box_image">
                                   <img

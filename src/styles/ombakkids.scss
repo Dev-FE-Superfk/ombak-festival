@@ -77,7 +77,33 @@
         }
         .box_text{
             width: 50%;
+            padding-left: 100px;
             padding-right: 100px;
+            h3{
+                font-size: 32px;
+                font-family: 'Antique Olive Std Bold';
+                margin-bottom: 40px;
+                position: relative;
+                span{
+                    width: 51px;
+                    height: 57px;
+                    display: block;
+                    background: url('../assets/main/background_number.png') no-repeat center / contain;
+                    position: absolute;
+                    top: -8px;
+                    left: -75px;
+                    line-height: 57px;
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
+        }
+        button{
+            background: $orange;
+            border-radius: 45px;
+            height: 45px;
+            color:#fff;
+            padding: 0 20px;
         }
     }
 }
