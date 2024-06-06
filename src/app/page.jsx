@@ -195,7 +195,7 @@ export default function Home() {
           </h2>
           <div className="artist_wrapper">
             <div className="artist_box">
-              <Link href="../music-and-performances/asiyah-asiz">
+              <Link href="../music-and-performances/aisyah-aziz">
                 <div className="artist_image">
                   <Image src={Artist1} alt="Aisyah Aziz"></Image>
                 </div>

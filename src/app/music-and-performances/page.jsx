@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import "../../styles/experience.scss";
 import { ArtistCard } from "@/components";
 
@@ -68,25 +69,31 @@ export default function Experience() {
           <h3>More Experiences</h3>
           <div className="row_flex">
             <div className="me_box">
-              <h4>
-                Culinary <br />
-                &amp; Cuisine
-              </h4>
-              <div className="button">Explore</div>
+              <Link href="/culinary-cuisine">
+                <h4>
+                  Culinary <br />
+                  &amp; Cuisine
+                </h4>
+                <div className="button">Explore</div>
+              </Link>
             </div>
             <div className="me_box">
-              <h4>
-                Ombak <br />
-                Kids
-              </h4>
-              <div className="button">Explore</div>
+              <Link href="/ombak-kids">
+                <h4>
+                  Ombak <br />
+                  Kids
+                </h4>
+                <div className="button">Explore</div>
+              </Link>
             </div>
             <div className="me_box">
-              <h4>
-                Visual Arts <br />
-                &amp; Craft
-              </h4>
-              <div className="button">Explore</div>
+              <Link href="/visual-arts-and-craft">
+                <h4>
+                  Visual Arts <br />
+                  &amp; Craft
+                </h4>
+                <div className="button">Explore</div>
+              </Link>
             </div>
           </div>
         </div>
