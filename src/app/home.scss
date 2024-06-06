@@ -5,6 +5,17 @@
     background: $purple;
     position: relative;
     padding-top: 80px;
+    &:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background: $purple;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
     img{
         width: 100%;
         display: block;
@@ -33,6 +44,8 @@
         color:#fff;
         margin-top: 9%;
         margin-left: 3%;
+        font-family: 'Roboto';
+        font-weight: 500;
         ul{
             display: flex;
             li{
@@ -260,6 +273,9 @@
             }
             p{
                 margin-bottom: 40px;
+                font-size: 20px;
+                line-height: 22px;
+                font-family: 'Roboto';
             }
             .button{
                 width: 65px;
@@ -385,6 +401,7 @@
         padding-left: 15px;
         border-top: 1px solid #000;
         position: relative;
+        padding-right: 60px;
         h3{
             font-size: 32px;
             line-height: 42px;
@@ -395,6 +412,8 @@
         }
         p{
             font-size: 16px;
+            line-height: 20px;
+            font-family: 'Roboto';
         }
         .button{
             width: 50px;

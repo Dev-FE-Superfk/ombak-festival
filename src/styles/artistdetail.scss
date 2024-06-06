@@ -6,7 +6,6 @@
     .back_button{
         padding: 20px 0;
         font-size: 16px;
-        cursor: pointer;
     }
     .container{
         width: 100%;
@@ -53,8 +52,12 @@
             justify-content: center;
             align-items: center;
             color:#fff;
+            font-family: 'Antique Olive Std Bold';
+            font-size: 24px;
             span{
                 display: block;
+                font-size: 16px;
+                font-family: 'Antique Olive Std Roman';
             }
         }
         .dl_bottom{
@@ -83,6 +86,8 @@
             color:#fff;
             justify-content: center;
             align-items: center;
+            font-size: 24px;
+            font-family: 'Antique Olive Std Bold';
         }
         .dlbr_right{
             width: 195px;
@@ -96,6 +101,35 @@
                 font-size: 48px;
                 margin-bottom: 20px;
                 font-family: 'Antique Olive Std Black';
+            }
+            .artist_desc{
+                font-family: 'Roboto';
+                font-size: 16px;
+            }
+            .sosial_media{
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                .sm_box{
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    margin-right: 20px;
+                }
+                .sm_tiktok{
+                    width: 30px;
+                    height: 30px;
+                    background: url('../assets/main/icon-tiktok-black.png') no-repeat center / contain;
+                    text-indent: -9999px;
+                    display: block;
+                }
+                .sm_instagram{
+                    width: 30px;
+                    height: 30px;
+                    background: url('../assets/main/icon-instagram-black.png') no-repeat center / contain;
+                    text-indent: -9999px;
+                    display: block;
+                }
             }
         }
     }

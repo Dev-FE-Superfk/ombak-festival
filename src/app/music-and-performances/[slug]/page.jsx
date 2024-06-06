@@ -43,9 +43,9 @@ export default function ArtistDetail() {
   return (
     <div className="section_artist_detail">
       <div className="container">
-        <Link href="/music-and-performances">
-          <div className="back_button">Back</div>
-        </Link>
+        <div className="back_button">
+          <Link href="/music-and-performances">Back</Link>
+        </div>
         <div className="artist_detail">
           <div className="detail_left">
             <div className="dl_top">
@@ -80,6 +80,30 @@ export default function ArtistDetail() {
                 dangerouslySetInnerHTML={{
                   __html: artistdetail.description,
                 }}></div>
+              <div className="sosial_media">
+                {artistdetail.instagram && (
+                  <div className="sm_box">
+                    <Link
+                      className="sm_instagram"
+                      href={artistdetail.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Instagram
+                    </Link>
+                  </div>
+                )}
+                {artistdetail.tiktok && (
+                  <div className="sm_box">
+                    <Link
+                      className="sm_tiktok"
+                      href={artistdetail.tiktok}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Tiktok
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -70,3 +70,21 @@
     font-weight: normal;
     src: local('Antique Olive Std Nord Italic'), url('Antique-Olive-Std-Nord-Italic_3867.woff') format('woff');
     }
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('Roboto-Regular.woff2') format('woff2'),
+            url('Roboto-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    
+    @font-face {
+        font-family: 'Roboto Condensed';
+        src: url('RobotoCondensed-Regular.woff2') format('woff2'),
+            url('RobotoCondensed-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }

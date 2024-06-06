@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import parse from "html-react-parser";
 import Image from "next/image";
+import Link from "next/link";
 import "../../styles/ombakkids.scss";
 
 export default function OmbakKids() {
@@ -67,85 +68,50 @@ export default function OmbakKids() {
                       <div key={contentId} className="festival_item">
                         {contentData.items && contentData.items.length > 0 && (
                           <div className="festival_item_content">
-                            {contentData.v_page_element_alignment.startsWith(
-                              "Left Text"
-                            ) ? (
-                              <div className="festival_box">
-                                <div className="box_text">
-                                  <h3>
-                                    <span>
-                                      {String(counter++).padStart(2, "0")}
-                                    </span>
-                                    {contentData.v_page_element_section}
-                                  </h3>
-                                  {contentData.items[0].v_page_element_text &&
-                                  typeof contentData.items[0]
-                                    .v_page_element_text === "string"
-                                    ? parse(
-                                        contentData.items[0].v_page_element_text
-                                      )
-                                    : null}
-                                  {contentData.items[0]
-                                    .v_page_element_button_label && (
-                                    <button>
-                                      {parse(
-                                        contentData.items[0]
-                                          .v_page_element_button_label
-                                      )}
-                                    </button>
-                                  )}
-                                </div>
-                                <div className="box_image">
-                                  <img
-                                    src={
-                                      contentData.items[0].v_page_element_image
-                                    }
-                                    alt={
+                            <div
+                              className={`festival_box ${
+                                contentData.v_page_element_alignment.startsWith(
+                                  "Left Text"
+                                )
+                                  ? ""
+                                  : "reverse"
+                              }`}>
+                              <div className="box_text">
+                                <h3>
+                                  <span>
+                                    {String(counter++).padStart(2, "0")}
+                                  </span>
+                                  {contentData.v_page_element_section}
+                                </h3>
+                                {contentData.items[0].v_page_element_text &&
+                                typeof contentData.items[0]
+                                  .v_page_element_text === "string"
+                                  ? parse(
+                                      contentData.items[0].v_page_element_text
+                                    )
+                                  : null}
+                                {contentData.items[0]
+                                  .v_page_element_button_label && (
+                                  <button>
+                                    {parse(
                                       contentData.items[0]
-                                        .v_page_element_image_title
-                                    }
-                                  />
-                                </div>
+                                        .v_page_element_button_label
+                                    )}
+                                  </button>
+                                )}
                               </div>
-                            ) : (
-                              <div className="festival_box reverse">
-                                <div className="box_text">
-                                  <h3>
-                                    <span>
-                                      {String(counter++).padStart(2, "0")}
-                                    </span>
-                                    {contentData.v_page_element_section}
-                                  </h3>
-                                  {contentData.items[0].v_page_element_text &&
-                                  typeof contentData.items[0]
-                                    .v_page_element_text === "string"
-                                    ? parse(
-                                        contentData.items[0].v_page_element_text
-                                      )
-                                    : null}
-                                  {contentData.items[0]
-                                    .v_page_element_button_label && (
-                                    <button>
-                                      {parse(
-                                        contentData.items[0]
-                                          .v_page_element_button_label
-                                      )}
-                                    </button>
-                                  )}
-                                </div>
-                                <div className="box_image">
-                                  <img
-                                    src={
-                                      contentData.items[0].v_page_element_image
-                                    }
-                                    alt={
-                                      contentData.items[0]
-                                        .v_page_element_image_title
-                                    }
-                                  />
-                                </div>
+                              <div className="box_image">
+                                <img
+                                  src={
+                                    contentData.items[0].v_page_element_image
+                                  }
+                                  alt={
+                                    contentData.items[0]
+                                      .v_page_element_image_title
+                                  }
+                                />
                               </div>
-                            )}
+                            </div>
                           </div>
                         )}
                       </div>
@@ -160,25 +126,31 @@ export default function OmbakKids() {
           <h3>More Experiences</h3>
           <div className="row_flex">
             <div className="me_box">
-              <h4>
-                Culinary <br />
-                &amp; Cuisine
-              </h4>
-              <div className="button">Explore</div>
+              <Link href="/culinary-cuisine">
+                <h4>
+                  Culinary <br />
+                  &amp; Cuisine
+                </h4>
+                <div className="button">Explore</div>
+              </Link>
             </div>
             <div className="me_box music_and_performance">
-              <h4>
-                Musik &amp; <br />
-                Performances
-              </h4>
-              <div className="button">Explore</div>
+              <Link href="/music-and-performances">
+                <h4>
+                  Musik &amp; <br />
+                  Performances
+                </h4>
+                <div className="button">Explore</div>
+              </Link>
             </div>
             <div className="me_box">
-              <h4>
-                Visual Arts <br />
-                &amp; Craft
-              </h4>
-              <div className="button">Explore</div>
+              <Link href="/visual-arts-and-craft">
+                <h4>
+                  Visual Arts <br />
+                  &amp; Craft
+                </h4>
+                <div className="button">Explore</div>
+              </Link>
             </div>
           </div>
         </div>
