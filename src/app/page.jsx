@@ -176,16 +176,16 @@ export default function Home() {
             </Link>
           </div>
           <div className="box_right">
-            <Link className="resorts_box" href="/resort/hard-rock-hotel">
+            <Link className="resorts_box" href="/stay?tag=hard_rock_hotel">
               <Image src={Hardrock} alt="Hardrock"></Image>
             </Link>
-            <Link className="resorts_box" href="/resort/one-and-only-hotel">
+            <Link className="resorts_box" href="/stay?tag=one_and_only">
               <Image src={Onenonly} alt="One n Only"></Image>
             </Link>
-            <Link className="resorts_box" href="/resort/the-westin-hotel">
+            <Link className="resorts_box" href="/stay?tag=the_westin">
               <Image src={TheWestin} alt="The Westin"></Image>
             </Link>
-            <Link className="resorts_box" href="/resort/anantara-hotel">
+            <Link className="resorts_box" href="/stay?tag=anantara">
               <Image src={Anantara} alt="Anantara"></Image>
             </Link>
           </div>
