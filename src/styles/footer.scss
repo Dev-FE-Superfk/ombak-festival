@@ -14,6 +14,7 @@ footer{
         font-size: 12px;
         color: #fff;
         width: 380px;
+        font-family: 'Antique Olive Std Roman';
         p{
             padding-left: 5px;
         }
@@ -42,20 +43,72 @@ footer{
     }
     .footer_right{
         width: calc(100% - 380px);
-        display: flex;
-        flex-wrap: wrap;
+        .fr_top{
+            width:100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        .fr_tablet{
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+        }
         .fr_box{
-            width: 200px;
-            color: #fff;
+            width: calc(100% / 2);
+            color: #386D71;
             font-size: 14px;
             .fr_nav{
                 margin-bottom: 20px;
+                a{
+                    color: #fff;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
             }
-            &:nth-child(2){
-                width: calc(100% - 460px);
+        }
+        .fr_bottom{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            color: #fff;
+            font-size: 14px;
+            .pb_box{
+                width: calc(100% / 4);
             }
-            &:last-child{
-                width: 260px;
+            .pr_box{
+                width: 75%;
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    margin-top: 20px;
+                    li{
+                        margin-right: 50px;
+                        &:first-child{
+                            width: 68px;
+                            height: 55px;
+                        }
+                        &:nth-child(2){
+                            width: 82px;
+                            height: 55px;
+                        }
+                        &:nth-child(3){
+                            width: 90px;
+                            height: 55px;
+                        }
+                        &:last-child{
+                            width: 80px;
+                            height: 55px;
+                        }
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
             }
         }
         .presented_logo{

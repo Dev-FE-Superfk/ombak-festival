@@ -23,6 +23,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="get_ticket_btn">Get Ticket</div>
+        <div className="burger_menu_btn"></div>
       </div>
     </header>
   );

@@ -28,30 +28,49 @@ import {
   Artist4,
   MemoriesCover,
 } from "@/assets";
+import { useEffect, useState } from "react";
 import { VideoPlayer, PartnerSlider } from "@/components";
 import { VideoOmbak } from "../../public/videos";
+import { ArtistCard } from "@/components";
 
 export default function Home() {
+  const [artists, setArtists] = useState([]);
+  const classes = ["mask1", "mask2", "mask3", "mask4"];
+  useEffect(() => {
+    // Gantilah URL ini dengan URL API Anda
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/homepage";
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Asumsikan struktur data dari API sesuai dengan yang kita butuhkan
+        const artists = data.data.artists;
+        setArtists(artists);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  }, []);
   return (
     <>
       <div className="section_one">
-        <Image src={ImageOmbak} alt="Ombak"></Image>
+        <Image src={ImageOmbak} alt="Ombak" className="desktop"></Image>
+        {/* <Image src={ImageOmbakMobile} alt="Ombak" className="mobile"></Image> */}
         <VideoPlayer src={VideoOmbak} type="video/mp4" />
         <div className="container">
           <div className="text">
             <Image src={LogoYellow} alt="Ombak"></Image>
-            <ul>
-              <li>
-                13-15 Sep 2024
-                <br />
-                10am - 10pm
-              </li>
-              <li>
-                Desaru Coast
-                <br />
-                Johor, Malaysia
-              </li>
-            </ul>
+            <div className="text_info">
+              13 - 15 September 2024
+              <br />
+              Desaru Coast, Johor, Malaysia
+              <span>The Ultimate Weekend</span>
+            </div>
           </div>
         </div>
       </div>
@@ -66,25 +85,22 @@ export default function Home() {
         </div>
         <div className="container">
           <h2>
-            An unforgettable
-            <Image
-              src={IconOmbakPurple}
-              width={46}
-              height={46}
-              alt="Wave purple"></Image>
-            weekend getaway where arts, culture, and luxury
-            <Image
-              src={IconOmbakGreen}
-              width={46}
-              height={46}
-              alt="Wave Green"></Image>
-            meet at the pristine beachfront of
+            Malay for ocean wave, "Ombak"
             <Image
               src={IconOmbakOrange}
               width={46}
               height={46}
               alt="Wave Green"></Image>
-            Desaru Coast
+            <br /> is more than a festival - it's the <br />
+            ultimate coastal weekend{" "}
+            <Image
+              src={IconOmbakPurple}
+              width={46}
+              height={46}
+              alt="Wave purple"></Image>{" "}
+            that <br />
+            celebrates music, art, food and <br />
+            family-fun for all ages
           </h2>
         </div>
         <div className="ornament_right">
@@ -98,7 +114,7 @@ export default function Home() {
       </div>
       <div className="section_three">
         <div className="category_box">
-          <Link href="/music-and-performances">
+          <Link href="/experience/music-and-performances">
             <div className="category_image">
               <Image src={Category1} alt="Music and Perfomances"></Image>
             </div>
@@ -109,7 +125,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="category_box">
-          <Link href="/visual-artsand-craft">
+          <Link href="/experience/visual-arts-and-craft">
             <div className="category_image">
               <Image src={Category2} alt="Visual Arts and Craft"></Image>
             </div>
@@ -124,31 +140,24 @@ export default function Home() {
           </Link>
         </div>
         <div className="category_box">
-          <Link href="/ombak-kids">
+          <Link href="/experience/food-and-beverages">
             <div className="category_image">
-              <Image src={Category3} alt="Ombak Kids"></Image>
+              <Image src={Category3} alt="Culinary"></Image>
             </div>
             <div className="category_text">
-              <div className="category_title">
-                Ombak
-                <br />
-                Kids
-              </div>
-              <Image src={WaveOrange} alt="Wave Orange"></Image>
+              <div className="category_title">F&amp;B</div>
+              <Image src={WaveDarkGreen} alt="Wave Dark Green"></Image>
             </div>
           </Link>
         </div>
         <div className="category_box">
-          <Link href="/culinary-and-cuisine">
+          <Link href="/experience/ombak-kids">
             <div className="category_image">
-              <Image src={Category4} alt="Culinary"></Image>
+              <Image src={Category4} alt="Ombak Kids"></Image>
             </div>
             <div className="category_text">
-              <div className="category_title">
-                Culinary
-                <br /> &amp; Cuisine
-              </div>
-              <Image src={WaveDarkGreen} alt="Wave Dark Green"></Image>
+              <div className="category_title">Ombak Kids</div>
+              <Image src={WaveOrange} alt="Wave Orange"></Image>
             </div>
           </Link>
         </div>
@@ -157,33 +166,27 @@ export default function Home() {
         <Image src={ImageResort} alt="Resorts Cover"></Image>
         <div className="container">
           <div className="box_left">
-            <h3>Our Resorts</h3>
+            <h3>Book your Ultimate Weekend</h3>
             <p>
-              Get exclusive packages with <br />
-              our resorts
+              Choose your Desaru Coast resort <br />
+              for Early Stay Packages
             </p>
-            <div className="button">Explore</div>
+            <Link href="/stay">
+              <div className="button">Explore</div>
+            </Link>
           </div>
           <div className="box_right">
-            <Link href="/resort/hard-rock-hotel">
-              <div className="resorts_box">
-                <Image src={Hardrock} alt="Hardrock"></Image>
-              </div>
+            <Link className="resorts_box" href="/resort/hard-rock-hotel">
+              <Image src={Hardrock} alt="Hardrock"></Image>
             </Link>
-            <Link href="/resort/one-and-only-hotel">
-              <div className="resorts_box">
-                <Image src={Onenonly} alt="One n Only"></Image>
-              </div>
+            <Link className="resorts_box" href="/resort/one-and-only-hotel">
+              <Image src={Onenonly} alt="One n Only"></Image>
             </Link>
-            <Link href="/resort/the-westin-hotel">
-              <div className="resorts_box">
-                <Image src={TheWestin} alt="The Westin"></Image>
-              </div>
+            <Link className="resorts_box" href="/resort/the-westin-hotel">
+              <Image src={TheWestin} alt="The Westin"></Image>
             </Link>
-            <Link href="/resort/anantara-hotel">
-              <div className="resorts_box">
-                <Image src={Anantara} alt="Anantara"></Image>
-              </div>
+            <Link className="resorts_box" href="/resort/anantara-hotel">
+              <Image src={Anantara} alt="Anantara"></Image>
             </Link>
           </div>
         </div>
@@ -191,49 +194,37 @@ export default function Home() {
       <div className="section_five">
         <div className="container">
           <h2>
-            Diverse lineup of <span>world-class</span> artists
+            An exciting and eclectic lineup of <br />
+            <span>world-class</span> artistes
           </h2>
           <div className="artist_wrapper">
-            <div className="artist_box">
-              <Link href="../music-and-performances/aisyah-aziz">
-                <div className="artist_image">
-                  <Image src={Artist1} alt="Aisyah Aziz"></Image>
-                </div>
-                <div className="artist_name">Aisyah Aziz</div>
-              </Link>
-            </div>
-            <div className="artist_box">
-              <Link href="../music-and-performances/alena-murang">
-                <div className="artist_image">
-                  <Image src={Artist2} alt="Alena Murang"></Image>
-                </div>
-                <div className="artist_name">Alena Murang</div>
-              </Link>
-            </div>
-            <div className="artist_box">
-              <Link href="../music-and-performances/bunga">
-                <div className="artist_image">
-                  <Image src={Artist3} alt="Bunga"></Image>
-                </div>
-                <div className="artist_name">Bunga</div>
-              </Link>
-            </div>
-            <div className="artist_box">
-              <Link href="../music-and-performances/masdo">
-                <div className="artist_image">
-                  <Image src={Artist4} alt="Masdo"></Image>
-                </div>
-                <div className="artist_name">Masdo</div>
-              </Link>
-            </div>
+            {artists.map((artist, index) => (
+              <div className="artist_box">
+                <Link
+                  href={`/experience/music-and-performances/${artist.slug}`}>
+                  <div
+                    className={`artist_image ${
+                      classes[index % classes.length]
+                    }`}
+                    key={artist.slug}>
+                    <Image
+                      src={artist.thumbnail}
+                      alt={artist.name}
+                      width={200}
+                      height={200}></Image>
+                  </div>
+                  <div className="artist_name">{artist.name}</div>
+                </Link>
+              </div>
+            ))}
           </div>
-          <Link href="../music-and-performances">
+          <Link href="../experience/music-and-performances">
             <div className="button">See More</div>
           </Link>
         </div>
         <Image src={WaveGreenLong}></Image>
       </div>
-      <div className="section_six">
+      {/* <div className="section_six">
         <div className="container">
           <div className="misc_box">
             <h3>
@@ -266,20 +257,20 @@ export default function Home() {
             <div className="button">Explore</div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="section_seven">
         <div className="container">
           <Image src={MemoriesCover} alt="Memories Cover"></Image>
-          <h3>Making Waves. Creating memories.</h3>
-          <div className="button">Get The Ticket Now</div>
+          <h3>Ready for the Ultimate Weekend?</h3>
+          <div className="button">BOOK YOUR STAY PACKAGES NOW</div>
         </div>
       </div>
-      <div className="section_eight">
+      {/* <div className="section_eight">
         <div className="container">
-          <h3>Our Festival partners</h3>
+          <h3>Our festival partners</h3>
           <PartnerSlider></PartnerSlider>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

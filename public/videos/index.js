@@ -1,2 +1,2 @@
 // import video from './video.webm';
-export { default as VideoOmbak } from './video.mp4';
+export { default as VideoOmbak } from './new_video.mp4';

@@ -1,0 +1,236 @@
+@import "../styles/main.scss";
+
+.section_visual_arts{
+    padding-top: 80px;
+    .visual_arts_banner{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .va_image{
+        width: 55%;
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+    .va_info{
+        width: 45%;
+        background: $green url('../assets/home/wave_yellow.png') no-repeat bottom center / contain;
+        font-family: 'Roboto';
+        font-size: 16px;
+        .vai_box{
+            padding:40px 60px;
+            font-size: 16px;
+        }
+        .sub_title{
+            font-size: 14px;
+            display: block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-family: 'Roboto';
+        }
+        h3{
+            font-size: 48px;
+            line-height: 48px;
+            margin-bottom: 20px;
+            font-family: 'Antique Olive Std Black';
+            text-transform: capitalize;
+        }
+    }
+}
+.section_festival{
+    background: #F0EBE6;
+    padding: 60px 0 0;
+    .container{
+        max-width: 1130px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #000;
+    }
+    .festival_item{
+        &:last-child{
+            .festival_box{
+                border-bottom: none;
+            }
+        }
+        &.mask1{
+            .box_image{
+                mask-image: url('../assets/main/new-Mask-group5.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+                mask-size: cover;
+                -webkit-mask-image: url('../assets/main/new-Mask-group5.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+                -webkit-mask-size: cover;
+            }
+        }
+        &.mask2{
+            .box_image{
+                mask-image: url('../assets/main/new-Mask-group6.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+                mask-size: cover;
+                -webkit-mask-image: url('../assets/main/new-Mask-group6.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+                -webkit-mask-size: cover;
+            }
+        }
+        &.mask3{
+            .box_image{
+                mask-image: url('../assets/main/new-Mask-group7.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+                mask-size: cover;
+                -webkit-mask-image: url('../assets/main/new-Mask-group7.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+                -webkit-mask-size: cover;
+            }
+        }
+    }
+    .festival_box{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 60px;
+        margin-bottom: 60px;
+        border-bottom: 1px solid #000; 
+        &.reverse{
+            flex-direction: row-reverse;
+            .box_text{
+                padding-left: 100px;
+                padding-right: 0;
+            }
+        }
+        .box_image{
+            width: 50%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                transition: all 0.2s ease;
+            }
+            &:hover{
+                img{
+                    transform: scale(1.1);
+                    transition: all 0.2s ease;
+                }
+            }
+        }
+        .box_text{
+            width: 50%;
+            padding-left: 100px;
+            padding-right: 100px;
+            font-family: 'Roboto';
+            h3{
+                font-size: 32px;
+                font-family: 'Antique Olive Std Bold';
+                margin-bottom: 40px;
+                position: relative;
+                span{
+                    width: 51px;
+                    height: 57px;
+                    display: block;
+                    background: url('../assets/main/background_number_green.png') no-repeat center / contain;
+                    position: absolute;
+                    top: -8px;
+                    left: -75px;
+                    line-height: 57px;
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
+        }
+        button{
+            background: $orange;
+            border-radius: 45px;
+            height: 45px;
+            color:#fff;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+    }
+}
+.more_experience{
+    background: #F0EBE6;
+    padding: 60px 0;
+    .container{
+        max-width: 1130px;
+        margin: 0 auto;
+        h3{
+            font-size: 40px;
+            font-family: 'Antique Olive Std Black';
+            margin-bottom: 40px;
+        }
+        .row_flex{
+            display: flex;
+            flex-wrap: wrap; 
+        }
+        .me_box{
+            width: calc((100% - 50px)/3);
+            margin-right: 25px;
+            padding: 0 25px 25px;
+            height: 230px;
+            position: relative;
+            &.fnb{
+                background: $yellow url('../assets/main/square_wave_yellow.png') no-repeat top left / 65px;
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$darkgreen url('../assets/home/arrow_white.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
+            }
+            &.music_and_performance{
+                background: $purple url('../assets/main/square_wave_green2.png') no-repeat top left / 65px;
+                color:#fff;
+                .button{
+                    border-color:#fff;
+                    background: url('../assets/home/arrow_white.png') no-repeat center / 27px;
+                }
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$green url('../assets/home/arrow_green.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
+            }
+            &.ombakkids{
+                background: $blue url('../assets/main/square_wave_orange.png') no-repeat top left / 65px;
+                margin-right: 0;
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$orange url('../assets/home/arrow_white.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
+            }
+            h4{
+                font-size: 32px;
+                font-family: 'Antique Olive Std Black';
+                line-height: normal;
+                position: absolute;
+                bottom: 25px;
+            }
+            .button{
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                border:1px solid #000;
+                background: url('../assets/home/arrow_black.png') no-repeat center / 27px;
+                text-indent: -9999px;
+                position: absolute;
+                bottom: 25px;
+                right: 25px;
+                left: auto;
+                transition: all 0.2s ease;
+            }
+        }
+    }
+}
