@@ -1,21 +1,21 @@
 "use client";
-import { useRouter, useParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import "../../../styles/resort.scss";
+import "../../styles/resort.scss";
 
 export default function Resort() {
-  const router = useRouter();
-  const { slug } = useParams(); // Mengakses slug dari router.query
+  const searchParams = useSearchParams();
+  const tag = searchParams.get("tag"); // Mengakses query parameter 'tag'
 
   const [resorts, setResorts] = useState(null);
   const [listresorts, setListresorts] = useState(null);
   const [packages, setPackages] = useState(null);
 
   useEffect(() => {
-    if (slug) {
-      const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/resorts?slug=${slug}`;
+    if (tag) {
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/stay?tag=${tag}`;
       console.log(apiUrl);
       fetch(apiUrl)
         .then((response) => {
@@ -36,7 +36,7 @@ export default function Resort() {
           console.error("Error fetching data: ", error);
         });
     }
-  }, [slug]);
+  }, [tag]);
 
   if (!resorts) {
     return <div>Loading...</div>;
@@ -56,15 +56,19 @@ export default function Resort() {
             height={400}></Image>
         </div>
         <div className="resorts_middle">
-          {listresorts.map((listresort) => (
+          {listresorts.map((resort) => (
             <Link
-              className={`resorts_card ${listresort.is_active ? "active" : ""}`}
-              key={listresort.slug}
-              href={`/resort/${listresort.slug}`}>
+              className={`resorts_card ${resort.is_active ? "active" : ""}`}
+              key={resort.slug}
+              href={{
+                pathname: "/stay",
+                query: { tag: resort.tag },
+              }}
+              passHref>
               <div>
                 <Image
-                  src={listresort.logo}
-                  alt={listresort.name}
+                  src={resort.logo}
+                  alt={resort.name}
                   width={200}
                   height={80}></Image>
               </div>
