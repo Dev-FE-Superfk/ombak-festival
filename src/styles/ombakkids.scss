@@ -55,6 +55,30 @@
                 border-bottom: none;
             }
         }
+        &.mask1{
+            .box_image{
+                mask-image: url('../assets/main/new-Mask-group5.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+                mask-size: cover;
+                -webkit-mask-image: url('../assets/main/new-Mask-group5.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+                -webkit-mask-size: cover;
+            }
+        }
+        &.mask2{
+            .box_image{
+                mask-image: url('../assets/main/new-Mask-group6.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+                mask-size: cover;
+                -webkit-mask-image: url('../assets/main/new-Mask-group6.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+                -webkit-mask-size: cover;
+            }
+        }
+        &.mask3{
+            .box_image{
+                mask-image: url('../assets/main/new-Mask-group7.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+                mask-size: cover;
+                -webkit-mask-image: url('../assets/main/new-Mask-group7.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+                -webkit-mask-size: cover;
+            }
+        }
     }
     .festival_box{
         display: flex;
@@ -75,7 +99,16 @@
             width: 50%;
             img{
                 width: 100%;
+                height: 100%;
+                object-fit: cover;
                 display: block;
+                transition: all 0.2s ease;
+            }
+            &:hover{
+                img{
+                    transform: scale(1.1);
+                    transition: all 0.2s ease;
+                }
             }
         }
         .box_text{
@@ -130,10 +163,21 @@
         .me_box{
             width: calc((100% - 50px)/3);
             margin-right: 25px;
-            padding: 120px 25px 25px;
+            padding: 0 25px 25px;
+            height: 230px;
             position: relative;
-            &:first-child{
+            &.fnb{
                 background: $yellow url('../assets/main/square_wave_yellow.png') no-repeat top left / 65px;
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$darkgreen url('../assets/home/arrow_white.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
             }
             &.music_and_performance{
                 background: $purple url('../assets/main/square_wave_green2.png') no-repeat top left / 65px;
@@ -142,15 +186,37 @@
                     border-color:#fff;
                     background: url('../assets/home/arrow_white.png') no-repeat center / 27px;
                 }
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$green url('../assets/home/arrow_green.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
             }
-            &:last-child{
+            &.visualarts{
                 background: $green url('../assets/main/square_wave_green.png') no-repeat top left / 65px;
                 margin-right: 0;
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$yellow url('../assets/home/arrow_black.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
             }
             h4{
                 font-size: 32px;
                 font-family: 'Antique Olive Std Black';
                 line-height: normal;
+                position: absolute;
+                bottom: 25px;
             }
             .button{
                 width: 50px;
@@ -163,6 +229,7 @@
                 bottom: 25px;
                 right: 25px;
                 left: auto;
+                transition: all 0.2s ease;
             }
         }
     }

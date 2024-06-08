@@ -3,13 +3,16 @@ import {
   IconFacebook,
   IconInstagram,
   IconTiktok,
-  IconTwitter,
-  IconYoutube,
   LogoDRH,
   LogoDesaru,
   LogoOrange,
+  Hardrock,
+  TheWestin,
+  Anantara,
+  Onenonly,
 } from "@/assets";
 import "@/styles/footer.scss";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -24,12 +27,12 @@ export default function Footer() {
             <div className="sosmed_box">
               <Image src={IconInstagram} alt="Instagram Ombak"></Image>
             </div>
-            <div className="sosmed_box">
+            {/* <div className="sosmed_box">
               <Image src={IconYoutube} alt="Youtube Ombak"></Image>
             </div>
             <div className="sosmed_box">
               <Image src={IconTwitter} alt="Twitter Ombak"></Image>
-            </div>
+            </div> */}
             <div className="sosmed_box">
               <Image src={IconTiktok} alt="Tiktok Ombak"></Image>
             </div>
@@ -37,23 +40,77 @@ export default function Footer() {
           <p>Copyright 2024 Ombak Festival</p>
         </div>
         <div className="footer_right">
-          <div className="fr_box">
-            <div className="fr_nav">Getting Here</div>
-            <div className="fr_nav">Maps</div>
-            <div className="fr_nav">Media Room</div>
-            <div className="fr_nav">Partners</div>
+          <div className="fr_top">
+            <div className="fr_tablet">
+              <div className="fr_box">
+                <div className="fr_nav">
+                  <Link href="/getting-here">Getting Here</Link>
+                </div>
+                <div className="fr_nav">Maps</div>
+              </div>
+              <div className="fr_box">
+                <div className="fr_nav">Contact Us</div>
+                <div className="fr_nav">
+                  <Link href="/faqs">FAQs</Link>
+                </div>
+              </div>
+            </div>
+            <div className="fr_tablet">
+              <div className="fr_box">
+                <div className="fr_nav">Media Room</div>
+                <div className="fr_nav">Partners</div>
+              </div>
+              <div className="fr_box">
+                <div className="fr_nav">
+                  <Link href="/privacy-policy">Privacy Policy</Link>
+                </div>
+                <div className="fr_nav">
+                  <Link href="/terms">Terms of Use</Link>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="fr_box">
-            <div className="fr_nav">Contact Us</div>
-            <div className="fr_nav">FAQs</div>
-            <div className="fr_nav">Privacy Policy</div>
-            <div className="fr_nav">Terms of Use</div>
-          </div>
-          <div className="fr_box">
-            <span>Presented by:</span>
-            <div className="presented_logo">
-              <Image src={LogoDesaru} alt="Desaru"></Image>
-              <Image src={LogoDRH} alt="DRH"></Image>
+          <div className="fr_bottom">
+            <div className="pb_box">
+              <span>Presented by:</span>
+              <div className="presented_logo">
+                <Link href="http://www.desarucoast.com" target="_blank">
+                  <Image src={LogoDesaru} alt="Desaru"></Image>
+                </Link>
+              </div>
+            </div>
+            <div className="pr_box">
+              <span>Participating resorts:</span>
+              <ul>
+                <li>
+                  <Link
+                    href="https://hotel.hardrock.com/desaru-coast/"
+                    target="_blank">
+                    <Image src={Hardrock}></Image>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.oneandonlyresorts.com/desaru-coast"
+                    target="_blank">
+                    <Image src={Onenonly}></Image>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.marriott.com/en-us/hotels/jhbwi-the-westin-desaru-coast-resort/overview/"
+                    target="_blank">
+                    <Image src={TheWestin}></Image>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.anantara.com/en/desaru-coast"
+                    target="_blank">
+                    <Image src={Anantara}></Image>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

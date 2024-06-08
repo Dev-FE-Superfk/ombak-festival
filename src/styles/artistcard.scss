@@ -1,14 +1,56 @@
+@import './main.scss';
 .artist_card{
     width: calc(100% / 2);
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 60px;
+    &:hover{
+        .artist_image{
+            img{
+                transform: scale(1.1);
+                transition: all 0.2s ease;
+            }
+        }
+        .button{
+            border:none;
+            background: $green url('../assets/home/arrow_green.png') no-repeat center / 27px;
+            transition: all 0.2s ease;
+        }
+    }
 }
 .artist_image{
     width: 250px;
+    height: 300px;
+    &.mask1{
+        mask-image: url('../assets/main/new-Mask-group1.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+        mask-size: cover;
+        -webkit-mask-image: url('../assets/main/new-Mask-group1.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+        -webkit-mask-size: cover;
+    }
+    &.mask2{
+        mask-image: url('../assets/main/new-Mask-group2.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+        mask-size: cover;
+        -webkit-mask-image: url('../assets/main/new-Mask-group2.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+        -webkit-mask-size: cover;
+    }
+    &.mask3{
+        mask-image: url('../assets/main/new-Mask-group3.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+        mask-size: cover;
+        -webkit-mask-image: url('../assets/main/new-Mask-group3.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+        -webkit-mask-size: cover;
+    }
+    &.mask4{
+        mask-image: url('../assets/main/new-Mask-group4.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+        mask-size: cover;
+        -webkit-mask-image: url('../assets/main/new-Mask-group4.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+        -webkit-mask-size: cover;
+    }
     img{
         width: 100%;
+        height: 100%;
+        object-fit: cover;
         max-width: 100%;
+        transition: all 0.2s ease;
     }
 }
 .artist_info{
@@ -33,5 +75,6 @@
         left: 40px;
         text-indent: -9999px;
         cursor: pointer;
+        transition: all 0.2s ease;
     }
 }

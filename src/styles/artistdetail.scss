@@ -6,6 +6,32 @@
     .back_button{
         padding: 20px 0;
         font-size: 16px;
+        a{
+            display: inline-block;
+            position: relative;
+            padding-left: 42px;
+            line-height: 32px;
+            &:before{
+                content: '';
+                width: 32px;
+                height: 32px;
+                display: block;
+                background: url('../assets/home/arrow_left_black.png') no-repeat center / 13px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 32px;
+                border: 1px solid #000;
+                transition: all 0.2s ease;
+            }
+            &:hover{
+                &:before{
+                    background: $green url('../assets/home/arrow_left_green.png') no-repeat center / 13px;
+                    border: none;
+                    transition: all 0.2s ease;
+                }
+            }
+    }
     }
     .container{
         width: 100%;
@@ -18,81 +44,12 @@
         border-bottom: 1px solid #000;
         padding-bottom: 60px;
         .detail_left{
-            width:650px;
-        }
-        .dl_top{
-            display: flex;
-            flex-wrap: wrap;
-            background: $purple;
-        }
-        .dlt_left{
-            width: 195px;
-        }
-        .dlt_right{
-            width: calc(100% - 195px);
-            height: 390px;
-            overflow: hidden;
-            img{
-                width: 100%;
-                height: 100%;
-                display: block;
-                object-fit: cover;
-            }
-        }
-        .dltl_top{
-            width: 195px;
-            height: 195px;
-            display: block;
-            background: url('../assets/main/tribal_wave1.png') no-repeat center / cover;
-        }
-        .dltl_bottom{
-            width: 195px;
-            height: 195px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color:#fff;
-            font-family: 'Antique Olive Std Bold';
-            font-size: 24px;
-            span{
-                display: block;
-                font-size: 16px;
-                font-family: 'Antique Olive Std Roman';
-            }
-        }
-        .dl_bottom{
-            background: $purple;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .dlb_left{
-            width: 195px;
-            height: 195px;
-            display: block;
-            overflow: hidden;
+            width:100%;
+            max-width: 650px;
             img{
                 width: 100%;
                 display: block;
             }
-        }
-        .dlb_right{
-            width: calc(100% - 195px);
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .dlbr_left{
-            width:calc(100% - 195px);
-            display: flex;
-            color:#fff;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-family: 'Antique Olive Std Bold';
-        }
-        .dlbr_right{
-            width: 195px;
-            height: 195px;
-            background: url('../assets/main/tribal_wave2.png') no-repeat center / cover;
         }
         .detail_right{
             width:calc(100% - 650px);

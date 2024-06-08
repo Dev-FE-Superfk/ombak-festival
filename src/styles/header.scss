@@ -24,6 +24,17 @@ header{
         left: 0;
         transform: translateY(-50%);
     }
+    .burger_menu_btn{
+        width: 36px;
+        height: 36px;
+        display: none;
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        border-radius: 36px;
+        border: 1px solid #fff;
+        background: url('../assets/main/burger_menu.png') no-repeat center / 14px;
+    }
 }
 nav{
     ul{
@@ -51,4 +62,48 @@ nav{
     text-align: center;
     cursor: pointer;
     text-transform: uppercase;
+}
+@media only screen and (max-width:959px){
+    
+}
+@media only screen and (max-width:767px){
+    body{
+        overflow-x: hidden;
+    }
+    header{
+        height: 60px;
+        .container{
+            height: 60px;
+        }
+        .burger_menu_btn{
+            display: block;
+        }
+        .get_ticket_btn{
+            display: none;
+        }
+        #logo{
+            left: 20px;
+        }
+        nav{
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: $purple;
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                li{
+                    width: 100%;
+                    text-align: center;
+                    a{
+                        display: block;
+                        padding: 20px 0;
+                    }
+                }
+            }
+        }
+    }
 }

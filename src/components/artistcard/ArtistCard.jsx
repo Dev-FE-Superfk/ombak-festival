@@ -1,17 +1,21 @@
 "use client";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
 import "../../styles/artistcard.scss";
 
-export default function ArtistCard({ artist }) {
+export default function ArtistCard({ artist, index }) {
+  const classes = ["mask1", "mask2", "mask3", "mask4"];
+
   const router = useRouter();
 
   const handleExploreClick = () => {
-    router.push(`/music-and-performances/${artist.slug}`);
+    router.push(`/experience/music-and-performances/${artist.slug}`);
   };
   return (
-    <div className="artist_card">
-      <div className="artist_image">
+    <Link
+      className="artist_card"
+      href={`/experience/music-and-performances/${artist.slug}`}>
+      <div className={`artist_image ${classes[index % classes.length]}`}>
         <img src={artist.thumbnail} alt={artist.name} />
       </div>
       <div className="artist_info">
@@ -21,6 +25,6 @@ export default function ArtistCard({ artist }) {
           Explore
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

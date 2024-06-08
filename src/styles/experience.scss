@@ -68,22 +68,55 @@
         .me_box{
             width: calc((100% - 50px)/3);
             margin-right: 25px;
-            padding: 120px 25px 25px;
+            padding: 0 25px 25px;
+            height: 230px;
             position: relative;
-            &:first-child{
+            &.fnb{
                 background: $yellow url('../assets/main/square_wave_yellow.png') no-repeat top left / 65px;
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$darkgreen url('../assets/home/arrow_white.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
             }
-            &:nth-child(2){
+            &.ombakkids{
                 background: $blue url('../assets/main/square_wave_orange.png') no-repeat top left / 65px;
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$orange url('../assets/home/arrow_white.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
             }
-            &:last-child{
+            &.visualarts{
                 background: $green url('../assets/main/square_wave_green.png') no-repeat top left / 65px;
                 margin-right: 0;
+                &:hover{
+                    h4{
+                        text-decoration: underline;
+                    }
+                    .button{
+                        background:$yellow url('../assets/home/arrow_black.png') no-repeat center / 27px;
+                        border:none;
+                        transition: all 0.2s ease;
+                    }
+                }
             }
             h4{
                 font-size: 32px;
                 font-family: 'Antique Olive Std Black';
                 line-height: normal;
+                position: absolute;
+                bottom: 25px;
             }
             .button{
                 width: 50px;
@@ -97,6 +130,7 @@
                 right: 25px;
                 left: auto;
                 cursor: pointer;
+                transition: all 0.2s ease;
             }
         }
     }
