@@ -1,10 +1,11 @@
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import "../../styles/info.scss";
 
-export default function Info() {
+function Info() {
   const searchParams = useSearchParams();
   const tag = searchParams.get("tag"); // Mengakses query parameter 'tag'
 
@@ -71,5 +72,13 @@ export default function Info() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function infoWrapper() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Info />
+    </Suspense>
   );
 }

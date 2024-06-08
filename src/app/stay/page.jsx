@@ -1,11 +1,12 @@
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "../../styles/resort.scss";
 
-export default function Resort() {
+function Stay() {
   const searchParams = useSearchParams();
   const tag = searchParams.get("tag"); // Mengakses query parameter 'tag'
 
@@ -122,5 +123,13 @@ export default function Resort() {
         <button>Check Out FAQ</button>
       </div>
     </div>
+  );
+}
+
+export default function stayWrapper() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Stay />
+    </Suspense>
   );
 }
