@@ -50,6 +50,9 @@
                 width: 100%;
                 display: block;
             }
+            h3{
+                display: none;
+            }
         }
         .detail_right{
             width:calc(100% - 650px);
@@ -100,6 +103,53 @@
         .content{
             display: flex;
             flex-wrap: wrap;
+        }
+    }
+}
+@media only screen and (max-width:767px){
+    .section_artist_detail{
+        padding-top: 60px;
+        padding-bottom: 0;
+        .back_button{
+            padding-left: 20px;
+        }
+        .artist_detail{
+            display: block;
+            border: none;
+            padding-bottom: 0;
+            .detail_left{
+                width: 100%;
+                h3{
+                    display: block;
+                    font-size: 36px;
+                    margin-bottom: 20px;
+                    font-family: 'Antique Olive Std Black';
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
+            .detail_right{
+                width: 100%;
+                display: block;
+                padding: 20px;
+                &::after{
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background: #000;
+                    margin: 30px auto 0;
+                    display: block;
+                }
+                h3{
+                    display: none;
+                }
+            }
+        }
+        .discover_artist{
+            padding: 20px;
+            h2{
+                font-size: 28px;
+            }
         }
     }
 }

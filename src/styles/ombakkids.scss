@@ -88,8 +88,9 @@
         padding-bottom: 60px;
         margin-bottom: 60px;
         border-bottom: 1px solid #000; 
+        flex-direction: row-reverse;
         &.reverse{
-            flex-direction: row-reverse;
+            flex-direction: unset;
             .box_text{
                 padding-left: 100px;
                 padding-right: 0;
@@ -230,6 +231,92 @@
                 right: 25px;
                 left: auto;
                 transition: all 0.2s ease;
+            }
+        }
+    }
+}
+@media only screen and (max-width:767px){
+    .section_ombak_kids{
+        padding-top: 60px;
+        .ombak_kids_banner{
+            display: block;
+        }
+        .ok_image{
+            width: 100%;
+        }
+        .ok_info{
+            width: 100%;
+            .sub_title{
+                margin-bottom: 10px;
+            }
+            h3{
+                font-size: 36px;
+                line-height: normal;
+                margin-bottom: 10px;
+            }
+            .oki_box{
+                padding:30px 20px 200px;
+            }
+        }
+    }
+    .section_festival{
+        .container{
+            border:none;
+        }
+        .festival_box{
+            display: block;
+            padding: 0 20px;
+            margin-bottom: 30px;
+            border: none;
+            &::after{
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: #000;
+                display: block;
+                margin: 30px auto 0;
+            }
+            &.reverse{
+                .box_text{
+                    padding-left: 60px;
+                }
+            }
+            .box_text{
+                width: 100%;
+                padding:0;
+                padding-left: 60px;
+                h3{
+                    font-size: 24px;
+                    line-height: normal;
+                    margin-bottom: 20px;
+                    span{
+                        width: 45px;
+                        height: 50px;
+                        left:-60px;
+                    }
+                }
+            }
+            .box_image{
+                width: 100%;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    .more_experience{
+        padding-top: 30px;
+        .container{
+            padding: 0 20px;
+            h3{
+                font-size: 28px;
+            }
+            .me_box{
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+                height: 180px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
             }
         }
     }

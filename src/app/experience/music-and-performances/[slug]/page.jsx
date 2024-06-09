@@ -49,6 +49,7 @@ export default function ArtistDetail() {
         </div>
         <div className="artist_detail">
           <div className="detail_left">
+            <h3 className="mobile">{artistdetail.name}</h3>
             <Image
               src={artistdetail.image}
               alt={artistdetail.name}
@@ -57,7 +58,7 @@ export default function ArtistDetail() {
           </div>
           <div className="detail_right">
             <div className="dr_info">
-              <h3>{artistdetail.name}</h3>
+              <h3 className="desktop">{artistdetail.name}</h3>
               <div
                 className="artist_desc"
                 dangerouslySetInnerHTML={{
@@ -83,6 +84,17 @@ export default function ArtistDetail() {
                       target="_blank"
                       rel="noopener noreferrer">
                       Tiktok
+                    </Link>
+                  </div>
+                )}
+                {artistdetail.youtube && (
+                  <div className="sm_box">
+                    <Link
+                      className="sm_tiktok"
+                      href={artistdetail.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Youtube
                     </Link>
                   </div>
                 )}

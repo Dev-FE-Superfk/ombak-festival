@@ -78,3 +78,26 @@
         transition: all 0.2s ease;
     }
 }
+@media only screen and (max-width:767px){
+    .artist_card{
+        width: 100%;
+    }
+    .artist_image{
+        width: 160px;
+        height: 180px;
+    }
+    .artist_info{
+        width: calc(100% - 160px);
+        padding: 0 0 0 20px;
+        h3{
+            font-size: 24px;
+            margin-bottom: 0px;
+        }
+        span{
+            font-size: 14px;
+        }
+        .button{
+            left: 20px;
+        }
+    }
+}
