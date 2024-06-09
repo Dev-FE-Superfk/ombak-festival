@@ -17,8 +17,8 @@ export default function Header() {
             <li>
               <Link href="/experience">Experience</Link>
               <Link href="/schedule">Schedule</Link>
-              <Link href="/stay">Stay</Link>
-              <Link href="/infos">Infos</Link>
+              <Link href="/stay?tag=hard_rock_hotel">Stay</Link>
+              <Link href="/info?tag=info">Infos</Link>
             </li>
           </ul>
         </nav>
