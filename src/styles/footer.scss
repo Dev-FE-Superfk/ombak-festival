@@ -128,3 +128,83 @@ footer{
         }
     }
 }
+@media only screen and (max-width:767px){
+    footer{
+        .container{
+            padding: 0 20px;
+            display: block;
+            text-align: center;
+            position: relative;
+        }
+        .footer_left{
+            width: 100%;
+            margin-bottom: 30px;
+            img{
+                margin: 0 auto 10px;
+            }
+            .sosmed{
+                justify-content: center;
+            }
+            p{
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+                width: 100%;
+            }
+        }
+        .footer_right{
+            width: 100%;
+            .fr_top{
+                display: block;
+                .fr_tablet{
+                    width:100%;
+                    display: block;
+                }
+            }
+            .fr_box{
+                width: 100%;
+            }
+            .fr_bottom{
+                .pb_box{
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                .pr_box{
+                    width: 100%;
+                    ul{
+                        max-width: 300px;
+                        margin: 20px auto;
+                        li{
+                            margin-bottom: 20px;
+                            &:first-child{
+                                width: 50%;
+                                margin-right: 0;
+                            }
+                            &:nth-child(2){
+                                width: 50%;
+                                margin-right: 0;
+                            }
+                            &:nth-child(3){
+                                width: 50%;
+                                margin-right: 0;
+                                padding:0 20px;
+                            }
+                            &:last-child{
+                                width: 50%;
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .presented_logo{
+                margin: 20px auto;
+                img{
+                    &:first-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -21,6 +21,7 @@ export { default as Artist2 } from "./artist_2.png";
 export { default as Artist3 } from "./artist_3.png";
 export { default as Artist4 } from "./artist_4.png";
 export { default as MemoriesCover } from "./memories_cover.png";
+export { default as MemoriesCoverM } from "./memories_cover_m.png";
 export { default as SunwayUniversity } from "./sunwayuniversity.png";
 export { default as Airasia } from "./airasia.png";
 export { default as Smobble } from "./smobble.png";

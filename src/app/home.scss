@@ -94,6 +94,12 @@
             margin: 0 10px;
         }
     }
+    .desktop{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
     h2{
         font-size: 40px;
     }
@@ -537,6 +543,9 @@
             width: 100%;
             display: block;
             margin-bottom: 30px;
+            &.mobile{
+                display: none;
+            }
         }
         h3{
             color:#fff;
@@ -604,5 +613,241 @@
     }
 }
 @media only screen and (max-width:767px){
-    
+    html{
+        overflow-x: hidden;
+    }
+    .section_one{
+        min-height:100vh;
+        img{
+            width: 100%;
+            position: absolute;
+            top: 60vh;
+            left: 0;
+        }
+        video{
+            height:40vh;
+            top:60vh;
+        }
+        .text{
+            width:100%;
+            margin-left:0;
+            margin-top:0;
+            position: absolute;
+            top: -35vh;
+            text-align:center;
+            img{
+                position: static;
+                width: 280px;
+                margin:0 auto 10px;
+            }
+            .text_info{
+                font-size: 18px;
+                span{
+                    margin-top:10px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .section_two{
+        height: auto;
+        .container{
+            padding: 80px 20px;
+            img{
+                max-width: 25px;
+            }
+        }
+        .desktop{
+            display: none;
+        }
+        .mobile{
+            display: block;
+        }
+        h2{
+            font-size: 24px;
+        }
+        .ornament_1{
+            width: 90px;
+            height: 84px;
+            top:-30px;
+            left: -20px;
+        }
+        .ornament_2{
+            width: 60px;
+            height: 115px;
+            top: 0px;
+            left: 0px;
+        }
+        .ornament_3{
+            width: 68px;
+            height: 68px;
+            top: 0px;
+            left: 30px;
+        }
+        .ornament_4{
+            width: 160px;
+            height:160px;
+            top: 70px;
+            left: -34px;
+        }
+        .ornament_5{
+            width: 160px;
+            height:160px;
+            top: 200px;
+            left: -45px;
+        }
+        .ornament_6{
+            width: 90px;
+            height:90px;
+            top: 300px;
+            left: -30px;
+        }
+        .ornament_7{
+            width: 90px;
+            height:90px;
+            top: -45px;
+            right: -35px;
+        }
+        .ornament_8{
+            width: 90px;
+            height:90px;
+            top: 10px;
+            right: -30px;
+        }
+        .ornament_8a{
+            width: 120px;
+            height:120px;
+            top: 60px;
+            right: -65px;
+        }
+        .ornament_9{
+            width: 25px;
+            height:25px;
+            top: 25px;
+            right: 10px;
+            z-index: 10;
+        }
+        .ornament_10{
+            width: 90px;
+            height:150px;
+            top: 205px;
+            right: -20px;
+            z-index: 10;
+        }
+        .ornament_11{
+            width: 120px;
+            height:200px;
+            top: 260px;
+            right: -20px;
+            z-index: 9;
+        }
+        .ornament_12{
+            width: 100px;
+            height:120px;
+            top: 290px;
+            right: -60px;
+            z-index: 9;
+        }
+    }
+    .section_three{
+        padding-bottom: 40px;
+        .category_box{
+            width: calc(100% / 2);
+            .category_text{
+                .category_title{
+                    font-size: 18px;
+                    line-height: normal;
+                    height: 80px;
+                }
+            }
+        }
+    } 
+    .section_four{
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            top:0;
+            left:0;
+            z-index: -1;
+        }
+        .container{
+            position: static;
+            transform: none;
+            display: block;
+            .box_left{
+                width: 100%;
+                padding: 40px 80px 0 20px;
+                h3{
+                    font-size: 28px;
+                    margin-bottom: 10px;
+                }
+                p{
+                    font-size: 16px;
+                    line-height: normal;
+                }
+                .button{
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    top: 50px;
+                    right: 20px;
+                }
+            }
+            .box_right{
+                width: 100%;
+                padding: 0 20px 40px;
+                .resorts_box{
+                    width: calc((100% - 20px)/2);
+                    height: 85px;
+                    margin-right: 20px;
+                    &:nth-child(2n){
+                        margin-right: 0;
+                    }
+                    img{
+                        position: static;
+                        width: auto;
+                        height: auto;
+                        object-fit: none;
+                        display: block;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+    .section_seven{
+        .container{
+            padding: 0 20px;
+            .desktop{
+                display:none;
+            }
+            img{
+                width: 100%;
+                &.mobile{
+                    display:block;
+                }
+            }
+            h3{
+                font-size: 28px;
+            }
+        }
+    }
+    .section_five{
+        display: block;
+        padding-top:40px;
+        h2{
+            font-size: 28px;
+            padding: 0 20px;
+            line-height: normal;
+        }
+        .artist_box{
+            &.slider{
+                width:260px !important;
+                padding: 0 20px;
+            }
+        }
+    }
 }

@@ -81,6 +81,17 @@ export default function OmbakKids() {
                                   ? ""
                                   : "reverse"
                               }`}>
+                              <div className="box_image">
+                                <img
+                                  src={
+                                    contentData.items[0].v_page_element_image
+                                  }
+                                  alt={
+                                    contentData.items[0]
+                                      .v_page_element_image_title
+                                  }
+                                />
+                              </div>
                               <div className="box_text">
                                 <h3>
                                   <span>
@@ -104,17 +115,6 @@ export default function OmbakKids() {
                                     )}
                                   </button>
                                 )}
-                              </div>
-                              <div className="box_image">
-                                <img
-                                  src={
-                                    contentData.items[0].v_page_element_image
-                                  }
-                                  alt={
-                                    contentData.items[0]
-                                      .v_page_element_image_title
-                                  }
-                                />
                               </div>
                             </div>
                           </div>

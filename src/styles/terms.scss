@@ -42,3 +42,20 @@
         }
     }
 }
+@media only screen and (max-width:767px){
+    .section_terms{
+        padding: 100px 0;
+        .container{
+            padding: 0 20px;
+        }
+        h2{
+            font-size: 28px;
+        }
+        ul{
+            padding-left: 20px;
+            ol{
+                padding-left: 20px;
+            }
+        }
+    }
+}

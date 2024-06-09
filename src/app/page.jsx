@@ -22,19 +22,19 @@ import {
   TheWestin,
   Anantara,
   WaveGreenLong,
-  Artist1,
-  Artist2,
-  Artist3,
-  Artist4,
   MemoriesCover,
+  MemoriesCoverM,
 } from "@/assets";
 import { useEffect, useState } from "react";
 import { VideoPlayer, PartnerSlider } from "@/components";
 import { VideoOmbak } from "../../public/videos";
-import { ArtistCard } from "@/components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   const [artists, setArtists] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
   const classes = ["mask1", "mask2", "mask3", "mask4"];
   useEffect(() => {
     // Gantilah URL ini dengan URL API Anda
@@ -55,7 +55,32 @@ export default function Home() {
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
+
+    // Check if the screen is mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  // Settings for the slider
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    variableWidth: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 2000, // Set autoplay speed (in milliseconds)
+  };
+
   return (
     <>
       <div className="section_one">
@@ -84,7 +109,7 @@ export default function Home() {
           <div className="ornament_6"></div>
         </div>
         <div className="container">
-          <h2>
+          <h2 className="desktop">
             Malay for ocean wave, "Ombak"
             <Image
               src={IconOmbakOrange}
@@ -92,15 +117,34 @@ export default function Home() {
               height={46}
               alt="Wave Green"></Image>
             <br /> is more than a festival - it's the <br />
-            ultimate coastal weekend{" "}
+            ultimate coastal weekend
             <Image
               src={IconOmbakPurple}
               width={46}
               height={46}
-              alt="Wave purple"></Image>{" "}
+              alt="Wave purple"></Image>
             that <br />
             celebrates music, art, food and <br />
             family-fun for all ages
+          </h2>
+          <h2 className="mobile">
+            Malay for ocean wave, <br />
+            "Ombak"
+            <Image
+              src={IconOmbakOrange}
+              width={46}
+              height={46}
+              alt="Wave Green"></Image>
+            is more than <br />a festival - it's the <br />
+            ultimate coastal weekend <br />
+            <Image
+              src={IconOmbakPurple}
+              width={46}
+              height={46}
+              alt="Wave purple"></Image>
+            that celebrates music, <br />
+            art, food and family-fun <br />
+            for all ages
           </h2>
         </div>
         <div className="ornament_right">
@@ -199,25 +243,49 @@ export default function Home() {
             <span>world-class</span> artistes
           </h2>
           <div className="artist_wrapper">
-            {artists.map((artist, index) => (
-              <div className="artist_box">
-                <Link
-                  href={`/experience/music-and-performances/${artist.slug}`}>
-                  <div
-                    className={`artist_image ${
-                      classes[index % classes.length]
-                    }`}
-                    key={artist.slug}>
-                    <Image
-                      src={artist.thumbnail}
-                      alt={artist.name}
-                      width={200}
-                      height={200}></Image>
+            {isMobile ? (
+              <Slider {...sliderSettings}>
+                {artists.map((artist, index) => (
+                  <div className="artist_box slider" key={artist.slug}>
+                    <Link
+                      href={`/experience/music-and-performances/${artist.slug}`}>
+                      <div
+                        className={`artist_image ${
+                          classes[index % classes.length]
+                        }`}>
+                        <Image
+                          src={artist.thumbnail}
+                          alt={artist.name}
+                          width={200}
+                          height={200}
+                        />
+                      </div>
+                      <div className="artist_name">{artist.name}</div>
+                    </Link>
                   </div>
-                  <div className="artist_name">{artist.name}</div>
-                </Link>
-              </div>
-            ))}
+                ))}
+              </Slider>
+            ) : (
+              artists.map((artist, index) => (
+                <div className="artist_box" key={artist.slug}>
+                  <Link
+                    href={`/experience/music-and-performances/${artist.slug}`}>
+                    <div
+                      className={`artist_image ${
+                        classes[index % classes.length]
+                      }`}>
+                      <Image
+                        src={artist.thumbnail}
+                        alt={artist.name}
+                        width={200}
+                        height={200}
+                      />
+                    </div>
+                    <div className="artist_name">{artist.name}</div>
+                  </Link>
+                </div>
+              ))
+            )}
           </div>
           <Link href="../experience/music-and-performances">
             <div className="button">See More</div>
@@ -261,9 +329,20 @@ export default function Home() {
       </div> */}
       <div className="section_seven">
         <div className="container">
-          <Image src={MemoriesCover} alt="Memories Cover"></Image>
+          <Image
+            className="desktop"
+            src={MemoriesCover}
+            alt="Memories Cover"></Image>
+          <Image
+            className="mobile"
+            src={MemoriesCoverM}
+            alt="Memories Cover"></Image>
           <h3>Ready for the Ultimate Weekend?</h3>
-          <div className="button">BOOK YOUR STAY PACKAGES NOW</div>
+          <div className="button">
+            <Link href="/stay?tag=hard_rock_hotel">
+              BOOK YOUR STAY PACKAGES NOW
+            </Link>
+          </div>
         </div>
       </div>
       {/* <div className="section_eight">

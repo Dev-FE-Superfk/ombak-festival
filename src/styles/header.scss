@@ -157,30 +157,85 @@ nav{
         }
         .burger_menu_btn{
             display: block;
+            &.active{
+                background: url('../assets/main/icon_close.png') no-repeat center / 30px;
+            }
         }
         .get_ticket_btn{
-            display: none;
+            position: static;
+            margin:20px auto 0;
+            transform: none;
         }
         #logo{
             left: 20px;
         }
-        nav{
+        .nav_box{
             display: none;
-            position: absolute;
-            top: 80px;
+            position: fixed;
+            top: 60px;
             left: 0;
             width: 100%;
-            background: $purple;
+            height: calc(100vh - 60px);
+            background: #F0EBE6;
+            overflow: scroll;
+            &.active{
+                display: block;
+            }
             ul{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+                display: block;
+                padding: 20px;
                 li{
                     width: 100%;
-                    text-align: center;
+                    text-align: left;
+                    color:#000;
+                    margin: 0;
+                    border-bottom: 1px solid #000;
                     a{
                         display: block;
                         padding: 20px 0;
+                        color:#000;
+                    }
+                    .experience_btn{
+                        color:#000;
+                        padding-bottom: 20px;
+                    }
+                    .sub_nav{
+                        width: 100%;
+                        position: static;
+                        left: auto;
+                        top: auto;
+                        padding:0 0 20px 0;
+                        .sn_category{
+                            padding-top: 18px;
+                            padding-left: 18px;
+                            padding-right: 18px;
+                            width: calc((100% - 20px)/2);
+                            font-size: 16px;
+                            padding-bottom: 43px;
+                            margin-bottom: 20px;
+                            height: 109px;
+                            &:nth-child(2n){
+                                margin-right: 0;
+                            }
+                            &:nth-child(3){
+                                margin-bottom: 0;
+                            }
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                            &.music{
+                                background:$purple url('../assets/home/wave_green.png') no-repeat bottom -25px left / contain;
+                            }
+                            &.visualarts{
+                                background:$green url('../assets/home/wave_yellow.png') no-repeat bottom -25px left / contain;
+                            }
+                            &.fnb{
+                                background:$yellow url('../assets/home/wave_dark_green.png') no-repeat bottom -25px left / contain;
+                            }
+                            &.ombakkids{
+                                background:$blue url('../assets/home/wave_orange.png') no-repeat bottom -25px left / contain;
+                            }
+                        }
                     }
                 }
             }

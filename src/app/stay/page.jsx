@@ -77,19 +77,6 @@ function Stay() {
           ))}
         </div>
         <div className="resorts_bottom">
-          <div className="rb_left">
-            <div className="big_image">
-              <Image src={resorts.image1} width={200} height={100}></Image>
-            </div>
-            <div className="small_image">
-              <div className="si_box">
-                <Image src={resorts.image2} width={200} height={100}></Image>
-              </div>
-              <div className="si_box">
-                <Image src={resorts.image3} width={200} height={100}></Image>
-              </div>
-            </div>
-          </div>
           <div className="rb_right">
             <div className="rbr_top">
               <h3>
@@ -112,7 +99,7 @@ function Stay() {
                         __html: pkg.description,
                       }}></p>
                     <div className="pkg_price">
-                      <span>from</span>
+                      <span>From</span>
                       {pkg.price}
                     </div>
                     <div className="button_box">
@@ -124,6 +111,19 @@ function Stay() {
                     </div>
                   </div>
                 ))}
+            </div>
+          </div>
+          <div className="rb_left">
+            <div className="big_image">
+              <Image src={resorts.image1} width={200} height={100}></Image>
+            </div>
+            <div className="small_image">
+              <div className="si_box">
+                <Image src={resorts.image2} width={200} height={100}></Image>
+              </div>
+              <div className="si_box">
+                <Image src={resorts.image3} width={200} height={100}></Image>
+              </div>
             </div>
           </div>
         </div>

@@ -57,3 +57,39 @@
         }
     }
 }
+@media only screen and (max-width:767px){
+    .section_privacy{
+        padding: 100px 0;
+        .container{
+            padding:0 20px;
+        }
+        h2{
+            font-size: 28px;
+            line-height: normal;
+            margin-bottom: 10px;
+        }
+        .updated{
+            position: static;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .sp_box{
+            h3{
+                font-size: 18px;
+                padding-left: 25px;
+                position: relative;
+                span{
+                    position: absolute;
+                    left: 0;
+                    &.left{
+                        position: absolute;
+                        left: -10px;
+                    }
+                }
+            }
+            ol{
+                padding-left: 20px;
+            }
+        }
+    }
+}
