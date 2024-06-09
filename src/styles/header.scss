@@ -38,11 +38,91 @@ header{
 }
 nav{
     ul{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
         li{
+            margin:0 20px;
             a{
                 color: $white;
-                padding:0 20px;
+                padding:0;
                 font-size: 18px;
+                position: relative;
+                display: block;
+                &.active{
+                    &:before{
+                        content: '';
+                        width: 100%;
+                        height: 5px;
+                        background: $orange;
+                        display: block;
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                    }
+                }
+            }
+            .experience_btn{
+                color: $white;
+                padding:0;
+                font-size: 18px;
+                position: relative;
+                &.active{
+                    &:before{
+                        content: '';
+                        width: 100%;
+                        height: 5px;
+                        background: $orange;
+                        display: block;
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                    }
+                }
+            }
+            .sub_nav{
+                position: absolute;
+                width: 100vw;
+                padding: 40px 0;
+                background: #F0EBE6;
+                left:calc((1130px - 100vw)/2);
+                top: 80px;
+                .sn_container{
+                    max-width: 1130px;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .sn_category{
+                    width: calc((100% - 60px)/4);
+                    margin-right: 20px;
+                    padding: 20px 20px 80px;
+                    font-size: 24px;
+                    font-family: 'Antique Olive Std Black';
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    &.music{
+                        background:$purple url('../assets/home/wave_green.png') no-repeat bottom -40px left / contain;
+                        color:#fff;
+                    }
+                    &.visualarts{
+                        background:$green url('../assets/home/wave_yellow.png') no-repeat bottom -40px left / contain;
+                        color:#000;
+                    }
+                    &.fnb{
+                        background:$yellow url('../assets/home/wave_dark_green.png') no-repeat bottom -40px left / contain;
+                        color:#000;
+                    }
+                    &.ombakkids{
+                        background:$blue url('../assets/home/wave_orange.png') no-repeat bottom -40px left / contain;
+                        color:#fff;
+                    }
+                }
             }
         }
     }

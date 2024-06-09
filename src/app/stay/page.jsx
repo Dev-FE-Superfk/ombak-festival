@@ -92,7 +92,11 @@ function Stay() {
           </div>
           <div className="rb_right">
             <div className="rbr_top">
-              <h3>{resorts.name}</h3>
+              <h3>
+                <Link target="_blank" href={resorts.link}>
+                  {resorts.name}
+                </Link>
+              </h3>
               <p
                 dangerouslySetInnerHTML={{
                   __html: resorts.description,
@@ -103,14 +107,20 @@ function Stay() {
                 packages.map((pkg) => (
                   <div key={pkg.id}>
                     <h4>{pkg.name}</h4>
-                    <p>{pkg.description}</p>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: pkg.description,
+                      }}></p>
                     <div className="pkg_price">
                       <span>from</span>
                       {pkg.price}
                     </div>
                     <div className="button_box">
-                      <button disabled>Buy Package</button>
-                      <span>Coming Soon</span>
+                      <button>
+                        <Link href={pkg.link} target="_blank">
+                          Buy Package
+                        </Link>
+                      </button>
                     </div>
                   </div>
                 ))}
@@ -120,7 +130,9 @@ function Stay() {
       </div>
       <div className="faq_info">
         <h4>Have questions and want to know more?</h4>
-        <button>Check Out FAQ</button>
+        <button>
+          <Link href="/info?tag=faq">Check Out FAQ</Link>
+        </button>
       </div>
     </div>
   );

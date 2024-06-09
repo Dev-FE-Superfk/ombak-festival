@@ -106,6 +106,7 @@ export default function Home() {
         <div className="ornament_right">
           <div className="ornament_7"></div>
           <div className="ornament_8"></div>
+          <div className="ornament_8a"></div>
           <div className="ornament_9"></div>
           <div className="ornament_10"></div>
           <div className="ornament_11"></div>

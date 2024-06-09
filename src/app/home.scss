@@ -115,20 +115,20 @@
         background: url('../assets/home/ornament_2.png') no-repeat top left / contain;
     }
     .ornament_3{
-        width: 148px;
-        height: 148px;
+        width: 144px;
+        height: 152px;
         position: absolute;
-        top: 150px;
-        left: 120px;
-        background: url('../assets/home/ornament_3.png') no-repeat top left / contain;
+        top: 130px;
+        left: 100px;
+        background: url('../assets/home/Isolation_Mode.png') no-repeat top left / contain;
     }
     .ornament_4{
-        width: 94px;
-        height: 398px;
+        width: 225px;
+        height: 236px;
         position: absolute;
-        top: 30px;
+        top: 140px;
         left: 0;
-        background: url('../assets/home/ornament_4.png') no-repeat top left / contain;
+        background: url('../assets/home/Rectangle.png') no-repeat top left / contain;
         z-index: 9;
     }
     .ornament_5{
@@ -165,28 +165,37 @@
         background: url('../assets/home/ornament_8.png') no-repeat top left / contain;
         z-index: 10;
     }
+    .ornament_8a{
+        width: 230px;
+        height: 230px;
+        position: absolute;
+        top: 120px;
+        right: -120px;
+        background: url('../assets/home/Bunga_Penawar.png') no-repeat top left / contain;
+        z-index: 10;
+    }
     .ornament_9{
         width: 52px;
         height: 60px;
         position: absolute;
         top: 220px;
-        right: 60px;
+        right: 100px;
         background: url('../assets/home/ornament_9.png') no-repeat top left / contain;
     }
     .ornament_10{
         width: 199px;
         height: 262px;
         position: absolute;
-        top: 250px;
-        right: 0;
-        background: url('../assets/home/ornament_10.png') no-repeat top left / contain;
-        z-index: 9;
+        top: 260px;
+        right: -20px;
+        background: url('../assets/home/Wayang_Kulit.png') no-repeat top left / contain;
+        z-index: 12;
     }
     .ornament_11{
         width: 283px;
         height: 262px;
         position: absolute;
-        top: 310px;
+        top: 290px;
         right: 0;
         background: url('../assets/home/ornament_11.png') no-repeat top left / contain;
     }
@@ -194,7 +203,7 @@
         width: 111px;
         height: 322px;
         position: absolute;
-        top: 410px;
+        top: 390px;
         right: 0;
         background: url('../assets/home/ornament_12.png') no-repeat top left / contain;
     }
