@@ -44,14 +44,14 @@ export default function Footer() {
             <div className="fr_tablet">
               <div className="fr_box">
                 <div className="fr_nav">
-                  <Link href="/getting-here">Getting Here</Link>
+                  <Link href="/info?tag=info">Getting Here</Link>
                 </div>
                 <div className="fr_nav">Maps</div>
               </div>
               <div className="fr_box">
                 <div className="fr_nav">Contact Us</div>
                 <div className="fr_nav">
-                  <Link href="/faqs">FAQs</Link>
+                  <Link href="/info?tag=faq">FAQs</Link>
                 </div>
               </div>
             </div>

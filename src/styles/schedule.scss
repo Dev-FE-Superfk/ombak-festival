@@ -1,0 +1,21 @@
+.section_schedule{
+    padding-top: 120px;
+    padding-bottom: 60px;
+    .container{
+        max-width: 1130px;
+        margin: 0 auto;
+        .schedule_box{
+            width: 70%;
+            h2{
+                font-size: 48px;
+                font-family: 'Antique Olive Std Black';
+                margin-bottom: 20px;
+            }
+            img{
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+}

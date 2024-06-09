@@ -26,3 +26,7 @@ export { default as Airasia } from "./airasia.png";
 export { default as Smobble } from "./smobble.png";
 export { default as Energizer } from "./energizer.png";
 export { default as Gamuda } from "./gamuda.png";
+export { default as BungaPenawar } from "./Bunga_Penawar.png";
+export { default as IsolationMode } from "./Isolation_Mode.png";
+export { default as WayangKulit } from "./Wayang_Kulit.png";
+export { default as Rectangele } from "./Rectangle.png";
