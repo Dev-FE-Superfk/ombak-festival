@@ -26,13 +26,15 @@ import {
   MemoriesCoverM,
 } from "@/assets";
 import { useEffect, useState } from "react";
-import { VideoPlayer, PartnerSlider } from "@/components";
+import { VideoPlayer, PartnerSlider, UserbackWidget } from "@/components";
 import { VideoOmbak } from "../../public/videos";
+import { useUserback, UserbackProvider } from "@userback/react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
+  const { init, open } = useUserback();
   const [artists, setArtists] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   const classes = ["mask1", "mask2", "mask3", "mask4"];
@@ -87,6 +89,9 @@ export default function Home() {
     autoplaySpeed: 2000, // Set autoplay speed (in milliseconds)
   };
 
+  useEffect(() => {
+    init("P-594QMpIk2nw42M7qspN1NIqAy");
+  }, []);
   return (
     <>
       <div className="section_one">

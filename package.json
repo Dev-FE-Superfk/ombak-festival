@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@userback/react": "^0.3.2",
+    "@userback/widget": "^0.3.2",
     "file-loader": "^6.2.0",
     "html-react-parser": "^5.1.10",
     "next": "14.2.3",
