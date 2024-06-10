@@ -1,39 +1,39 @@
 "use client";
 import "@/styles/header.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import { LogoWhite } from "@/assets";
 import Link from "next/link";
 
 export default function Header() {
-  const [isSubNavVisible, setSubNavVisible] = useState(false);
   const [isNavVisible, setNavVisible] = useState(false);
+  const [isSubNavVisible, setSubNavVisible] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
   // Function to determine if the current path matches a given path
   const isPathActive = (path) => pathname && pathname.startsWith(path);
 
+  const toggleNav = () => {
+    setNavVisible(!isNavVisible);
+  };
+
   const toggleSubNav = () => {
     setSubNavVisible(!isSubNavVisible);
   };
 
-  const hideSubNav = () => {
-    setSubNavVisible(false);
-  };
-  const toggleNav = () => {
-    setNavVisible(!isNavVisible);
-  };
   const hideNav = () => {
     setNavVisible(false);
+    setSubNavVisible(false);
   };
+
   return (
     <header>
       <div className="container">
         <h1 id="logo">
           <Link href="/">
-            <Image src={LogoWhite} width={93} height={30}></Image>
+            <Image src={LogoWhite} width={93} height={30} alt="Logo" />
           </Link>
         </h1>
         <div className={`nav_box ${isNavVisible ? "active" : ""}`}>
@@ -47,16 +47,14 @@ export default function Header() {
                   onClick={toggleSubNav}>
                   Experience
                 </div>
-                {isSubNavVisible && (
+                {((isNavVisible && window.innerWidth <= 1129) ||
+                  isSubNavVisible) && (
                   <div className="sub_nav">
                     <div className="sn_container">
                       <Link
                         className="sn_category music"
                         href="/experience/music-and-performances"
-                        onClick={() => {
-                          hideSubNav();
-                          hideNav();
-                        }}>
+                        onClick={hideNav}>
                         <h3>
                           Music &amp;
                           <br />
@@ -66,10 +64,7 @@ export default function Header() {
                       <Link
                         className="sn_category visualarts"
                         href="/experience/visual-arts-and-craft"
-                        onClick={() => {
-                          hideSubNav();
-                          hideNav();
-                        }}>
+                        onClick={hideNav}>
                         <h3>
                           Visual Arts <br />
                           &amp; Craft
@@ -78,19 +73,13 @@ export default function Header() {
                       <Link
                         className="sn_category fnb"
                         href="/experience/food-and-beverages"
-                        onClick={() => {
-                          hideSubNav();
-                          hideNav();
-                        }}>
+                        onClick={hideNav}>
                         <h3>F&amp;B</h3>
                       </Link>
                       <Link
                         className="sn_category ombakkids"
                         href="/experience/ombak-kids"
-                        onClick={() => {
-                          hideSubNav();
-                          hideNav();
-                        }}>
+                        onClick={hideNav}>
                         <h3>Ombak Kids</h3>
                       </Link>
                     </div>
@@ -99,12 +88,11 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  className={`${isPathActive("/schedule") ? "active" : ""}`}
-                  href="/schedule"
-                  onClick={() => {
-                    hideSubNav();
-                    hideNav();
-                  }}>
+                  className={`disabled ${
+                    isPathActive("/schedule") ? "active" : ""
+                  }`}
+                  href="#"
+                  onClick={hideNav}>
                   Schedule
                 </Link>
               </li>
@@ -112,10 +100,7 @@ export default function Header() {
                 <Link
                   className={`${isPathActive("/stay") ? "active" : ""}`}
                   href="/stay?tag=hard_rock_hotel"
-                  onClick={() => {
-                    hideSubNav();
-                    hideNav();
-                  }}>
+                  onClick={hideNav}>
                   Stay
                 </Link>
               </li>
@@ -123,17 +108,16 @@ export default function Header() {
                 <Link
                   className={`${isPathActive("/info") ? "active" : ""}`}
                   href="/info?tag=info"
-                  onClick={() => {
-                    hideSubNav();
-                    hideNav();
-                  }}>
+                  onClick={hideNav}>
                   Info
                 </Link>
               </li>
             </ul>
           </nav>
           <div className="get_ticket_btn">
-            <Link href="/stay?tag=hard_rock_hotel">Get Packages</Link>
+            <Link href="/stay?tag=hard_rock_hotel" onClick={hideNav}>
+              Get Packages
+            </Link>
           </div>
         </div>
         <div
