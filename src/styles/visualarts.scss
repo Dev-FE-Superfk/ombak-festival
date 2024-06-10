@@ -166,7 +166,10 @@
             padding: 0 25px 25px;
             height: 230px;
             position: relative;
-            &.va{
+            &:last-child{
+                margin-right: 0;
+            }
+            &.fnb{
                 background: $yellow url('../assets/main/square_wave_yellow.png') no-repeat top left / 65px;
                 &:hover{
                     h4{
@@ -199,7 +202,6 @@
             }
             &.ombakkids{
                 background: $blue url('../assets/main/square_wave_orange.png') no-repeat top left / 65px;
-                margin-right: 0;
                 &:hover{
                     h4{
                         text-decoration: underline;
@@ -237,9 +239,6 @@
 @media only screen and (max-width:1129px){
     .section_visual_arts{
         padding-top: 60px;
-        .va_banner{
-            display: block;
-        }
         .va_image{
             img{
                 width: 100%;
@@ -309,6 +308,9 @@
                 font-size: 34px;
             }
             .me_box{
+                h4{
+                    font-size: 26px;
+                }
             }
         }
     }
