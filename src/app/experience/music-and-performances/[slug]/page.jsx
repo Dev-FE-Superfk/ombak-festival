@@ -17,7 +17,13 @@ export default function ArtistDetail() {
     if (slug) {
       const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/music-and-performances/detail?slug=${slug}`;
 
-      fetch(apiUrl)
+      fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          "x-api-key": "bda07dc4-cab9-4148-ac9c-7a44c3c55wqr9",
+          "Content-Type": "application/json",
+        },
+      })
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");

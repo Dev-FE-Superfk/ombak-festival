@@ -128,6 +128,72 @@ footer{
         }
     }
 }
+@media only screen and (max-width:1129px){
+    footer{
+        padding-bottom: 160px;
+        .container{
+            padding: 0 40px;
+        }
+        .footer_left{
+            img{
+            }
+            .sosmed{
+            }
+            p{
+            }
+        }
+        .footer_right{
+            .fr_top{
+                .fr_tablet{
+                    width: 100%;
+                }
+            }
+            .fr_box{
+                width: calc(100% / 2);
+            }
+            .fr_bottom{
+                width: calc(100% - 40px);
+                position: absolute;
+                left: 40px;
+                .pb_box{
+                    width: 380px;
+                }
+                .pr_box{
+                    width: calc(100% - 420px);
+                    ul{
+                       li{
+                            &:first-child{
+                                width: calc(100% / 4);
+                                margin-right: 0;
+                            }
+                            &:nth-child(2){
+                                width: calc(100% / 4);
+                                margin-right: 0;
+                            }
+                            &:nth-child(3){
+                                width: calc(100% / 4);
+                                margin-right: 0;
+                                padding:0 20px;
+                            }
+                            &:last-child{
+                                width: calc(100% / 4);
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .presented_logo{
+                margin: 20px auto;
+                img{
+                    &:first-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
 @media only screen and (max-width:767px){
     footer{
         .container{
