@@ -79,8 +79,9 @@ export default function Home() {
 
   // Settings for the slider
   const sliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
+    arrows: false,
     speed: 500,
     variableWidth: true,
     slidesToShow: 1,
