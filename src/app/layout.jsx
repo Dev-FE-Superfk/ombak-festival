@@ -1,21 +1,36 @@
+"use client";
 import "./globals.css";
 import "../fonts/style.css";
 import { Header, Footer } from "@/components";
+import { UserbackProvider } from "@userback/react";
 
-export const metadata = {
-  title: "Ombak Festival At Desaru Coast Johor",
-  description:
-    "A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now.",
-  keywords:
-    "Family friendly activities, Music festival, Music festival in Johor, Arts and Crafts, Beach festival, Weekend getaway ideas, Events for family, Malaysia festivals, Upcoming concerts 2024, Resort activities",
-};
+// export const metadata = {
+//   title: "Ombak Festival At Desaru Coast Johor",
+//   description:
+//     "A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now.",
+//   keywords:
+//     "Family friendly activities, Music festival, Music festival in Johor, Arts and Crafts, Beach festival, Weekend getaway ideas, Events for family, Malaysia festivals, Upcoming concerts 2024, Resort activities",
+// };
 
 export default function RootLayout({ children }) {
+  const user_data = {
+    id: "123456", // example data
+    info: {
+      name: "someone", // example data
+      email: "someone@example.com", // example data
+    },
+  };
   return (
     <html lang="en">
-      <title>{metadata.title}</title>
-      <meta name="description" content={metadata.description} />
-      <meta name="keywords" content={metadata.keywords} />
+      <title>Ombak Festival At Desaru Coast Johor</title>
+      <meta
+        name="description"
+        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"
+      />
+      <meta
+        name="keywords"
+        content="Family friendly activities, Music festival, Music festival in Johor, Arts and Crafts, Beach festival, Weekend getaway ideas, Events for family, Malaysia festivals, Upcoming concerts 2024, Resort activities"
+      />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
@@ -23,7 +38,13 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/favicon.ico" />
       <body>
         <Header />
-        <section>{children}</section>
+        <section id="root">
+          <UserbackProvider
+            token="P-594QMpIk2nw42M7qspN1NIqAy"
+            options={{ user_data: user_data }}>
+            {children}
+          </UserbackProvider>
+        </section>
         <Footer />
       </body>
     </html>
