@@ -15,6 +15,8 @@ export { default as Hardrock } from "./hardrock.png";
 export { default as Onenonly } from "./onenonly.png";
 export { default as Anantara } from "./anantara.png";
 export { default as TheWestin } from "./thewestin.png";
+export { default as TheElsClub } from "./the_els_club.png";
+export { default as AdventureWaterpark } from "./adventure_waterpark.png";
 export { default as WaveGreenLong } from "./wave_green_long.png";
 export { default as Artist1 } from "./artist_1.png";
 export { default as Artist2 } from "./artist_2.png";

@@ -10,6 +10,8 @@ import {
   TheWestin,
   Anantara,
   Onenonly,
+  TheElsClub,
+  AdventureWaterpark,
 } from "@/assets";
 import "@/styles/footer.scss";
 import Link from "next/link";
@@ -92,20 +94,20 @@ export default function Footer() {
               </div>
             </div>
             <div className="pr_box">
-              <span>Participating resorts:</span>
+              <span>Partner properties:</span>
               <ul>
-                <li>
-                  <Link
-                    href="https://hotel.hardrock.com/desaru-coast/"
-                    target="_blank">
-                    <Image src={Hardrock}></Image>
-                  </Link>
-                </li>
                 <li>
                   <Link
                     href="https://www.oneandonlyresorts.com/desaru-coast"
                     target="_blank">
                     <Image src={Onenonly}></Image>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.anantara.com/en/desaru-coast"
+                    target="_blank">
+                    <Image src={Anantara}></Image>
                   </Link>
                 </li>
                 <li>
@@ -117,9 +119,19 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="https://www.anantara.com/en/desaru-coast"
+                    href="https://hotel.hardrock.com/desaru-coast/"
                     target="_blank">
-                    <Image src={Anantara}></Image>
+                    <Image src={Hardrock}></Image>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.elsclubmalaysia.com/" target="_blank">
+                    <Image src={TheElsClub}></Image>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" target="_blank">
+                    <Image src={AdventureWaterpark}></Image>
                   </Link>
                 </li>
               </ul>

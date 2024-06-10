@@ -102,14 +102,14 @@ function Stay() {
                         __html: pkg.description,
                       }}></p>
                     <div className="pkg_price">
-                      {tag !== "one_and_only_hotel" && <span>From</span>}
+                      {tag !== "one_and_only" && <span>From</span>}
                       {pkg.price}
                     </div>
                     <div className="button_box">
                       <button>
                         <Link
                           href={
-                            tag == "one_and_only_hotel"
+                            tag == "one_and_only"
                               ? `mailto:${pkg.link}`
                               : pkg.link
                           }
