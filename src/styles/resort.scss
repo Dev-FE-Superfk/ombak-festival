@@ -126,6 +126,12 @@
                     border:1px solid #000;
                     border-radius: 40px;
                     transition: all 0.2s ease;
+                    z-index: 1;
+                }
+                a{
+                    display: block;
+                    position: relative;
+                    z-index: 10;
                 }
                 &:hover{
                     &::before{
@@ -155,6 +161,7 @@
                 position: absolute;
                 bottom: 30px;
                 left: 20px;
+                padding-right: 120px;
                 span{
                     font-family: 'Roboto';
                     font-weight: normal;
@@ -211,6 +218,33 @@
         }
     }
 }
+@media only screen and (max-width:1129px){
+    .section_resorts{
+        padding-top: 80px;
+        .container{
+            padding: 0 40px;
+        }
+        .resorts_top{
+            h3{
+                font-size: 34px;
+                line-height: normal;
+                margin-bottom: 20px;
+            }
+            p{
+                font-size: 16px;
+            }
+        }
+        .resorts_bottom{
+            .rb_right{
+                padding-top:0;
+            }
+        }
+        .faq_info{
+            padding: 20px 20px 200px;
+        }
+    }
+}
+
 @media only screen and (max-width:767px){
     .section_resorts{
         padding-top: 60px;

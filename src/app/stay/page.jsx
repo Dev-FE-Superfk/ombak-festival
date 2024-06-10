@@ -17,8 +17,13 @@ function Stay() {
   useEffect(() => {
     if (tag) {
       const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/stay?tag=${tag}`;
-      console.log(apiUrl);
-      fetch(apiUrl)
+      fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          "x-api-key": "bda07dc4-cab9-4148-ac9c-7a44c3c55wqr9",
+          "Content-Type": "application/json",
+        },
+      })
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -79,11 +84,9 @@ function Stay() {
         <div className="resorts_bottom">
           <div className="rb_right">
             <div className="rbr_top">
-              <h3>
-                <Link target="_blank" href={resorts.link}>
-                  {resorts.name}
-                </Link>
-              </h3>
+              <Link target="_blank" href={resorts.link}>
+                <h3>{resorts.name}</h3>
+              </Link>
               <p
                 dangerouslySetInnerHTML={{
                   __html: resorts.description,
@@ -99,7 +102,7 @@ function Stay() {
                         __html: pkg.description,
                       }}></p>
                     <div className="pkg_price">
-                      <span>From</span>
+                      {tag !== "one_and_only_hotel" && <span>From</span>}
                       {pkg.price}
                     </div>
                     <div className="button_box">

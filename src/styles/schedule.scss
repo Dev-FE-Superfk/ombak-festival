@@ -19,6 +19,20 @@
         }
     }
 }
+@media only screen and (max-width:1129px){
+    .section_schedule{
+        padding-top: 80px;
+        .container{
+            padding: 0 40px;
+            .schedule_box{
+                width: 70%;
+                h2{
+                    font-size: 42px;
+                }
+            }
+        }
+    }
+}
 @media only screen and (max-width:767px){
     .section_schedule{
         padding-top: 100px;

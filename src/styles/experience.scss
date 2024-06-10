@@ -135,6 +135,66 @@
         }
     }
 }
+@media only screen and (max-width:1129px){
+    .section_music_performance{
+        padding-top: 60px;
+        .music_performance_banner{
+        }
+        .mp_image{
+            img{
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+        .mp_info{
+            padding: 20px;
+            .sub_title{
+                margin-bottom: 10px;
+            }
+            h3{
+                font-size: 40px;
+                line-height: normal;
+                margin-bottom: 10px;
+            }
+            .mpi_box{
+                padding:30px 20px 200px;
+            }
+        }
+    }
+    .artist_list{
+        .container{
+            padding: 0 40px;
+            border:none;
+            &:after{
+                content: '';
+                width: 100%;
+                height: 1px;
+                display: block;
+                background: #000;
+                margin: 0 auto;
+            }
+        }
+    }
+    .more_experience{
+        padding-top: 30px;
+        .container{
+            padding: 0 40px;
+            h3{
+                font-size: 28px;
+            }
+            .me_box{
+                h4{
+                    font-size: 28px;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
 @media only screen and (max-width:767px){
     .section_music_performance{
         padding-top: 60px;
