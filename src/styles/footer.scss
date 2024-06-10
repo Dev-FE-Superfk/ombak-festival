@@ -194,6 +194,7 @@ footer{
 }
 @media only screen and (max-width:767px){
     footer{
+        padding-bottom: 40px;
         .container{
             padding: 0 20px;
             display: block;
@@ -229,6 +230,9 @@ footer{
                 width: 100%;
             }
             .fr_bottom{
+                position: static;
+                transform: none;
+                margin:0 auto;
                 .pb_box{
                     width: 100%;
                     margin-bottom: 20px;
@@ -253,6 +257,14 @@ footer{
                                 margin-right: 0;
                                 padding:0 20px;
                             }
+                            &:nth-child(4){
+                                width: 50%;
+                                margin-right: 0;
+                            }
+                            &:nth-child(5){
+                                width: 50%;
+                                margin-right: 0;
+                            }
                             &:last-child{
                                 width: 50%;
                                 margin-right: 0;
@@ -265,7 +277,7 @@ footer{
                 margin: 20px auto;
                 img{
                     &:first-child{
-                        margin-right: 0;
+                        margin:0 auto;
                     }
                 }
             }
