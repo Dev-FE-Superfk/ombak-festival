@@ -107,8 +107,14 @@ function Stay() {
                     </div>
                     <div className="button_box">
                       <button>
-                        <Link href={pkg.link} target="_blank">
-                          Buy Package
+                        <Link
+                          href={
+                            tag == "one_and_only_hotel"
+                              ? `mailto:${pkg.link}`
+                              : pkg.link
+                          }
+                          target="_blank">
+                          {pkg.name_button}
                         </Link>
                       </button>
                     </div>

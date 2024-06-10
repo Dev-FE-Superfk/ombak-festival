@@ -22,10 +22,18 @@ export default function Footer() {
           <Image className="logo" src={LogoOrange}></Image>
           <div className="sosmed">
             <div className="sosmed_box">
-              <Image src={IconFacebook} alt="Facebook Ombak"></Image>
+              <Link
+                href="https://www.facebook.com/profile.php?id=61560878937367"
+                target="_blank">
+                <Image src={IconFacebook} alt="Facebook Ombak"></Image>
+              </Link>
             </div>
             <div className="sosmed_box">
-              <Image src={IconInstagram} alt="Instagram Ombak"></Image>
+              <Link
+                href="https://www.instagram.com/ombakfestivalmy/"
+                target="_blank">
+                <Image src={IconInstagram} alt="Instagram Ombak"></Image>
+              </Link>
             </div>
             {/* <div className="sosmed_box">
               <Image src={IconYoutube} alt="Youtube Ombak"></Image>
@@ -34,7 +42,11 @@ export default function Footer() {
               <Image src={IconTwitter} alt="Twitter Ombak"></Image>
             </div> */}
             <div className="sosmed_box">
-              <Image src={IconTiktok} alt="Tiktok Ombak"></Image>
+              <Link
+                href="https://www.tiktok.com/@ombakfestivalmy"
+                target="_blank">
+                <Image src={IconTiktok} alt="Tiktok Ombak"></Image>
+              </Link>
             </div>
           </div>
           <p>Copyright 2024 Ombak Festival</p>
@@ -62,10 +74,10 @@ export default function Footer() {
               </div>
               <div className="fr_box">
                 <div className="fr_nav">
-                  <Link href="/privacy-policy">Privacy Policy</Link>
+                  <Link href="/privacy-statement">Privacy Statement</Link>
                 </div>
                 <div className="fr_nav">
-                  <Link href="/terms">Terms of Use</Link>
+                  <Link href="/terms">Terms &amp; Conditions</Link>
                 </div>
               </div>
             </div>

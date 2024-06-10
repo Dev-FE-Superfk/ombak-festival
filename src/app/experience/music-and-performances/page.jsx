@@ -85,7 +85,9 @@ export default function Experience() {
               <h4>Ombak Kids</h4>
               <div className="button">Explore</div>
             </Link>
-            <Link className="me_box visualarts" href="/visual-arts-and-craft">
+            <Link
+              className="me_box visualarts"
+              href="/experience/visual-arts-and-craft">
               <h4>
                 Visual Arts <br />
                 &amp; Craft

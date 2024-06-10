@@ -64,7 +64,7 @@ export default function Home() {
 
     // Check if the screen is mobile
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 767);
     };
 
     handleResize();

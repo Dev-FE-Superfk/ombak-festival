@@ -133,7 +133,7 @@ export default function Header() {
             </ul>
           </nav>
           <div className="get_ticket_btn">
-            <Link href="/stay?tag=hard_rock_hotel">Get Ticket</Link>
+            <Link href="/stay?tag=hard_rock_hotel">Get Packages</Link>
           </div>
         </div>
         <div

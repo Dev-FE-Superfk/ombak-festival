@@ -1,5 +1,8 @@
 @import '../styles/main.scss';
 
+html{
+    overflow-x: hidden;
+}
 .section_one{
     width: 100%;
     background: $purple;
@@ -89,6 +92,8 @@
         width: 100%;
         max-width: 760px;
         text-align: center;
+        position: relative;
+        z-index: 1;
         img{
             display: inline-block;
             margin: 0 10px;
@@ -410,7 +415,7 @@
     }
     .artist_box{
         width: calc((100% - 90px)/4);
-        margin-right: 20px;
+        margin-right: 30px;
         margin-bottom: 20px;
         &:hover{
             .artist_image{
@@ -610,6 +615,114 @@
     }
     .slick-initialized .slick-slide{
         padding: 0 20px !important;
+    }
+}
+@media only screen and (max-width:1129px){
+    html{
+        overflow-x: hidden;
+    }
+    .section_four{
+        .container{
+            padding: 0 40px;
+            .box_right{
+                padding-left: 40px;
+                .resorts_box{
+                    width: 240px;
+                }
+            }
+        }
+    }
+    .section_five{
+        .artist_wrapper{
+            padding: 0 40px;
+        }
+    }
+    .section_seven{
+        .container{
+            padding: 0 40px;
+        }
+    }
+}
+@media only screen and (max-width:959px){
+    .section_one{
+        min-height:100vh;
+        img{
+            width: 100%;
+            position: absolute;
+            top: 60vh;
+            left: 0;
+        }
+        video{
+            height:40vh;
+            top:60vh;
+        }
+        .text{
+            width:100%;
+            margin-left:0;
+            margin-top:0;
+            position: absolute;
+            top: -35vh;
+            text-align:center;
+            img{
+                position: static;
+                width: 280px;
+                margin:0 auto 10px;
+            }
+            .text_info{
+                font-size: 18px;
+                span{
+                    margin-top:10px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .section_two{
+        h2{
+            font-size: 28px;
+        }
+        .ornament_1{
+            width: 180px;
+            height: 180px;
+            top:-80px;
+        }
+        .ornament_2{
+            width: 85px;
+            height: 155px;
+            top:10px;
+        }
+        .ornament_3{
+            width: 92px;
+            height: 96px;
+            top:40px;
+        }
+        .ornament_4{
+            width: 192px;
+            height:192px;
+            top: 140px;
+        }
+        .ornament_5{
+            width: 212px;
+            height:212px;
+            top: 240px;
+        }
+        .ornament_6{
+            width: 122px;
+            height:122px;
+            top: 380px;
+        }
+        .ornament_7{
+            width: 182px;
+            height:182px;
+            top:-110px;
+            right: -5px;
+        }
+        .ornament_8{
+            width: 182px;
+            height:182px;
+            top:-110px;
+            right: -5px;
+        }
     }
 }
 @media only screen and (max-width:767px){
