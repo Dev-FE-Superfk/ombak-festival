@@ -134,7 +134,7 @@ export default function OmbakKids() {
       </div>
       <div className="more_experience">
         <div className="container">
-          <h3>More Experiences</h3>
+          <h3>More experiences</h3>
           <div className="row_flex">
             <Link className="me_box fnb" href="/experience/food-and-beverages">
               <h4>F&amp;B</h4>

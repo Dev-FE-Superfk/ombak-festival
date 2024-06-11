@@ -652,25 +652,35 @@ html{
     }
 }
 @media only screen and (max-width:959px){
+    body{
+        overflow-x: hidden;
+    }
     .section_one{
         min-height:100vh;
+        padding-top: 60px;
+        &::before{
+            display: none;
+        }
         img{
             width: 100%;
             position: absolute;
-            top: 60vh;
+            top: 295px;
             left: 0;
         }
         video{
-            height:40vh;
-            top:60vh;
+            height:52vh;
+            top:299px;
         }
-        .text{
+        .container{
+            display: none;
+        }
+        .mobile_text{
             width:100%;
-            margin-left:0;
-            margin-top:0;
-            position: absolute;
-            top: -35vh;
-            text-align:center;
+            display: block;
+            margin: 0;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 10px;
             img{
                 position: static;
                 width: 280px;
@@ -728,8 +738,76 @@ html{
         .ornament_8{
             width: 182px;
             height:182px;
-            top:-110px;
-            right: -5px;
+            top:25px;
+            right: -65px;
+        }
+        .ornament_9{
+            top: 160px;
+            right: 60px;
+        }
+        .ornament_10{
+            width: 150px;
+        }
+        .ornament_11{
+            width: 190px;
+            top:340px;
+        }
+    }
+    .section_three{
+        .category_box{
+            .category_text{
+                .category_title{
+                    font-size: 18px;
+                    padding: 20px 20px 0;
+                    line-height: normal;
+                    height: 80px;
+                }
+            }
+        }
+    }
+    .section_four{
+        .container{
+            .box_left{
+                h3{
+                    font-size: 28px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+            .box_right{
+                padding-right: 0;
+                padding-left: 10px;
+                .resorts_box{
+                    width: 190px;
+                    height: 105px;
+                    &:nth-child(2n){
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .section_five{
+        h2{
+            font-size: 28px;
+        }
+        .artist_box{
+            width: calc((100% - 60px)/4);
+            margin-right: 20px;
+            .artist_image{
+                height: 178px;
+            }
+            .artist_name{
+                font-size: 16px;
+            }
+        }
+    }
+    .section_seven{
+        .container{
+            h3{
+                font-size: 28px;
+            }
         }
     }
 }

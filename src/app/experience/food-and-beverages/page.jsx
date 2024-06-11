@@ -134,7 +134,7 @@ export default function OmbakKids() {
       </div>
       <div className="more_experience">
         <div className="container">
-          <h3>More Experiences</h3>
+          <h3>More experiences</h3>
           <div className="row_flex">
             <Link className="me_box ombakkids" href="/experience/ombak-kids">
               <h4>Ombak Kids</h4>

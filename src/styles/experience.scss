@@ -138,8 +138,6 @@
 @media only screen and (max-width:1129px){
     .section_music_performance{
         padding-top: 60px;
-        .music_performance_banner{
-        }
         .mp_image{
             img{
                 width: 100%;
@@ -190,6 +188,58 @@
                 }
                 &:last-child{
                     margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:959px){
+    .section_music_performance{
+        .mp_image{
+            width: 50%;
+        }
+        .mp_info{
+            width: 50%;
+            h3{
+                font-size: 34px;
+            }
+            .mpi_box{
+                font-size: 14px;
+                padding:0 0 130px;
+            }
+        }
+    }
+    .more_experience{
+        padding-top: 80px;
+        .container{
+            padding: 0 40px;
+            h3{
+                font-size: 28px;
+            }
+            .me_box{
+                height: 140px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 20px;
+                &.fnb{
+                    background-size: 40px;
+                }
+                &.ombakkids{
+                    background-size: 40px;
+                }
+                &.visualarts{
+                    background-size: 40px;
+                }
+                &.fnb{
+                    background-size: 40px;
+                }
+                h4{
+                    font-size: 20px;
+                }
+                .button{
+                    width: 40px;
+                    height: 40px;
+                    right: 20px;
                 }
             }
         }
