@@ -232,7 +232,7 @@ export default function Home() {
         <Image src={ImageResort} alt="Resorts Cover"></Image>
         <div className="container">
           <div className="box_left">
-            <h3>Book your Ultimate Weekend</h3>
+            <h3>Book your <br />Ultimate Weekend</h3>
             <p>
               Choose your Desaru Coast resort <br />
               for Early Stay Packages
