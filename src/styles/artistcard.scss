@@ -98,6 +98,13 @@
         }
     }
 }
+@media only screen and (max-width:959px){
+.artist_info{
+    h3{
+        font-size: 20px;
+    }
+}
+}
 @media only screen and (max-width:767px){
     .artist_card{
         width: 100%;
