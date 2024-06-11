@@ -89,7 +89,19 @@ export default function Home() {
     autoplay: true, // Enable autoplay
     autoplaySpeed: 2000, // Set autoplay speed (in milliseconds)
     centerMode: true,
-    centerPadding: '60px',
+    centerPadding: '60px', 
+    
+    // dots: false,
+    // infinite: true,
+    // speed: 500,
+    // arrows: true,
+    // variableWidth: true,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // autoplay: false,
+    // autoplaySpeed: 3000,
+    // pauseOnHover: true,
+    // swipeToSlide: true,
   };
 
   useEffect(() => {
@@ -283,7 +295,8 @@ export default function Home() {
                 ))}
               </Slider>
             ) : (
-              artists.map((artist, index) => (
+              <div className="artist_wrapper">
+              {artists.map((artist, index) => (
                 <div className="artist_box" key={artist.slug}>
                   <Link
                     href={`/experience/music-and-performances/${artist.slug}`}>
@@ -301,7 +314,7 @@ export default function Home() {
                     <div className="artist_name">{artist.name}</div>
                   </Link>
                 </div>
-              ))
+              ))}</div>
             )}
           <Link href="../experience/music-and-performances">
             <div className="button">See More</div>
