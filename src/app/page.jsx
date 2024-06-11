@@ -96,6 +96,15 @@ export default function Home() {
   return (
     <>
       <div className="section_one">
+        <div className="mobile_text">
+            <Image src={LogoYellow} alt="Ombak"></Image>
+            <div className="text_info">
+              13 - 15 September 2024
+              <br />
+              Desaru Coast, Johor, Malaysia
+              <span>The Ultimate Weekend</span>
+            </div>
+          </div>
         <Image src={ImageOmbak} alt="Ombak" className="desktop"></Image>
         {/* <Image src={ImageOmbakMobile} alt="Ombak" className="mobile"></Image> */}
         <VideoPlayer src={VideoOmbak} type="video/mp4" />
