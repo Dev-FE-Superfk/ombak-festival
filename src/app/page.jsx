@@ -83,11 +83,25 @@ export default function Home() {
     infinite: true,
     arrows: false,
     speed: 500,
-    variableWidth: true,
+    variableWidth: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true, // Enable autoplay
     autoplaySpeed: 2000, // Set autoplay speed (in milliseconds)
+    centerMode: true,
+    centerPadding: '60px', 
+    
+    // dots: false,
+    // infinite: true,
+    // speed: 500,
+    // arrows: true,
+    // variableWidth: true,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // autoplay: false,
+    // autoplaySpeed: 3000,
+    // pauseOnHover: true,
+    // swipeToSlide: true,
   };
 
   useEffect(() => {
@@ -258,9 +272,8 @@ export default function Home() {
             An exciting and eclectic lineup of <br />
             <span>world-class</span> artistes
           </h2>
-          <div className="artist_wrapper">
             {isMobile ? (
-              <Slider {...sliderSettings}>
+              <Slider className="artist_wrapper" {...sliderSettings}>
                 {artists.map((artist, index) => (
                   <div className="artist_box slider" key={artist.slug}>
                     <Link
@@ -302,7 +315,6 @@ export default function Home() {
                 </div>
               ))
             )}
-          </div>
           <Link href="../experience/music-and-performances">
             <div className="button">See More</div>
           </Link>

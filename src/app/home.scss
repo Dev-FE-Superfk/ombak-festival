@@ -1057,5 +1057,12 @@ html{
                 padding: 0 20px;
             }
         }
+        
+        .artist_wrapper{
+            padding: 0;
+            .artist_image {
+                height: 300px;
+            }
+        }
     }
 }
