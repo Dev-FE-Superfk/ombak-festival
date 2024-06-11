@@ -208,6 +208,10 @@ nav{
                             }
                         
                         }
+                        &.disabled{
+                            color: #BBBCBC;
+                            cursor: not-allowed;
+                        }
                     }
                     .experience_btn{
                         color:#000;
@@ -311,6 +315,10 @@ nav{
                                     display: none !important;
                                     background: none !important;
                                 }
+                            }
+                            &.disabled{
+                                color: #BBBCBC;
+                                cursor: not-allowed;
                             }
                         }
                         .experience_btn{
