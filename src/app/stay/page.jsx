@@ -62,24 +62,26 @@ function Stay() {
             height={400}></Image>
         </div>
         <div className="resorts_middle">
-          {listresorts.map((resort) => (
-            <Link
-              className={`resorts_card ${resort.is_active ? "active" : ""}`}
-              key={resort.slug}
-              href={{
-                pathname: "/stay",
-                query: { tag: resort.tag },
-              }}
-              passHref>
-              <div>
-                <Image
-                  src={resort.logo}
-                  alt={resort.name}
-                  width={200}
-                  height={80}></Image>
-              </div>
-            </Link>
-          ))}
+          <div className="rm_box">
+            {listresorts.map((resort) => (
+              <Link
+                className={`resorts_card ${resort.is_active ? "active" : ""}`}
+                key={resort.slug}
+                href={{
+                  pathname: "/stay",
+                  query: { tag: resort.tag },
+                }}
+                passHref>
+                <div>
+                  <Image
+                    src={resort.logo}
+                    alt={resort.name}
+                    width={200}
+                    height={80}></Image>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
         <div className="resorts_bottom">
           <div className="rb_right">

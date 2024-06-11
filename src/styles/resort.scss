@@ -252,11 +252,14 @@
         padding-top: 60px;
         .nav_title{
             padding-top: 52px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
         .container{
-            padding: 0 20px;
+            padding: 0;
         }
         .resorts_top{
+            padding: 0 20px;
             h3{
                 font-size: 28px;
                 line-height: normal;
@@ -267,8 +270,21 @@
             }
         }
         .resorts_middle{
+            display: block;
+            overflow-x: scroll;
+            padding-left: 20px;
+            .rm_box{
+                width: 436px;
+            }
             .resorts_card{
+                width: 100px;
                 height: 80px;
+                margin-right: 5px;
+                display: inline-block;
+                div{
+                    width: 100%;
+                    height: 80px;
+                }
                 img{
                     max-height: 48px;
                     width: 100%;
@@ -278,6 +294,7 @@
         }
         .resorts_bottom{
             display: block;
+            padding: 0 20px;
             .rbr_top{
                 margin-bottom: 0;
             }
