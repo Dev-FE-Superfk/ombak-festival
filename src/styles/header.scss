@@ -72,6 +72,7 @@ nav{
                 padding:0;
                 font-size: 18px;
                 position: relative;
+                line-height: 80px;
                 cursor: pointer;
                 &.active{
                     &:before{
@@ -85,14 +86,22 @@ nav{
                         left: 0;
                     }
                 }
+                &:hover{
+                    .sub_nav{
+                        display: block;
+                    }
+                }
             }
             .sub_nav{
-                position: absolute;
+                position: fixed;
+                display: none;
                 width: 100vw;
                 padding: 40px 0;
                 background: #F0EBE6;
-                left:calc((1130px - 100vw)/2);
+                //left:calc((1130px - 100vw)/2);
+                line-height: normal;
                 top: 80px;
+                left: 0;
                 .sn_container{
                     max-width: 1130px;
                     margin: 0 auto;
@@ -184,7 +193,7 @@ nav{
             overflow: scroll;
             &.active{
                 display: block;
-                &+ .sub_nav {
+                .sub_nav {
                     display: block;
                   }
             }
@@ -216,9 +225,15 @@ nav{
                     .experience_btn{
                         color:#000;
                         padding-bottom: 20px;
+                        &:hover{
+                            &+ .sub_nav{
+                                display: block;
+                            }
+                        }
                     }
                     .sub_nav{
                         width: 100%;
+                        display: block;
                         position: static;
                         left: auto;
                         top: auto;
