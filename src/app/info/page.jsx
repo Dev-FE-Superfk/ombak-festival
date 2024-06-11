@@ -109,7 +109,10 @@ function Info() {
                           <h4>{item.question}</h4>
                         </div>
                         <div className="info_answer">
-                          <p>{item.answer}</p>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: item.answer,
+                            }}></div>
                         </div>
                       </div>
                     ))
