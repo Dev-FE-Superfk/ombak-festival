@@ -89,19 +89,7 @@ export default function Home() {
     autoplay: true, // Enable autoplay
     autoplaySpeed: 2000, // Set autoplay speed (in milliseconds)
     centerMode: true,
-    // centerPadding: '60px', 
-    
-    // dots: false,
-    // infinite: true,
-    // speed: 500,
-    // arrows: true,
-    // variableWidth: true,
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
-    // autoplay: false,
-    // autoplaySpeed: 3000,
-    // pauseOnHover: true,
-    // swipeToSlide: true,
+    centerPadding: '60px',
   };
 
   useEffect(() => {
