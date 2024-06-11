@@ -111,7 +111,7 @@ nav{
                 .sn_category{
                     width: calc((100% - 60px)/4);
                     margin-right: 20px;
-                    padding: 20px 20px 80px;
+                    padding: 32px 50px 86px 32px;
                     font-size: 24px;
                     font-family: 'Antique Olive Std Black';
                     &:hover{
@@ -129,12 +129,15 @@ nav{
                         color:#000;
                     }
                     &.fnb{
-                        background:$yellow url('../assets/home/wave_dark_green.png') no-repeat bottom -40px left / contain;
+                        background:$yellow url('../assets/home/wave_dark_green_header.png') no-repeat bottom left / contain;
                         color:#000;
                     }
                     &.ombakkids{
-                        background:$blue url('../assets/home/wave_orange.png') no-repeat bottom -40px left / contain;
+                        background:$blue url('../assets/home/wave_orange_header.png') no-repeat bottom left / contain;
                         color:#fff;
+                    }
+                    h3 {
+                        line-height: 29px;
                     }
                 }
             }
@@ -261,10 +264,10 @@ nav{
                                 background:$green url('../assets/home/wave_yellow.png') no-repeat bottom -25px left / contain;
                             }
                             &.fnb{
-                                background:$yellow url('../assets/home/wave_dark_green.png') no-repeat bottom -25px left / contain;
+                                background:$yellow url('../assets/home/wave_dark_green_header.png') no-repeat bottom -25px left / contain;
                             }
                             &.ombakkids{
-                                background:$blue url('../assets/home/wave_orange.png') no-repeat bottom -25px left / contain;
+                                background:$blue url('../assets/home/wave_orange_header.png') no-repeat bottom -25px left / contain;
                             }
                         }
                     }
@@ -371,10 +374,10 @@ nav{
                                     background:$green url('../assets/home/wave_yellow.png') no-repeat bottom -25px left / contain;
                                 }
                                 &.fnb{
-                                    background:$yellow url('../assets/home/wave_dark_green.png') no-repeat bottom -25px left / contain;
+                                    background:$yellow url('../assets/home/wave_dark_green_header.png') no-repeat bottom left / contain;
                                 }
                                 &.ombakkids{
-                                    background:$blue url('../assets/home/wave_orange.png') no-repeat bottom -25px left / contain;
+                                    background:$blue url('../assets/home/wave_orange_header.png') no-repeat bottom left / contain;
                                 }
                             }
                         }

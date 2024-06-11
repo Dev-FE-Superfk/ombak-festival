@@ -83,10 +83,6 @@ function Info() {
             ) : tag === "faq" ? (
               <>
                 <h3>FAQs</h3>
-                <p>
-                  After you’ve looked around the website, you may have a few
-                  more questions. This is a great place to look.
-                </p>
               </>
             ) : null}
           </div>

@@ -20,7 +20,7 @@ export default function ArtistCard({ artist, index }) {
       </div>
       <div className="artist_info">
         <h3>{artist.name}</h3>
-        <span>{artist.performance_date}</span>
+        <span dangerouslySetInnerHTML={{ __html: artist.performance_date }}></span>
         <div className="button" onClick={handleExploreClick}>
           Explore
         </div>
