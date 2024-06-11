@@ -1,6 +1,6 @@
 "use client";
 import "@/styles/header.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import { LogoWhite } from "@/assets";
@@ -27,6 +27,21 @@ export default function Header() {
     setNavVisible(false);
     setSubNavVisible(false);
   };
+
+  useEffect(() => {
+    if (isNavVisible) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [isNavVisible]);
 
   return (
     <header>
