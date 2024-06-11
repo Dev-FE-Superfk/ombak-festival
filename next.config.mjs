@@ -20,7 +20,7 @@ const nextConfig = {
     return config;
     },
     images: {
-        domains: ['cms-api-ombak.superfk.co'], // Tambahkan domain di sini
+        domains: ['cms-api-ombak.reviewstagepro.com'], // Tambahkan domain di sini
     },
 };
 
