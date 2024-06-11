@@ -89,7 +89,7 @@ export default function Home() {
     autoplay: true, // Enable autoplay
     autoplaySpeed: 2000, // Set autoplay speed (in milliseconds)
     centerMode: true,
-    centerPadding: '60px', 
+    // centerPadding: '60px', 
     
     // dots: false,
     // infinite: true,
@@ -273,7 +273,7 @@ export default function Home() {
             <span>world-class</span> artistes
           </h2>
             {isMobile ? (
-              <Slider className="artist_wrapper" {...sliderSettings}>
+              <Slider {...sliderSettings}>
                 {artists.map((artist, index) => (
                   <div className="artist_box slider" key={artist.slug}>
                     <Link
