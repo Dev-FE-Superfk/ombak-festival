@@ -90,6 +90,10 @@
         }
         .info_content{
             margin-bottom: 40px;
+            ul{
+                list-style: disc;
+                padding-left: 20px;
+            }
         }
         .info_question{
             font-size: 20px;
