@@ -9,7 +9,7 @@
     }
     .nav_title{
         margin-bottom: 20px;
-        padding-top: 20px;
+        padding-top: 55px;
         text-transform: uppercase;
         font-family: 'Roboto Condensed';
         font-size: 16px;
@@ -159,13 +159,14 @@
                 font-family: 'Roboto';
                 font-weight: bold;
                 position: absolute;
+                font-size: 28px;
                 bottom: 30px;
                 left: 20px;
                 padding-right: 120px;
                 span{
                     font-family: 'Roboto';
                     font-weight: normal;
-                    font-size: 10px;
+                    font-size: 16px;
                     display: inline-block;
                     margin-right: 5px;
                 }
@@ -249,6 +250,9 @@
 @media only screen and (max-width:767px){
     .section_resorts{
         padding-top: 60px;
+        .nav_title{
+            padding-top: 52px;
+        }
         .container{
             padding: 0 20px;
         }
