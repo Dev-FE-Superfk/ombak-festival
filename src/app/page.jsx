@@ -144,9 +144,8 @@ export default function Home() {
               width={46}
               height={46}
               alt="Wave purple"></Image>
-            that <br />
-            celebrates music, art, food and <br />
-            family-fun for all ages
+            of <br />
+            music, art, food, and family-fun.
           </h2>
           <h2 className="mobile">
             Malay for ocean wave, <br />
@@ -163,9 +162,7 @@ export default function Home() {
               width={46}
               height={46}
               alt="Wave purple"></Image>
-            that celebrates music, <br />
-            art, food and family-fun <br />
-            for all ages
+            of music, art, food, <br/>and family-fun.
           </h2>
         </div>
         <div className="ornament_right">
@@ -232,10 +229,8 @@ export default function Home() {
         <Image src={ImageResort} alt="Resorts Cover"></Image>
         <div className="container">
           <div className="box_left">
-            <h3>Book your <br />Ultimate Weekend</h3>
-            <p>
-              Choose your Desaru Coast resort <br />
-              for Early Stay Packages
+            <h3>Our resorts</h3>
+            <p>Book your ultimate weekend
             </p>
             <Link href="/stay">
               <div className="button">Explore</div>
