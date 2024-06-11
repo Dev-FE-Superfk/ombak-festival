@@ -43,12 +43,8 @@ export default function Header() {
                 <div
                   className={`experience_btn ${
                     isPathActive("/experience") ? "active" : ""
-                  }`}
-                  onClick={toggleSubNav}>
+                  }`}>
                   Experience
-                </div>
-                {((isNavVisible && window.innerWidth <= 1129) ||
-                  isSubNavVisible) && (
                   <div className="sub_nav">
                     <div className="sn_container">
                       <Link
@@ -84,7 +80,7 @@ export default function Header() {
                       </Link>
                     </div>
                   </div>
-                )}
+                </div>
               </li>
               <li>
                 <Link
