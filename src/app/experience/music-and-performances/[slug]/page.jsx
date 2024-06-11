@@ -93,10 +93,21 @@ export default function ArtistDetail() {
                     </Link>
                   </div>
                 )}
+                {artistdetail.facebook && (
+                  <div className="sm_box">
+                    <Link
+                      className="sm_facebook"
+                      href={artistdetail.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Facebook
+                    </Link>
+                  </div>
+                )}
                 {artistdetail.youtube && (
                   <div className="sm_box">
                     <Link
-                      className="sm_tiktok"
+                      className="sm_youtube"
                       href={artistdetail.youtube}
                       target="_blank"
                       rel="noopener noreferrer">
