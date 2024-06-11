@@ -255,7 +255,7 @@ html{
         }
         .category_text{
             .category_title{
-                padding: 20px 20px 0;
+                padding: 32px 50px 0 32px;
                 height: 130px;
                 font-family: 'Antique Olive Std Black';
                 font-size: 28px;
@@ -333,6 +333,7 @@ html{
                 border-radius: 65px;
                 text-indent: -9999px;
                 transition: all 0.2s ease;
+                font-family: 'Antique Olive Std Black';
                 &:hover{
                     background: $green url('../assets/home/arrow_green.png') no-repeat center center / 35px;;
                 }
@@ -487,6 +488,7 @@ html{
         border-radius: 45px;
         cursor: pointer;
         transition: all 0.2s ease;
+        font-family: 'Antique Olive Std Black';
         &:hover{
             background: $green;
             color:$darkgreen;
@@ -536,13 +538,14 @@ html{
             right: 20px;
             border: 1px solid #000;
             text-indent: -9999px;
+            font-family: 'Antique Olive Std Black';
             background: url('../assets/home/arrow_black.png') no-repeat center / 27px;
         }
     }
 }
 .section_seven{
     background: $orange;
-    padding: 60px 0 80px;
+    padding: 105px 0 105px;
     .container{
         width: 100%;
         max-width: 1130px;
@@ -574,6 +577,7 @@ html{
             border-radius: 45px;
             cursor: pointer;
             transition: all 0.2s ease;
+            font-family: 'Antique Olive Std Black';
             &:hover{
                 background: $green;
                 color:$darkgreen;
