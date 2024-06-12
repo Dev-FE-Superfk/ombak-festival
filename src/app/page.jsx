@@ -379,7 +379,7 @@ export default function Home() {
             src={MemoriesCoverM}
             alt='Memories Cover'
           ></Image>
-          <h3>Ready for the Ultimate Weekend?</h3>
+          <h3>Get ready for an unforgettable weekend getaway!</h3>
           <div className='button'>
             <Link href='/stay?tag=hard_rock_hotel'>
               BOOK YOUR STAY PACKAGES NOW
