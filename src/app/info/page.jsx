@@ -121,10 +121,11 @@ function Info() {
                   ) : (
                     <div className="info_content">
                       <div className="info_answer">
-                      <div
-                            dangerouslySetInnerHTML={{
-                              __html: detail.description,
-                            }}></div>
+                        <div
+                              dangerouslySetInnerHTML={{
+                                __html: detail.description,
+                              }}>
+                        </div>
                       </div>
                     </div>
                   )}
