@@ -59,12 +59,14 @@ function Stay() {
               __html: resorts.subtitle,
             }}
           ></p>
+        </div>
+        <div className='pb-[20px]'>
           <Image
             src={resorts.banner}
             alt={resorts.name}
             width={600}
             height={400}
-          ></Image>
+          />
         </div>
         <div className='resorts_middle'>
           <div className='rm_box'>

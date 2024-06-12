@@ -224,7 +224,7 @@ export default function Home() {
         <div className='category_box'>
           <Link href='/experience/food-and-beverages'>
             <div className='category_image'>
-              <Image src={Category3} alt='Culinary'></Image>
+              <Image src={Category4} alt='Culinary'></Image>
             </div>
             <div className='category_text'>
               <div className='category_title'>F&amp;B</div>
@@ -235,7 +235,7 @@ export default function Home() {
         <div className='category_box'>
           <Link href='/experience/ombak-kids'>
             <div className='category_image'>
-              <Image src={Category4} alt='Ombak Kids'></Image>
+              <Image src={Category3} alt='Ombak Kids'></Image>
             </div>
             <div className='category_text'>
               <div className='category_title'>Ombak Kids</div>
