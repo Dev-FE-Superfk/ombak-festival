@@ -60,7 +60,7 @@ export default function Header() {
                     isPathActive('/experience') ? 'active' : ''
                   }`}
                 >
-                  Experience
+                  <div className='nav_title'>Experience</div>
                   <div className='sub_nav'>
                     <div className='sn_container'>
                       <Link
