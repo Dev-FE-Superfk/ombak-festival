@@ -88,7 +88,6 @@ export default function Home() {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '60px',
-
   };
 
   useEffect(() => {
