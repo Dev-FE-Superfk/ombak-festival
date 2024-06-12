@@ -165,6 +165,9 @@
           &:first-child {
             margin-bottom: 12px;
           }
+          ul {
+            margin-bottom: 24px;
+          }
         }
       }
       h4 {
@@ -352,6 +355,9 @@
             &:first-child {
               margin-bottom: 10px;
             }
+          }
+          ul {
+            margin-bottom: 20px;
           }
         }
         .pkg_price {
