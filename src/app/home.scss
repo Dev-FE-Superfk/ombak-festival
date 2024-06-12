@@ -141,13 +141,13 @@ html {
       contain;
   }
   .ornament_4 {
-    width: 225px;
-    height: 236px;
+    width: 240px;
+    height: 480px;
     position: absolute;
     top: 140px;
     left: 0;
-    background: url('../assets/home/Rectangle.png') no-repeat top left / contain;
-    z-index: 9;
+    background: url('../assets/home/ornament_13.png') no-repeat top left /
+      contain;
   }
   .ornament_5 {
     width: 283px;
@@ -692,7 +692,7 @@ html {
       left: 0;
     }
     video {
-      height: 52vh;
+      height: 65vh;
       top: 299px;
     }
     .container {
@@ -703,7 +703,7 @@ html {
       display: block;
       margin: 0;
       text-align: center;
-      padding-top: 20px;
+      padding-top: 50px;
       padding-bottom: 10px;
       img {
         position: static;
@@ -853,7 +853,7 @@ html {
       left: 0;
     }
     video {
-      height: 52vh;
+      height: 65vh;
       top: 299px;
     }
     .container {
@@ -916,9 +916,9 @@ html {
       left: 30px;
     }
     .ornament_4 {
-      width: 160px;
-      height: 160px;
-      top: 70px;
+      width: 200px;
+      height: 200px;
+      top: 150px;
       left: -34px;
     }
     .ornament_5 {

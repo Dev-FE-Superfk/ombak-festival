@@ -176,8 +176,7 @@ nav {
     .burger_menu_btn {
       display: block;
       right: 40px;
-      background: url('../assets/main/burger_menu_normal.png') no-repeat center /
-        18px;
+      background: url('../assets/main/burger_menu.png') no-repeat center / 18px;
       &.active {
         background: url('../assets/main/icon_close.png') no-repeat center / 30px;
       }

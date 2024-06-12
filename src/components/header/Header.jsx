@@ -1,10 +1,10 @@
-"use client";
-import "@/styles/header.scss";
-import { useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
-import Image from "next/image";
-import { LogoWhite } from "@/assets";
-import Link from "next/link";
+'use client';
+import '@/styles/header.scss';
+import {useState, useEffect} from 'react';
+import {useRouter, usePathname} from 'next/navigation';
+import Image from 'next/image';
+import {LogoWhite} from '@/assets';
+import Link from 'next/link';
 
 export default function Header() {
   const [isNavVisible, setNavVisible] = useState(false);
@@ -45,27 +45,29 @@ export default function Header() {
 
   return (
     <header>
-      <div className="container">
-        <h1 id="logo">
-          <Link href="/">
-            <Image src={LogoWhite} width={93} height={30} alt="Logo" />
+      <div className='container'>
+        <h1 id='logo'>
+          <Link href='/'>
+            <Image src={LogoWhite} width={93} height={30} alt='Logo' />
           </Link>
         </h1>
-        <div className={`nav_box ${isNavVisible ? "active" : ""}`}>
+        <div className={`nav_box ${isNavVisible ? 'active' : ''}`}>
           <nav>
             <ul>
               <li>
                 <div
                   className={`experience_btn ${
-                    isPathActive("/experience") ? "active" : ""
-                  }`}>
+                    isPathActive('/experience') ? 'active' : ''
+                  }`}
+                >
                   Experience
-                  <div className="sub_nav">
-                    <div className="sn_container">
+                  <div className='sub_nav'>
+                    <div className='sn_container'>
                       <Link
-                        className="sn_category music"
-                        href="/experience/music-and-performances"
-                        onClick={hideNav}>
+                        className='sn_category music'
+                        href='/experience/music-and-performances'
+                        onClick={hideNav}
+                      >
                         <h3>
                           Music &amp;
                           <br />
@@ -73,24 +75,27 @@ export default function Header() {
                         </h3>
                       </Link>
                       <Link
-                        className="sn_category visualarts"
-                        href="/experience/visual-arts-and-craft"
-                        onClick={hideNav}>
+                        className='sn_category visualarts'
+                        href='/experience/visual-arts-and-craft'
+                        onClick={hideNav}
+                      >
                         <h3>
                           Visual Arts <br />
                           &amp; Craft
                         </h3>
                       </Link>
                       <Link
-                        className="sn_category fnb"
-                        href="/experience/food-and-beverages"
-                        onClick={hideNav}>
+                        className='sn_category fnb'
+                        href='/experience/food-and-beverages'
+                        onClick={hideNav}
+                      >
                         <h3>F&amp;B</h3>
                       </Link>
                       <Link
-                        className="sn_category ombakkids"
-                        href="/experience/ombak-kids"
-                        onClick={hideNav}>
+                        className='sn_category ombakkids'
+                        href='/experience/ombak-kids'
+                        onClick={hideNav}
+                      >
                         <h3>Ombak Kids</h3>
                       </Link>
                     </div>
@@ -98,42 +103,53 @@ export default function Header() {
                 </div>
               </li>
               <li>
-                <Link
+                <p
+                  className={`disabled ${
+                    isPathActive('/schedule') ? 'active' : ''
+                  } py-[20px] text-[#bbbcbc]`}
+                >
+                  Schedule
+                </p>
+                {/* Uncomment when is not use */}
+                {/* <Link
                   className={`disabled ${
                     isPathActive("/schedule") ? "active" : ""
                   }`}
                   href="#"
                   onClick={hideNav}>
                   Schedule
-                </Link>
+                </Link> */}
               </li>
               <li>
                 <Link
-                  className={`${isPathActive("/stay") ? "active" : ""}`}
-                  href="/stay?tag=hard_rock_hotel"
-                  onClick={hideNav}>
+                  className={`${isPathActive('/stay') ? 'active' : ''}`}
+                  href='/stay?tag=hard_rock_hotel'
+                  onClick={hideNav}
+                >
                   Stay
                 </Link>
               </li>
               <li>
                 <Link
-                  className={`${isPathActive("/info") ? "active" : ""}`}
-                  href="/info?tag=info"
-                  onClick={hideNav}>
+                  className={`${isPathActive('/info') ? 'active' : ''}`}
+                  href='/info?tag=info'
+                  onClick={hideNav}
+                >
                   Info
                 </Link>
               </li>
             </ul>
           </nav>
-          <div className="get_ticket_btn">
-            <Link href="/stay?tag=hard_rock_hotel" onClick={hideNav}>
+          <div className='get_ticket_btn'>
+            <Link href='/stay?tag=hard_rock_hotel' onClick={hideNav}>
               Get Packages
             </Link>
           </div>
         </div>
         <div
-          className={`burger_menu_btn ${isNavVisible ? "active" : ""}`}
-          onClick={toggleNav}></div>
+          className={`burger_menu_btn ${isNavVisible ? 'active' : ''}`}
+          onClick={toggleNav}
+        ></div>
       </div>
     </header>
   );

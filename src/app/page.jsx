@@ -138,9 +138,9 @@ export default function Home() {
         <div className='ornament_left'>
           <div className='ornament_1'></div>
           <div className='ornament_2'></div>
-          <div className='ornament_3'></div>
+          {/* <div className='ornament_3'></div> */}
           <div className='ornament_4'></div>
-          <div className='ornament_5'></div>
+          {/* <div className='ornament_5'></div> */}
           <div className='ornament_6'></div>
         </div>
         <div className='container'>
@@ -188,8 +188,8 @@ export default function Home() {
           <div className='ornament_7'></div>
           <div className='ornament_8'></div>
           <div className='ornament_8a'></div>
-          <div className='ornament_9'></div>
-          <div className='ornament_10'></div>
+          {/* <div className='ornament_9'></div> */}
+          {/* <div className='ornament_10'></div> */}
           <div className='ornament_11'></div>
           <div className='ornament_12'></div>
         </div>
@@ -248,10 +248,8 @@ export default function Home() {
         <Image src={ImageResort} alt='Resorts Cover'></Image>
         <div className='container'>
           <div className='box_left'>
-            <p className='text_title'>Our resorts</p>
-            <p>
-              Get exclusive packages with our resorts
-            </p>
+            <p className='text_title'>Our Resorts</p>
+            <p>Book your ultimate weekend</p>
             <Link href='/stay'>
               <div className='button'>Explore</div>
             </Link>
@@ -379,7 +377,7 @@ export default function Home() {
             src={MemoriesCoverM}
             alt='Memories Cover'
           ></Image>
-          <h3>Ready for the Ultimate Weekend?</h3>
+          <h3>Get ready for an unforgettable weekend getaway!</h3>
           <div className='button'>
             <Link href='/stay?tag=hard_rock_hotel'>
               BOOK YOUR STAY PACKAGES NOW
