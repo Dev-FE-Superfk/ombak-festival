@@ -250,7 +250,7 @@ export default function Home() {
           <div className='box_left'>
             <p className='text_title'>Our Resorts</p>
             <p>Book your ultimate weekend</p>
-            <Link href='/stay'>
+            <Link href='/stay?tag=hard_rock_hotel'>
               <div className='button'>Explore</div>
             </Link>
           </div>

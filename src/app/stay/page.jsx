@@ -64,6 +64,7 @@ function Stay() {
           <Image
             src={resorts.banner}
             alt={resorts.name}
+            className='banner-image'
             width={600}
             height={400}
           />
