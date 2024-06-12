@@ -9,6 +9,7 @@ import Link from 'next/link';
 export default function Header() {
   const [isNavVisible, setNavVisible] = useState(false);
   const [isSubNavVisible, setSubNavVisible] = useState(false);
+  const [showSubNav, setShowSubNav] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -29,6 +30,7 @@ export default function Header() {
   };
 
   useEffect(() => {
+    console.log(isNavVisible, 'isNavVisible');
     if (isNavVisible) {
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
@@ -51,7 +53,10 @@ export default function Header() {
             <Image src={LogoWhite} width={93} height={30} alt='Logo' />
           </Link>
         </h1>
-        <div className={`nav_box ${isNavVisible ? 'active' : ''}`}>
+        <div
+          className={`nav_box ${isNavVisible ? 'active' : ''}`}
+          // onMouseLeave={() => !showSubNav && setShowSubNav(true)}
+        >
           <nav>
             <ul>
               <li>
@@ -60,8 +65,20 @@ export default function Header() {
                     isPathActive('/experience') ? 'active' : ''
                   }`}
                 >
-                  <div className='nav_title'>Experience</div>
-                  <div className='sub_nav'>
+                  <div
+                    className='nav_title'
+                    onMouseMove={() => !showSubNav && setShowSubNav(true)}
+                  >
+                    Experience
+                  </div>
+                  <div
+                    className='sub_nav'
+                    style={{
+                      display: showSubNav ? 'block' : 'none',
+                    }}
+                    onMouseEnter={() => !showSubNav && setShowSubNav(true)}
+                    onMouseLeave={() => showSubNav && setShowSubNav(false)}
+                  >
                     <div className='sn_container'>
                       <Link
                         className='sn_category music'
