@@ -74,6 +74,9 @@ nav {
         position: relative;
         line-height: 80px;
         cursor: pointer;
+        // .nav_title {
+        //   padding: 7px 0 12px;
+        // }
         &.active {
           &:before {
             content: '';
@@ -350,6 +353,10 @@ nav {
             .experience_btn {
               color: #000;
               padding-bottom: 20px;
+              line-height: normal;
+              .nav_title {
+                margin: 7px 0 12px;
+              }
             }
             .sub_nav {
               width: 100%;
