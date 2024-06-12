@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import {
   IconFacebook,
   IconInstagram,
@@ -12,29 +12,31 @@ import {
   Onenonly,
   TheElsClub,
   AdventureWaterpark,
-} from "@/assets";
-import "@/styles/footer.scss";
-import Link from "next/link";
+} from '@/assets';
+import '@/styles/footer.scss';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer>
-      <div className="container">
-        <div className="footer_left">
-          <Image className="logo" src={LogoOrange}></Image>
-          <div className="sosmed">
-            <div className="sosmed_box">
+      <div className='container'>
+        <div className='footer_left'>
+          <Image className='logo' src={LogoOrange}></Image>
+          <div className='sosmed'>
+            <div className='sosmed_box'>
               <Link
-                href="https://www.facebook.com/profile.php?id=61560878937367"
-                target="_blank">
-                <Image src={IconFacebook} alt="Facebook Ombak"></Image>
+                href='https://www.facebook.com/profile.php?id=61560878937367'
+                target='_blank'
+              >
+                <Image src={IconFacebook} alt='Facebook Ombak'></Image>
               </Link>
             </div>
-            <div className="sosmed_box">
+            <div className='sosmed_box'>
               <Link
-                href="https://www.instagram.com/ombakfestivalmy/"
-                target="_blank">
-                <Image src={IconInstagram} alt="Instagram Ombak"></Image>
+                href='https://www.instagram.com/ombakfestivalmy/'
+                target='_blank'
+              >
+                <Image src={IconInstagram} alt='Instagram Ombak'></Image>
               </Link>
             </div>
             {/* <div className="sosmed_box">
@@ -43,96 +45,108 @@ export default function Footer() {
             <div className="sosmed_box">
               <Image src={IconTwitter} alt="Twitter Ombak"></Image>
             </div> */}
-            <div className="sosmed_box">
+            <div className='sosmed_box'>
               <Link
-                href="https://www.tiktok.com/@ombakfestivalmy"
-                target="_blank">
-                <Image src={IconTiktok} alt="Tiktok Ombak"></Image>
+                href='https://www.tiktok.com/@ombakfestivalmy'
+                target='_blank'
+              >
+                <Image src={IconTiktok} alt='Tiktok Ombak'></Image>
               </Link>
             </div>
           </div>
           <p>Copyright 2024 Ombak Festival</p>
         </div>
-        <div className="footer_right">
-          <div className="fr_top">
-            <div className="fr_tablet">
-              <div className="fr_box">
-                <div className="fr_nav">
-                  <Link href="/info?tag=info">Getting Here</Link>
+        <div className='footer_right'>
+          <div className='fr_top'>
+            <div className='fr_tablet'>
+              <div className='fr_box'>
+                <div className='fr_nav'>
+                  <Link href='/info?tag=info'>Getting Here</Link>
                 </div>
-                <div className="fr_nav">Maps</div>
+                <div className='fr_nav'>Maps</div>
               </div>
-              <div className="fr_box">
-                <div className="fr_nav">Contact Us</div>
-                <div className="fr_nav">
-                  <Link href="/info?tag=faq">FAQs</Link>
+              <div className='fr_box'>
+                <div className='fr_nav'>Contact Us</div>
+                <div className='fr_nav'>
+                  <Link href='/info?tag=faq'>FAQs</Link>
                 </div>
               </div>
             </div>
-            <div className="fr_tablet">
-              <div className="fr_box">
-                <div className="fr_nav">Media Room</div>
-                <div className="fr_nav">Partners</div>
+            <div className='fr_tablet'>
+              <div className='fr_box'>
+                <div className='fr_nav'>Media Room</div>
+                <div className='fr_nav'>Partners</div>
               </div>
-              <div className="fr_box">
-                <div className="fr_nav">
-                  <Link href="/privacy-statement">Privacy Statement</Link>
+              <div className='fr_box'>
+                <div className='fr_nav'>
+                  <Link href='/privacy-statement'>Privacy Statement</Link>
                 </div>
-                <div className="fr_nav">
-                  <Link href="/terms">Terms &amp; Conditions</Link>
+                <div className='fr_nav'>
+                  <Link href='/terms'>Terms &amp; Conditions</Link>
                 </div>
               </div>
             </div>
           </div>
-          <div className="fr_bottom">
-            <div className="pb_box">
+          <div className='fr_bottom'>
+            <div className='pb_box'>
               <span>Presented by:</span>
-              <div className="presented_logo">
-                <Link href="http://www.desarucoast.com" target="_blank">
-                  <Image src={LogoDesaru} alt="Desaru"></Image>
+              <div className='presented_logo'>
+                <Link href='http://www.desarucoast.com' target='_blank'>
+                  <Image
+                    src={LogoDesaru}
+                    alt='Desaru'
+                    className='desaru_logo'
+                  ></Image>
                 </Link>
               </div>
             </div>
-            <div className="pr_box">
+            <div className='pr_box'>
               <span>Partner properties:</span>
               <ul>
                 <li>
                   <Link
-                    href="https://www.oneandonlyresorts.com/desaru-coast"
-                    target="_blank">
-                    <Image src={Onenonly}></Image>
+                    href='https://www.oneandonlyresorts.com/desaru-coast'
+                    target='_blank'
+                  >
+                    <Image src={Onenonly} className='oneonly_logo'></Image>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="https://www.anantara.com/en/desaru-coast"
-                    target="_blank">
-                    <Image src={Anantara}></Image>
+                    href='https://www.anantara.com/en/desaru-coast'
+                    target='_blank'
+                  >
+                    <Image src={Anantara} className='anantara_logo'></Image>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="https://www.marriott.com/en-us/hotels/jhbwi-the-westin-desaru-coast-resort/overview/"
-                    target="_blank">
-                    <Image src={TheWestin}></Image>
+                    href='https://www.marriott.com/en-us/hotels/jhbwi-the-westin-desaru-coast-resort/overview/'
+                    target='_blank'
+                  >
+                    <Image src={TheWestin} className='thewestin_logo'></Image>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="https://hotel.hardrock.com/desaru-coast/"
-                    target="_blank">
-                    <Image src={Hardrock}></Image>
+                    href='https://hotel.hardrock.com/desaru-coast/'
+                    target='_blank'
+                  >
+                    <Image src={Hardrock} className='hardrock_logo'></Image>
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.elsclubmalaysia.com/" target="_blank">
-                    <Image src={TheElsClub}></Image>
+                  <Link href='https://www.elsclubmalaysia.com/' target='_blank'>
+                    <Image src={TheElsClub} className='theelsclub_logo'></Image>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" target="_blank">
-                    <Image src={AdventureWaterpark}></Image>
-                  </Link>
+                  {/* <Link href="#" target="_blank"> */}
+                  <Image
+                    src={AdventureWaterpark}
+                    className='adventure_waterpark_logo'
+                  ></Image>
+                  {/* </Link> */}
                 </li>
               </ul>
             </div>

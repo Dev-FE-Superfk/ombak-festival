@@ -85,7 +85,6 @@ function Info() {
             {tag === "info" ? (
               <>
                 <h3>Getting Here</h3>
-                <p>We have many ways to get to the festival.</p>
               </>
             ) : tag === "faq" ? (
               <>
@@ -122,10 +121,11 @@ function Info() {
                   ) : (
                     <div className="info_content">
                       <div className="info_answer">
-                      <div
-                            dangerouslySetInnerHTML={{
-                              __html: detail.description,
-                            }}></div>
+                        <div
+                              dangerouslySetInnerHTML={{
+                                __html: detail.description,
+                              }}>
+                        </div>
                       </div>
                     </div>
                   )}
