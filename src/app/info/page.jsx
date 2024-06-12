@@ -14,6 +14,7 @@ function Info() {
   const [visibleItems, setVisibleItems] = useState({});
 
   useEffect(() => {
+    setVisibleItems({})
     if (tag) {
       const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/info?tag=${tag}`;
       console.log(apiUrl);
@@ -32,6 +33,8 @@ function Info() {
         })
         .then((data) => {
           setDetails(data.data.detail);
+          
+          toggleVisibility(data.data.detail[0].id, true)
         })
         .catch((error) => {
           console.error("Error fetching data: ", error);
@@ -40,13 +43,16 @@ function Info() {
     }
   }, [tag]);
 
-  const toggleVisibility = (id) => {
+  const toggleVisibility = (id, val = true) => {
     setVisibleItems((prev) => ({
       ...prev,
-      [id]: !prev[id],
+      [id]: val,
     }));
   };
 
+  useEffect(() => {
+    console.log(visibleItems, 'test')
+  }, [visibleItems])
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -54,6 +60,7 @@ function Info() {
   if (!details) {
     return <div>Loading...</div>;
   }
+
 
   return (
     <div className="section_info">
@@ -86,7 +93,7 @@ function Info() {
               </>
             ) : null}
           </div>
-          {details.map((detail) => (
+          {details.map((detail, index) => (
             <div className="info_box">
               <div className="info_title">
                 <h3>{detail.name}</h3>
@@ -94,7 +101,7 @@ function Info() {
                   className={`toggle_btn ${
                     visibleItems[detail.id] ? "active" : ""
                   }`}
-                  onClick={() => toggleVisibility(detail.id)}></div>
+                  onClick={() => toggleVisibility(detail.id, !visibleItems[detail.id])}></div>
               </div>
               {visibleItems[detail.id] && (
                 <div>
