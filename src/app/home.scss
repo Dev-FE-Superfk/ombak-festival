@@ -601,6 +601,16 @@ html {
       cursor: pointer;
       transition: all 0.2s ease;
       font-family: 'Antique Olive Std Black';
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 19.2px;
+      }
       &:hover {
         background: $green;
         color: $darkgreen;
@@ -679,6 +689,10 @@ html {
   .section_seven {
     .container {
       padding: 0 40px;
+    }
+    .button {
+      p {
+      }
     }
   }
 }
@@ -842,6 +856,10 @@ html {
     .container {
       h3 {
         font-size: 28px;
+      }
+    }
+    .button {
+      p {
       }
     }
   }
@@ -1078,6 +1096,10 @@ html {
       }
       h3 {
         font-size: 28px;
+      }
+    }
+    .button {
+      p {
       }
     }
   }
