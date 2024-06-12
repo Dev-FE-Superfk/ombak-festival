@@ -89,11 +89,11 @@ nav {
             left: 0;
           }
         }
-        // &:hover {
-        //   .sub_nav {
-        //     display: block;
-        //   }
-        // }
+        &:hover {
+          .sub_nav {
+            display: block;
+          }
+        }
       }
       .sub_nav {
         position: fixed;
