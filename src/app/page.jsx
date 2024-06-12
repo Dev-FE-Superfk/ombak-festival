@@ -1,7 +1,7 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import "./home.scss";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import './home.scss';
 import {
   ImageOmbak,
   LogoYellow,
@@ -24,34 +24,34 @@ import {
   WaveGreenLong,
   MemoriesCover,
   MemoriesCoverM,
-} from "@/assets";
-import { useEffect, useState } from "react";
-import { VideoPlayer, PartnerSlider, UserbackWidget } from "@/components";
-import { VideoOmbak } from "../../public/videos";
-import { useUserback, UserbackProvider } from "@userback/react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+} from '@/assets';
+import {useEffect, useState} from 'react';
+import {VideoPlayer, PartnerSlider, UserbackWidget} from '@/components';
+import {VideoOmbak} from '../../public/videos';
+import {useUserback, UserbackProvider} from '@userback/react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function Home() {
-  const { init, open } = useUserback();
+  const {init, open} = useUserback();
   const [artists, setArtists] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
-  const classes = ["mask1", "mask2", "mask3", "mask4"];
+  const classes = ['mask1', 'mask2', 'mask3', 'mask4'];
   useEffect(() => {
     // Gantilah URL ini dengan URL API Anda
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/homepage";
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL + '/homepage';
 
     fetch(apiUrl, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "x-api-key": "bda07dc4-cab9-4148-ac9c-7a44c3c55wqr9",
-        "Content-Type": "application/json",
+        'x-api-key': 'bda07dc4-cab9-4148-ac9c-7a44c3c55wqr9',
+        'Content-Type': 'application/json',
       },
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error('Network response was not ok');
         }
         return response.json();
       })
@@ -61,7 +61,7 @@ export default function Home() {
         setArtists(artists);
       })
       .catch((error) => {
-        console.error("Error fetching data: ", error);
+        console.error('Error fetching data: ', error);
       });
 
     // Check if the screen is mobile
@@ -70,10 +70,10 @@ export default function Home() {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -89,8 +89,8 @@ export default function Home() {
     autoplay: true, // Enable autoplay
     autoplaySpeed: 2000, // Set autoplay speed (in milliseconds)
     centerMode: true,
-    centerPadding: '60px', 
-    
+    centerPadding: '60px',
+
     // dots: false,
     // infinite: true,
     // speed: 500,
@@ -105,27 +105,27 @@ export default function Home() {
   };
 
   useEffect(() => {
-    init("P-594QMpIk2nw42M7qspN1NIqAy");
+    init('P-594QMpIk2nw42M7qspN1NIqAy');
   }, []);
   return (
     <>
-      <div className="section_one">
-        <div className="mobile_text">
-            <Image src={LogoYellow} alt="Ombak"></Image>
-            <div className="text_info">
-              13 - 15 September 2024
-              <br />
-              Desaru Coast, Johor, Malaysia
-              <span>The Ultimate Weekend</span>
-            </div>
+      <div className='section_one'>
+        <div className='mobile_text'>
+          <Image src={LogoYellow} alt='Ombak'></Image>
+          <div className='text_info'>
+            13 - 15 September 2024
+            <br />
+            Desaru Coast, Johor, Malaysia
+            <span>The Ultimate Weekend</span>
           </div>
-        <Image src={ImageOmbak} alt="Ombak" className="desktop"></Image>
+        </div>
+        <Image src={ImageOmbak} alt='Ombak' className='desktop'></Image>
         {/* <Image src={ImageOmbakMobile} alt="Ombak" className="mobile"></Image> */}
-        <VideoPlayer src={VideoOmbak} type="video/mp4" />
-        <div className="container">
-          <div className="text">
-            <Image src={LogoYellow} alt="Ombak"></Image>
-            <div className="text_info">
+        <VideoPlayer src={VideoOmbak} type='video/mp4' />
+        <div className='container'>
+          <div className='text'>
+            <Image src={LogoYellow} alt='Ombak'></Image>
+            <div className='text_info'>
               13 - 15 September 2024
               <br />
               Desaru Coast, Johor, Malaysia
@@ -134,176 +134,162 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="section_two">
-        <div className="ornament_left">
-          <div className="ornament_1"></div>
-          <div className="ornament_2"></div>
-          <div className="ornament_3"></div>
-          <div className="ornament_4"></div>
-          <div className="ornament_5"></div>
-          <div className="ornament_6"></div>
+      <div className='section_two'>
+        <div className='ornament_left'>
+          <div className='ornament_1'></div>
+          <div className='ornament_2'></div>
+          <div className='ornament_3'></div>
+          <div className='ornament_4'></div>
+          <div className='ornament_5'></div>
+          <div className='ornament_6'></div>
         </div>
-        <div className="container">
-          <h2 className="desktop">
+        <div className='container'>
+          <h2 className='desktop'>
             Malay for ocean wave, "Ombak"
             <Image
               src={IconOmbakOrange}
               width={46}
               height={46}
-              alt="Wave Green"></Image>
+              alt='Wave Green'
+            ></Image>
             <br /> is more than a festival - it's the <br />
             ultimate coastal weekend
             <Image
               src={IconOmbakPurple}
               width={46}
               height={46}
-              alt="Wave purple"></Image>
+              alt='Wave purple'
+            ></Image>
             of <br />
             music, art, food, and family-fun.
           </h2>
-          <h2 className="mobile">
+          <h2 className='mobile'>
             Malay for ocean wave, <br />
             "Ombak"
             <Image
               src={IconOmbakOrange}
               width={46}
               height={46}
-              alt="Wave Green"></Image>
+              alt='Wave Green'
+            ></Image>
             is more than <br />a festival - it's the <br />
             ultimate coastal weekend <br />
             <Image
               src={IconOmbakPurple}
               width={46}
               height={46}
-              alt="Wave purple"></Image>
-            of music, art, food, <br/>and family-fun.
+              alt='Wave purple'
+            ></Image>
+            of music, art, food, <br />
+            and family-fun.
           </h2>
         </div>
-        <div className="ornament_right">
-          <div className="ornament_7"></div>
-          <div className="ornament_8"></div>
-          <div className="ornament_8a"></div>
-          <div className="ornament_9"></div>
-          <div className="ornament_10"></div>
-          <div className="ornament_11"></div>
-          <div className="ornament_12"></div>
+        <div className='ornament_right'>
+          <div className='ornament_7'></div>
+          <div className='ornament_8'></div>
+          <div className='ornament_8a'></div>
+          <div className='ornament_9'></div>
+          <div className='ornament_10'></div>
+          <div className='ornament_11'></div>
+          <div className='ornament_12'></div>
         </div>
       </div>
-      <div className="section_three">
-        <div className="category_box">
-          <Link href="/experience/music-and-performances">
-            <div className="category_image">
-              <Image src={Category1} alt="Music and Perfomances"></Image>
+      <div className='section_three'>
+        <div className='category_box'>
+          <Link href='/experience/music-and-performances'>
+            <div className='category_image'>
+              <Image src={Category1} alt='Music and Perfomances'></Image>
             </div>
-            <div className="category_text">
-              <div className="category_title">Music &amp; Perfomances</div>
-              <Image src={WaveGreen} alt="Wave Green"></Image>
+            <div className='category_text'>
+              <div className='category_title'>Music &amp; Perfomances</div>
+              <Image src={WaveGreen} alt='Wave Green'></Image>
             </div>
           </Link>
         </div>
-        <div className="category_box">
-          <Link href="/experience/visual-arts-and-craft">
-            <div className="category_image">
-              <Image src={Category2} alt="Visual Arts and Craft"></Image>
+        <div className='category_box'>
+          <Link href='/experience/visual-arts-and-craft'>
+            <div className='category_image'>
+              <Image src={Category2} alt='Visual Arts and Craft'></Image>
             </div>
-            <div className="category_text">
-              <div className="category_title">
+            <div className='category_text'>
+              <div className='category_title'>
                 Visual Arts
                 <br />
                 &amp; Craft
               </div>
-              <Image src={WaveYellow} alt="Wave Yelow"></Image>
+              <Image src={WaveYellow} alt='Wave Yelow'></Image>
             </div>
           </Link>
         </div>
-        <div className="category_box">
-          <Link href="/experience/food-and-beverages">
-            <div className="category_image">
-              <Image src={Category3} alt="Culinary"></Image>
+        <div className='category_box'>
+          <Link href='/experience/food-and-beverages'>
+            <div className='category_image'>
+              <Image src={Category3} alt='Culinary'></Image>
             </div>
-            <div className="category_text">
-              <div className="category_title">F&amp;B</div>
-              <Image src={WaveDarkGreen} alt="Wave Dark Green"></Image>
+            <div className='category_text'>
+              <div className='category_title'>F&amp;B</div>
+              <Image src={WaveDarkGreen} alt='Wave Dark Green'></Image>
             </div>
           </Link>
         </div>
-        <div className="category_box">
-          <Link href="/experience/ombak-kids">
-            <div className="category_image">
-              <Image src={Category4} alt="Ombak Kids"></Image>
+        <div className='category_box'>
+          <Link href='/experience/ombak-kids'>
+            <div className='category_image'>
+              <Image src={Category4} alt='Ombak Kids'></Image>
             </div>
-            <div className="category_text">
-              <div className="category_title">Ombak Kids</div>
-              <Image src={WaveOrange} alt="Wave Orange"></Image>
+            <div className='category_text'>
+              <div className='category_title'>Ombak Kids</div>
+              <Image src={WaveOrange} alt='Wave Orange'></Image>
             </div>
           </Link>
         </div>
       </div>
-      <div className="section_four">
-        <Image src={ImageResort} alt="Resorts Cover"></Image>
-        <div className="container">
-          <div className="box_left">
-            <h3>Our resorts</h3>
-            <p>Book your ultimate weekend
+      <div className='section_four'>
+        <Image src={ImageResort} alt='Resorts Cover'></Image>
+        <div className='container'>
+          <div className='box_left'>
+            <p className='text_title'>Our resorts</p>
+            <p>
+              Get exclusive packages with our resorts
             </p>
-            <Link href="/stay">
-              <div className="button">Explore</div>
+            <Link href='/stay'>
+              <div className='button'>Explore</div>
             </Link>
           </div>
-          <div className="box_right">
-            <Link className="resorts_box" href="/stay?tag=hard_rock_hotel">
-              <Image src={Hardrock} alt="Hardrock"></Image>
+          <div className='box_right'>
+            <Link className='resorts_box' href='/stay?tag=hard_rock_hotel'>
+              <Image src={Hardrock} alt='Hardrock'></Image>
             </Link>
-            <Link className="resorts_box" href="/stay?tag=one_and_only">
-              <Image src={Onenonly} alt="One n Only"></Image>
+            <Link className='resorts_box' href='/stay?tag=one_and_only'>
+              <Image src={Onenonly} alt='One n Only'></Image>
             </Link>
-            <Link className="resorts_box" href="/stay?tag=the_westin">
-              <Image src={TheWestin} alt="The Westin"></Image>
+            <Link className='resorts_box' href='/stay?tag=the_westin'>
+              <Image src={TheWestin} alt='The Westin'></Image>
             </Link>
-            <Link className="resorts_box" href="/stay?tag=anantara">
-              <Image src={Anantara} alt="Anantara"></Image>
+            <Link className='resorts_box' href='/stay?tag=anantara'>
+              <Image src={Anantara} alt='Anantara'></Image>
             </Link>
           </div>
         </div>
       </div>
-      <div className="section_five">
-        <div className="container">
+      <div className='section_five'>
+        <div className='container'>
           <h2>
             An exciting and eclectic lineup of <br />
             <span>world-class</span> artistes
           </h2>
-            {isMobile ? (
-              <Slider {...sliderSettings}>
-                {artists.map((artist, index) => (
-                  <div className="artist_box slider" key={artist.slug}>
-                    <Link
-                      href={`/experience/music-and-performances/${artist.slug}`}>
-                      <div
-                        className={`artist_image ${
-                          classes[index % classes.length]
-                        }`}>
-                        <Image
-                          src={artist.thumbnail}
-                          alt={artist.name}
-                          width={200}
-                          height={200}
-                        />
-                      </div>
-                      <div className="artist_name">{artist.name}</div>
-                    </Link>
-                  </div>
-                ))}
-              </Slider>
-            ) : (
-              <div className="artist_wrapper">
+          {isMobile ? (
+            <Slider {...sliderSettings}>
               {artists.map((artist, index) => (
-                <div className="artist_box" key={artist.slug}>
+                <div className='artist_box slider' key={artist.slug}>
                   <Link
-                    href={`/experience/music-and-performances/${artist.slug}`}>
+                    href={`/experience/music-and-performances/${artist.slug}`}
+                  >
                     <div
                       className={`artist_image ${
                         classes[index % classes.length]
-                      }`}>
+                      }`}
+                    >
                       <Image
                         src={artist.thumbnail}
                         alt={artist.name}
@@ -311,13 +297,38 @@ export default function Home() {
                         height={200}
                       />
                     </div>
-                    <div className="artist_name">{artist.name}</div>
+                    <div className='artist_name'>{artist.name}</div>
                   </Link>
                 </div>
-              ))}</div>
-            )}
-          <Link href="../experience/music-and-performances">
-            <div className="button">See More</div>
+              ))}
+            </Slider>
+          ) : (
+            <div className='artist_wrapper'>
+              {artists.map((artist, index) => (
+                <div className='artist_box' key={artist.slug}>
+                  <Link
+                    href={`/experience/music-and-performances/${artist.slug}`}
+                  >
+                    <div
+                      className={`artist_image ${
+                        classes[index % classes.length]
+                      }`}
+                    >
+                      <Image
+                        src={artist.thumbnail}
+                        alt={artist.name}
+                        width={200}
+                        height={200}
+                      />
+                    </div>
+                    <div className='artist_name'>{artist.name}</div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
+          <Link href='../experience/music-and-performances'>
+            <div className='button'>See More</div>
           </Link>
         </div>
         <Image src={WaveGreenLong}></Image>
@@ -356,19 +367,21 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div className="section_seven">
-        <div className="container">
+      <div className='section_seven'>
+        <div className='container'>
           <Image
-            className="desktop"
+            className='desktop'
             src={MemoriesCover}
-            alt="Memories Cover"></Image>
+            alt='Memories Cover'
+          ></Image>
           <Image
-            className="mobile"
+            className='mobile'
             src={MemoriesCoverM}
-            alt="Memories Cover"></Image>
+            alt='Memories Cover'
+          ></Image>
           <h3>Ready for the Ultimate Weekend?</h3>
-          <div className="button">
-            <Link href="/stay?tag=hard_rock_hotel">
+          <div className='button'>
+            <Link href='/stay?tag=hard_rock_hotel'>
               BOOK YOUR STAY PACKAGES NOW
             </Link>
           </div>
