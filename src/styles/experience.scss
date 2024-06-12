@@ -1,304 +1,312 @@
-@import "../styles/main.scss";
+@import '../styles/main.scss';
 
-.section_music_performance{
+.section_music_performance {
+  padding-top: 80px;
+  .music_performance_banner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mp_image {
+    width: 55%;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .mp_info {
+    width: 45%;
+    background: $purple url('../assets/home/wave_green.png') no-repeat bottom
+      center / contain;
+    .mpi_box {
+      padding: 40px 60px;
+      color: #fff;
+      font-size: 16px;
+      font-family: 'Roboto';
+    }
+    .sub_title {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-family: 'Roboto';
+    }
+    h3 {
+      font-size: 48px;
+      line-height: 48px;
+      margin-bottom: 20px;
+      font-family: 'Antique Olive Std Black';
+      text-transform: capitalize;
+    }
+  }
+}
+.artist_list {
+  background: #f0ebe6;
+  padding: 100px 0 0;
+  .container {
+    max-width: 1130px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #000;
+  }
+}
+.more_experience {
+  background: #f0ebe6;
+  padding: 130px 0 130px;
+  .container {
+    max-width: 1130px;
+    margin: 0 auto;
+    h3 {
+      font-size: 40px;
+      font-family: 'Antique Olive Std Black';
+      margin-bottom: 40px;
+    }
+    .row_flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .me_box {
+      width: calc((100% - 50px) / 3);
+      margin-right: 25px;
+      padding: 0 25px 25px;
+      height: 230px;
+      position: relative;
+      &.fnb {
+        background: $yellow url('../assets/main/square_wave_yellow.png')
+          no-repeat top left / 65px;
+        &:hover {
+          h4 {
+            text-decoration: underline;
+          }
+          .button {
+            background: $darkgreen url('../assets/home/arrow_white.png')
+              no-repeat center / 27px;
+            border: none;
+            transition: all 0.2s ease;
+          }
+        }
+      }
+      &.ombakkids {
+        background: $blue url('../assets/main/square_wave_orange.png') no-repeat
+          top left / 65px;
+        &:hover {
+          h4 {
+            text-decoration: underline;
+          }
+          .button {
+            background: $orange url('../assets/home/arrow_white.png') no-repeat
+              center / 27px;
+            border: none;
+            transition: all 0.2s ease;
+          }
+        }
+      }
+      &.visualarts {
+        background: $green url('../assets/main/square_wave_green.png') no-repeat
+          top left / 65px;
+        margin-right: 0;
+        &:hover {
+          h4 {
+            text-decoration: underline;
+          }
+          .button {
+            background: $yellow url('../assets/home/arrow_black.png') no-repeat
+              center / 27px;
+            border: none;
+            transition: all 0.2s ease;
+          }
+        }
+      }
+      h4 {
+        font-size: 32px;
+        font-family: 'Antique Olive Std Black';
+        line-height: normal;
+        position: absolute;
+        bottom: 25px;
+      }
+      .button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        border: 1px solid #000;
+        background: url('../assets/home/arrow_black.png') no-repeat center /
+          27px;
+        text-indent: -9999px;
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        left: auto;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1129px) {
+  .section_music_performance {
+    padding-top: 60px;
+    .mp_image {
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+    .mp_info {
+      padding: 20px;
+      .sub_title {
+        margin-bottom: 10px;
+      }
+      h3 {
+        font-size: 40px;
+        line-height: normal;
+        margin-bottom: 10px;
+      }
+      .mpi_box {
+        padding: 30px 20px 200px;
+      }
+    }
+  }
+  .artist_list {
+    .container {
+      padding: 0 40px;
+      border: none;
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        display: block;
+        background: #000;
+        margin: 0 auto;
+      }
+    }
+  }
+  .more_experience {
+    padding-top: 30px;
+    .container {
+      padding: 0 40px;
+      h3 {
+        font-size: 28px;
+      }
+      .me_box {
+        h4 {
+          font-size: 28px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 959px) {
+  .section_music_performance {
+    .mp_image {
+      width: 50%;
+    }
+    .mp_info {
+      width: 50%;
+      h3 {
+        font-size: 34px;
+      }
+      .mpi_box {
+        font-size: 14px;
+        padding: 0 0 130px;
+      }
+    }
+  }
+  .more_experience {
     padding-top: 80px;
-    .music_performance_banner{
-        width:100%;
-        display: flex;
-        flex-wrap: wrap;
+    .container {
+      padding: 0 40px;
+      h3 {
+        font-size: 28px;
+      }
+      .me_box {
+        height: 140px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        &.fnb {
+          background-size: 40px;
+        }
+        &.ombakkids {
+          background-size: 40px;
+        }
+        &.visualarts {
+          background-size: 40px;
+        }
+        &.fnb {
+          background-size: 40px;
+        }
+        h4 {
+          font-size: 20px;
+        }
+        .button {
+          width: 40px;
+          height: 40px;
+          right: 20px;
+        }
+      }
     }
-    .mp_image{
-        width: 55%;
-        img{
-            width: 100%;
-            display: block;
-        }
-    }
-    .mp_info{
-        width: 45%;
-        background: $purple url('../assets/home/wave_green.png') no-repeat bottom center / contain;
-        .mpi_box{
-            padding:40px 60px;
-            color:#fff;
-            font-size: 16px;
-            font-family: 'Roboto';
-        }
-        .sub_title{
-            font-size: 14px;
-            display: block;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-family: 'Roboto';
-        }
-        h3{
-            font-size: 48px;
-            line-height: 48px;
-            margin-bottom: 20px;
-            font-family: 'Antique Olive Std Black';
-            text-transform: capitalize;
-        }
-    }
+  }
 }
-.artist_list{
-    background: #F0EBE6;
-    padding: 60px 0 0;
-    .container{
-        max-width: 1130px;
+@media only screen and (max-width: 767px) {
+  .section_music_performance {
+    padding-top: 60px;
+    .music_performance_banner {
+      display: block;
+    }
+    .mp_image {
+      width: 100%;
+    }
+    .mp_info {
+      width: 100%;
+      .sub_title {
+        margin-bottom: 10px;
+      }
+      h3 {
+        font-size: 36px;
+        line-height: normal;
+        margin-bottom: 10px;
+      }
+      .mpi_box {
+        padding: 30px 20px 200px;
+      }
+    }
+  }
+  .artist_list {
+    .container {
+      padding: 0 20px;
+      border: none;
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        display: block;
+        background: #000;
         margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        border-bottom: 1px solid #000;
+      }
     }
-}
-.more_experience{
-    background: #F0EBE6;
-    padding: 130px 0 130px;
-    .container{
-        max-width: 1130px;
-        margin: 0 auto;
-        h3{
-            font-size: 40px;
-            font-family: 'Antique Olive Std Black';
-            margin-bottom: 40px;
+  }
+  .more_experience {
+    padding-top: 80px;
+    .container {
+      padding: 0 20px;
+      h3 {
+        font-size: 28px;
+      }
+      .me_box {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: 180px;
+        &:last-child {
+          margin-bottom: 0;
         }
-        .row_flex{
-            display: flex;
-            flex-wrap: wrap; 
-        }
-        .me_box{
-            width: calc((100% - 50px)/3);
-            margin-right: 25px;
-            padding: 0 25px 25px;
-            height: 230px;
-            position: relative;
-            &.fnb{
-                background: $yellow url('../assets/main/square_wave_yellow.png') no-repeat top left / 65px;
-                &:hover{
-                    h4{
-                        text-decoration: underline;
-                    }
-                    .button{
-                        background:$darkgreen url('../assets/home/arrow_white.png') no-repeat center / 27px;
-                        border:none;
-                        transition: all 0.2s ease;
-                    }
-                }
-            }
-            &.ombakkids{
-                background: $blue url('../assets/main/square_wave_orange.png') no-repeat top left / 65px;
-                &:hover{
-                    h4{
-                        text-decoration: underline;
-                    }
-                    .button{
-                        background:$orange url('../assets/home/arrow_white.png') no-repeat center / 27px;
-                        border:none;
-                        transition: all 0.2s ease;
-                    }
-                }
-            }
-            &.visualarts{
-                background: $green url('../assets/main/square_wave_green.png') no-repeat top left / 65px;
-                margin-right: 0;
-                &:hover{
-                    h4{
-                        text-decoration: underline;
-                    }
-                    .button{
-                        background:$yellow url('../assets/home/arrow_black.png') no-repeat center / 27px;
-                        border:none;
-                        transition: all 0.2s ease;
-                    }
-                }
-            }
-            h4{
-                font-size: 32px;
-                font-family: 'Antique Olive Std Black';
-                line-height: normal;
-                position: absolute;
-                bottom: 25px;
-            }
-            .button{
-                width: 50px;
-                height: 50px;
-                border-radius: 50px;
-                border:1px solid #000;
-                background: url('../assets/home/arrow_black.png') no-repeat center / 27px;
-                text-indent: -9999px;
-                position: absolute;
-                bottom: 25px;
-                right: 25px;
-                left: auto;
-                cursor: pointer;
-                transition: all 0.2s ease;
-            }
-        }
+      }
     }
-}
-@media only screen and (max-width:1129px){
-    .section_music_performance{
-        padding-top: 60px;
-        .mp_image{
-            img{
-                width: 100%;
-                height: 100%;
-                display: block;
-                object-fit: cover;
-            }
-        }
-        .mp_info{
-            padding: 20px;
-            .sub_title{
-                margin-bottom: 10px;
-            }
-            h3{
-                font-size: 40px;
-                line-height: normal;
-                margin-bottom: 10px;
-            }
-            .mpi_box{
-                padding:30px 20px 200px;
-            }
-        }
-    }
-    .artist_list{
-        .container{
-            padding: 0 40px;
-            border:none;
-            &:after{
-                content: '';
-                width: 100%;
-                height: 1px;
-                display: block;
-                background: #000;
-                margin: 0 auto;
-            }
-        }
-    }
-    .more_experience{
-        padding-top: 30px;
-        .container{
-            padding: 0 40px;
-            h3{
-                font-size: 28px;
-            }
-            .me_box{
-                h4{
-                    font-size: 28px;
-                }
-                &:last-child{
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
-}
-@media only screen and (max-width:959px){
-    .section_music_performance{
-        .mp_image{
-            width: 50%;
-        }
-        .mp_info{
-            width: 50%;
-            h3{
-                font-size: 34px;
-            }
-            .mpi_box{
-                font-size: 14px;
-                padding:0 0 130px;
-            }
-        }
-    }
-    .more_experience{
-        padding-top: 80px;
-        .container{
-            padding: 0 40px;
-            h3{
-                font-size: 28px;
-            }
-            .me_box{
-                height: 140px;
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-bottom: 20px;
-                &.fnb{
-                    background-size: 40px;
-                }
-                &.ombakkids{
-                    background-size: 40px;
-                }
-                &.visualarts{
-                    background-size: 40px;
-                }
-                &.fnb{
-                    background-size: 40px;
-                }
-                h4{
-                    font-size: 20px;
-                }
-                .button{
-                    width: 40px;
-                    height: 40px;
-                    right: 20px;
-                }
-            }
-        }
-    }
-}
-@media only screen and (max-width:767px){
-    .section_music_performance{
-        padding-top: 60px;
-        .music_performance_banner{
-            display: block;
-        }
-        .mp_image{
-            width: 100%;
-        }
-        .mp_info{
-            width: 100%;
-            .sub_title{
-                margin-bottom: 10px;
-            }
-            h3{
-                font-size: 36px;
-                line-height: normal;
-                margin-bottom: 10px;
-            }
-            .mpi_box{
-                padding:30px 20px 200px;
-            }
-        }
-    }
-    .artist_list{
-        .container{
-            padding: 0 20px;
-            border:none;
-            &:after{
-                content: '';
-                width: 100%;
-                height: 1px;
-                display: block;
-                background: #000;
-                margin: 0 auto;
-            }
-        }
-    }
-    .more_experience{
-        padding-top: 80px;
-        .container{
-            padding: 0 20px;
-            h3{
-                font-size: 28px;
-            }
-            .me_box{
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 20px;
-                height: 180px;
-                &:last-child{
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
+  }
 }
