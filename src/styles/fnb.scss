@@ -1,459 +1,473 @@
-@import "../styles/main.scss";
+@import '../styles/main.scss';
 
-.section_fnb{
+.section_fnb {
+  padding-top: 80px;
+  .fnb_banner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .fnb_image {
+    width: 55%;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .fnb_info {
+    width: 45%;
+    background: $yellow url('../assets/home/wave_dark_green.png') no-repeat
+      bottom center / contain;
+    font-family: 'Roboto';
+    font-size: 16px;
+    .fnbi_box {
+      padding: 40px 60px;
+      font-size: 16px;
+    }
+    .sub_title {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-family: 'Roboto';
+    }
+    h3 {
+      font-size: 48px;
+      line-height: 48px;
+      margin-bottom: 20px;
+      font-family: 'Antique Olive Std Black';
+      text-transform: capitalize;
+    }
+  }
+}
+.section_festival {
+  background: #f0ebe6;
+  padding: 60px 0 0;
+  .container {
+    max-width: 1130px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #000;
+  }
+  .festival_item {
+    &:last-child {
+      .festival_box {
+        border-bottom: none;
+      }
+    }
+    &.mask1 {
+      .box_image {
+        mask-image: url('../assets/main/new-Mask-group5.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+        mask-size: cover;
+        -webkit-mask-image: url('../assets/main/new-Mask-group5.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+        -webkit-mask-size: cover;
+      }
+    }
+    &.mask2 {
+      .box_image {
+        mask-image: url('../assets/main/new-Mask-group6.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+        mask-size: cover;
+        -webkit-mask-image: url('../assets/main/new-Mask-group6.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+        -webkit-mask-size: cover;
+      }
+    }
+    &.mask3 {
+      .box_image {
+        mask-image: url('../assets/main/new-Mask-group7.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+        mask-size: cover;
+        -webkit-mask-image: url('../assets/main/new-Mask-group7.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+        -webkit-mask-size: cover;
+      }
+    }
+  }
+  .festival_box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #000;
+    &.reverse {
+      flex-direction: row-reverse;
+      .box_text {
+        padding-left: 100px;
+        padding-right: 30px;
+      }
+    }
+    .box_image {
+      width: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: all 0.2s ease;
+      }
+      &:hover {
+        img {
+          transform: scale(1.1);
+          transition: all 0.2s ease;
+        }
+      }
+    }
+    .box_text {
+      width: 50%;
+      padding-left: 100px;
+      padding-right: 100px;
+      font-family: 'Roboto';
+      h3 {
+        font-size: 32px;
+        font-family: 'Antique Olive Std Bold';
+        margin-bottom: 40px;
+        position: relative;
+        span {
+          width: 51px;
+          height: 57px;
+          display: block;
+          background: url('../assets/main/background_number_yellow.png')
+            no-repeat center / contain;
+          position: absolute;
+          top: -8px;
+          left: -75px;
+          line-height: 57px;
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+    }
+    button {
+      background: $orange;
+      border-radius: 45px;
+      height: 45px;
+      color: #fff;
+      margin-top: 20px;
+      padding: 0 20px;
+    }
+  }
+}
+.more_experience {
+  background: #f0ebe6;
+  padding: 130px 0 130px;
+  .container {
+    max-width: 1130px;
+    margin: 0 auto;
+    h3 {
+      font-size: 40px;
+      font-family: 'Antique Olive Std Black';
+      margin-bottom: 40px;
+    }
+    .row_flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .me_box {
+      width: calc((100% - 50px) / 3);
+      margin-right: 25px;
+      padding: 0 25px 25px;
+      height: 230px;
+      position: relative;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.visualarts {
+        background: $green url('../assets/main/square_wave_yellow.png')
+          no-repeat top left / 65px;
+        &:hover {
+          h4 {
+            text-decoration: underline;
+          }
+          .button {
+            background: $yellow url('../assets/home/arrow_green.png') no-repeat
+              center / 27px;
+            border: none;
+            transition: all 0.2s ease;
+          }
+        }
+      }
+      &.music_and_performance {
+        background: $purple url('../assets/main/square_wave_green2.png')
+          no-repeat top left / 65px;
+        color: #fff;
+        .button {
+          border-color: #fff;
+          background: url('../assets/home/arrow_white.png') no-repeat center /
+            27px;
+        }
+        &:hover {
+          h4 {
+            text-decoration: underline;
+          }
+          .button {
+            background: $green url('../assets/home/arrow_green.png') no-repeat
+              center / 27px;
+            border: none;
+            transition: all 0.2s ease;
+          }
+        }
+      }
+      &.ombakkids {
+        background: $blue url('../assets/main/square_wave_orange.png') no-repeat
+          top left / 65px;
+        &:hover {
+          h4 {
+            text-decoration: underline;
+          }
+          .button {
+            background: $orange url('../assets/home/arrow_white.png') no-repeat
+              center / 27px;
+            border: none;
+            transition: all 0.2s ease;
+          }
+        }
+      }
+      h4 {
+        font-size: 32px;
+        font-family: 'Antique Olive Std Black';
+        line-height: normal;
+        position: absolute;
+        bottom: 25px;
+      }
+      .button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        border: 1px solid #000;
+        background: url('../assets/home/arrow_black.png') no-repeat center /
+          27px;
+        text-indent: -9999px;
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        left: auto;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1129px) {
+  .section_fnb {
+    padding-top: 60px;
+    .fnb_image {
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+    .fnb_info {
+      padding: 20px;
+      .sub_title {
+        margin-bottom: 10px;
+      }
+      h3 {
+        font-size: 40px;
+        line-height: normal;
+        margin-bottom: 10px;
+      }
+      .fnbi_box {
+        padding: 30px 20px 200px;
+      }
+    }
+  }
+  .section_festival {
+    .container {
+      border: none;
+    }
+    .festival_box {
+      padding: 0 40px;
+      margin-bottom: 30px;
+      border: none;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #000;
+        display: block;
+        margin: 30px auto 0;
+      }
+      &.reverse {
+        .box_text {
+          padding-right: 40px;
+          padding-left: 80px;
+          button {
+            margin-bottom: 30px;
+          }
+        }
+      }
+      .box_text {
+        padding-right: 20px;
+        font-size: 18px;
+        h3 {
+          font-size: 30px;
+          line-height: normal;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .more_experience {
+    padding-top: 30px;
+    .container {
+      padding: 0 40px;
+      h3 {
+        font-size: 34px;
+      }
+      .me_box {
+        h4 {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 959px) {
+  .section_fnb {
+    .fnb_image {
+      width: 50%;
+    }
+    .fnb_info {
+      width: 50%;
+      h3 {
+        font-size: 34px;
+      }
+      .fnbi_box {
+        font-size: 14px;
+        padding: 0 0 130px;
+      }
+    }
+  }
+  .more_experience {
     padding-top: 80px;
-    .fnb_banner{
-        width:100%;
-        display: flex;
-        flex-wrap: wrap;
+    .container {
+      padding: 0 40px;
+      h3 {
+        font-size: 28px;
+      }
+      .me_box {
+        height: 140px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        &.fnb {
+          background-size: 40px;
+        }
+        &.ombakkids {
+          background-size: 40px;
+        }
+        &.visualarts {
+          background-size: 40px;
+        }
+        &.music_and_performance {
+          background-size: 40px;
+        }
+        &.fnb {
+          background-size: 40px;
+        }
+        h4 {
+          font-size: 20px;
+        }
+        .button {
+          width: 40px;
+          height: 40px;
+          right: 20px;
+        }
+      }
     }
-    .fnb_image{
-        width: 55%;
-        img{
-            width: 100%;
-            display: block;
-        }
-    }
-    .fnb_info{
-        width: 45%;
-        background: $yellow url('../assets/home/wave_dark_green.png') no-repeat bottom center / contain;
-        font-family: 'Roboto';
-        font-size: 16px;
-        .fnbi_box{
-            padding:40px 60px;
-            font-size: 16px;
-        }
-        .sub_title{
-            font-size: 14px;
-            display: block;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-family: 'Roboto';
-        }
-        h3{
-            font-size: 48px;
-            line-height: 48px;
-            margin-bottom: 20px;
-            font-family: 'Antique Olive Std Black';
-            text-transform: capitalize;
-        }
-    }
+  }
 }
-.section_festival{
-    background: #F0EBE6;
-    padding: 60px 0 0;
-    .container{
-        max-width: 1130px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        border-bottom: 1px solid #000;
+@media only screen and (max-width: 767px) {
+  .section_fnb {
+    padding-top: 60px;
+    .fnb_banner {
+      display: block;
     }
-    .festival_item{
-        &:last-child{
-            .festival_box{
-                border-bottom: none;
-            }
-        }
-        &.mask1{
-            .box_image{
-                mask-image: url('../assets/main/new-Mask-group5.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
-                mask-size: cover;
-                -webkit-mask-image: url('../assets/main/new-Mask-group5.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
-                -webkit-mask-size: cover;
-            }
-        }
-        &.mask2{
-            .box_image{
-                mask-image: url('../assets/main/new-Mask-group6.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
-                mask-size: cover;
-                -webkit-mask-image: url('../assets/main/new-Mask-group6.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
-                -webkit-mask-size: cover;
-            }
-        }
-        &.mask3{
-            .box_image{
-                mask-image: url('../assets/main/new-Mask-group7.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
-                mask-size: cover;
-                -webkit-mask-image: url('../assets/main/new-Mask-group7.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
-                -webkit-mask-size: cover;
-            }
-        }
+    .fnb_image {
+      width: 100%;
     }
-    .festival_box{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 60px;
-        margin-bottom: 60px;
-        border-bottom: 1px solid #000; 
-        &.reverse{
-            flex-direction: row-reverse;
-            .box_text{
-                padding-left: 100px;
-                padding-right: 30px;
-            }
+    .fnb_info {
+      width: 100%;
+      .sub_title {
+        margin-bottom: 10px;
+      }
+      h3 {
+        font-size: 36px;
+        line-height: normal;
+        margin-bottom: 10px;
+      }
+      .fnbi_box {
+        padding: 30px 20px 200px;
+        p {
+          font-size: 16px;
         }
-        .box_image{
-            width: 50%;
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-                transition: all 0.2s ease;
-            }
-            &:hover{
-                img{
-                    transform: scale(1.1);
-                    transition: all 0.2s ease;
-                }
-            }
-        }
-        .box_text{
-            width: 50%;
-            padding-left: 100px;
-            padding-right: 100px;
-            font-family: 'Roboto';
-            h3{
-                font-size: 32px;
-                font-family: 'Antique Olive Std Bold';
-                margin-bottom: 40px;
-                position: relative;
-                span{
-                    width: 51px;
-                    height: 57px;
-                    display: block;
-                    background: url('../assets/main/background_number_yellow.png') no-repeat center / contain;
-                    position: absolute;
-                    top: -8px;
-                    left: -75px;
-                    line-height: 57px;
-                    font-size: 20px;
-                    text-align: center;
-                }
-            }
-        }
-        button{
-            background: $orange;
-            border-radius: 45px;
-            height: 45px;
-            color:#fff;
-            margin-top: 20px;
-            padding: 0 20px;
-        }
+      }
     }
-}
-.more_experience{
-    background: #F0EBE6;
-    padding: 130px 0 130px;
-    .container{
-        max-width: 1130px;
-        margin: 0 auto;
-        h3{
-            font-size: 40px;
-            font-family: 'Antique Olive Std Black';
-            margin-bottom: 40px;
-        }
-        .row_flex{
-            display: flex;
-            flex-wrap: wrap; 
-        }
-        .me_box{
-            width: calc((100% - 50px)/3);
-            margin-right: 25px;
-            padding: 0 25px 25px;
-            height: 230px;
-            position: relative;
-            &:last-child{
-                margin-right: 0;
-            }
-            &.visualarts{
-                background: $green url('../assets/main/square_wave_yellow.png') no-repeat top left / 65px;
-                &:hover{
-                    h4{
-                        text-decoration: underline;
-                    }
-                    .button{
-                        background:$yellow url('../assets/home/arrow_green.png') no-repeat center / 27px;
-                        border:none;
-                        transition: all 0.2s ease;
-                    }
-                }
-            }
-            &.music_and_performance{
-                background: $purple url('../assets/main/square_wave_green2.png') no-repeat top left / 65px;
-                color:#fff;
-                .button{
-                    border-color:#fff;
-                    background: url('../assets/home/arrow_white.png') no-repeat center / 27px;
-                }
-                &:hover{
-                    h4{
-                        text-decoration: underline;
-                    }
-                    .button{
-                        background:$green url('../assets/home/arrow_green.png') no-repeat center / 27px;
-                        border:none;
-                        transition: all 0.2s ease;
-                    }
-                }
-            }
-            &.ombakkids{
-                background: $blue url('../assets/main/square_wave_orange.png') no-repeat top left / 65px;
-                &:hover{
-                    h4{
-                        text-decoration: underline;
-                    }
-                    .button{
-                        background:$orange url('../assets/home/arrow_white.png') no-repeat center / 27px;
-                        border:none;
-                        transition: all 0.2s ease;
-                    }
-                }
-            }
-            h4{
-                font-size: 32px;
-                font-family: 'Antique Olive Std Black';
-                line-height: normal;
-                position: absolute;
-                bottom: 25px;
-            }
-            .button{
-                width: 50px;
-                height: 50px;
-                border-radius: 50px;
-                border:1px solid #000;
-                background: url('../assets/home/arrow_black.png') no-repeat center / 27px;
-                text-indent: -9999px;
-                position: absolute;
-                bottom: 25px;
-                right: 25px;
-                left: auto;
-                transition: all 0.2s ease;
-            }
-        }
+  }
+  .section_festival {
+    .container {
+      border: none;
     }
-}
-@media only screen and (max-width:1129px){
-    .section_fnb{
-        padding-top: 60px;
-        .fnb_image{
-            img{
-                width: 100%;
-                height: 100%;
-                display: block;
-                object-fit: cover;
-            }
-        }
-        .fnb_info{
-            padding: 20px;
-            .sub_title{
-                margin-bottom: 10px;
-            }
-            h3{
-                font-size: 40px;
-                line-height: normal;
-                margin-bottom: 10px;
-            }
-            .fnbi_box{
-                padding:30px 20px 200px;
-            }
-        }
-    }
-    .section_festival{
-        .container{
-            border:none;
-        }
-        .festival_box{
-            padding: 0 40px;
+    .festival_box {
+      display: block;
+      padding: 0 20px;
+      margin-bottom: 30px;
+      border: none;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #000;
+        display: block;
+        margin: 30px auto 0;
+      }
+      &.reverse {
+        .box_text {
+          padding-right: 0px;
+          padding-left: 60px;
+          button {
             margin-bottom: 30px;
-            border: none;
-            &::after{
-                content: '';
-                width: 100%;
-                height: 1px;
-                background: #000;
-                display: block;
-                margin: 30px auto 0;
-            }
-            &.reverse{
-                .box_text{
-                    padding-right: 40px;
-                    padding-left: 80px;
-                    button{
-                        margin-bottom: 30px;
-                    }
-                }
-            }
-            .box_text{
-                padding-right: 20px;
-                font-size: 18px;
-                h3{
-                    font-size: 30px;
-                    line-height: normal;
-                    margin-bottom: 20px;
-                }
-            }
+          }
         }
+      }
+      .box_text {
+        width: 100%;
+        padding: 0;
+        padding-left: 60px;
+        h3 {
+          font-size: 24px;
+          line-height: normal;
+          margin-bottom: 20px;
+          span {
+            width: 45px;
+            height: 50px;
+            left: -60px;
+          }
+        }
+      }
+      .box_image {
+        width: 100%;
+        margin-bottom: 40px;
+      }
     }
-    .more_experience{
-        padding-top: 30px;
-        .container{
-            padding: 0 40px;
-            h3{
-                font-size: 34px;
-            }
-            .me_box{
-                h4{
-                    font-size: 26px;
-                }
-            }
+  }
+  .more_experience {
+    padding-top: 80px;
+    .container {
+      padding: 0 20px;
+      h3 {
+        font-size: 28px;
+      }
+      .me_box {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: 180px;
+        &:last-child {
+          margin-bottom: 0;
         }
+      }
     }
-}
-@media only screen and (max-width:959px){
-    .section_fnb{
-        .fnb_image{
-            width: 50%;
-        }
-        .fnb_info{
-            width: 50%;
-            h3{
-                font-size: 34px;
-            }
-            .fnbi_box{
-                font-size: 14px;
-                padding:0 0 130px;
-            }
-        }
-    }
-    .more_experience{
-        padding-top: 80px;
-        .container{
-            padding: 0 40px;
-            h3{
-                font-size: 28px;
-            }
-            .me_box{
-                height: 140px;
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-bottom: 20px;
-                &.fnb{
-                    background-size: 40px;
-                }
-                &.ombakkids{
-                    background-size: 40px;
-                }
-                &.visualarts{
-                    background-size: 40px;
-                }
-                &.music_and_performance{
-                    background-size: 40px;
-                }
-                &.fnb{
-                    background-size: 40px;
-                }
-                h4{
-                    font-size: 20px;
-                }
-                .button{
-                    width: 40px;
-                    height: 40px;
-                    right: 20px;
-                }
-            }
-        }
-    }
-}
-@media only screen and (max-width:767px){
-    .section_fnb{
-        padding-top: 60px;
-        .fnb_banner{
-            display: block;
-        }
-        .fnb_image{
-            width: 100%;
-        }
-        .fnb_info{
-            width: 100%;
-            .sub_title{
-                margin-bottom: 10px;
-            }
-            h3{
-                font-size: 36px;
-                line-height: normal;
-                margin-bottom: 10px;
-            }
-            .fnbi_box{
-                padding:30px 20px 200px;
-            }
-        }
-    }
-    .section_festival{
-        .container{
-            border:none;
-        }
-        .festival_box{
-            display: block;
-            padding: 0 20px;
-            margin-bottom: 30px;
-            border: none;
-            &::after{
-                content: '';
-                width: 100%;
-                height: 1px;
-                background: #000;
-                display: block;
-                margin: 30px auto 0;
-            }
-            &.reverse{
-                .box_text{
-                    padding-left: 60px;
-                    button{
-                        margin-bottom: 30px;
-                    }
-                }
-            }
-            .box_text{
-                width: 100%;
-                padding:0;
-                padding-left: 60px;
-                h3{
-                    font-size: 24px;
-                    line-height: normal;
-                    margin-bottom: 20px;
-                    span{
-                        width: 45px;
-                        height: 50px;
-                        left:-60px;
-                    }
-                }
-            }
-            .box_image{
-                width: 100%;
-                margin-bottom: 40px;
-            }
-        }
-    }
-    .more_experience{
-        padding-top: 80px;
-        .container{
-            padding: 0 20px;
-            h3{
-                font-size: 28px;
-            }
-            .me_box{
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 20px;
-                height: 180px;
-                &:last-child{
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
+  }
 }
