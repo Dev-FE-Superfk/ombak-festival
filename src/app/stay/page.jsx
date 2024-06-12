@@ -54,7 +54,11 @@ function Stay() {
         <div className='nav_title'>Stay</div>
         <div className='resorts_top'>
           <h3>{resorts.title}</h3>
-          <p>{resorts.subtitle}</p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: resorts.subtitle,
+            }}
+          ></p>
           <Image
             src={resorts.banner}
             alt={resorts.name}
