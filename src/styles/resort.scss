@@ -165,9 +165,6 @@
           &:first-child {
             margin-bottom: 12px;
           }
-          ul {
-            margin-bottom: 24px;
-          }
         }
       }
       h4 {
@@ -266,8 +263,16 @@
         padding-top: 0;
         .rbr_bottom {
           padding: 20px;
+          div {
+            p {
+              ul {
+                margin-bottom: 24px;
+              }
+            }
+          }
           .pkg_price {
             position: unset;
+            padding-right: 0px;
           }
           .button_box {
             position: unset;
