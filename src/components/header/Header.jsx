@@ -30,7 +30,6 @@ export default function Header() {
   };
 
   useEffect(() => {
-    console.log(isNavVisible, 'isNavVisible');
     if (isNavVisible) {
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
@@ -67,17 +66,17 @@ export default function Header() {
                 >
                   <div
                     className='nav_title'
-                    onMouseMove={() => !showSubNav && setShowSubNav(true)}
+                    // onMouseMove={() => !showSubNav && setShowSubNav(true)}
                   >
                     Experience
                   </div>
                   <div
                     className='sub_nav'
-                    style={{
-                      display: showSubNav ? 'block' : 'none',
-                    }}
-                    onMouseEnter={() => !showSubNav && setShowSubNav(true)}
-                    onMouseLeave={() => showSubNav && setShowSubNav(false)}
+                    // style={{
+                    //   display: showSubNav ? 'block' : 'none',
+                    // }}
+                    // onMouseEnter={() => !showSubNav && setShowSubNav(true)}
+                    // onMouseLeave={() => showSubNav && setShowSubNav(false)}
                   >
                     <div className='sn_container'>
                       <Link
