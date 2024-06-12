@@ -692,7 +692,7 @@ html {
       left: 0;
     }
     video {
-      height: 65vh;
+      height: calc(100vh - 300px);
       top: 299px;
     }
     .container {
@@ -853,7 +853,7 @@ html {
       left: 0;
     }
     video {
-      height: 65vh;
+      height: calc(100vh - 300px);
       top: 299px;
     }
     .container {
