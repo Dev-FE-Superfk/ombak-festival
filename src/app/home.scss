@@ -50,7 +50,6 @@ html {
   .mobile_text {
     color: #fff;
     margin-top: 9%;
-    margin-left: 3%;
     font-family: 'Roboto';
     font-weight: 500;
     ul {
@@ -652,6 +651,14 @@ html {
 @media only screen and (max-width: 1129px) {
   html {
     overflow-x: hidden;
+  }
+  .section_one {
+    .text {
+      margin-left: 40px;
+    }
+    .mobile_text {
+      margin-left: 40px;
+    }
   }
   .section_four {
     .container {
