@@ -72,10 +72,10 @@ function Info() {
       <div className="si_nav">
         <div className="container">
           <div className={`si_nav_box ${tag === "info" ? "active" : ""}`}>
-            <Link href="/info?tag=info">Getting Here</Link>
+            <Link scroll={false} href="/info?tag=info">Getting Here</Link>
           </div>
           <div className={`si_nav_box ${tag === "faq" ? "active" : ""}`}>
-            <Link href="/info?tag=faq">FAQs</Link>
+            <Link scroll={false} href="/info?tag=faq">FAQs</Link>
           </div>
         </div>
       </div>
