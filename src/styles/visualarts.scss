@@ -403,7 +403,7 @@
         margin-bottom: 10px;
       }
       .vai_box {
-        padding: 30px 20px 200px;
+        padding: 30px 0px 200px;
         p {
           font-size: 16px;
         }
@@ -469,11 +469,11 @@
         margin-right: 0;
         margin-bottom: 20px;
         height: 180px;
-        &:last-child {
-          margin-bottom: 0;
-        }
         h4 {
           font-size: 24px;
+        }
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }

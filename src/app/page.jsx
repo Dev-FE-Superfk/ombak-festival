@@ -236,7 +236,7 @@ export default function Home() {
         <div className='container'>
           <div className='box_left'>
             <p className='text_title'>Our Resorts</p>
-            <p>Book your ultimate weekend</p>
+            <p>Book your Ultimate Weekend</p>
             <Link href='/stay?tag=hard_rock_hotel'>
               <div className='button'>Explore</div>
             </Link>
@@ -364,7 +364,7 @@ export default function Home() {
             src={MemoriesCoverM}
             alt='Memories Cover'
           ></Image>
-          <h3>Get ready for an unforgettable weekend getaway!</h3>
+          <h3>Get ready for an unforgettable weekend getaway</h3>
           <div className='button'>
             <Link href='/stay?tag=hard_rock_hotel'>
               BOOK YOUR STAY PACKAGES NOW
