@@ -17,7 +17,7 @@
   .va_info {
     width: 45%;
     background: $green url('../assets/home/wave_yellow.png') no-repeat bottom
-      center / contain;
+      center / 100% 35%;
     font-family: 'Roboto';
     font-size: 16px;
     .vai_box {
@@ -278,7 +278,6 @@
     }
     .festival_box {
       padding: 0 40px;
-      margin-bottom: 30px;
       border: none;
       &::after {
         content: '';
@@ -286,7 +285,7 @@
         height: 1px;
         background: #000;
         display: block;
-        margin: 30px auto 0;
+        margin: 70px auto 0;
       }
       &.reverse {
         .box_text {
@@ -294,6 +293,9 @@
           padding-left: 80px;
           button {
             margin-bottom: 30px;
+          }
+          p {
+            font-size: 16px;
           }
         }
       }
@@ -304,6 +306,9 @@
           font-size: 30px;
           line-height: normal;
           margin-bottom: 20px;
+        }
+        p {
+          font-size: 16px;
         }
       }
     }
