@@ -1,61 +1,60 @@
-.section_terms{
-    padding: 120px 0;
-    background: #F0EBE6;
-    .container{
-        width: 100%;
-        max-width: 1130px;
-        margin: 0 auto;
-        position: relative;
-    }
-    h2{
-        font-size: 48px;
-        font-family: 'Antique Olive Std Black';
-        margin-bottom: 40px;
-    }
-    .terms_box{
-        width: 100%;
-        max-width: 840px;
-    }
-    p{
-        font-size: 16px;
+.section_terms {
+  padding: 166px 0;
+  background: #f0ebe6;
+  .container {
+    width: 100%;
+    max-width: 1130px;
+    margin: 0 auto;
+    position: relative;
+  }
+  h2 {
+    font-size: 48px;
+    font-family: 'Antique Olive Std Black';
+    margin-bottom: 40px;
+  }
+  .terms_box {
+    width: 100%;
+    max-width: 840px;
+  }
+  p {
+    font-size: 16px;
+    font-family: 'Roboto';
+    margin-bottom: 30px;
+  }
+  ul {
+    list-style: decimal;
+    li {
+      font-size: 16px;
+      font-family: 'Roboto';
+      margin-bottom: 20px;
+      span {
         font-family: 'Roboto';
-        margin-bottom: 30px;
-
+        font-size: 16px;
+        display: block;
+        margin-top: 10px;
+      }
     }
-    ul{
-        list-style: decimal;
-        li{
-            font-size: 16px;
-            font-family: 'Roboto';
-            margin-bottom: 20px;
-            span{
-                font-family: 'Roboto';
-                font-size: 16px;
-                display: block;
-                margin-top: 10px;
-            }
-        }
-        ol{
-            list-style: disc;
-            padding-left: 100px;
-            margin-top: 20px;
-        }
+    ol {
+      list-style: disc;
+      padding-left: 100px;
+      margin-top: 20px;
     }
+  }
 }
-@media only screen and (max-width:767px){
-    .section_terms{
-        padding: 100px 0;
-        .container{
-            padding: 0 20px;
-        }
-        h2{
-            font-size: 28px;
-        }
-        ul{
-            padding-left: 20px;
-            ol{
-                padding-left: 20px;
-            }
-        }
+@media only screen and (max-width: 767px) {
+  .section_terms {
+    padding: 112px 0;
+    .container {
+      padding: 0 20px;
     }
+    h2 {
+      font-size: 28px;
+    }
+    ul {
+      padding-left: 20px;
+      ol {
+        padding-left: 20px;
+      }
+    }
+  }
 }
