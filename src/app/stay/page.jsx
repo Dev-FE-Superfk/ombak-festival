@@ -72,6 +72,7 @@ function Stay() {
                   pathname: '/stay',
                   query: {tag: resort.tag},
                 }}
+                scroll={false}
                 passHref
               >
                 <div>
