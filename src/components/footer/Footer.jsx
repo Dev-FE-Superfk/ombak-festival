@@ -54,7 +54,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <p>Copyright 2024 Ombak Festival</p>
+          <p>© Copyright 2024 Ombak Festival</p>
         </div>
         <div className='footer_right'>
           <div className='fr_top'>
