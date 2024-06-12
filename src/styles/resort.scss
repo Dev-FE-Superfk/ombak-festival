@@ -171,6 +171,9 @@
           }
         }
       }
+      .price_button_wrapper {
+        height: 50px;
+      }
       h4 {
         font-size: 24px;
         font-family: 'Antique Olive Std Bold';
@@ -197,7 +200,7 @@
       }
       .button_box {
         position: absolute;
-        bottom: 20px;
+        bottom: 30px;
         right: 20px;
       }
       button {
