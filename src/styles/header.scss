@@ -175,7 +175,7 @@ nav {
     }
     .burger_menu_btn {
       display: block;
-      right: 20px;
+      right: 40px;
       background: url('../assets/main/burger_menu.png') no-repeat center / 18px;
       &.active {
         background: url('../assets/main/icon_close.png') no-repeat center / 30px;
@@ -366,6 +366,9 @@ nav {
                 padding-bottom: 43px;
                 margin-bottom: 20px;
                 height: 109px;
+                h3 {
+                  line-height: 16px;
+                }
                 &:nth-child(2n) {
                   margin-right: 0;
                 }
