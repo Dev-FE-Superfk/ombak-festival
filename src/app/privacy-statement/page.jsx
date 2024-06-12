@@ -1,15 +1,15 @@
-import "../../styles/privacy.scss";
+import '../../styles/privacy.scss';
 export default function Privacy() {
   return (
-    <div className="section_privacy">
-      <div className="container">
+    <div className='section_privacy'>
+      <div className='container'>
         <h2>Privacy Statement</h2>
-        <span className="updated">Updated as at January 2024</span>
-        <div className="sp_box">
+        <span className='updated'>Updated as at January 2024</span>
+        <div className='sp_box'>
           <h3>
             <span>1.</span>Introduction
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               This Privacy Statement sets out how Desaru Development Holdings
               One Sdn Bhd and/or its subsidiaries (collectively referred to as
@@ -26,11 +26,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
             <span>2.</span>Consent
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               Your consent to the terms of this Privacy Statement will be
               obtained when you make booking or purchase products and services
@@ -58,11 +58,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
             <span>3.</span>Defining Personal Information 
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               Personal information refers to any information which relates
               directly or indirectly to you. This includes any information that
@@ -74,11 +74,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
             <span>4.</span>Personal Information We Collect
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               We collect and maintain personal information that you have
               provided in our Sites or provided to us in any other way. You can
@@ -94,9 +94,8 @@ export default function Privacy() {
                 number), gender, nationality and race, preferred language; 
               </li>
               <li>
-                Personally identifiable information such as name, date of birth,
-                identification supporting documents (including NRIC or passport
-                number), gender, nationality and race, preferred language; 
+                Contact information such as address, phone numbers, fax number
+                and email address;
               </li>
               <li>
                 Payment information such as credit or debit card information and
@@ -116,11 +115,11 @@ export default function Privacy() {
             </ol>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
             <span>5.</span>When and how we collect your Personal Information?
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               We may collect personal information directly from you or from your
               authorised representatives (i.e. persons whom you have authorised,
@@ -170,11 +169,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
             <span>6.</span>How we use your Personal Information
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               We may collect and use personal information received from you or
               from third parties identified in this Privacy Statement, for the
@@ -196,9 +195,11 @@ export default function Privacy() {
                 choose to receive such communications;
               </li>
               <li>
-                Sending you marketing communications such as updates, news,
-                events and promotions about our products and services if you
-                choose to receive such communications;
+                Business development purposes such as business analytics to
+                produce data, reports and statistics which shall be anonymized
+                or aggregated in a manner that does not identify you as an
+                individual, quality assurance, customer surveys to improve our
+                existing and future products and services;
               </li>
               <li>
                 Compliance with the applicable legal and regulatory
@@ -217,11 +218,11 @@ export default function Privacy() {
             </ol>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
             <span>7.</span>Sharing of your Personal Information
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               In connection with your use of our Sites, products and services,
               we may share your personal information as follows:
@@ -258,13 +259,12 @@ export default function Privacy() {
                 purpose;
               </li>
               <li>
-                Trusted third party service providers who provide data
-                processing services for us. Our third party service providers
-                will only process information as needed to perform their
-                functions, based on our instructions and in compliance with any
-                other appropriate security and confidentiality measures. They
-                are not permitted to share or use the information for any other
-                purpose;
+                Our affiliated group of companies who have access to this
+                information with our permission and who need to know or have
+                access to this information in order for us to: (i) provide you
+                with products and services on a consistent basis; (ii) internal
+                audit or investigations; or (iii) as otherwise required or
+                permitted by applicable law;
               </li>
               <li>
                 Where required or permitted by law, we may disclose your
@@ -289,11 +289,11 @@ export default function Privacy() {
             </ol>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
             <span>8.</span>Marketing Communications
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               You can choose how you receive marketing communications from us.
               All marketing communications we send to you will provide you with
@@ -311,11 +311,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
             <span>9.</span>Protecting Your Personal Information
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               We maintain reasonable physical and electronic security measures
               to protect your personal information against accidental or
@@ -355,12 +355,12 @@ export default function Privacy() {
             </ol>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
-            <span className="left">10.</span>How long We Keep Your Personal
+            <span className='left'>10.</span>How long We Keep Your Personal
             Information
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               Whenever we collect or process your personal information, we will
               only keep it for as long as necessary to provide our Products
@@ -374,11 +374,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
-            <span className="left">11.</span>Your Rights
+            <span className='left'>11.</span>Your Rights
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               You may submit a request to withdraw your consent at any time by
               contacting us. However, if you choose not to provide certain
@@ -398,11 +398,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
-            <span className="left">12.</span>Online dealings with DH1’s Cookies
+            <span className='left'>12.</span>Online dealings with DH1’s Cookies
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               We collect information about your use of our Sites from cookies.
               Cookies are packets of information stored in your device which
@@ -417,11 +417,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
-            <span className="left">13.</span>Links to Third Party Websites
+            <span className='left'>13.</span>Links to Third Party Websites
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               We may provide links to other websites or platforms (including
               social messaging platforms such as WhatsApp, Facebook Messenger,
@@ -437,12 +437,12 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
-            <span className="left">14.</span>Transfer of your Personal
+            <span className='left'>14.</span>Transfer of your Personal
             Information outside Malaysia
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               We may transfer and store your personal information outside
               Malaysia in accordance with the terms and standards as set out in
@@ -455,11 +455,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
-            <span className="left">15.</span>Updates to our Privacy Statement 
+            <span className='left'>15.</span>Updates to our Privacy Statement 
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               We may revise and update this Privacy Statement from time to time
               and without notice to reflect changes in the law, new or
@@ -472,11 +472,11 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-        <div className="sp_box">
+        <div className='sp_box'>
           <h3>
-            <span className="left">16.</span>Contact Us
+            <span className='left'>16.</span>Contact Us
           </h3>
-          <div className="spp_box">
+          <div className='spp_box'>
             <p>
               If you have any enquiries about this Privacy Statement, our
               privacy practices or wish to exercise any of your rights as

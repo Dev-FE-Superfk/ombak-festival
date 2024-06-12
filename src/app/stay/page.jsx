@@ -87,7 +87,7 @@ function Stay() {
                     src={resort.logo}
                     alt={resort.name}
                     width={200}
-                    height={80}
+                    height={72}
                   ></Image>
                 </div>
               </Link>
