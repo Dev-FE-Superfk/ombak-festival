@@ -117,22 +117,22 @@ function Stay() {
                       }}
                     ></p>
                     <div className='pkg_price'>
-                      {tag !== 'one_and_only' && <span>Packages start from</span>}
+                      {tag !== 'one_and_only' && (
+                        <span>Packages start from</span>
+                      )}
                       {pkg.price}
                     </div>
                     <div className='button_box'>
-                      <button>
-                        <Link
-                          href={
-                            tag == 'one_and_only'
-                              ? `mailto:${pkg.link}`
-                              : pkg.link
-                          }
-                          target='_blank'
-                        >
-                          {pkg.name_button}
-                        </Link>
-                      </button>
+                      <Link
+                        href={
+                          tag == 'one_and_only'
+                            ? `mailto:${pkg.link}`
+                            : pkg.link
+                        }
+                        target='_blank'
+                      >
+                        <button>{pkg.name_button}</button>
+                      </Link>
                     </div>
                   </div>
                 ))}
