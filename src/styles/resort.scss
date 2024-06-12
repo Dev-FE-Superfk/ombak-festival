@@ -157,6 +157,16 @@
       font-family: 'Roboto';
       border: 1px solid #000;
       padding: 20px 20px 120px;
+      div {
+        h4 {
+          margin-bottom: 12px;
+        }
+        p {
+          &:first-child {
+            margin-bottom: 12px;
+          }
+        }
+      }
       h4 {
         font-size: 24px;
         font-family: 'Antique Olive Std Bold';
@@ -251,6 +261,15 @@
     .resorts_bottom {
       .rb_right {
         padding-top: 0;
+        .rbr_bottom {
+          padding: 20px;
+          .pkg_price {
+            position: unset;
+          }
+          .button_box {
+            position: unset;
+          }
+        }
       }
     }
     .faq_info {
@@ -325,6 +344,16 @@
       }
       .rbr_bottom {
         padding-bottom: 20px;
+        div {
+          h4 {
+            margin-bottom: 10px;
+          }
+          p {
+            &:first-child {
+              margin-bottom: 10px;
+            }
+          }
+        }
         .pkg_price {
           margin-top: 20px;
           position: static;
