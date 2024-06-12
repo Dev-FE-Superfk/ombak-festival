@@ -1,221 +1,228 @@
 @import '../styles/main.scss';
 
-.section_artist_detail{
-    padding:80px 0;
-    background: #F0EBE6;
-    .back_button{
-        padding: 45px 0 45px;
-        font-size: 16px;
-        a{
-            display: inline-block;
-            position: relative;
-            padding-left: 42px;
-            line-height: 32px;
-            &:before{
-                content: '';
-                width: 32px;
-                height: 32px;
-                display: block;
-                background: url('../assets/home/arrow_left_black.png') no-repeat center / 13px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                border-radius: 32px;
-                border: 1px solid #000;
-                transition: all 0.2s ease;
-            }
-            &:hover{
-                &:before{
-                    background: $green url('../assets/home/arrow_left_green.png') no-repeat center / 13px;
-                    border: none;
-                    transition: all 0.2s ease;
-                }
-            }
+.section_artist_detail {
+  padding: 80px 0;
+  background: #f0ebe6;
+  .back_button {
+    padding: 45px 0 45px;
+    font-size: 16px;
+    a {
+      display: inline-block;
+      position: relative;
+      padding-left: 42px;
+      line-height: 32px;
+      &:before {
+        content: '';
+        width: 32px;
+        height: 32px;
+        display: block;
+        background: url('../assets/home/arrow_left_black.png') no-repeat center /
+          13px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 32px;
+        border: 1px solid #000;
+        transition: all 0.2s ease;
+      }
+      &:hover {
+        &:before {
+          background: $green url('../assets/home/arrow_left_green.png')
+            no-repeat center / 13px;
+          border: none;
+          transition: all 0.2s ease;
+        }
+      }
     }
-    }
-    .container{
+  }
+  .container {
+    width: 100%;
+    max-width: 1130px;
+    margin: 0 auto;
+  }
+  .artist_detail {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #000;
+    padding-bottom: 60px;
+    .detail_left {
+      width: 100%;
+      max-width: 650px;
+      img {
         width: 100%;
-        max-width: 1130px;
-        margin: 0 auto;
+        display: block;
+      }
+      h3 {
+        display: none;
+      }
     }
-    .artist_detail{
-        display:flex;
+    .detail_right {
+      width: calc(100% - 650px);
+      padding: 0 0 0 30px;
+      h3 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        font-family: 'Antique Olive Std Black';
+      }
+      .artist_desc {
+        font-family: 'Roboto';
+        font-size: 16px;
+      }
+      .sosial_media {
+        display: flex;
         flex-wrap: wrap;
-        border-bottom: 1px solid #000;
-        padding-bottom: 60px;
-        .detail_left{
-            width:100%;
-            max-width: 650px;
-            img{
-                width: 100%;
-                display: block;
-            }
-            h3{
-                display: none;
-            }
+        margin-top: 20px;
+        .sm_box {
+          width: 30px;
+          height: 30px;
+          display: block;
+          margin-right: 20px;
         }
-        .detail_right{
-            width:calc(100% - 650px);
-            padding: 0 0 0 30px;
-            h3{
-                font-size: 48px;
-                margin-bottom: 20px;
-                font-family: 'Antique Olive Std Black';
-            }
-            .artist_desc{
-                font-family: 'Roboto';
-                font-size: 16px;
-            }
-            .sosial_media{
-                display: flex;
-                flex-wrap: wrap;
-                margin-top: 20px;
-                .sm_box{
-                    width: 30px;
-                    height: 30px;
-                    display: block;
-                    margin-right: 20px;
-                }
-                .sm_tiktok{
-                    width: 30px;
-                    height: 30px;
-                    background: url('../assets/main/icon-tiktok-black.png') no-repeat center / contain;
-                    text-indent: -9999px;
-                    display: block;
-                }
-                .sm_instagram{
-                    width: 30px;
-                    height: 30px;
-                    background: url('../assets/main/icon-instagram-black.png') no-repeat center / contain;
-                    text-indent: -9999px;
-                    display: block;
-                }
-                .sm_facebook{
-                    width: 30px;
-                    height: 30px;
-                    background: url('../assets/main/icon-facebook-black.png') no-repeat center / contain;
-                    text-indent: -9999px;
-                    display: block;
-                }
-                .sm_youtube{
-                    width: 30px;
-                    height: 30px;
-                    background: url('../assets/main/icon-youtube-black.png') no-repeat center / contain;
-                    text-indent: -9999px;
-                    display: block;
-                }
-            }
+        .sm_tiktok {
+          width: 30px;
+          height: 30px;
+          background: url('../assets/main/icon-tiktok-black.png') no-repeat
+            center / contain;
+          text-indent: -9999px;
+          display: block;
         }
+        .sm_instagram {
+          width: 30px;
+          height: 30px;
+          background: url('../assets/main/icon-instagram-black.png') no-repeat
+            center / contain;
+          text-indent: -9999px;
+          display: block;
+        }
+        .sm_facebook {
+          width: 30px;
+          height: 30px;
+          background: url('../assets/main/icon-facebook-black.png') no-repeat
+            center / contain;
+          text-indent: -9999px;
+          display: block;
+        }
+        .sm_youtube {
+          width: 30px;
+          height: 30px;
+          background: url('../assets/main/icon-youtube-black.png') no-repeat
+            center / contain;
+          text-indent: -9999px;
+          display: block;
+        }
+      }
     }
-    .discover_artist{
-        padding-top: 116px;
-        h2{
-            font-size: 40px;
-            font-family: 'Antique Olive Std Black';
-            margin-bottom: 20px;
-        }
-        .content{
-            display: flex;
-            flex-wrap: wrap;
-        }
+  }
+  .discover_artist {
+    padding-top: 116px;
+    h2 {
+      font-size: 40px;
+      font-family: 'Antique Olive Std Black';
+      margin-bottom: 20px;
     }
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 }
-@media only screen and (max-width:1129px){
-    .section_artist_detail{
-        .back_button{
-            padding-left: 40px;
-        }
-        .artist_detail{
-            display: block;
-            border: none;
-            padding-bottom: 0;
-            .detail_left{
-                width: 100%;
-                h3{
-                    display: block;
-                    font-size: 42px;
-                    margin-bottom: 20px;
-                    font-family: 'Antique Olive Std Black';
-                    padding-left: 40px;
-                    padding-right: 40px;
-                }
-            }
-            .detail_right{
-                width: 100%;
-                display: block;
-                padding: 40px;
-                &::after{
-                    content: '';
-                    width: 100%;
-                    height: 1px;
-                    background: #000;
-                    margin: 30px auto 0;
-                    display: block;
-                }
-                p{
-                    padding-right: 100px;
-                }
-                h3{
-                    display: none;
-                }
-            }
-        }
-        .discover_artist{
-            padding: 20px 40px;
-            h2{
-                font-size: 36px;
-                margin-bottom: 40px;
-            }
-        }
+@media only screen and (max-width: 1129px) {
+  .section_artist_detail {
+    .back_button {
+      padding-left: 40px;
     }
+    .artist_detail {
+      display: block;
+      border: none;
+      padding-bottom: 0;
+      .detail_left {
+        width: 100%;
+        h3 {
+          display: block;
+          font-size: 42px;
+          margin-bottom: 20px;
+          font-family: 'Antique Olive Std Black';
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }
+      .detail_right {
+        width: 100%;
+        display: block;
+        padding: 40px;
+        &::after {
+          content: '';
+          width: 100%;
+          height: 1px;
+          background: #000;
+          margin: 30px auto 0;
+          display: block;
+        }
+        p {
+          padding-right: 100px;
+        }
+        h3 {
+          display: none;
+        }
+      }
+    }
+    .discover_artist {
+      padding: 20px 40px;
+      h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+      }
+    }
+  }
 }
-@media only screen and (max-width:767px){
-    .section_artist_detail{
-        padding-top: 60px;
-        padding-bottom: 0;
-        .back_button{
-            padding: 40px 0px 40px 20px;
-        }
-        .artist_detail{
-            display: block;
-            border: none;
-            padding-bottom: 0;
-            .detail_left{
-                width: 100%;
-                h3{
-                    display: block;
-                    font-size: 36px;
-                    margin-bottom: 20px;
-                    font-family: 'Antique Olive Std Black';
-                    padding-left: 20px;
-                    padding-right: 20px;
-                }
-            }
-            .detail_right{
-                width: 100%;
-                display: block;
-                padding: 20px;
-                &::after{
-                    content: '';
-                    width: 100%;
-                    height: 1px;
-                    background: #000;
-                    margin: 30px auto 0;
-                    display: block;
-                }
-                p{
-                    padding-right: 0;
-                }
-                h3{
-                    display: none;
-                }
-            }
-        }
-        .discover_artist{
-            padding: 20px;
-            h2{
-                font-size: 28px;
-            }
-        }
+@media only screen and (max-width: 767px) {
+  .section_artist_detail {
+    padding-top: 60px;
+    padding-bottom: 0;
+    .back_button {
+      padding: 40px 0px 40px 20px;
     }
+    .artist_detail {
+      display: block;
+      border: none;
+      padding-bottom: 0;
+      .detail_left {
+        width: 100%;
+        h3 {
+          display: block;
+          font-size: 36px;
+          margin-bottom: 20px;
+          font-family: 'Antique Olive Std Black';
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      .detail_right {
+        width: 100%;
+        display: block;
+        padding: 20px;
+        &::after {
+          content: '';
+          width: 100%;
+          height: 1px;
+          background: #000;
+          margin: 30px auto 0;
+          display: block;
+        }
+        p {
+          padding-right: 0;
+        }
+        h3 {
+          display: none;
+        }
+      }
+    }
+    .discover_artist {
+      padding: 70px 20px 20px;
+      h2 {
+        font-size: 28px;
+        line-height: 34px;
+      }
+    }
+  }
 }
