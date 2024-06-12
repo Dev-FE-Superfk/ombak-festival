@@ -6,7 +6,7 @@
   .container {
     max-width: 1130px;
     margin: 0 auto;
-    
+
     .banner-image {
       width: 100%;
     }
@@ -29,8 +29,8 @@
       max-width: 780px;
     }
     p {
-      margin-top: 35px;
-      margin-bottom: 40px;
+      margin-top: 30px;
+      margin-bottom: 30px;
       font-family: 'Roboto';
       max-width: 780px;
       font-size: 20px;
@@ -171,6 +171,9 @@
           }
         }
       }
+      .price_button_wrapper {
+        height: 50px;
+      }
       h4 {
         font-size: 24px;
         font-family: 'Antique Olive Std Bold';
@@ -197,7 +200,7 @@
       }
       .button_box {
         position: absolute;
-        bottom: 20px;
+        bottom: 30px;
         right: 20px;
       }
       button {
