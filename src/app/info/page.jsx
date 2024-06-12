@@ -85,7 +85,6 @@ function Info() {
             {tag === "info" ? (
               <>
                 <h3>Getting Here</h3>
-                <p>We have many ways to get to the festival.</p>
               </>
             ) : tag === "faq" ? (
               <>
