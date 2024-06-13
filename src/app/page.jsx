@@ -167,7 +167,7 @@ export default function Home() {
               alt='Wave purple'
             ></Image>
             of music, art, food, <br />
-            and family-fun.
+            and family fun.
           </h2>
         </div>
         <div className='ornament_right'>
