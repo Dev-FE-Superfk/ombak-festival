@@ -35,6 +35,28 @@ export default function RootLayout({children}) {
         content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'
       />
       <link rel='icon' href='/favicon.ico' />
+      <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "mplxxqhpxr");
+              `,
+            }}
+          />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7KWRCJG83T"></script>
+      <script
+        dangerouslySetInnerHTML={{
+              __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7KWRCJG83T');
+        `,
+        }}
+      />
       <body>
         <Header />
         <section id='root'>{children}</section>
