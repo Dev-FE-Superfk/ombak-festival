@@ -327,11 +327,10 @@ html {
     .box_left {
       width: 40%;
       .text_title {
-        font-family: 'Antique Olive Std', sans-serif;
+        font-family: 'Antique Olive Std Black';
         font-size: 40px;
         line-height: 39.6px;
         margin-bottom: 20px;
-        font-weight: 900;
       }
       h3 {
         font-size: 40px;
@@ -741,6 +740,7 @@ html {
     }
   }
   .section_two {
+    height: 425px;
     h2 {
       font-size: 28px;
     }
@@ -760,9 +760,9 @@ html {
       top: 40px;
     }
     .ornament_4 {
-      width: 192px;
-      height: 192px;
-      top: 140px;
+      width: 240px;
+      height: 240px;
+      top: 100px;
     }
     .ornament_5 {
       width: 212px;
@@ -772,7 +772,7 @@ html {
     .ornament_6 {
       width: 122px;
       height: 122px;
-      top: 380px;
+      top: 290px;
     }
     .ornament_7 {
       width: 182px;
@@ -783,8 +783,11 @@ html {
     .ornament_8 {
       width: 182px;
       height: 182px;
-      top: 25px;
+      top: 0px;
       right: -65px;
+    }
+    .ornament_8a {
+      top: 60px;
     }
     .ornament_9 {
       top: 160px;
@@ -795,7 +798,12 @@ html {
     }
     .ornament_11 {
       width: 190px;
-      top: 340px;
+      top: 240px;
+    }
+    .ornament_12 {
+      width: 80px;
+      height: 235px;
+      top: 290px;
     }
   }
   .section_three {
@@ -814,11 +822,10 @@ html {
     .container {
       .box_left {
         .text_title {
-          font-family: 'Antique Olive Std', sans-serif;
-          font-size: 32px;
+          font-family: 'Antique Olive Std Black';
+          font-size: 28px;
           line-height: 39.6px;
           margin-bottom: 20px;
-          font-weight: 900;
         }
         p {
           font-size: 16px;
@@ -1042,11 +1049,10 @@ html {
         width: 100%;
         padding: 40px 80px 0 20px;
         .text_title {
-          font-family: 'Antique Olive Std', sans-serif;
-          font-size: 32px;
+          font-family: 'Antique Olive Std Black';
+          font-size: 28px;
           line-height: 39.6px;
           margin-bottom: 20px;
-          font-weight: 900;
         }
         p {
           font-size: 16px;
