@@ -147,7 +147,7 @@ export default function Home() {
               alt='Wave purple'
             ></Image>
             of <br />
-            music, art, food, and family-fun.
+            music, art, food, and family fun.
           </h2>
           <h2 className='mobile'>
             Malay for ocean wave, <br />
