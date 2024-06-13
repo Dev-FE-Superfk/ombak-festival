@@ -98,7 +98,11 @@ function Stay() {
           <div className='rb_right'>
             <div className='rbr_top'>
               <Link target='_blank' href={resorts.link}>
-                <h3>{resorts.name}</h3>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: resorts.name,
+                  }}
+                ></h3>
               </Link>
               <p
                 dangerouslySetInnerHTML={{
