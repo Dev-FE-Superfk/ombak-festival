@@ -106,7 +106,6 @@ export default function Home() {
           </div>
         </div>
         <Image src={ImageOmbak} alt='Ombak' className='desktop'></Image>
-        {/* <Image src={ImageOmbakMobile} alt="Ombak" className="mobile"></Image> */}
         <VideoPlayer src={VideoOmbak} type='video/mp4' />
         <div className='container'>
           <div className='text'>
@@ -124,9 +123,7 @@ export default function Home() {
         <div className='ornament_left'>
           <div className='ornament_1'></div>
           <div className='ornament_2'></div>
-          {/* <div className='ornament_3'></div> */}
           <div className='ornament_4'></div>
-          {/* <div className='ornament_5'></div> */}
           <div className='ornament_6'></div>
         </div>
         <div className='container'>
@@ -174,8 +171,6 @@ export default function Home() {
           <div className='ornament_7'></div>
           <div className='ornament_8'></div>
           <div className='ornament_8a'></div>
-          {/* <div className='ornament_9'></div> */}
-          {/* <div className='ornament_10'></div> */}
           <div className='ornament_11'></div>
           <div className='ornament_12'></div>
         </div>
@@ -317,40 +312,6 @@ export default function Home() {
         </div>
         <Image src={WaveGreenLong}></Image>
       </div>
-      {/* <div className="section_six">
-        <div className="container">
-          <div className="misc_box">
-            <h3>
-              Navigate The <br />
-              Festival
-            </h3>
-            <p>
-              Explore our festival grounds and discover where you can find our
-              partnering resorts
-            </p>
-            <div className="button">Explore</div>
-          </div>
-          <div className="misc_box">
-            <h3>
-              Plan Your <br />
-              Schedule
-            </h3>
-            <p>
-              View the full 3-day schedule to find out when and where your
-              favourite acts will be
-            </p>
-            <div className="button">Explore</div>
-          </div>
-          <div className="misc_box">
-            <h3>
-              Get Help & <br />
-              Infos
-            </h3>
-            <p>Find more information about Ombak Festival here</p>
-            <div className="button">Explore</div>
-          </div>
-        </div>
-      </div> */}
       <div className='section_seven'>
         <div className='container'>
           <Image
@@ -371,12 +332,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className="section_eight">
-        <div className="container">
-          <h3>Our festival partners</h3>
-          <PartnerSlider></PartnerSlider>
-        </div>
-      </div> */}
     </>
   );
 }
