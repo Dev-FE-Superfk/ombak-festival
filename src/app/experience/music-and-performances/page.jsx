@@ -73,7 +73,7 @@ export default function Experience() {
               index={index}
             ></ArtistCard>
           ))}
-          <div className='artist_amtc'>And more to come</div>
+          <div className='amtc'>And more to come</div>
         </div>
       </div>
       <div className='more_experience'>
