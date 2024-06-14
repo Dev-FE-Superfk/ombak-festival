@@ -289,7 +289,7 @@ export default function Home() {
                     >
                       <Image
                         src={artist.thumbnail}
-                        alt={artist.name}
+                        alt={artist.slug}
                         width={200}
                         height={200}
                       />
@@ -301,7 +301,7 @@ export default function Home() {
             </div>
           )}
           <Link href='../experience/music-and-performances'>
-            <div className='button'>See More</div>
+            <div className='button'>See</div>
           </Link>
         </div>
         <Image src={WaveGreenLong} alt='Ombak Wave Green'></Image>
