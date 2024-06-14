@@ -21,7 +21,7 @@ export default function Footer() {
     <footer>
       <div className='container'>
         <div className='footer_left'>
-          <Image className='logo' src={LogoOrange}></Image>
+          <Image className='logo' src={LogoOrange} alt='Ombak Festival 2024'></Image>
           <div className='sosmed'>
             <div className='sosmed_box'>
               <Link
@@ -107,37 +107,41 @@ export default function Footer() {
                   <Link
                     href='https://www.oneandonlyresorts.com/desaru-coast'
                     target='_blank'
+                    aria-label='one and only desaru coast'
                   >
-                    <Image src={Onenonly} className='oneonly_logo'></Image>
+                    <Image src={Onenonly} className='oneonly_logo' alt='One And Only Hotel'></Image>
                   </Link>
                 </li>
                 <li>
                   <Link
                     href='https://www.anantara.com/en/desaru-coast'
                     target='_blank'
+                    aria-label='anatara desaru coast'
                   >
-                    <Image src={Anantara} className='anantara_logo'></Image>
+                    <Image src={Anantara} className='anantara_logo' alt='Anantara Hotel'></Image>
                   </Link>
                 </li>
                 <li>
                   <Link
                     href='https://www.marriott.com/en-us/hotels/jhbwi-the-westin-desaru-coast-resort/overview/'
                     target='_blank'
+                    aria-label='the westin desaru coast'
                   >
-                    <Image src={TheWestin} className='thewestin_logo'></Image>
+                    <Image src={TheWestin} className='thewestin_logo' alt='The Westin Hotel'></Image>
                   </Link>
                 </li>
                 <li>
                   <Link
                     href='https://hotel.hardrock.com/desaru-coast/'
                     target='_blank'
+                    aria-label='Hardrock hotel desaru coast'
                   >
-                    <Image src={Hardrock} className='hardrock_logo'></Image>
+                    <Image src={Hardrock} className='hardrock_logo' alt='HardRock Hotel'></Image>
                   </Link>
                 </li>
                 <li>
-                  <Link href='https://www.elsclubmalaysia.com/' target='_blank'>
-                    <Image src={TheElsClub} className='theelsclub_logo'></Image>
+                  <Link href='https://www.elsclubmalaysia.com/' aria-label='The Els Club Malaysia' target='_blank'>
+                    <Image src={TheElsClub} className='theelsclub_logo' alt='The Els Club'></Image>
                   </Link>
                 </li>
                 <li>
@@ -145,6 +149,7 @@ export default function Footer() {
                   <Image
                     src={AdventureWaterpark}
                     className='adventure_waterpark_logo'
+                    alt='Adventure Waterpark'
                   ></Image>
                   {/* </Link> */}
                 </li>
