@@ -511,6 +511,18 @@ html {
     cursor: pointer;
     transition: all 0.2s ease;
     font-family: 'Antique Olive Std Black';
+    position: relative;
+    text-indent: -9999px;
+    &::before{
+      content: 'See More';
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-indent: 0;
+    }
     &:hover {
       background: $green;
       color: $darkgreen;
@@ -603,7 +615,7 @@ html {
       display: flex;
       justify-content: center;
       align-items: center;
-
+      position: relative;
       p {
         font-size: 16px;
         font-weight: 900;
