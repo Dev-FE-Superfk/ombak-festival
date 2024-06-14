@@ -301,7 +301,7 @@ export default function Home() {
             </div>
           )}
           <Link href='../experience/music-and-performances'>
-            <div className='button'>See More</div>
+            <div className='button'>See</div>
           </Link>
         </div>
         <Image src={WaveGreenLong} alt='Ombak Wave Green'></Image>
