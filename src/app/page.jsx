@@ -265,7 +265,7 @@ export default function Home() {
                     >
                       <Image
                         src={artist.thumbnail}
-                        alt={artist.name}
+                        alt={artist.slug}
                         width={200}
                         height={200}
                       />
@@ -304,7 +304,7 @@ export default function Home() {
             <div className='button'>See More</div>
           </Link>
         </div>
-        <Image src={WaveGreenLong}></Image>
+        <Image src={WaveGreenLong} alt='Ombak Wave Green'></Image>
       </div>
       <div className='section_seven'>
         <div className='container'>
