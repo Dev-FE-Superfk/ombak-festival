@@ -289,7 +289,7 @@ export default function Home() {
                     >
                       <Image
                         src={artist.thumbnail}
-                        alt={artist.name}
+                        alt={artist.slug}
                         width={200}
                         height={200}
                       />
