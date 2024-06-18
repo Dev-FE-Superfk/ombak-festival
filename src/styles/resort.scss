@@ -170,6 +170,9 @@
             margin-bottom: 12px;
           }
         }
+        strong{
+          font-weight: 900;
+        }
       }
       .price_button_wrapper {
         height: 50px;
@@ -181,6 +184,12 @@
       ul {
         list-style: disc;
         padding-left: 20px;
+        margin-bottom: 12px;
+      }
+      ol{
+        list-style: decimal;
+        padding-left: 20px;
+        margin-bottom: 12px;
       }
       .pkg_price {
         font-family: 'Roboto';
