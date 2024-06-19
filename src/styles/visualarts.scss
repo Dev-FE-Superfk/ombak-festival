@@ -98,8 +98,9 @@
     padding-bottom: 60px;
     margin-bottom: 60px;
     border-bottom: 1px solid #000;
+    flex-direction: row-reverse;
     &.reverse {
-      flex-direction: row-reverse;
+      flex-direction: unset;
       .box_text {
         padding-left: 100px;
         padding-right: 30px;
