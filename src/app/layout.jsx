@@ -40,11 +40,11 @@ export default function RootLayout({children}) {
       <meta property="og:description" content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"/>
       <meta property="og:url" content="https://www.ombakfestival.com/" />
       <meta property="og:site_name" content="Ombak Festival At Desaru Coast Johor" />
-      <meta property="og:image" content="https://www.ombakfestival.com/ombak_meta.png" />
+      <meta property="og:image" content="https://www.ombakfestival.com/ombak_meta.jpeg" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:description" content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"/>
       <meta name="twitter:title" content="Ombak Festival At Desaru Coast Johor" />
-      <meta name="twitter:image" content="https://www.ombakfestival.com/ombak_meta.png" />
+      <meta name="twitter:image" content="https://www.ombakfestival.com/ombak_meta.jpeg" />
       <script
             dangerouslySetInnerHTML={{
               __html: `
