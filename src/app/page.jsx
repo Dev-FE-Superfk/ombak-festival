@@ -90,8 +90,13 @@ export default function Home() {
   return (
     <>
       <div className='section_one'>
+        <Image src="https://ombakfestival.com/ombak_meta.jpeg" width={600} height={600} alt='Ombak Festival' style={{
+          position: 'absolute',
+          top: 0,
+          zIndex: -1,
+        }}></Image>
         <div className='mobile_text'>
-          <Image src={LogoYellow} alt='Ombak'></Image>
+          <Image src={LogoYellow} alt=''></Image>
           <div className='text_info'>
             13 - 15 September 2024
             <br />
@@ -99,11 +104,11 @@ export default function Home() {
             <span>The Ultimate Weekend</span>
           </div>
         </div>
-        <Image src={ImageOmbak} alt='Ombak' className='desktop'></Image>
+        <Image src={ImageOmbak} alt='' className='desktop'></Image>
         <VideoPlayer src={VideoOmbak} type='video/mp4' />
         <div className='container'>
           <div className='text'>
-            <Image src={LogoYellow} alt='Ombak'></Image>
+            <Image src={LogoYellow} alt=''></Image>
             <div className='text_info'>
               13 - 15 September 2024
               <br />
