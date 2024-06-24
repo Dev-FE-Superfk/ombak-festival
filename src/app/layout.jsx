@@ -27,13 +27,6 @@ export default function RootLayout({children}) {
         name='viewport'
         content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'
       />
-      <PageMap>
-        <DataObject type="thumbnail">
-          <Attribute name="src" value="https://www.ombakfestival.com/ombak_meta.jpeg"/>
-          <Attribute name="width" value="100"/>
-          <Attribute name="height" value="130"/>
-        </DataObject>
-      </PageMap>
       <meta name="thumbnail" content="https://www.ombakfestival.com/ombak_meta.jpeg" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
