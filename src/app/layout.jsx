@@ -2,7 +2,6 @@
 import './globals.css';
 import '../fonts/style.css';
 import {Header, Footer} from '@/components';
-import Head from 'next/head';
 
 // export const metadata = {
 //   title: "Ombak Festival At Desaru Coast Johor",
@@ -15,7 +14,6 @@ import Head from 'next/head';
 export default function RootLayout({children}) {
   return (
     <html lang='en'>
-      <Head>
       <title>Ombak Festival At Desaru Coast Johor</title>
       <meta
         name='description'
@@ -62,7 +60,6 @@ export default function RootLayout({children}) {
         `,
         }}
       />
-      </Head>
       <body>
         <Header />
         <section id='root'>{children}</section>
