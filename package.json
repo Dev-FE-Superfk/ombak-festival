@@ -10,9 +10,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@userback/widget": "^0.3.4",
+    "dompurify": "^3.1.5",
     "file-loader": "^6.2.0",
     "html-react-parser": "^5.1.10",
     "next": "14.2.3",
+    "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
     "react-slick": "^0.30.2",

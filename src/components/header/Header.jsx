@@ -148,7 +148,7 @@ export default function Header() {
               <li>
                 <Link
                   className={`${isPathActive('/info') ? 'active' : ''}`}
-                  href='/info?tag=info'
+                  href='/info?tag=general_info'
                   onClick={hideNav}
                 >
                   Info
