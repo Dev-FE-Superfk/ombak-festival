@@ -40,7 +40,6 @@ export default function MediaRoom(){
         <div className="section_media_room">
             <div className="container">
                 <h2>Media Room</h2>
-
                 <div dangerouslySetInnerHTML={{__html: mediaData }}></div>
             </div>
         </div>
