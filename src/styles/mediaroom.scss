@@ -23,3 +23,29 @@
         }
     }
 }
+@media only screen and (max-width:1129px){
+    .section_media_room{
+        padding: 100px 0;
+        .container{
+            padding:0 40px;
+            h3{
+                margin-top: 40px;
+            }
+        }
+    }
+}
+@media only screen and (max-width:767px){
+    .section_media_room{
+        padding: 80px 0;
+        .container{
+            padding:0 20px;
+            h2{
+                font-size: 34px;
+            }
+            h3{
+                margin-top: 40px;
+                font-size: 26px;
+            }
+        }
+    }
+}
