@@ -84,7 +84,7 @@ export default function ContactUs() {
             setIsSending(false);
             setTimeout(() => {
                 setSendSuccess(false);
-            }, 3000);
+            }, 15000);
         }
     };
 
@@ -140,7 +140,7 @@ export default function ContactUs() {
                                     <button type="submit" disabled={isSending}>
                                         {isSending ? 'Send' : 'Send'}
                                     </button>
-                                    {sendSuccess && <p className="success">Email sent successfully!</p>}
+                                    {sendSuccess && <p className="success">Thank you! Your message has been sent.</p>}
                                 </div>
                             </form>
                         </div>
@@ -151,11 +151,11 @@ export default function ContactUs() {
                 <div className="container">
                     <div className="sb_box">
                         <h3>Sponsorship</h3>
-                        <p>For sponsorship enquiries, please email at <br/><Link href="mailto:example@ombakfestival.com">example@ombakfestival.com</Link></p>
+                        <p>For sponsorship enquiries, please email at <br/><Link href="mailto:rozy.laxana@desarucoast.com">sponsorships@ombakfestival.com</Link></p>
                     </div>
                     <div className="sb_box">
                         <h3>Press</h3>
-                        <p>For press enquiries, please email at <br/><Link href="mailto:example@ombakfestival.com">example@ombakfestival.com</Link></p>
+                        <p>For press enquiries, please email at <br/><Link href="mailto:gowri.mohanadas@drh.com.my">media@ombakfestival.com</Link></p>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,6 @@
 .section_contact{
     padding: 160px 0 160px;
-    background: #F0EBE6;
-    background: url('../assets/main/long_wave.png') no-repeat bottom center / contain;
+    background: #F0EBE6 url('../assets/main/long_wave.png') no-repeat bottom center / contain;
     .container{
         width: 100%;
         max-width: 1130px;
@@ -54,6 +53,7 @@
                     height: 50px;
                     border: 1px solid #787673;
                     color: #787673;
+                    color:#000000;
                     background: #EAE7E5;
                     font-size: 16px;
                     font-family: 'Roboto';
@@ -61,6 +61,13 @@
                     padding:0 15px;
                     &.error{
                         border-color: #FF6255;
+                    }
+                    &::placeholder {
+                        color: #aaa;
+                        opacity: 1;
+                    }
+                    &:focus{
+                        border-color: #000;
                     }
                 }
                 textarea{
@@ -77,6 +84,13 @@
                     display: block;
                     &.error{
                         border-color: #FF6255;
+                    }
+                    &::placeholder {
+                        color: #aaa;
+                        opacity: 1;
+                    }
+                    &:focus{
+                        border-color: #000;
                     }
                 }
                 button{
@@ -159,6 +173,7 @@
 @media only screen and (max-width: 767px) {
     .section_contact{
         padding:100px 0 80px;
+        background: #F0EBE6 url('../assets/main/long_wave_mobile.png') no-repeat bottom center / contain;
         .container{
             padding:0 20px;
             h2{
@@ -186,13 +201,18 @@
     .section_bottom{
         padding:40px 0;
         .container{
-            padding:0 20px;
+            padding:0 0 0 20px;
         }
         .sb_box{
             width:100%;
             &:last-child{
                 padding-left: 0;
                 margin-top: 40px;
+            }
+            p{
+                br{
+                    display: none;
+                }
             }
         }
     }
