@@ -46,6 +46,7 @@
                     font-size: 20px;
                     font-family: 'Antique Olive Std Black';
                     line-height: 24px;
+                    margin-bottom: 6px;
                 }
                 input[type="email"],
                 input[type="text"]{
@@ -149,6 +150,9 @@
             font-family: 'Antique Olive Std Bold';
             margin-bottom: 20px;
         }
+        a{
+            text-decoration: underline;
+        }
     }
 }
 @media only screen and (max-width: 1129px) {
@@ -172,7 +176,7 @@
 }
 @media only screen and (max-width: 767px) {
     .section_contact{
-        padding:100px 0 80px;
+        padding:100px 0 135px;
         background: #F0EBE6 url('../assets/main/long_wave_mobile.png') no-repeat bottom center / contain;
         .container{
             padding:0 20px;
