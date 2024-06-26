@@ -96,7 +96,7 @@ export default function ContactUs() {
                     <div className="row_flex">
                         <div className="contact_left">
                             <h3>General Enquiries</h3>
-                            <p>Please visit our <Link href='/info?tag=faq'>FAQs</Link> page before sending us a body. And if you still don't find what you are looking for, feel free to send us a body!</p>
+                            <p>Please visit our <Link href='/info?tag=faq'>FAQs</Link> page before sending us a message. And if you still don't find what you are looking for, feel free to send us a message!</p>
                             <p>We will make every effort to respond within 5 business days, however, response times can be affected due to the high volume of emails we receive each day.</p>
                         </div>
                         <div className="contact_right">
