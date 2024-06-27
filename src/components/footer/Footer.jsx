@@ -75,7 +75,7 @@ export default function Footer() {
             <div className='fr_tablet'>
               <div className='fr_box'>
                 <div className='fr_nav'>Media Room</div>
-                <div className='fr_nav'><Link href='/partners'>Partners</Link></div>
+                <div className='fr_nav'>Partners</div>
               </div>
               <div className='fr_box'>
                 <div className='fr_nav'>
