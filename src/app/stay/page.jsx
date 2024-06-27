@@ -48,9 +48,10 @@ function Stay() {
     if (resorts && pkgPriceRef.current && typeof window !== 'undefined') {
       // Adding a slight delay to ensure all elements are rendered
       setTimeout(() => {
-        const topOffset = pkgPriceRef.current.getBoundingClientRect().top + window.pageYOffset - 100;
+        const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+        const topOffset = pkgPriceRef.current.getBoundingClientRect().top + window.pageYOffset - (isMobile ? 80 : 100);
         window.scrollTo({ top: topOffset, behavior: 'smooth' });
-      }, 1000); // Adjust the delay as needed
+      }, 500); // Adjust the delay as needed
     }
   }, [resorts]);
 
