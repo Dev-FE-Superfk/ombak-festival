@@ -220,7 +220,7 @@
         line-height: 19.2px;
         background: $orange;
         transition: all 0.2s ease;
-        font-family: 'Antique Olive Std Bold';
+        font-family: 'Antique Olive Std Black';
         text-transform: uppercase;
         color: #fff;
         &:hover {
@@ -250,6 +250,7 @@
       font-size: 16px;
       color: #fff;
       transition: all 0.2s ease;
+      font-family: 'Antique Olive Std Black';
       &:hover {
         background: $green;
         color: $darkgreen;
