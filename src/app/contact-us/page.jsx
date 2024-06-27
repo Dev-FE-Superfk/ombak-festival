@@ -150,8 +150,8 @@ export default function ContactUs() {
             <div className="section_bottom">
                 <div className="container">
                     <div className="sb_box">
-                        <h3>Sponsorship</h3>
-                        <p>For sponsorship enquiries, please email at <br/><Link href="mailto:rozy.laxana@desarucoast.com">sponsorships@ombakfestival.com</Link></p>
+                        <h3>Partnership</h3>
+                        <p>For partnership enquiries, please email at <br/><Link href="mailto:rozy.laxana@desarucoast.com">sponsorships@ombakfestival.com</Link></p>
                     </div>
                     <div className="sb_box">
                         <h3>Press</h3>
