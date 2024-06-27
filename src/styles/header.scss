@@ -167,6 +167,7 @@ nav {
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.2s ease;
+  font-family: 'Antique Olive Std Black';
   &:hover {
     background: rgb(181, 189, 35);
     color: rgb(6, 72, 78);
@@ -343,6 +344,7 @@ nav {
       height: calc(100vh - 60px);
       background: #f0ebe6;
       overflow: scroll;
+      padding-bottom: 40px;
       &.active {
         display: block;
       }
