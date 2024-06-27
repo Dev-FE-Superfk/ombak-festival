@@ -1,7 +1,6 @@
 'use client';
-import {Suspense} from 'react';
 import {useSearchParams} from 'next/navigation';
-import {useEffect, useState} from 'react';
+import { Suspense, useRef, useEffect, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import '../../styles/resort.scss';
@@ -13,6 +12,7 @@ function Stay() {
   const [resorts, setResorts] = useState(null);
   const [listresorts, setListresorts] = useState(null);
   const [packages, setPackages] = useState(null);
+  const pkgPriceRef = useRef(null);
 
   useEffect(() => {
     if (tag) {
@@ -44,6 +44,13 @@ function Stay() {
     }
   }, [tag]);
 
+  useEffect(() => {
+    if (resorts && pkgPriceRef.current && typeof window !== 'undefined') {
+      const topOffset = pkgPriceRef.current.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    }
+  }, [resorts]);
+
   if (!resorts) {
     return <div>Loading...</div>;
   }
@@ -69,7 +76,7 @@ function Stay() {
             height={400}
           />
         </div>
-        <div className='resorts_middle'>
+        <div className='resorts_middle' ref={pkgPriceRef}>
           <div className='rm_box'>
             {listresorts.map((resort) => (
               <Link
