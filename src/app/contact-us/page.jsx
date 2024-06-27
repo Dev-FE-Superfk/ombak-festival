@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import '../../styles/contact.scss';
-import { sanitize } from 'dompurify';
+import DOMPurify from 'dompurify';
 
 export default function ContactUs() {
     const [formData, setFormData] = useState({
@@ -16,8 +16,8 @@ export default function ContactUs() {
     
     const handleChange = (e) => {
         const { name, value } = e.target;
-        // Cleanse input to prevent script injection using DomPurify
-        const sanitizedValue = sanitize(value);
+        // Cleanse input to prevent script injection using DOMPurify
+        const sanitizedValue = DOMPurify.sanitize(value);
         setFormData({
             ...formData,
             [name]: sanitizedValue
@@ -62,9 +62,9 @@ export default function ContactUs() {
                     'x-api-key': 'bda07dc4-cab9-4148-ac9c-7a44c3c55wqr9'
                 },
                 body: JSON.stringify({
-                    name: sanitize(formData.name),
-                    email: sanitize(formData.email),
-                    body: sanitize(formData.body)
+                    name: DOMPurify.sanitize(formData.name),
+                    email: DOMPurify.sanitize(formData.email),
+                    body: DOMPurify.sanitize(formData.body)
                 })
             });
 
@@ -96,7 +96,7 @@ export default function ContactUs() {
                     <div className="row_flex">
                         <div className="contact_left">
                             <h3>General Enquiries</h3>
-                            <p>Please visit our <Link href='/info?tag=faq'>FAQs</Link> page before sending us a message. And if you still don't find what you are looking for, feel free to send us a message!</p>
+                            <p>Please visit our <Link href='/info?tag=faq'>FAQs</Link> page before sending us a message. And if you still don't find what you are looking for, feel free to send us a message!</p>
                             <p>We will make every effort to respond within 5 business days, however, response times can be affected due to the high volume of emails we receive each day.</p>
                         </div>
                         <div className="contact_right">
@@ -138,7 +138,7 @@ export default function ContactUs() {
                                 </div>
                                 <div className="form_box">
                                     <button type="submit" disabled={isSending}>
-                                        {isSending ? 'Send' : 'Send'}
+                                        {isSending ? 'Sending...' : 'Send'}
                                     </button>
                                     {sendSuccess && <p className="success">Thank you! Your message has been sent.</p>}
                                 </div>

@@ -40,3 +40,27 @@
         }
     }
 }
+@media only screen and (max-width:1129px){
+    .section_partners{
+        padding-top: 120px;
+        .container{
+            padding:0 40px;
+        }
+    }
+}
+@media only screen and (max-width:767px){
+    .section_partners{
+        padding-top: 100px;
+        padding-bottom: 60px;
+        .container{
+            padding:0 40px;
+        }
+        .partners_box{
+            width: calc((100% - 20px)/2);
+            margin-right: 20px;
+            &:nth-child(2n){
+                margin-right: 0;
+            }
+        }
+    }
+}
