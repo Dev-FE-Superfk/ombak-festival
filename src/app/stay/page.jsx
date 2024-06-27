@@ -46,8 +46,11 @@ function Stay() {
 
   useEffect(() => {
     if (resorts && pkgPriceRef.current && typeof window !== 'undefined') {
-      const topOffset = pkgPriceRef.current.getBoundingClientRect().top + window.pageYOffset - 100;
-      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      // Adding a slight delay to ensure all elements are rendered
+      setTimeout(() => {
+        const topOffset = pkgPriceRef.current.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      }, 1000); // Adjust the delay as needed
     }
   }, [resorts]);
 
