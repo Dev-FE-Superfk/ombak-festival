@@ -96,8 +96,8 @@ export default function ContactUs() {
                     <div className="row_flex">
                         <div className="contact_left">
                             <h3>General Enquiries</h3>
-                            <p>Please visit our <Link href='/info?tag=faq'>FAQs</Link> page before sending us a message. And if you still don't find what you are looking for, feel free to send us a message!</p>
-                            <p>We will make every effort to respond within 5 business days, however, response times can be affected due to the high volume of emails we receive each day.</p>
+                            <p>Our <Link href='/info?tag=faq'>FAQs</Link> and <Link href='/terms'>Terms & Conditions</Link> pages may already be able to answer some of your questions about ticketing, parking, facilities, and so much more!</p>
+                            <p>But if you still cannot find what you are looking for, drop us a message here and we will get back to you.</p>
                         </div>
                         <div className="contact_right">
                             <form onSubmit={handleSubmit}>
@@ -151,11 +151,11 @@ export default function ContactUs() {
                 <div className="container">
                     <div className="sb_box">
                         <h3>Partnership</h3>
-                        <p>For partnership enquiries, please email at <br/><Link href="mailto:arni.bashir@drh.com.my">partnership@ombakfestival.com</Link></p>
+                        <p>For partnership enquiries, please email at <br/><Link href="mailto:arni.bashir@drh.com.my?subject=(Ombak Festival) Partnership Enquiries">partnership@ombakfestival.com</Link></p>
                     </div>
                     <div className="sb_box">
                         <h3>Press</h3>
-                        <p>For press enquiries, please email at <br/><Link href="mailto:gowri.mohanadas@drh.com.my">media@ombakfestival.com</Link></p>
+                        <p>For press enquiries, please email at <br/><Link href="mailto:gowri.mohanadas@drh.com.my?subject=(Ombak Festival) Press Enquiries">media@ombakfestival.com</Link></p>
                     </div>
                 </div>
             </div>
