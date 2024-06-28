@@ -126,7 +126,7 @@ export default function ContactUs() {
                                     {errors.email && <p className="error">{errors.email}</p>}
                                 </div>
                                 <div className="form_box">
-                                    <span>What can we help you?</span>
+                                    <span>How can we help you?</span>
                                     <textarea
                                         name="body"
                                         placeholder='Write here...'

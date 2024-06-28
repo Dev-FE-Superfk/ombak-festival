@@ -1,5 +1,5 @@
 'use client';
-import {useSearchParams} from 'next/navigation';
+import {useSearchParams, useRouter} from 'next/navigation';
 import { Suspense, useRef, useEffect, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,12 +7,20 @@ import '../../styles/resort.scss';
 
 function Stay() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const tag = searchParams.get('tag'); // Mengakses query parameter 'tag'
+  const hasPackageParam = searchParams.get('package') !== null;
 
   const [resorts, setResorts] = useState(null);
   const [listresorts, setListresorts] = useState(null);
   const [packages, setPackages] = useState(null);
   const pkgPriceRef = useRef(null);
+
+  useEffect(() => {
+    if (!tag) {
+      router.replace('/stay?tag=hard_rock_hotel');
+    }
+  }, [tag, router]);
 
   useEffect(() => {
     if (tag) {
@@ -45,7 +53,7 @@ function Stay() {
   }, [tag]);
 
   useEffect(() => {
-    if (resorts && pkgPriceRef.current && typeof window !== 'undefined') {
+    if (resorts && pkgPriceRef.current && typeof window !== 'undefined' && hasPackageParam) {
       // Adding a slight delay to ensure all elements are rendered
       setTimeout(() => {
         const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
@@ -53,7 +61,7 @@ function Stay() {
         window.scrollTo({ top: topOffset, behavior: 'smooth' });
       }, 500); // Adjust the delay as needed
     }
-  }, [resorts]);
+  }, [resorts, hasPackageParam]);
 
   if (!resorts) {
     return <div>Loading...</div>;
