@@ -1,6 +1,6 @@
 'use client';
 import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,12 +8,19 @@ import '../../styles/info.scss';
 
 function Info() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const tag = searchParams.get('tag'); // Mengakses query parameter 'tag'
 
   const [details, setDetails] = useState(null);
   const [error, setError] = useState(null);
   const [visibleItems, setVisibleItems] = useState({});
   const classes = ['wave1', 'wave2', 'wave3', 'wave4'];
+
+  useEffect(() => {
+    if (!tag) {
+      router.replace('/info?tag=general_info');
+    }
+  }, [tag, router]);
 
   useEffect(() => {
     setVisibleItems({});
