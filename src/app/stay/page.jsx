@@ -164,14 +164,17 @@ function Stay() {
           </div>
           <div className='rb_left'>
             <div className='big_image'>
-              <Image src={resorts.image1} width={200} height={100}></Image>
+              <img src={resorts.image1} alt={resorts.name} />
+              {/* <Image src={resorts.image1} width={200} height={100}></Image> */}
             </div>
             <div className='small_image'>
               <div className='si_box'>
-                <Image src={resorts.image2} width={200} height={100}></Image>
+              <img src={resorts.image2} alt={resorts.name} />
+                {/* <Image src={resorts.image2} width={200} height={100}></Image> */}
               </div>
               <div className='si_box'>
-                <Image src={resorts.image3} width={200} height={100}></Image>
+              <img src={resorts.image3} alt={resorts.name} />
+                {/* <Image src={resorts.image3} width={200} height={100}></Image> */}
               </div>
             </div>
           </div>
