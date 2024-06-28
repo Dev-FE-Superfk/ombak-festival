@@ -20,8 +20,30 @@ const nextConfig = {
     return config;
     },
     images: {
-        domains: ['cms-api-ombak.reviewstagepro.com', 'cms-api.ombakfestival.com', 'ombakfestival.com', 'www.ombakfestival.com'], // Tambahkan domain di sini
-    },
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'cms-api-ombak.reviewstagepro.com',
+            port: '',
+            pathname: '/**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'cms-api.ombakfestival.com',
+            port: '',
+            pathname: '/**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'ombakfestival.com',
+            port: '',
+            pathname: '/**',
+          },
+        ],
+      },
+    // images: {
+    //     domains: ['cms-api-ombak.reviewstagepro.com', 'cms-api.ombakfestival.com', 'ombakfestival.com', 'www.ombakfestival.com'], // Tambahkan domain di sini
+    // },
 };
 
 export default nextConfig;
