@@ -2,32 +2,8 @@
 import './globals.css';
 import '../fonts/style.css';
 import {Header, Footer} from '@/components';
-import { useEffect } from 'react';
-import Userback from '@userback/widget';
-Userback('P-594QMpIk2nw42M7qspN1NIqAy').then((ub) => {
-  // identify your logged-in users (optional)
-  ub.identify("123456", {
-    name: "someone",
-    email: "someone@example.com"
-  });
-});
-
-// export const metadata = {
-//   title: "Ombak Festival At Desaru Coast Johor",
-//   description:
-//     "A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now.",
-//   keywords:
-//     "Family friendly activities, Music festival, Music festival in Johor, Arts and Crafts, Beach festival, Weekend getaway ideas, Events for family, Malaysia festivals, Upcoming concerts 2024, Resort activities",
-// };
 
 export default function RootLayout({children}) {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-        import('@userback/widget').then(({ default: UserbackWidgetLoader }) => {
-            UserbackWidgetLoader();
-        });
-    }
-}, []);
   return (
     <html lang='en'>
       <title>Ombak Festival At Desaru Coast Johor</title>
@@ -58,7 +34,7 @@ export default function RootLayout({children}) {
       <meta name="twitter:description" content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"/>
       <meta name="twitter:title" content="Ombak Festival At Desaru Coast Johor" />
       <meta name="twitter:image" content="https://www.ombakfestival.com/ombak_meta.jpeg" />
-      {/* <script
+      <script
             dangerouslySetInnerHTML={{
               __html: `
                 (function(c,l,a,r,i,t,y){
@@ -79,7 +55,7 @@ export default function RootLayout({children}) {
         gtag('config', 'G-7KWRCJG83T');
         `,
         }}
-      /> */}
+      />
       <body>
         <Header />
         <section id='root'>{children}</section>
