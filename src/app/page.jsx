@@ -25,7 +25,7 @@ import {
   MemoriesCoverM,
 } from '@/assets';
 import {useEffect, useState} from 'react';
-import {VideoPlayer} from '@/components';
+import {VideoPlayer, PartnerSlider} from '@/components';
 import {VideoOmbak} from '../../public/videos';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -312,6 +312,46 @@ export default function Home() {
         </div>
         <Image src={WaveGreenLong} alt='Ombak Wave Green'></Image>
       </div>
+      <div className="section_six">
+        <div className="container">
+          <div className="misc_box">
+            <Link href='/festival-map'>
+            <h3>
+              Navigate The <br />
+              Festival
+            </h3>
+            <p>
+              Explore our festival grounds and discover where you can find our
+              partnering resorts
+            </p>
+            <div className="button">Explore</div>
+            </Link>
+          </div>
+          <div className="misc_box">
+          <Link href='/schedule'>
+            <h3>
+              Plan Your <br />
+              Schedule
+            </h3>
+            <p>
+              View the full 3-day schedule to find out when and where your
+              favourite acts will be
+            </p>
+            <div className="button">Explore</div>
+            </Link>
+          </div>
+          <div className="misc_box">
+          <Link href='/info?tag=general_info'>
+            <h3>
+              Get Help & <br />
+              Infos
+            </h3>
+            <p>Find more information about Ombak Festival here</p>
+            <div className="button">Explore</div>
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className='section_seven'>
         <div className='container'>
           <Image
@@ -330,6 +370,12 @@ export default function Home() {
               <p>BOOK YOUR STAY PACKAGES NOW</p>
             </Link>
           </div>
+        </div>
+      </div>
+      <div className="section_eight">
+        <div className="container">
+          <h3>Our festival partners</h3>
+          <PartnerSlider></PartnerSlider>
         </div>
       </div>
     </>

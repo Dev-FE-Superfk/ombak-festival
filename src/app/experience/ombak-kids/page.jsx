@@ -82,6 +82,7 @@ export default function OmbakKids() {
                       >
                         {contentData.items && contentData.items.length > 0 && (
                           <div className='festival_item_content'>
+                            <Link href={`/experience/ombak-kids/${contentData.items[0].v_page_element_slug}`}>
                             <div
                               className={`festival_box ${
                                 contentData.v_page_element_alignment.startsWith(
@@ -132,6 +133,7 @@ export default function OmbakKids() {
                                 <div className='amtc'>And more to come</div>
                               )}
                             </div>
+                            </Link>
                           </div>
                         )}
                       </div>

@@ -8,3 +8,7 @@ export { default as IconYoutube } from './icon-youtube.png';
 export { default as IconTiktok } from './icon-tiktok.png';
 export { default as LogoDesaru } from './desaru_coast_logo.png';
 export { default as LogoDRH } from './drh_logo.png';
+export { default as IconFnB } from './icon_fandb.png';
+export { default as IconParking } from './icon_parking.png';
+export { default as IconMedic } from './icon_medic.png';
+export { default as IconWashroom } from './icon_washroom.png';
