@@ -532,7 +532,7 @@ html {
 }
 .section_six {
   background: $yellow;
-  padding: 60px 0 100px;
+  padding: 60px 0 60px;
   .container {
     max-width: 1130px;
     width: 100%;
@@ -544,11 +544,20 @@ html {
   .misc_box {
     width: calc((100% - 60px) / 3);
     margin-right: 30px;
-    padding-top: 25px;
+    padding-top: 40px;
     padding-left: 15px;
     border-top: 1px solid #000;
     position: relative;
     padding-right: 60px;
+    padding-bottom: 40px;
+    &:hover{
+      background: $orange;
+      color:#fff;
+      .button{
+        border-color:#fff;
+        background: url('../assets/home/arrow_white.png') no-repeat center / 27px;
+      }
+    }
     h3 {
       font-size: 32px;
       line-height: 42px;

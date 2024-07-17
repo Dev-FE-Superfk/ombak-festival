@@ -1,0 +1,425 @@
+@import './main.scss';
+
+.section_get_ticktes {
+  padding-top: 80px;
+  .sgt_top {
+    width: 100%;
+    background: $green url('../assets/main/get_ticket_wave.png') no-repeat bottom right / contain;
+    color: #000;
+    .container {
+      height: 200px;
+      max-width: 1130px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      h3 {
+        font-size: 58px;
+        font-family: 'Antique Olive Std Black';
+      }
+    }
+  }
+  .sgt_nav {
+    width: 100%;
+    background: #fff;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    .container {
+      max-width: 1130px;
+      margin: 0 auto;
+      display: flex;
+    }
+    .sgt_nav_box {
+        margin-right: 30px;
+        padding: 20px 0;
+        display: block;
+        &.active {
+            padding-bottom: 15px;
+            border-bottom: 5px solid $orange;
+        }
+    }
+  }
+  .info_middle {
+    background: #f0ebe6;
+    padding: 40px 0;
+    .container {
+      max-width: 1130px;
+      margin: 0 auto;
+    }
+    .title_box {
+      padding-top: 20px;
+      margin-bottom: 20px;
+      h3 {
+        font-size: 32px;
+        font-family: 'Antique Olive Std Black';
+        margin-bottom: 20px;
+        }
+      p {
+        font-size: 16px;
+        font-family: 'Roboto';
+      }
+    }
+    .general_admission{
+        .ga_flex{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .ga_box{
+            width: calc((100% - 20px)/2);
+            background: $darkgreen url('../assets/main/ga_wave.png') no-repeat top right / 50px;
+            color:#fff;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 27px 20px;
+            font-family: 'Roboto';
+            &:nth-child(2n){
+                margin-right: 0;
+            }
+            h3{
+                font-family: 'Antique Olive Std Bold';
+                font-size: 24px;
+                display: block;
+                margin-bottom: 20px;
+                line-height: normal;
+                padding-right: 50px;
+            }
+            ul{
+                list-style: disc;
+                padding-left: 20px;
+                margin-bottom: 20px;
+            }
+            strong{
+                font-weight: bold;
+                color:#FFE17F;
+            }
+            .ga_price{
+                span{
+                    font-size: 28px;
+                    line-height: 45px;
+                    font-weight: 500;
+                    font-family: 'Roboto';
+                    display: block;
+                    float: left;
+                }
+                button{
+                    min-width: 125px;
+                    height: 45px;
+                    line-height: 45px;
+                    text-align: center;
+                    border-radius: 45px;
+                    background: $orange;
+                    font-family: 'Antique Olive Std Black';
+                    float: right;
+                }
+            }
+        }
+    }
+    .hotel_packages{
+        padding-top: 100px;
+        .hp_box{
+            .hp_flex{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                border: 1px solid #000;
+                margin-bottom: 20px;
+            }
+            .hp_image{
+                width: calc((100% - 20px)/2);
+                margin-right: 20px;
+            }
+            .hp_info{
+                width: calc((100% - 20px)/2);
+                font-family: 'Roboto';
+                font-size: 16px;
+                h4{
+                    margin-bottom: 20px;
+                    font-size: 24px;
+                    font-family: 'Antique Olive Std Bold';
+                }
+                ul{
+                    list-style: disc;
+                    padding-left: 20px;
+                    margin-bottom: 20px;
+                }
+                .hp_price{
+                    &::after{
+                        content: '';
+                        display: block;
+                        clear: both;   
+                    }
+                    .price_text{
+                        float: left;
+                        span{
+                            font-size: 28px;
+                            line-height: 45px;
+                            font-weight: 500;
+                            font-family: 'Roboto';
+                        }
+                    }
+                    button{
+                        min-width: 125px;
+                        padding: 0 20px;
+                        height: 45px;
+                        line-height: 45px;
+                        text-align: center;
+                        border-radius: 45px;
+                        background: $orange;
+                        font-family: 'Antique Olive Std Black';
+                        float: right;
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+    .addons{
+        padding-top: 100px;
+        .title_box{
+            font-family: 'Roboto';
+            margin-bottom: 30px;
+            strong{
+                font-weight: bold;
+            }
+            h3{
+                margin-bottom: 0;
+                line-height: normal;
+            }
+        }
+        .addon_box{
+            width: calc((100% - 40px)/3);
+            margin-right: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 70px;
+            &:nth-child(3n){
+                margin-right: 0;
+            }
+            .addon_info{
+                padding: 25px 20px 20px;
+                .ai_box{
+                    height: 130px;
+                }
+                h4{
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                    line-height: normal;
+                }
+                span{
+                    font-size: 20px;
+                    font-weight: 500;
+                    font-family: 'Roboto';
+                }
+                button{
+                    min-width: 125px;
+                    width: 100%;
+                    padding: 0 20px;
+                    height: 45px;
+                    line-height: 45px;
+                    text-align: center;
+                    border-radius: 45px;
+                    background: $orange;
+                    font-family: 'Antique Olive Std Black';
+                    color:#fff;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+                .view_btn{
+                    line-height: 45px;
+                    font-family: 'Antique Olive Std Roman';
+                    display: block;
+                    text-align: center;
+                    font-size: 16px;
+                    text-decoration: underline;
+                }
+            }
+            .addon_image{
+                width: 100%;
+                img{
+                    width: 100%;
+                    display: block;
+                    height: auto;
+                }
+            }
+            &.ombakkids{
+                background: $blue url('../assets/main/modal_wave_green.png') no-repeat bottom left / contain;
+            }
+        }
+    }
+  }
+}
+@media only screen and (max-width: 1129px) {
+  .section_get_ticktes {
+    padding-top: 60px;
+    .sgt_top {
+      background-size: 220px;
+      .container {
+        height: 160px;
+        padding-left: 40px;
+        padding-right: 40px;
+        h3 {
+          font-size: 34px;
+        }
+      }
+    }
+    .sgt_nav {
+      top:60px;
+      .container {
+        padding: 0 40px;
+        .sgt_nav_box {
+          &.active {
+            a {
+              padding-bottom: 13px;
+            }
+          }
+        }
+        a {
+          padding: 18px 0;
+        }
+      }
+    }
+    .info_middle {
+      .title_box {
+        padding-top: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        border: none;
+        padding-bottom: 0;
+        h3 {
+          font-size: 28px;
+          margin: 0;
+          padding: 0 0 25px;
+          &.no_border{
+            padding-bottom: 10px;
+          }
+        }
+      }
+      .info_box {
+        padding-left: 40px;
+        padding-right: 40px;
+        border: none;
+        &:after {
+          content: '';
+          width: 100%;
+          height: 1px;
+          display: block;
+          background: #000;
+          margin: 0 auto;
+        }
+      }
+      .info_title {
+        font-size: 24px;
+        padding-right: 57px;
+        .toggle_btn {
+          width: 42px;
+          height: 42px;
+        }
+      }
+      .info_answer {
+        table {
+          width: 100% !important;
+          border: 1.5px solid #000;
+          &:first-child {
+            tr {
+              td {
+                padding: 14px 12px;
+              }
+            }
+          }
+          tr {
+            border: 1.5px solid #000;
+
+            td {
+              border: 1.5px solid #000;
+              padding: 20px 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .section_get_ticktes{
+    .content_item{
+      .item_info{
+        h4{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .section_get_ticktes {
+    padding-top: 60px;
+    .sgt_top {
+      background-position: bottom right -75px;
+      background-size: 200px;
+      .container {
+        height: 150px;
+        padding-left: 20px;
+        h3 {
+          font-size: 36px;
+        }
+      }
+    }
+    .sgt_nav {
+      top:60px;
+      .container {
+        padding: 0 20px;
+        .sgt_nav_box {
+          &.active {
+            a {
+              padding-bottom: 13px;
+            }
+          }
+        }
+        a {
+          padding: 18px 0;
+        }
+      }
+    }
+    .info_middle {
+      .title_box {
+        padding-top: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: none;
+        padding-bottom: 0;
+        h3 {
+          font-size: 28px;
+          margin: 0;
+          padding: 0 0 25px;
+          &.no_border{
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  .general_info_content{
+    .info_section{
+      padding:0 20px;
+    }
+  }
+  .section_get_ticktes{
+    .faq_info{
+      margin-top: 60px;
+      h4{
+        font-size: 24px;
+      }
+    }
+    .content_item{
+      .item{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 48px;
+      }
+      .item_info{
+        h4{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

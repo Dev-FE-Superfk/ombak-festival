@@ -67,6 +67,10 @@
       .artist_desc {
         font-family: 'Roboto';
         font-size: 16px;
+        a{
+          color: $orange;
+          text-decoration: underline;
+        }
       }
       .sosial_media {
         display: flex;
@@ -123,6 +127,56 @@
     .content {
       display: flex;
       flex-wrap: wrap;
+    }
+    .discover_box {
+      width: calc((100% - 50px) / 3);
+      margin-right: 25px;
+      margin-bottom: 40px;
+      &:last-child{
+        margin-right: 0;
+      }
+      &:nth-child(1){
+        .discover_image{
+          mask-image: url('../assets/main/new-Mask-group5.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+          mask-size: cover;
+          -webkit-mask-image: url('../assets/main/new-Mask-group5.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+          -webkit-mask-size: cover;
+        }
+      }
+      &:nth-child(2){
+        .discover_image{
+          mask-image: url('../assets/main/new-Mask-group6.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+          mask-size: cover;
+          -webkit-mask-image: url('../assets/main/new-Mask-group6.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+          -webkit-mask-size: cover;
+        }
+      }
+      &:nth-child(3){
+        .discover_image{
+          mask-image: url('../assets/main/new-Mask-group7.png'); /* Ganti dengan path ke file PNG yang digunakan sebagai mask */
+          mask-size: cover;
+          -webkit-mask-image: url('../assets/main/new-Mask-group7.png'); /* Untuk kompatibilitas dengan browser WebKit seperti Safari */
+          -webkit-mask-size: cover;
+        }
+      }
+      .discover_image {
+        width: 100%;
+        height: 285px;
+        display: block;
+        margin-bottom: 25px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+            transition: all 0.2s ease;
+        }
+      }
+      .discover_info {
+        font-size: 32px;
+        font-family: 'Antique Olive Std Bold';
+        text-align: center;
+      }
     }
   }
 }

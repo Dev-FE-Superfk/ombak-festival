@@ -1,0 +1,199 @@
+.filter_map{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .fm_box{
+        border: 1px solid #000;
+        height: 56px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        min-width: 75px;
+        justify-content: center;
+        &:hover,
+        &.active{
+            background: #06484E;
+            color: #fff;
+        }
+        img{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+}
+.map_image{
+    width: 100%;
+    position: relative;
+    .map_img{
+        width: 100%;
+        display: block;
+    }
+    .pin_image{
+        position: absolute;
+        top: -43px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 35px;
+        height: 43px;
+        display: block;
+        &.venue{
+            top: -54px;
+            width: 85px;
+            height: 54px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    }
+    .pin_modal{
+        width: 225px;
+        padding: 15px;
+        background: #FFFFFF;
+        position: absolute;
+        top: calc(50% - 21.5px);
+        left: 30px;
+        transform: translateY(-50%);
+        z-index: 10;
+        h4{
+            font-size: 20px;
+        }
+        p{
+            font-size: 14px;
+            font-family: 'Roboto';
+        }
+        .img_detail{
+            margin-top: 20px;
+        }
+        &.parking_modal{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_blue.png') no-repeat bottom left / contain;
+            padding-bottom: 35px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 34px;
+                height: 34px;
+                display: block;
+                background: url('../assets/main/icon_parking.png') no-repeat center / contain;
+                position: absolute;
+                top: -17px;
+                left: 15px;
+            }
+        }
+        &.washroom_modal{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_green.png') no-repeat bottom left / contain;
+            padding-bottom: 35px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 34px;
+                height: 34px;
+                display: block;
+                background: url('../assets/main/icon_washroom.png') no-repeat center / contain;
+                position: absolute;
+                top: -17px;
+                left: 15px;
+            }
+        }
+        &.medic_modal{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_orange.png') no-repeat bottom left / contain;
+            padding-bottom: 35px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 34px;
+                height: 34px;
+                display: block;
+                background: url('../assets/main/icon_medic.png') no-repeat center / contain;
+                position: absolute;
+                top: -17px;
+                left: 15px;
+            }
+        }
+        &.fandb_modal{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_yellow.png') no-repeat bottom left / contain;
+            padding-bottom: 35px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 34px;
+                height: 34px;
+                display: block;
+                background: url('../assets/main/icon_fandb.png') no-repeat center / contain;
+                position: absolute;
+                top: -17px;
+                left: 15px;
+            }
+        }
+        &.venue_modal{
+            background: #fff url('../assets/main/modal_wave_darkgreen.png') no-repeat bottom left / contain;
+            padding-bottom: 35px;
+            top: calc(50% - 27px);
+            left: 50px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+        }
+    }
+}
