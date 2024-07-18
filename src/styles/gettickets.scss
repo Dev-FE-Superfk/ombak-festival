@@ -82,6 +82,10 @@
                 margin-bottom: 20px;
                 line-height: normal;
                 padding-right: 50px;
+                span{
+                  font-size: 16px;
+                  font-family: 'Antique Olive Std Roman';
+                }
             }
             ul{
                 list-style: disc;
@@ -115,7 +119,6 @@
         }
     }
     .hotel_packages{
-        padding-top: 100px;
         .hp_box{
             .hp_flex{
                 display: flex;
@@ -176,7 +179,6 @@
         }
     }
     .addons{
-        padding-top: 100px;
         .title_box{
             font-family: 'Roboto';
             margin-bottom: 30px;
@@ -187,6 +189,10 @@
                 margin-bottom: 0;
                 line-height: normal;
             }
+        }
+        .addon_row_flex{
+          display: flex;
+          flex-wrap: wrap;
         }
         .addon_box{
             width: calc((100% - 40px)/3);
@@ -211,6 +217,13 @@
                     font-weight: 500;
                     font-family: 'Roboto';
                 }
+                p{
+                  font-family: 'Roboto';
+                  a{
+                    color:#fff;
+                    text-decoration: underline;
+                  }
+                }
                 button{
                     min-width: 125px;
                     width: 100%;
@@ -231,7 +244,9 @@
                     display: block;
                     text-align: center;
                     font-size: 16px;
-                    text-decoration: underline;
+                    a{
+                      text-decoration: underline;
+                    }
                 }
             }
             .addon_image{
@@ -243,7 +258,17 @@
                 }
             }
             &.ombakkids{
-                background: $blue url('../assets/main/modal_wave_green.png') no-repeat bottom left / contain;
+                background: $blue url('../assets/main/wave_green_addon.png') no-repeat bottom left / contain;
+            }
+            &.fnb{
+                background: $yellow url('../assets/main/wave_darkgreen_addon.png') no-repeat bottom left / contain;
+            }
+            &.visualarts{
+                background: $green url('../assets/main/wave_yellow_addon.png') no-repeat bottom left / contain;
+            }
+            &.music{
+                background: $purple url('../assets/main/wave_green_addon.png') no-repeat bottom left / contain;
+                color:#fff;
             }
         }
     }

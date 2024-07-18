@@ -7,6 +7,26 @@
     .schedule_top{
         background: $darkgreen;
         color: #fff;
+        &::before{
+            content: '';
+            width: 248px;
+            height: 435px;
+            background: url('../assets/main/schedule_ornament_2.png') no-repeat left top / contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        &::after{
+            content: '';
+            width: 298px;
+            height: 425px;
+            background: url('../assets/main/schedule_ornament.png') no-repeat right top / contain;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 100;
+        }
         h2{
             height: 210px;
             padding-top: 60px;
@@ -252,6 +272,30 @@
             position: absolute;
             top: 0;
             left: 0;
+        }
+    }
+    .slick-arrow{
+        width: 24px;
+        height: 24px;
+        top: 20px;
+        transform: none;
+        &::before{
+            display: none;
+        }
+        &::after{
+            display: none;
+        }
+        &.slick-prev{
+            background: url('../assets/main/icon_arrow_left_black.png') no-repeat center / contain;
+            &.slick-disabled{
+                background: url('../assets/main/icon_arrow_left_grey.png') no-repeat center / contain;
+            }
+        }
+        &.slick-next{
+            background: url('../assets/main/icon_arrow_right_black.png') no-repeat center / contain;
+            &.slick-disabled{
+                background: url('../assets/main/icon_arrow_right_grey.png') no-repeat center / contain;
+            }
         }
     }
 }

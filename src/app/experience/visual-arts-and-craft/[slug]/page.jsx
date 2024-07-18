@@ -10,6 +10,7 @@ export default function visualartsDetail() {
 
   const [visualarts, setVisualartsDetail] = useState(null);
   const [discover, setDiscover] = useState(null);
+  const [visualartsAddon, setVisualartsAddon] = useState(null);
 
   useEffect(() => {
     if (slug) {
@@ -31,8 +32,10 @@ export default function visualartsDetail() {
         .then((data) => {
           const visualarts = data.detail;
           const discover = data.discoverMore;
+          const visualartsAddon = data.addon;
           setVisualartsDetail(visualarts);
           setDiscover(discover);
+          setVisualartsAddon(visualartsAddon);
         })
         .catch((error) => {
           console.error('Error fetching data: ', error);
@@ -118,6 +121,18 @@ export default function visualartsDetail() {
                     </div>
                 </div>
               ))}
+              {visualartsAddon.addon_status && (
+                <div className='addon_box'>
+                    <div className='addon_content'>
+                      <h5>Interested to join? Buy the Add-on Ticket now!</h5>
+                      <div className='addon_status visualarts'>
+                        <h4>{visualartsAddon.addon_title}</h4>
+                        <span>{visualartsAddon.addon_price}</span>
+                        <button>Buy Add-On</button>
+                      </div>
+                    </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
