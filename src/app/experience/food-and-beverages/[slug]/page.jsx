@@ -121,7 +121,7 @@ export default function FnbDetail() {
                     </div>
                 </div>
               ))}
-              {fnbAddon.addon_status && (
+              {fnbAddon && (
                 <div className='addon_box'>
                     <div className='addon_content'>
                       <h5>Interested to join? Buy the Add-on Ticket now!</h5>
