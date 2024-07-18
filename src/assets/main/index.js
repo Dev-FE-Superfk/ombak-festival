@@ -12,3 +12,4 @@ export { default as IconFnB } from './icon_fandb.png';
 export { default as IconParking } from './icon_parking.png';
 export { default as IconMedic } from './icon_medic.png';
 export { default as IconWashroom } from './icon_washroom.png';
+export { default as TicketMelon } from './ticketmelon.png';

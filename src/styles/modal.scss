@@ -1,0 +1,131 @@
+.popup_modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    z-index: 1001;
+    overflow: auto;
+    .modal_overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .modal_content{
+        width: 550px;
+        background: white;
+        padding: 40px 70px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        .close{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .info_text{
+            font-family: 'Roboto';
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        h4{
+            font-size: 24px;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .next_btn{
+            min-width: 120px;
+            height: 45px;
+            background: #FF6255;
+            color:#fff;
+            text-align: center;
+            padding: 0 20px;
+            border-radius: 45px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            &:disabled{
+                color:#FF9188;
+            }
+        }
+        p{
+            font-family: 'Roboto';
+            strong{
+                font-weight: bold;
+            }
+        }
+        .row_flex{
+            display: flex;
+            flex-wrap: wrap;
+            .resort_choose{
+                width: calc((100% - 20px)/2);
+                margin-right: 20px;
+                margin-bottom: 20px;
+                position: relative;
+                height: 72px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                &:nth-child(2n){
+                    margin-right: 0;
+                }  
+                input[type="radio"]{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    z-index: 100;
+                    &:checked + span{
+                        border:1px solid #06484E;
+                        background: #06484E;
+                    }
+                    &:checked ~ img{
+                        filter: invert(0) grayscale(0);
+                    }
+                }
+                span{
+                    width: 100%;
+                    height: 100%;
+                    border:1px solid #000;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    z-index: -1;
+                }
+                img{
+                    display: block;
+                    margin:0 auto;
+                    filter: invert(100%) grayscale(100%);
+                }
+            }
+        }
+        .ticketmelon{
+            display: block;
+            margin: 40px auto 40px;
+        }
+        .close{
+            width: 24px;
+            height: 24px;
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: url('../assets/main/icon_close_square.png') no-repeat center center / contain;
+            text-indent: -9999px;
+        }
+    }
+}

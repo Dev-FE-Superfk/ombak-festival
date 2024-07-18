@@ -10,6 +10,7 @@ export default function ombakkidsDetail() {
 
   const [ombakkids, setOmbakkidsDetail] = useState(null);
   const [discover, setDiscover] = useState(null);
+  const [ombakkidsAddon, setOmbakkidsAddon] = useState(null);
 
   useEffect(() => {
     if (slug) {
@@ -31,8 +32,10 @@ export default function ombakkidsDetail() {
         .then((data) => {
           const ombakkids = data.detail;
           const discover = data.discoverMore;
+          const ombakkidsAddon = data.addon;
           setOmbakkidsDetail(ombakkids);
           setDiscover(discover);
+          setOmbakkidsAddon(ombakkidsAddon);
         })
         .catch((error) => {
           console.error('Error fetching data: ', error);
@@ -118,6 +121,18 @@ export default function ombakkidsDetail() {
                     </div>
                 </div>
               ))}
+              {ombakkidsAddon.addon_status && (
+                <div className='addon_box'>
+                    <div className='addon_content'>
+                      <h5>Interested to join? Buy the Add-on Ticket now!</h5>
+                      <div className='addon_status ombakkids'>
+                        <h4>{ombakkidsAddon.addon_title}</h4>
+                        <span>{ombakkidsAddon.addon_price}</span>
+                        <button>Buy Add-On</button>
+                      </div>
+                    </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

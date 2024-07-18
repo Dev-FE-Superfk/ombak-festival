@@ -43,11 +43,12 @@ export default function Schedule() {
   }
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 5,
+    arrows: true,
     responsive: [
       {
         breakpoint: 1024,

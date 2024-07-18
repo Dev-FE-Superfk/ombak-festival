@@ -9,6 +9,7 @@ export default function FnbDetail() {
   const {slug} = useParams();
 
   const [fnbDetail, setFnbDetail] = useState(null);
+  const [fnbAddon, setFnbAddon] = useState(null);
   const [discover, setDiscover] = useState(null);
 
   useEffect(() => {
@@ -30,8 +31,10 @@ export default function FnbDetail() {
         })
         .then((data) => {
           const fnbDetail = data.detail;
+          const fnbAddon = data.addon;
           const discover = data.discoverMore;
           setFnbDetail(fnbDetail);
+          setFnbAddon(fnbAddon);
           setDiscover(discover);
         })
         .catch((error) => {
@@ -118,6 +121,18 @@ export default function FnbDetail() {
                     </div>
                 </div>
               ))}
+              {fnbAddon.addon_status && (
+                <div className='addon_box'>
+                    <div className='addon_content'>
+                      <h5>Interested to join? Buy the Add-on Ticket now!</h5>
+                      <div className='addon_status fnb'>
+                        <h4>{fnbAddon.addon_title}</h4>
+                        <span>{fnbAddon.addon_price}</span>
+                        <button>Buy Add-On</button>
+                      </div>
+                    </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
