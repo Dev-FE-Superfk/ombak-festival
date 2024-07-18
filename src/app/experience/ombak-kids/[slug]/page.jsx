@@ -121,7 +121,7 @@ export default function ombakkidsDetail() {
                     </div>
                 </div>
               ))}
-              {ombakkidsAddon.addon_status && (
+              {ombakkidsAddon && (
                 <div className='addon_box'>
                     <div className='addon_content'>
                       <h5>Interested to join? Buy the Add-on Ticket now!</h5>
