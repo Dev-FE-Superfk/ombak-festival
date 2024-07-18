@@ -87,16 +87,20 @@ export default function GetTickets() {
                         <div className="hp_flex" key={index}>
                             <div className="hp_image"><Image src={hotelpack.resort_image} width={525} height={350} quality={100} alt={hotelpack.resort_title}></Image></div>
                             <div className="hp_info">
-                                <h4>{hotelpack.resort_title}</h4>
+                                <h4 dangerouslySetInnerHTML={{ __html: hotelpack.resort_title}}></h4>
                                 <div dangerouslySetInnerHTML={{ __html: hotelpack.resort_description}}></div>
                                 <div className='hp_price'>
-                                    {hotelpack.resort_price === 'null' ? 
+                                    {hotelpack.resort_price ? (
                                     <>
-                                    <div className='price_text'>Packages start from <span>{hotelpack.resort_price}</span></div>
-                                    <button><Link href={hotelpack.resort_button_link} target='_blank' rel='noopener noreferrer'>{hotelpack.resort_button_name}</Link></button>
+                                        <div className='price_text'>Packages start from <span>{hotelpack.resort_price}</span></div>
+                                        <button><Link href={hotelpack.resort_button_link} target='_blank' rel='noopener noreferrer'>{hotelpack.resort_button_name}</Link></button>
                                     </>
-                                    :
-                                    <button><Link href={`mailto:${hotelpack.resort_button_link}?subject=(Ombak Festival) Partnership Enquiries`} target='_blank' rel='noopener noreferrer'>{hotelpack.resort_button_name}</Link></button>   
+                                    )
+                                    : (
+                                    <>
+                                        <button><Link href={`mailto:${hotelpack.resort_button_link}?subject=(Ombak Festival) Partnership Enquiries`} target='_blank' rel='noopener noreferrer'>{hotelpack.resort_button_name}</Link></button>
+                                    </>
+                                    )
                                     }
                                 </div>
                             </div>
