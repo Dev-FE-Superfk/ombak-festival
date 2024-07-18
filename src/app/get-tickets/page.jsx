@@ -213,7 +213,7 @@ export default function GetTickets() {
                                 </div>
                                 <div className="addon_row_flex">
                                     {addOn.map((addon, index) => (
-                                        <div className={`addon_box ${addon.addon_experience_slug === 'ombak-kids' ? 'ombakkids' : '' || addon.addon_experience_slug === 'f-and-b' ? 'fnb' : '' || addon.addon_experience_slug === 'visual-arts-and-craft' ? 'visualarts' : '' || addon.addon_experience_slug === 'music-and-performances' ? 'music' : ''}`} key={index}>
+                                        <div className={`addon_box ${addon.addon_experience_slug === 'ombak-kids' ? 'ombakkids' : '' || addon.addon_experience_slug === 'food-and-beverages' ? 'fnb' : '' || addon.addon_experience_slug === 'visual-arts-and-craft' ? 'visualarts' : '' || addon.addon_experience_slug === 'music-and-performances' ? 'music' : ''}`} key={index}>
                                             <div className="addon_info">
                                                 <div className="ai_box">
                                                     <h4>{addon.addon_title}</h4>
