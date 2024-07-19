@@ -56,7 +56,7 @@ export default function Schedule() {
           slidesToShow: 3,
           slidesToScroll: 5,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {

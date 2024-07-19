@@ -197,3 +197,80 @@
         }
     }
 }
+.filter_btn{
+    display: none;
+}
+
+@media only screen and (max-width: 1129px) {
+    .filter_btn{
+        display: none;
+    }
+    .section_info{
+        .si_nav{
+            .container{
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .si_nav_box{
+                display: inline-block;
+            }
+        }
+    }
+    .map_image{
+        overflow-x: auto;
+        height: 640px;
+        .map_img{
+            height: 716px;
+            max-width: none;
+            width: 1366px;
+        }
+        ul{
+            width: 1366px;
+            height: 716px;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+    }
+    .filter_map{
+        padding: 0 20px;
+        display: block;
+        text-align: left;
+        .fm_box{
+            margin-right: 0;
+            display: flex;
+            justify-content: start;
+        }
+    }
+}
+@media only screen and (max-width: 767px) {
+    .filter_btn{
+        padding: 0 20px;
+        display: block;
+        div{
+            display: flex;
+            padding: 0 10px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            height: 56px;
+            align-items: center;
+            justify-content: start;
+            background: url('../assets/main/keyboard_arrow_down.png') no-repeat right 10px center / 24px;
+            &.active{
+                background: url('../assets/main/keyboard_arrow_up.png') no-repeat right 10px center / 24px;
+            }
+        }
+        img{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+    .filter_map{
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+}

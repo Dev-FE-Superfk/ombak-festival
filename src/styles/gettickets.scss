@@ -278,7 +278,6 @@
   .section_get_ticktes {
     padding-top: 60px;
     .sgt_top {
-      background-size: 220px;
       .container {
         height: 160px;
         padding-left: 40px;
@@ -305,9 +304,10 @@
       }
     }
     .info_middle {
+      padding:40px;
       .title_box {
         padding-top: 0;
-        padding-left: 40px;
+        padding-left: 0;
         padding-right: 40px;
         border: none;
         padding-bottom: 0;
@@ -362,6 +362,36 @@
           }
         }
       }
+      .hotel_packages{
+        .hp_box{
+          .hp_info{
+            .hp_price{
+              .price_text{
+                float: none;
+              }
+              button{
+                float: none;
+              }
+            }
+          }
+        }
+      }
+      .addons{
+        .addon_box{
+          padding-bottom: 40px;
+          .addon_info{
+            h4{
+              font-size: 18px;
+            }
+            span{
+              font-size: 16px;
+            }
+            .view_btn{
+              font-size: 14px;
+            }
+          }
+        }
+      }
     }
   }
   .section_get_ticktes{
@@ -392,7 +422,13 @@
       top:60px;
       .container {
         padding: 0 20px;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        flex-wrap: unset;
+        justify-content: unset;
         .sgt_nav_box {
+          display: inline-block;
           &.active {
             a {
               padding-bottom: 13px;
@@ -405,9 +441,10 @@
       }
     }
     .info_middle {
+      padding: 40px 20px;
       .title_box {
         padding-top: 0;
-        padding-left: 20px;
+        padding-left: 0;
         padding-right: 20px;
         border: none;
         padding-bottom: 0;
@@ -417,6 +454,37 @@
           padding: 0 0 25px;
           &.no_border{
             padding-bottom: 10px;
+          }
+        }
+      }
+      .general_admission{
+        .ga_box{
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+      .hotel_packages{
+        .hp_box{
+          .hp_flex{
+            display: block;
+            .hp_image{
+              width: 100%;
+              margin: 0 0 20px;
+            }
+            .hp_info{
+              width: 100%;
+              margin: 0;
+            }
+          }
+        }
+      }
+      .addons{
+        .addon_row_flex{
+          width: 100%;
+          display: block;
+          .addon_box{
+            width: 100%;
+            margin-right: 0;
           }
         }
       }
