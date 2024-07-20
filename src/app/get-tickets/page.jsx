@@ -64,7 +64,7 @@ export default function GetTickets() {
     const scrollToSection = (ref) => {
         if (ref.current) {
             const element = ref.current;
-            const top = element.getBoundingClientRect().top + window.scrollY - 130;
+            const top = element.getBoundingClientRect().top + window.scrollY - 50;
             window.scrollTo({ top, behavior: 'smooth' });
         }
     };

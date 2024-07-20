@@ -132,12 +132,12 @@
         font-family: 'Antique Olive Std Bold';
         margin-bottom: 40px;
         position: relative;
-        span {
+        span.visualarts {
           width: 51px;
           height: 57px;
           display: block;
           background: url('../assets/main/background_number_green.png')
-            no-repeat center / contain;
+            no-repeat center / contain !important;
           position: absolute;
           top: -8px;
           left: -75px;
@@ -154,6 +154,12 @@
       color: #fff;
       margin-top: 20px;
       padding: 0 20px;
+      transition: all 0.2s ease;
+      font-family: 'Antique Olive Std Black';
+      &:hover {
+        background: rgb(181, 189, 35);
+        color: rgb(6, 72, 78);
+      }
     }
   }
 }

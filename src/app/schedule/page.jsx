@@ -10,7 +10,7 @@ import "../../styles/schedule.scss";
 
 export default function Schedule() {
   const [schedules, setSchedules] = useState(null);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
 
   useEffect(() => {
     // Replace this URL with your actual API URL
@@ -92,7 +92,7 @@ export default function Schedule() {
       <div className="schedule_label">
         <div className="sl_box">
           <span className="addon_tag">Add-On</span>
-          Add-ons purchase
+          Add-ons ticket
         </div>
         <div className="sl_box">
           <span className="purple"></span>

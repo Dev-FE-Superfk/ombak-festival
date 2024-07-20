@@ -105,7 +105,7 @@ export default function OmbakKids() {
                               </div>
                               <div className='box_text'>
                                 <h3>
-                                  <span>
+                                  <span className='ombakkids'>
                                     {String(counter++).padStart(2, '0')}
                                   </span>
                                   {contentData.v_page_element_section}
@@ -127,11 +127,11 @@ export default function OmbakKids() {
                                   </button>
                                 )}
                               </div>
-                              {index ===
+                              {/* {index ===
                                 Object.entries(sectionData.contents).length -
                                   1 && (
                                 <div className='amtc'>And more to come</div>
-                              )}
+                              )} */}
                             </div>
                             </Link>
                           </div>

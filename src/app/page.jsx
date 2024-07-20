@@ -372,12 +372,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="section_eight">
+      {/* <div className="section_eight">
         <div className="container">
           <h3>Our festival partners</h3>
           <PartnerSlider></PartnerSlider>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

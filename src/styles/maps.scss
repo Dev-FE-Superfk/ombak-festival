@@ -11,6 +11,7 @@
         margin-right: 20px;
         min-width: 75px;
         justify-content: center;
+        cursor: pointer;
         &:hover,
         &.active{
             background: #06484E;
@@ -38,6 +39,7 @@
         width: 35px;
         height: 43px;
         display: block;
+        cursor: pointer;
         &.venue{
             top: -54px;
             width: 85px;
@@ -182,6 +184,9 @@
             padding-bottom: 35px;
             top: calc(50% - 27px);
             left: 50px;
+            h4{
+                display: none;
+            }
             &::after{
                 content: '';
                 width: 12px;
