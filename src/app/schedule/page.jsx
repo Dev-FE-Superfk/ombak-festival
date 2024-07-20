@@ -51,11 +51,20 @@ export default function Schedule() {
     arrows: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1129,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: false,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 960,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 5,
-          infinite: true,
+          slidesToScroll: 3,
+          infinite: false,
           dots: false
         }
       },
