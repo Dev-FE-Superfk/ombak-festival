@@ -875,6 +875,20 @@ html {
       }
     }
   }
+  .section_six{
+    .container{
+      padding: 0 20px;
+    }
+    .misc_box{
+      padding: 40px 20px;
+      .button{
+        top:auto;
+        bottom: -20px;
+        left: 20px;
+        right: auto;
+      }
+    }
+  }
   .section_seven {
     .container {
       h3 {
@@ -1138,8 +1152,29 @@ html {
       }
     }
   }
+  .section_six{
+    .container{
+      padding: 0 20px;
+    }
+    .misc_box{
+      padding: 40px 20px;
+      padding-right: 50px;
+      width: 100%;
+      margin-right: 0;
+      h3{
+        font-size: 28px;
+        line-height: 38px;
+      }
+      .button{
+        top:35px;
+        bottom: auto;
+        left: auto;
+        right: 0px;
+      }
+    }
+  }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 359px) {
   .section_seven{
     .container{
       .button{

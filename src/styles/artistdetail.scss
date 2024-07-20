@@ -150,6 +150,12 @@
             }
             &.visualarts{
               background: $green;
+              button{
+                &:hover {
+                  background: #FFE17F;
+                  color: #000;
+                }
+              }
             }
             h4{
               font-size: 24px;
@@ -174,6 +180,11 @@
               border: none;
               border-radius: 45px;
               cursor: pointer;
+              transition: all 0.2s ease;
+              &:hover {
+                background: rgb(181, 189, 35);
+                color: rgb(6, 72, 78);
+              }
             }
           }
         }

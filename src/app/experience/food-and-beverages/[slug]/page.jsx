@@ -1,9 +1,11 @@
 'use client';
 import {useParams} from 'next/navigation';
 import {useEffect, useState} from 'react';
+import { Modal } from '@/components';
 import '../../../../styles/artistdetail.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Hardrock, TheWestin, Anantara, Onenonly, TicketMelon } from '@/assets';
 
 export default function FnbDetail() {
   const {slug} = useParams();
@@ -11,6 +13,10 @@ export default function FnbDetail() {
   const [fnbDetail, setFnbDetail] = useState(null);
   const [fnbAddon, setFnbAddon] = useState(null);
   const [discover, setDiscover] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [showSecondModal, setShowSecondModal] = useState(false);
+  const [selectedResort, setSelectedResort] = useState(null);
+  const [modalActionType, setModalActionType] = useState(null);
 
   useEffect(() => {
     if (slug) {
@@ -46,8 +52,38 @@ export default function FnbDetail() {
   if (!fnbDetail) {
     return <div>Loading...</div>;
   }
+  const openModal = (actionType) => {
+      setShowModal(true);
+      setShowSecondModal(false); // Pastikan modal kedua tertutup saat membuka modal pertama
+      setModalActionType(actionType); // Simpan jenis tindakan untuk digunakan di dalam modal
+  };
 
+  const closeModal = () => {
+      setShowModal(false);
+      setSelectedResort(null);
+  };
+
+  const handleRadioChange = (resortName) => {
+      setSelectedResort(resortName);
+  };
+
+  const handleProceed = () => {
+      setShowModal(false); // Close first modal after selecting
+      setShowSecondModal(true); // Open second modal for purchase confirmation
+  };
+
+  const openSecondModal = (actionType) => {
+      setShowModal(false);
+      setShowSecondModal(true); // Pastikan modal kedua tertutup saat membuka modal pertama
+      setModalActionType(actionType); // Simpan jenis tindakan untuk digunakan di dalam modal
+  };
+
+  const closeSecondModal = () => {
+      setShowSecondModal(false); // Function to close second modal
+      setSelectedResort(null);
+  };
   return (
+    <>
     <div className='section_artist_detail'>
       <div className='container'>
         <div className='back_button'>
@@ -128,7 +164,7 @@ export default function FnbDetail() {
                       <div className='addon_status fnb'>
                         <h4>{fnbAddon.addon_title}</h4>
                         <span>{fnbAddon.addon_price}</span>
-                        <button>Buy Add-On</button>
+                        <button onClick={openModal}>Buy Add-On</button>
                       </div>
                     </div>
                 </div>
@@ -153,5 +189,78 @@ export default function FnbDetail() {
         </div>
       </div>
     </div>
+    {showModal && (
+      <>
+          <Modal isOpen={showModal} onClose={closeModal}>
+              <span className='info_text'>Before we continue...</span>
+              <h4>Which hotel guest are you <br />coming from?</h4>
+              <div className="row_flex">
+                  <div className="resort_choose">
+                      <input
+                          type="radio"
+                          name='resorts'
+                          onChange={() => handleRadioChange('Hardrock')}
+                          checked={selectedResort === 'Hardrock'}
+                      />
+                      <span></span>
+                      <Image src={Hardrock} width={75} height={57} />
+                  </div>
+                  <div className="resort_choose">
+                      <input
+                          type="radio"
+                          name='resorts'
+                          onChange={() => handleRadioChange('TheWestin')}
+                          checked={selectedResort === 'TheWestin'}
+                      />
+                      <span></span>
+                      <Image src={TheWestin} width={118} height={45} />
+                  </div>
+                  <div className="resort_choose">
+                      <input
+                          type="radio"
+                          name='resorts'
+                          onChange={() => handleRadioChange('Anantara')}
+                          checked={selectedResort === 'Anantara'}
+                      />
+                      <span></span>
+                      <Image src={Anantara} width={88} height={53} />
+                  </div>
+                  <div className="resort_choose">
+                      <input
+                          type="radio"
+                          name='resorts'
+                          onChange={() => handleRadioChange('Onenonly')}
+                          checked={selectedResort === 'Onenonly'}
+                      />
+                      <span></span>
+                      <Image src={Onenonly} width={95} height={52} />
+                  </div>
+              </div>
+              <button className='next_btn' disabled={!selectedResort} onClick={handleProceed}>Proceed</button>
+              <p>If you’re not from any of the hotel guest, you can’t proceed to purchase the add-on. Add-on purchases are only available for holders of <strong>Hotel Packages.</strong></p>
+          </Modal>
+      </>
+    )}
+    {showSecondModal && ( 
+      <>
+          {/* Second modal for ticket purchase confirmation */}
+          <Modal isOpen={showSecondModal} onClose={closeSecondModal}>
+              <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
+              <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
+              <button className='next_btn'>
+              {modalActionType === 'add-ons' ?
+                  (
+                  <Link href="https://www.google.com/" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                  )
+                  :
+                  (
+                  <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                  )
+              }
+              </button>
+          </Modal>
+      </>
+    )}
+    </>
   );
 }
