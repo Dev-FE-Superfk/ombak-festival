@@ -315,7 +315,7 @@
             }
         }
         .container{
-            padding: 0 40px;
+            padding: 40px 40px 0;
             .schedule_box{
                 width: 70%;
                 h2{
@@ -325,6 +325,7 @@
         }
         .schedule_nav{
             top: 60px;
+            z-index: 100;
             ul{
                 li{
                     font-size: 20px;
