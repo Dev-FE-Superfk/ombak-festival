@@ -61,10 +61,22 @@ export default function GetTickets() {
         
     }, [showModal || showSecondModal]);
 
-    const scrollToSection = (ref) => {
+    const scrollToSection = (ref, section) => {
         if (ref.current) {
             const element = ref.current;
-            const top = element.getBoundingClientRect().top + window.scrollY - 50;
+            let offset = -50; // Default offset for desktop
+    
+            if (section === 'general') {
+                if (window.innerWidth > 1129) {
+                    offset = -110; // Offset for large screens
+                } else if (window.innerWidth <= 1129 && window.innerWidth > 767) {
+                    offset = -110; // Offset for medium screens
+                } else if (window.innerWidth <= 767) {
+                    offset = -140; // Offset for small screens
+                }
+            }
+    
+            const top = element.getBoundingClientRect().top + window.scrollY + offset;
             window.scrollTo({ top, behavior: 'smooth' });
         }
     };
@@ -149,7 +161,7 @@ export default function GetTickets() {
                 </div>
                 <div className='sgt_nav'>
                     <div className='container'>
-                        <div className={`sgt_nav_box general active`} onClick={() => scrollToSection(generalAdmissionRef)}>General Admission</div>
+                        <div className={`sgt_nav_box general active`} onClick={() => scrollToSection(generalAdmissionRef, 'general')}>General Admission</div>
                         <div className={`sgt_nav_box hotel`} onClick={() => scrollToSection(hotelPackagesRef)}>Hotel Packages</div>
                         <div className={`sgt_nav_box addon`} onClick={() => scrollToSection(addonsRef)}>Add-ons</div>
                     </div>
