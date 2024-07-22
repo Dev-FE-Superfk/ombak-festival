@@ -178,7 +178,7 @@ export default function ombakkidsDetail() {
           <h2>Discover More</h2>
           <div className='content'>
             {discover.map((exp, index) => (
-                <Link href={`/experience/food-and-beverages/${exp.slug}`} className='discover_box' key={index}>
+                <Link href={`/experience/ombak-kids/${exp.slug}`} className='discover_box' key={index}>
                     <div className='discover_image'>
                         <Image width={400} height={400} src={exp.image}></Image>
                     </div>
