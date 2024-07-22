@@ -98,6 +98,7 @@
                     left: 0;
                     opacity: 0;
                     z-index: 100;
+                    cursor: pointer;
                     &:checked + span{
                         border:1px solid #06484E;
                         background: #06484E;

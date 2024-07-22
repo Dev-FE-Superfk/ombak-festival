@@ -60,6 +60,9 @@
       }
     }
     .general_admission{
+        .title_box{
+          padding-top: 40px;
+        }
         .ga_flex{
             display: flex;
             flex-wrap: wrap;
@@ -390,10 +393,23 @@
           }
         }
       }
+      .general_admission{
+        .title_box{
+          padding-top: 20px;
+        }
+        .ga_box{
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
       .hotel_packages{
         .hp_box{
           .hp_flex{
             align-items: start;
+            &:last-child{
+              margin-bottom: 0;
+            }
           }
           .hp_info{
             .hp_price{
@@ -490,9 +506,17 @@
         }
       }
       .general_admission{
+        .title_box{
+          padding-top: 8px;
+        }
         .ga_box{
           width: 100%;
           margin-right: 0;
+          h3{
+            span{
+              display: block;
+            }
+          }
         }
       }
       .hotel_packages{
@@ -517,6 +541,7 @@
           .addon_box{
             width: 100%;
             margin-right: 0;
+            padding-bottom: 66px;
             .addon_info{
               h4{
                 font-size: 20px;
