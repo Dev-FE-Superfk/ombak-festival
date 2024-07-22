@@ -455,8 +455,7 @@
   .section_get_ticktes {
     padding-top: 60px;
     .sgt_top {
-      background-position: bottom right -75px;
-      background-size: 200px;
+      background: $green url('../assets/main/get_ticket_wave_mobile.png') no-repeat bottom right / contain;
       .container {
         height: 150px;
         padding-left: 20px;
