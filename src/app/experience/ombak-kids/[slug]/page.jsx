@@ -252,7 +252,7 @@ export default function ombakkidsDetail() {
               <button className='next_btn'>
               {modalActionType === 'add-ons' ?
                   (
-                  <Link href="https://www.google.com/" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                  <Link href="http://www.ticketmelon.com/event/ombakexclusives" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
                   )
                   :
                   (
