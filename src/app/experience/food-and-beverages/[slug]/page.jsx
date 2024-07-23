@@ -248,7 +248,7 @@ export default function FnbDetail() {
                   </div>
               </div>
               <button className='next_btn' disabled={!selectedResort} onClick={handleProceed}>Proceed</button>
-              <p><strong>Exclusive Ticketed Events</strong> are only available to <strong>Stay Package</strong> ticket holders. You can book your Stay Package at any of our four 5-star resorts <Link href="/stay?tag=hard_rock_hotel">here.</Link></p>
+              <p><strong>Exclusive Ticketed Events</strong> are only available to <strong>Stay Package</strong> ticket holders. You can book your Stay Package at any of our four 5-star resorts <Link href="/stay?tag=hard_rock_hotel">here</Link>.</p>
           </Modal>
       </>
     )}
