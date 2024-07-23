@@ -36,6 +36,12 @@
         padding: 20px 0;
         display: block;
       }
+      span{
+        padding: 20px 0;
+        display: block;
+        color: rgba(0,0,0,0.2);
+        cursor:not-allowed;
+      }
       &.active {
         a {
           padding-bottom: 15px;
@@ -125,6 +131,12 @@
         &:hover {
           color: rgb(255, 0, 43);
         }
+      }
+      .desktop{
+        display: block;
+      }
+      .mobile{
+        display: none;
       }
       table {
         width: 100% !important;
@@ -384,6 +396,14 @@
           display: block;
           background: #000;
           margin: 0 auto;
+        }
+      }
+      .info_answer{
+        .desktop{
+          display: none;
+        }
+        .mobile{
+          display: block;
         }
       }
       .info_title {

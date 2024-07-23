@@ -92,9 +92,10 @@ function Info() {
             </Link>
           </div>
           <div className={`si_nav_box`}>
-            <Link scroll={false} href='/festival-map'>
+            {/* <Link scroll={false} href='/festival-map'>
               Map
-            </Link>
+            </Link> */}
+              <span>Map</span>
           </div>
           <div className={`si_nav_box ${tag === 'info' ? 'active' : ''}`}>
             <Link scroll={false} href='/info?tag=info'>

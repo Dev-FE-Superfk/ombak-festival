@@ -240,7 +240,7 @@ html {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 20px 0 60px;
+  padding: 60px 0 60px;
   .category_box {
     width: calc(100% / 4);
     &:hover {
@@ -725,6 +725,11 @@ html {
       cursor: pointer;
       transition: all 0.2s ease;
       font-family: 'Antique Olive Std Black';
+      &:hover {
+        background: $green;
+        color: $darkgreen;
+        transition: all 0.2s ease;
+      }
     }
   }
 }
@@ -1126,6 +1131,7 @@ html {
     }
   }
   .section_three {
+    padding-top: 40px;
     padding-bottom: 40px;
     .category_box {
       width: calc(100% / 2);
