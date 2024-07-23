@@ -33,3 +33,5 @@ export { default as BungaPenawar } from "./Bunga_Penawar.png";
 export { default as IsolationMode } from "./Isolation_Mode.png";
 export { default as WayangKulit } from "./Wayang_Kulit.png";
 export { default as Rectangele } from "./Rectangle.png";
+export { default as OmbakExperience } from "./ombak_experience.png";
+export { default as OmbakExperienceMobile } from "./ombak_experience_mobile.png";

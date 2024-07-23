@@ -677,6 +677,68 @@ html {
     padding: 0 20px !important;
   }
 }
+.section_new_ticket{
+  background: $orange;
+  padding: 40px 0 60px;
+  .container{
+    max-width: 1130px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .snt_box{
+      width: calc(100% / 2);
+      position: relative;
+      &:first-child{
+        &:before{
+          display: none;
+        }
+      }
+      &:before{
+        content: '';
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+      }
+    }
+    h3{
+      font-size: 40px;
+      font-family: 'Antique Olive Std Black';
+      margin-bottom: 20px;
+      color:#fff;
+    }
+    button{
+      width: 127px;
+      background: $purple;
+      color: #fff;
+      height: 45px;
+      display: block;
+      margin: 0 auto;
+      line-height: 45px;
+      text-transform: uppercase;
+      border-radius: 45px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Antique Olive Std Black';
+    }
+  }
+}
+.section_experience_img{
+  img{
+    width: 100%;
+    &.desktop{
+      display: block;
+    }
+    &.mobile{
+      display: none;
+    }
+  }
+}
 @media only screen and (max-width: 1129px) {
   html {
     overflow-x: hidden;
@@ -719,6 +781,16 @@ html {
   .section_seven {
     .container {
       padding: 0 40px;
+    }
+  }
+  .section_new_ticket{
+    .container{
+      h3{
+        font-size: 28px;
+      }
+      button{
+        font-size: 16px;
+      }
     }
   }
 }
@@ -1181,6 +1253,43 @@ html {
         bottom: auto;
         left: auto;
         right: 0px;
+      }
+    }
+  }
+  .section_new_ticket{
+    padding-bottom: 40px;
+    .container{
+      display: block;
+      .snt_box{
+        width: 100%;
+        &:first-child{
+          &:before{
+            display: none;
+          }
+        }
+        &:before{
+          width:calc(100% - 40px);
+          height:1px;
+          position: static;
+          margin: 40px auto;
+        }
+      }
+      h3{
+        font-size: 28px;
+      }
+      button{
+        font-size: 16px;
+      }
+    }
+  }
+  .section_experience_img{
+    img{
+      width: 100%;
+      &.desktop{
+        display: none;
+      }
+      &.mobile{
+        display: block;
       }
     }
   }

@@ -120,6 +120,18 @@ export default function ArtistDetail() {
                     </Link>
                   </div>
                 )}
+                {artistdetail.twitter && (
+                  <div className='sm_box'>
+                    <Link
+                      className='sm_x'
+                      href={artistdetail.twitter}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      X
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>

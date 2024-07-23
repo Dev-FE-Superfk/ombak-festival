@@ -1,1 +1,1 @@
-export { default as VideoOmbak } from './OmbakFestivalVideo.mp4';
+export { default as VideoOmbak } from './OMBAK.mp4';

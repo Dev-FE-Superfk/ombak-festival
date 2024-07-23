@@ -23,9 +23,12 @@ import {
   WaveGreenLong,
   MemoriesCover,
   MemoriesCoverM,
+  OmbakExperience,
+  OmbakExperienceMobile,
+  TicketMelon,
 } from '@/assets';
 import {useEffect, useState} from 'react';
-import {VideoPlayer, PartnerSlider} from '@/components';
+import {VideoPlayer, PartnerSlider, RunningText, Modal} from '@/components';
 import {VideoOmbak} from '../../public/videos';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -34,6 +37,7 @@ import 'slick-carousel/slick/slick-theme.css';
 export default function Home() {
   const [artists, setArtists] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
+  const [showSecondModal, setShowSecondModal] = useState(false);
   const classes = ['mask1', 'mask2', 'mask3', 'mask4'];
   useEffect(() => {
     // Gantilah URL ini dengan URL API Anda
@@ -73,6 +77,14 @@ export default function Home() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const openSecondModal = () => {
+      setShowSecondModal(true); // Pastikan modal kedua tertutup saat membuka modal pertama
+  };
+
+  const closeSecondModal = () => {
+      setShowSecondModal(false); // Function to close second modal
+  };
 
   // Settings for the slider
   const sliderSettings = {
@@ -119,7 +131,25 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='section_two'>
+      <RunningText></RunningText>
+      <div className="section_experience_img">
+        <Image className='desktop' src={OmbakExperience} width={1366} height={756} alt='' quality={100}></Image>
+        <Image className='mobile' src={OmbakExperienceMobile} width={375} height={453} alt='' quality={100}></Image>
+      </div>
+      <RunningText></RunningText>
+      <div className="section_new_ticket">
+        <div className="container">
+          <div className="snt_box">
+            <h3>Get your Festival Day <br/>Passes now</h3>
+            <button onClick={openSecondModal}>Buy Pass</button>
+          </div>
+          <div className="snt_box">
+            <h3>Get your Stay <br/>Packages now</h3>
+            <button><Link href="/stay?tag=hard_rock_hotel">Book Now</Link></button>
+          </div>
+        </div>
+      </div>
+      {/* <div className='section_two'>
         <div className='ornament_left'>
           <div className='ornament_1'></div>
           <div className='ornament_2'></div>
@@ -174,7 +204,7 @@ export default function Home() {
           <div className='ornament_11'></div>
           <div className='ornament_12'></div>
         </div>
-      </div>
+      </div> */}
       <div className='section_three'>
         <div className='category_box'>
           <Link href='/experience/music-and-performances'>
@@ -378,6 +408,18 @@ export default function Home() {
           <PartnerSlider></PartnerSlider>
         </div>
       </div> */}
+      {showSecondModal && ( 
+        <>
+            {/* Second modal for ticket purchase confirmation */}
+            <Modal isOpen={showSecondModal} onClose={closeSecondModal}>
+                <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
+                <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
+                <button className='next_btn'>
+                <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                </button>
+            </Modal>
+        </>
+      )}
     </>
   );
 }
