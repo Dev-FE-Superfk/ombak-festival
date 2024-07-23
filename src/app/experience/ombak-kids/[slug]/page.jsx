@@ -250,15 +250,7 @@ export default function ombakkidsDetail() {
               <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
               <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
               <button className='next_btn'>
-              {modalActionType === 'add-ons' ?
-                  (
-                  <Link href="http://www.ticketmelon.com/event/ombakexclusives" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
-                  )
-                  :
-                  (
-                  <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
-                  )
-              }
+              <Link href="http://www.ticketmelon.com/event/ombakexclusives" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
               </button>
           </Modal>
       </>
