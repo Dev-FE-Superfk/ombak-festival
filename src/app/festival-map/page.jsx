@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import '../../styles/info.scss';
 import '../../styles/maps.scss';
-import { IconFnB, IconMedic, IconParking, IconWashroom } from '@/assets';
+import { IconArt, IconFnB, IconMedic, IconParking, IconToilet, IconWashroom } from '@/assets';
 
 function Map() {
     const searchParams = useSearchParams();
@@ -90,7 +90,7 @@ function Map() {
         setIsFilterMapVisible(!isFilterMapVisible);
     };
 
-    const filteredLocations = activeFilter === 'All' ? location : location.filter(loc => loc.category === activeFilter || loc.category === 'Venue');
+    const filteredLocations = activeFilter === 'All' ? location : location.filter(loc => loc.category === activeFilter || loc.category === 'Venue' || loc.category === 'Surau' || loc.category === 'Medic');
 
     return (
         <div className='section_info'>
@@ -133,8 +133,10 @@ function Map() {
                         <div className={`fm_box ${activeFilter === 'All' ? 'active' : ''}`} onClick={() => handleFilterClick('All', 'All')}>All</div>
                         <div className={`fm_box ${activeFilter === 'F&B' ? 'active' : ''}`} onClick={() => handleFilterClick('F&B', <><Image src={IconFnB} width={34} height={34} quality={100} /> F&B</>)}><Image src={IconFnB} width={34} height={34} quality={100} /> F&B</div>
                         <div className={`fm_box ${activeFilter === 'Parking' ? 'active' : ''}`} onClick={() => handleFilterClick('Parking', <><Image src={IconParking} width={34} height={34} quality={100} /> Parking</>)}><Image src={IconParking} width={34} height={34} quality={100} /> Parking</div>
-                        <div className={`fm_box ${activeFilter === 'Washroom' ? 'active' : ''}`} onClick={() => handleFilterClick('Washroom', <><Image src={IconWashroom} width={34} height={34} quality={100} /> Washroom</>)}><Image src={IconWashroom} width={34} height={34} quality={100} /> Washroom</div>
-                        <div className={`fm_box ${activeFilter === 'Medic' ? 'active' : ''}`} onClick={() => handleFilterClick('Medic', <><Image src={IconMedic} width={34} height={34} quality={100} /> Medic</>)}><Image src={IconMedic} width={34} height={34} quality={100} /> Medic</div>
+                        {/* <div className={`fm_box ${activeFilter === 'Washroom' ? 'active' : ''}`} onClick={() => handleFilterClick('Washroom', <><Image src={IconWashroom} width={34} height={34} quality={100} /> Washroom</>)}><Image src={IconWashroom} width={34} height={34} quality={100} /> Washroom</div> */}
+                        <div className={`fm_box ${activeFilter === 'Toilet' ? 'active' : ''}`} onClick={() => handleFilterClick('Toilet', <><Image src={IconToilet} width={34} height={34} quality={100} /> Toilet</>)}><Image src={IconToilet} width={34} height={34} quality={100} /> Toilet</div>
+                        {/* <div className={`fm_box ${activeFilter === 'Medic' ? 'active' : ''}`} onClick={() => handleFilterClick('Medic', <><Image src={IconMedic} width={34} height={34} quality={100} /> Medic</>)}><Image src={IconMedic} width={34} height={34} quality={100} /> Medic</div> */}
+                        <div className={`fm_box ${activeFilter === 'Art Installation' ? 'active' : ''}`} onClick={() => handleFilterClick('Art Installation', <><Image src={IconArt} width={34} height={34} quality={100} /> Art Installation</>)}><Image src={IconArt} width={34} height={34} quality={100} /> Art Installation</div>
                     </div>
                 </div>
             </div>
@@ -148,8 +150,8 @@ function Map() {
                                     <Image src={maploc.logo ? maploc.logo : maploc.category_image} width={100} height={100} />
                                 </div>
                                 {activeModal === index && (
-                                    <div ref={modalRef} className={`pin_modal ${maploc.category === 'Venue' ? 'venue_modal' : '' || maploc.category === 'Parking' ? 'parking_modal' : '' || maploc.category === 'Washroom' ? 'washroom_modal' : '' || maploc.category === 'F&B' ? 'fandb_modal' : '' || maploc.category === 'Medic' ? 'medic_modal' : ''}`}>
-                                        {maploc.category === 'Venue' && maploc.image_detail && <Image src={maploc.image_detail} width={100} height={100} />}
+                                    <div ref={modalRef} className={`pin_modal ${maploc.category === 'Venue' ? 'venue_modal' : '' || maploc.category === 'Parking' ? 'parking_modal' : '' || maploc.category === 'Washroom' ? 'washroom_modal' : '' || maploc.category === 'F&B' ? 'fandb_modal' : '' || maploc.category === 'Medic' ? 'medic_modal' : '' || maploc.category === 'Toilet' ? 'toilet_modal' : '' || maploc.category === 'Surau' ? 'surau_modal' : '' || maploc.category === 'Art Installation' ? 'art_modal' : ''}`}>
+                                        {maploc.category === 'Venue' && maploc.image_detail && <Image style={{marginBottom: '10px'}} src={maploc.image_detail} width={100} height={100} />}
                                         <h4>{maploc.title}</h4>
                                         {maploc.description && <p>{maploc.description}</p>}
                                         {maploc.category === 'Parking' && maploc.image_detail && <div className='img_detail'><Image src={maploc.image_detail} width={100} height={100} /></div>}

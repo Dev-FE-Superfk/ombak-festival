@@ -89,13 +89,13 @@
             }
             &::before{
                 content: '';
-                width: 34px;
-                height: 34px;
+                width: 42px;
+                height: 42px;
                 display: block;
                 background: url('../assets/main/icon_parking.png') no-repeat center / contain;
                 position: absolute;
-                top: -17px;
-                left: 15px;
+                top: -21px;
+                left: 21px;
             }
         }
         &.washroom_modal{
@@ -116,13 +116,13 @@
             }
             &::before{
                 content: '';
-                width: 34px;
-                height: 34px;
+                width: 42px;
+                height: 42px;
                 display: block;
                 background: url('../assets/main/icon_washroom.png') no-repeat center / contain;
                 position: absolute;
-                top: -17px;
-                left: 15px;
+                top: -21px;
+                left: 21px;
             }
         }
         &.medic_modal{
@@ -143,13 +143,13 @@
             }
             &::before{
                 content: '';
-                width: 34px;
-                height: 34px;
+                width: 42px;
+                height: 42px;
                 display: block;
                 background: url('../assets/main/icon_medic.png') no-repeat center / contain;
                 position: absolute;
-                top: -17px;
-                left: 15px;
+                top: -21px;
+                left: 21px;
             }
         }
         &.fandb_modal{
@@ -170,13 +170,13 @@
             }
             &::before{
                 content: '';
-                width: 34px;
-                height: 34px;
+                width: 42px;
+                height: 42px;
                 display: block;
                 background: url('../assets/main/icon_fandb.png') no-repeat center / contain;
                 position: absolute;
-                top: -17px;
-                left: 15px;
+                top: -21px;
+                left: 21px;
             }
         }
         &.venue_modal{
@@ -198,6 +198,87 @@
                 left: -12px;
                 transform: translateY(-50%);
                 z-index: -1;
+            }
+        }
+        &.toilet_modal{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_purple.png') no-repeat bottom left / contain;
+            padding-bottom: 35px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 42px;
+                height: 42px;
+                display: block;
+                background: url('../assets/main/icon_toilet.png') no-repeat center / contain;
+                position: absolute;
+                top: -21px;
+                left: 21px;
+            }
+        }
+        &.surau_modal{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_gray.png') no-repeat bottom left / contain;
+            padding-bottom: 35px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 42px;
+                height: 42px;
+                display: block;
+                background: url('../assets/main/icon_surau.png') no-repeat center / contain;
+                position: absolute;
+                top: -21px;
+                left: 21px;
+            }
+        }
+        &.art_modal{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_green.png') no-repeat bottom left / contain;
+            padding-bottom: 35px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 42px;
+                height: 42px;
+                display: block;
+                background: url('../assets/main/icon_art.png') no-repeat center / contain;
+                position: absolute;
+                top: -21px;
+                left: 21px;
             }
         }
     }
