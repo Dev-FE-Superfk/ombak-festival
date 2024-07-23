@@ -13,3 +13,5 @@ export { default as IconParking } from './icon_parking.png';
 export { default as IconMedic } from './icon_medic.png';
 export { default as IconWashroom } from './icon_washroom.png';
 export { default as TicketMelon } from './ticketmelon.png';
+export { default as IconToilet } from './icon_toilet.png';
+export { default as IconArt } from './icon_art.png';
