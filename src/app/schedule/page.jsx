@@ -100,8 +100,8 @@ export default function Schedule() {
       </div>
       <div className="schedule_label">
         <div className="sl_box">
-          <span className="addon_tag">Add-On</span>
-          Add-ons ticket
+          <span className="addon_tag">EXCLUSIVE</span>
+          Exclusive Ticketed Event
         </div>
         <div className="sl_box">
           <span className="purple"></span>
@@ -135,7 +135,7 @@ export default function Schedule() {
                         <h4>{activity.title}</h4>
                         <span>{activity.time}</span>
                       </div>
-                      {activity.addon_tag === '1' && <div className="addon_tag">Add-On</div>}
+                      {activity.addon_tag === '1' && <div className="addon_tag">EXCLUSIVE</div>}
                     </div>
                   ))}
               </div>

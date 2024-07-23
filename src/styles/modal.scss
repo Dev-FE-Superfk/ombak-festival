@@ -19,7 +19,7 @@
     .modal_content{
         width: 550px;
         background: white;
-        padding: 40px 70px;
+        padding: 40px 50px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         position: absolute;
@@ -70,13 +70,18 @@
         }
         p{
             font-family: 'Roboto';
+            font-size: 16px;
             strong{
                 font-weight: bold;
+            }
+            a{
+                color:#FF6255;
             }
         }
         .row_flex{
             display: flex;
             flex-wrap: wrap;
+            padding: 0 20px;
             .resort_choose{
                 width: calc((100% - 20px)/2);
                 margin-right: 20px;

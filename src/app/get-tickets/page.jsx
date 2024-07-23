@@ -161,9 +161,9 @@ export default function GetTickets() {
                 </div>
                 <div className='sgt_nav'>
                     <div className='container'>
-                        <div className={`sgt_nav_box general active`} onClick={() => scrollToSection(generalAdmissionRef, 'general')}>General Admission</div>
-                        <div className={`sgt_nav_box hotel`} onClick={() => scrollToSection(hotelPackagesRef)}>Hotel Packages</div>
-                        <div className={`sgt_nav_box addon`} onClick={() => scrollToSection(addonsRef)}>Add-ons</div>
+                        <div className={`sgt_nav_box general active`} onClick={() => scrollToSection(generalAdmissionRef, 'general')}>Festival Day Passes</div>
+                        <div className={`sgt_nav_box hotel`} onClick={() => scrollToSection(hotelPackagesRef)}>Stay Packages</div>
+                        <div className={`sgt_nav_box addon`} onClick={() => scrollToSection(addonsRef)}>Exclusive Ticketed Events</div>
                     </div>
                 </div>
                 <div className='info_middle'>
@@ -190,7 +190,7 @@ export default function GetTickets() {
                         {hotelPackages && (
                             <div className="hotel_packages" ref={hotelPackagesRef}>
                                 <div className="title_box">
-                                    <h3>Hotel Packages</h3>
+                                    <h3>Stay Packages</h3>
                                 </div>
                                 <div className="hp_box">
                                     {hotelPackages.map((hotelpack, index) => (
@@ -220,8 +220,8 @@ export default function GetTickets() {
                         {addOn && (
                             <div className="addons" ref={addonsRef}>
                                 <div className="title_box">
-                                    <h3>Add-ons</h3>
-                                    Add-on purchases are only available for holders of <strong>Hotel Packages.</strong>
+                                    <h3>Exclusive Ticketed Events</h3>
+                                    Exclusive Ticketed Events are only available to <strong>Ombak Festival Stay Package</strong> ticket holders.
                                 </div>
                                 <div className="addon_row_flex">
                                     {addOn.map((addon, index) => (
@@ -232,7 +232,7 @@ export default function GetTickets() {
                                                     {addon.addon_description && <p dangerouslySetInnerHTML={{__html : addon.addon_description}}></p>}
                                                     <span>{addon.addon_price}</span>
                                                 </div>
-                                                <button onClick={() => openModal('add-ons')}>Buy Add-On</button>
+                                                <button onClick={() => openModal('add-ons')}>Buy Ticket</button>
                                                 <div className='view_btn'>{addon.addon_link_detail ? (<Link href={addon.addon_link_detail}>View Details</Link>) : (<span>&nbsp;</span>)}</div>
                                             </div>
                                             <div className="addon_image"><Image src={addon.addon_image} width={356} height={280} quality={100} alt={addon.addon_title} /></div>
@@ -248,8 +248,8 @@ export default function GetTickets() {
             {showModal && (
                 <>
                     <Modal isOpen={showModal} onClose={closeModal}>
-                        <span className='info_text'>Before we continue...</span>
-                        <h4>Which hotel guest are you <br />coming from?</h4>
+                        {/* <span className='info_text'>Before we continue...</span> */}
+                        <h4>Where are you staying during <br/>Ombak Festival?</h4>
                         <div className="row_flex">
                             <div className="resort_choose">
                                 <input
@@ -293,7 +293,7 @@ export default function GetTickets() {
                             </div>
                         </div>
                         <button className='next_btn' disabled={!selectedResort} onClick={handleProceed}>Proceed</button>
-                        <p>If you’re not from any of the hotel guest, you can’t proceed to purchase the add-on. Add-on purchases are only available for holders of <strong>Hotel Packages.</strong></p>
+                        <p><strong>Exclusive Ticketed Events</strong> are only available to <strong>Stay Package</strong> ticket holders. You can book your Stay Package at any of our four 5-star resorts <Link href="/stay?tag=hard_rock_hotel">here.</Link></p>
                     </Modal>
                 </>
             )}

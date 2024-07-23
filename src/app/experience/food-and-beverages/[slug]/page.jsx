@@ -146,11 +146,23 @@ export default function FnbDetail() {
                             <div className='sm_box'>
                             <Link
                                 className='sm_youtube'
-                                href={desc.socialmedia_ig}
+                                href={desc.socialmedia_yt}
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 >
                                 Youtube
+                                </Link>
+                            </div>
+                        )}
+                        {desc.socialmedia_x && (
+                            <div className='sm_box'>
+                            <Link
+                                className='sm_x'
+                                href={desc.socialmedia_x}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                >
+                                X
                                 </Link>
                             </div>
                         )}
@@ -160,11 +172,11 @@ export default function FnbDetail() {
               {fnbAddon && (
                 <div className='addon_box'>
                     <div className='addon_content'>
-                      <h5>Interested to join? Buy the Add-on Ticket now!</h5>
+                      <h5>Interested to join? Buy the Exclusive Ticketed Events now!</h5>
                       <div className='addon_status fnb'>
                         <h4>{fnbAddon.addon_title}</h4>
                         <span>{fnbAddon.addon_price}</span>
-                        <button onClick={openModal}>Buy Add-On</button>
+                        <button onClick={openModal}>Buy Ticket</button>
                       </div>
                     </div>
                 </div>
@@ -192,8 +204,7 @@ export default function FnbDetail() {
     {showModal && (
       <>
           <Modal isOpen={showModal} onClose={closeModal}>
-              <span className='info_text'>Before we continue...</span>
-              <h4>Which hotel guest are you <br />coming from?</h4>
+              <h4>Where are you staying during <br/>Ombak Festival?</h4>
               <div className="row_flex">
                   <div className="resort_choose">
                       <input
@@ -237,7 +248,7 @@ export default function FnbDetail() {
                   </div>
               </div>
               <button className='next_btn' disabled={!selectedResort} onClick={handleProceed}>Proceed</button>
-              <p>If you’re not from any of the hotel guest, you can’t proceed to purchase the add-on. Add-on purchases are only available for holders of <strong>Hotel Packages.</strong></p>
+              <p><strong>Exclusive Ticketed Events</strong> are only available to <strong>Stay Package</strong> ticket holders. You can book your Stay Package at any of our four 5-star resorts <Link href="/stay?tag=hard_rock_hotel">here.</Link></p>
           </Modal>
       </>
     )}

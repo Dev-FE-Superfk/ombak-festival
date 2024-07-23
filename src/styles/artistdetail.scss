@@ -324,6 +324,17 @@
           font-size: 20px;
         }
         .discover_image{
+          height: 243px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1023px){
+  .section_artist_detail{
+    .discover_artist{
+      .discover_box{
+        .discover_image{
           height: 168px;
         }
       }
