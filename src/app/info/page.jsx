@@ -141,7 +141,7 @@ function Info() {
                         classes[index % classes.length]
                       }`}>
                               <div className='item_image'>
-                                <Image src={item.v_page_element_image} alt={item.v_page_element_image_title} width={200} height={200}></Image>
+                                <Image src={item.v_page_element_image} alt={item.v_page_element_image_title} width={300} height={300} quality={100}></Image>
                               </div>
                               <div className="item_info">
                                 <h4>{item.v_page_element_image_title}</h4>
