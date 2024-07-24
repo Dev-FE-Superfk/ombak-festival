@@ -19,7 +19,7 @@
     .modal_content{
         width: 550px;
         background: white;
-        padding: 40px 50px;
+        padding: 40px 38px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         position: absolute;
@@ -55,6 +55,7 @@
             text-transform: uppercase;
             margin-bottom: 20px;
             transition: all 0.2s ease;
+            font-family: 'Antique Olive Std Black';
             &:hover {
                 background: rgb(181, 189, 35);
                 color: rgb(6, 72, 78);
@@ -82,7 +83,7 @@
         .row_flex{
             display: flex;
             flex-wrap: wrap;
-            padding: 0 20px;
+            padding: 0 32px;
             .resort_choose{
                 width: calc((100% - 20px)/2);
                 margin-right: 20px;
@@ -130,9 +131,29 @@
                 }
             }
         }
+        .ticket_flex{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            .ticket_box{
+                font-family: 'Roboto';
+                font-weight: normal;
+                margin-right: 21px;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            .partners_image{
+                height: 45px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                margin: 10px auto 20px;
+            }
+        }
         .ticketmelon{
             display: block;
-            margin: 40px auto 40px;
         }
         .close{
             width: 24px;
@@ -159,6 +180,15 @@
             }
             p{
                 font-size: 14px;
+            }
+            .ticket_flex{
+                .ticket_box{
+                    width: 100%;
+                    margin-right: 0;
+                    &:first-child{
+                        margin-bottom: 20px;
+                    }
+                }
             }
         }
     }

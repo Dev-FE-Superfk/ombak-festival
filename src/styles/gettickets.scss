@@ -74,8 +74,9 @@
             color:#fff;
             margin-right: 20px;
             margin-bottom: 20px;
-            padding: 27px 20px;
+            padding: 27px 20px 70px;
             font-family: 'Roboto';
+            position: relative;
             &:nth-child(2n){
                 margin-right: 0;
             }
@@ -101,6 +102,16 @@
                 color:#FFE17F;
             }
             .ga_price{
+              width: 100%;
+              padding:0 20px;
+              position: absolute;
+              bottom: 20px;
+              left: 0;
+              &:after{
+                content: '';
+                display: block;
+                clear: both;
+              }
                 span{
                     font-size: 28px;
                     line-height: 45px;
@@ -166,9 +177,10 @@
                         float: left;
                         span{
                             font-size: 28px;
-                            line-height: 45px;
+                            line-height: normal;
                             font-weight: 500;
                             font-family: 'Roboto';
+                            display: block;
                         }
                     }
                     button{
@@ -184,6 +196,8 @@
                         color:#fff;
                         cursor: pointer;
                         transition: all 0.2s ease;
+                        position: relative;
+                        top: 17px;
                         &:hover {
                           background: rgb(181, 189, 35);
                           color: rgb(6, 72, 78);
@@ -428,6 +442,8 @@
               }
               button{
                 float: none;
+                position: static;
+                margin-top: 10px;
               }
             }
           }

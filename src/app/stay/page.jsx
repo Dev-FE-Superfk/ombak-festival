@@ -141,9 +141,11 @@ function Stay() {
                     ></p>
                     <div className='pkg_price'>
                       {tag !== 'one_and_only' && (
-                        <span>Packages start from</span>
+                        <>Packages start from
+                        <span>{pkg.price}</span>
+                        <div style={{fontSize:'14px', fontWeight:'normal'}}>Price valid until 6 August 2024</div>
+                        </>
                       )}
-                      {pkg.price}
                     </div>
                     <div className='button_box'>
                       <Link

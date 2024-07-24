@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Modal } from '@/components';
-import { Hardrock, TheWestin, Anantara, Onenonly, TicketMelon } from '@/assets';
+import { Hardrock, TheWestin, Anantara, Onenonly, TicketMelon, Sistic } from '@/assets';
 import '../../styles/gettickets.scss';
 
 function Tickets() {
@@ -124,9 +124,13 @@ function Tickets() {
             // Adding a slight delay to ensure all elements are rendered
             setTimeout(() => {
                 const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
-                const topOffset = addonsRef.current.getBoundingClientRect().top + window.pageYOffset - (isMobile ? 80 : 50);
-                console.log(topOffset);
+                const topOffset = addonsRef.current.getBoundingClientRect().top + window.pageYOffset - (isMobile ? 50 : 50);
                 window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    
+                // Change the URL without reloading the page
+                setTimeout(() => {
+                    window.history.pushState({}, '', '/get-tickets');
+                }, 3000); // Adjust the delay as needed
             }, 500); // Adjust the delay as needed
         }
     }, [addOn, hasPackageParam]);
@@ -217,7 +221,7 @@ function Tickets() {
                                                 <div className='hp_price'>
                                                     {hotelpack.resort_price ? (
                                                         <>
-                                                            <div className='price_text'>Packages start from <span>{hotelpack.resort_price}</span></div>
+                                                            <div className='price_text'>Packages start from <span>{hotelpack.resort_price}</span><div style={{fontSize: '14px'}}>Price valid until 6 August 2024</div></div>
                                                             <button><Link href={hotelpack.resort_button_link} target='_blank' rel='noopener noreferrer'>{hotelpack.resort_button_name}</Link></button>
                                                         </>
                                                     ) : (
@@ -316,19 +320,43 @@ function Tickets() {
                 <>
                     {/* Second modal for ticket purchase confirmation */}
                     <Modal isOpen={showSecondModal} onClose={closeSecondModal}>
-                        <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
-                        <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
-                        <button className='next_btn'>
                         {modalActionType === 'add-ons' ?
                             (
-                            <Link href="http://www.ticketmelon.com/event/ombakexclusives" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                            <>
+                                <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
+                                <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
+                                <button className='next_btn'>
+                                    <Link href="http://www.ticketmelon.com/event/ombakexclusives" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                                </button>
+                            </>
                             )
                             :
                             (
-                            <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                            <>
+                                <h4>You’ll be redirected to our ticketing partner to complete your purchase</h4>
+                                <div className='ticket_flex'>
+                                    <div className='ticket_box'>
+                                        <span>For Malaysian and others</span>
+                                        <div className='partners_image'>
+                                            <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
+                                        </div>
+                                        <button className='next_btn'>
+                                            <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                                        </button>
+                                    </div>
+                                    <div className='ticket_box'>
+                                        <span>For Singaporean</span>
+                                        <div className='partners_image'>
+                                            <Image className='ticketmelon' src={Sistic} width={97} height={45}></Image>
+                                        </div>
+                                        <button className='next_btn'>
+                                            <Link href="https://sistic.com.sg/events/ombak0924" target='_blank' rel='noopener noreferrer'>Proceed to Sistic</Link>
+                                        </button>
+                                    </div>
+                                </div>
+                            </>
                             )
                         }
-                        </button>
                     </Modal>
                 </>
             )}
