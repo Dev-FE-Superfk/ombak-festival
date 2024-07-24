@@ -27,7 +27,7 @@ export default function Terms() {
               </ol>
             </li>
             <li>
-            Ticket holders will need to redeem their tickets for festival wristbands in order to gain entry to the festival. Wristbands must be worn at all times during the event, and those found without wristbands will be asked to leave the festival grounds. For Festival 2-Day Passes ticket holders, the same wristband must be used for both days of the festival, and ticket holders are responsible for their own wristbands.
+            All event attendees are required to have a ticket to access the event, except for those aged 12 and below, who may enter for free provided that they are accompanied by an adult ticket holder. Ticket holders will need to redeem their tickets for festival wristbands in order to gain entry to the festival. Wristbands must be worn at all times during the event, and those found without wristbands will be asked to leave the festival grounds. For Festival 2-Day Pass ticket holders, the same wristband must be used for both days of the festival, and ticket holders are responsible for their own wristbands.
             </li>
             <li>
             Lost wristbands may only be reissued at Event Organiser’s sole discretion. Those who lose their wristband at the festival may be asked to leave the festival grounds unless they can produce the e-ticket in print or digital form and a copy of valid photo ID or passport for the reissuance of a replacement wristband which is subject to Event Organiser’s sole discretion.

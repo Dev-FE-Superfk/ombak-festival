@@ -229,7 +229,7 @@
             .addon_info{
                 padding: 25px 20px 20px;
                 .ai_box{
-                    height: 180px;
+                    height: 230px;
                 }
                 h4{
                     font-size: 24px;
@@ -393,6 +393,15 @@
           }
         }
       }
+      .addons{
+        .addon_box{
+          .addon_info{
+            .ai_box{
+              height: 300px;
+            }
+          }
+        }
+      }
       .general_admission{
         .title_box{
           padding-top: 20px;
@@ -544,6 +553,10 @@
             .addon_info{
               h4{
                 font-size: 20px;
+              }
+              .ai_box{
+                height: auto;
+                padding-bottom: 20px;
               }
             }
           }

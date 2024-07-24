@@ -374,7 +374,7 @@ export default function Home() {
           <Link href='/info?tag=general_info'>
             <h3>
               Get Help & <br />
-              Infos
+              Info
             </h3>
             <p>Find more information about Ombak Festival here</p>
             <div className="button">Explore</div>
