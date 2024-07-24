@@ -26,6 +26,7 @@ import {
   OmbakExperience,
   OmbakExperienceMobile,
   TicketMelon,
+  Sistic,
 } from '@/assets';
 import {useEffect, useState} from 'react';
 import {VideoPlayer, PartnerSlider, RunningText, Modal} from '@/components';
@@ -412,11 +413,29 @@ export default function Home() {
         <>
             {/* Second modal for ticket purchase confirmation */}
             <Modal isOpen={showSecondModal} onClose={closeSecondModal}>
-                <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
-                <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
-                <button className='next_btn'>
-                <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
-                </button>
+            <>
+              <h4>You’ll be redirected to our ticketing partner to complete your purchase</h4>
+              <div className='ticket_flex'>
+                  <div className='ticket_box'>
+                      <span>For Malaysian and others</span>
+                      <div className='partners_image'>
+                          <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
+                      </div>
+                      <button className='next_btn'>
+                          <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                      </button>
+                  </div>
+                  <div className='ticket_box'>
+                      <span>For Singaporean</span>
+                      <div className='partners_image'>
+                          <Image className='ticketmelon' src={Sistic} width={97} height={45}></Image>
+                      </div>
+                      <button className='next_btn'>
+                          <Link href="https://sistic.com.sg/events/ombak0924" target='_blank' rel='noopener noreferrer'>Proceed to Sistic</Link>
+                      </button>
+                  </div>
+              </div>
+          </>
             </Modal>
         </>
       )}
