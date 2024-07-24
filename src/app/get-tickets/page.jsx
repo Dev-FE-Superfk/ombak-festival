@@ -226,7 +226,7 @@ function Tickets() {
                                                         </>
                                                     ) : (
                                                         <>
-                                                            <button><Link href={`mailto:${hotelpack.resort_button_link}?subject=(Ombak Festival) Partnership Enquiries`} target='_blank' rel='noopener noreferrer'>{hotelpack.resort_button_name}</Link></button>
+                                                            <button style={{position:'static'}}><Link href={`mailto:${hotelpack.resort_button_link}?subject=(Ombak Festival) Partnership Enquiries`} target='_blank' rel='noopener noreferrer'>{hotelpack.resort_button_name}</Link></button>
                                                         </>
                                                     )}
                                                 </div>
