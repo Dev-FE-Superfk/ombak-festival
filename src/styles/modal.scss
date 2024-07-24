@@ -131,6 +131,12 @@
                 }
             }
         }
+        .exclusive_ticket{
+            padding:0 32px;
+            img{
+                margin:20px auto 40px;
+            }
+        }
         .ticket_flex{
             display: flex;
             flex-wrap: wrap;

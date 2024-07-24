@@ -322,13 +322,13 @@ function Tickets() {
                     <Modal isOpen={showSecondModal} onClose={closeSecondModal}>
                         {modalActionType === 'add-ons' ?
                             (
-                            <>
+                            <div className='exclusive_ticket'>
                                 <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
                                 <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
                                 <button className='next_btn'>
                                     <Link href="http://www.ticketmelon.com/event/ombakexclusives" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
                                 </button>
-                            </>
+                            </div>
                             )
                             :
                             (
