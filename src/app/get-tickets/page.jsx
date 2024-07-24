@@ -1,5 +1,4 @@
 'use client';
-import {useSearchParams} from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,8 +7,6 @@ import { Hardrock, TheWestin, Anantara, Onenonly, TicketMelon } from '@/assets';
 import '../../styles/gettickets.scss';
 
 export default function GetTickets() {
-    const searchParams = useSearchParams();
-    const hasPackageParam = searchParams.get('exclusive') !== null;
     const [generalAdmission, setGeneralAdmission] = useState(null);
     const [hotelPackages, setHotelPackages] = useState(null);
     const [addOn, setAddOn] = useState(null);
@@ -118,18 +115,6 @@ export default function GetTickets() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
-    useEffect(() => {
-        if (addOn && hasPackageParam) {
-            // Adding a slight delay to ensure all elements are rendered
-            setTimeout(() => {
-                const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
-                const topOffset = addonsRef.current.getBoundingClientRect().top + window.pageYOffset - (isMobile ? 80 : 50);
-                console.log(topOffset);
-                window.scrollTo({ top: topOffset, behavior: 'smooth' });
-            }, 500); // Adjust the delay as needed
-        }
-    }, [addOn, hasPackageParam]);
 
     const openModal = (actionType) => {
         setShowModal(true);
