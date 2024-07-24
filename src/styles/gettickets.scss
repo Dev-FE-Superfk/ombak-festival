@@ -33,6 +33,7 @@
         margin-right: 30px;
         padding: 20px 0;
         display: block;
+        cursor: pointer;
         &.active {
             padding-bottom: 15px;
             border-bottom: 5px solid $orange;
