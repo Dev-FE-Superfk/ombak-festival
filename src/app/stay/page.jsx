@@ -143,7 +143,6 @@ function Stay() {
                       {tag !== 'one_and_only' && (
                         <>Packages start from
                         <span>{pkg.price}</span>
-                        <div style={{fontSize:'14px', fontWeight:'normal'}}>Price valid until 6 August 2024</div>
                         </>
                       )}
                     </div>

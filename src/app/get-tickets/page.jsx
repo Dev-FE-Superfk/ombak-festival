@@ -221,7 +221,7 @@ function Tickets() {
                                                 <div className='hp_price'>
                                                     {hotelpack.resort_price ? (
                                                         <>
-                                                            <div className='price_text'>Packages start from <span>{hotelpack.resort_price}</span><div style={{fontSize: '14px'}}>Price valid until 6 August 2024</div></div>
+                                                            <div className='price_text'>Packages start from <span>{hotelpack.resort_price}</span></div>
                                                             <button><Link href={hotelpack.resort_button_link} target='_blank' rel='noopener noreferrer'>{hotelpack.resort_button_name}</Link></button>
                                                         </>
                                                     ) : (
