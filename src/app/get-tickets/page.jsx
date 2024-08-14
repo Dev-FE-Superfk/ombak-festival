@@ -240,7 +240,6 @@ function Tickets() {
                             <div className="addons" ref={addonsRef}>
                                 <div className="title_box">
                                     <h3>Exclusive Ticketed Events</h3>
-                                    Exclusive Ticketed Events are only available to <strong>Ombak Festival Stay Package</strong> ticket holders.
                                 </div>
                                 <div className="addon_row_flex">
                                     {addOn.map((addon, index) => (
@@ -251,7 +250,7 @@ function Tickets() {
                                                     {addon.addon_description && <p dangerouslySetInnerHTML={{__html : addon.addon_description}}></p>}
                                                     <span>{addon.addon_price}</span>
                                                 </div>
-                                                <button onClick={() => openModal('add-ons')}>Buy Ticket</button>
+                                                <button onClick={() => openSecondModal('add-ons')}>Buy Ticket</button>
                                                 <div className='view_btn'>{addon.addon_link_detail ? (<Link href={addon.addon_link_detail}>View Details</Link>) : (<span>&nbsp;</span>)}</div>
                                             </div>
                                             <div className="addon_image"><Image src={addon.addon_image} width={356} height={280} quality={100} alt={addon.addon_title} /></div>
@@ -264,10 +263,9 @@ function Tickets() {
                 </div>
             </div>
 
-            {showModal && (
+            {/* {showModal && (
                 <>
                     <Modal isOpen={showModal} onClose={closeModal}>
-                        {/* <span className='info_text'>Before we continue...</span> */}
                         <h4>Where are you staying during <br/>Ombak Festival?</h4>
                         <div className="row_flex">
                             <div className="resort_choose">
@@ -315,7 +313,7 @@ function Tickets() {
                         <p><strong>Exclusive Ticketed Events</strong> are only available to <strong>Stay Package</strong> ticket holders. You can book your Stay Package at any of our four 5-star resorts <Link href="/stay?tag=hard_rock_hotel">here</Link>.</p>
                     </Modal>
                 </>
-            )}
+            )} */}
             {showSecondModal && ( 
                 <>
                     {/* Second modal for ticket purchase confirmation */}
