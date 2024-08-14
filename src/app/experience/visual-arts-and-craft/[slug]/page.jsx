@@ -13,7 +13,7 @@ export default function visualartsDetail() {
   const [visualarts, setVisualartsDetail] = useState(null);
   const [discover, setDiscover] = useState(null);
   const [visualartsAddon, setVisualartsAddon] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  //const [showModal, setShowModal] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
   const [selectedResort, setSelectedResort] = useState(null);
   const [modalActionType, setModalActionType] = useState(null);
@@ -53,28 +53,28 @@ export default function visualartsDetail() {
   if (!visualarts) {
     return <div>Loading...</div>;
   }
-  const openModal = (actionType) => {
-    setShowModal(true);
-    setShowSecondModal(false); // Pastikan modal kedua tertutup saat membuka modal pertama
-    setModalActionType(actionType); // Simpan jenis tindakan untuk digunakan di dalam modal
-  };
+  // const openModal = (actionType) => {
+  //   setShowModal(true);
+  //   setShowSecondModal(false); // Pastikan modal kedua tertutup saat membuka modal pertama
+  //   setModalActionType(actionType); // Simpan jenis tindakan untuk digunakan di dalam modal
+  // };
 
-  const closeModal = () => {
-      setShowModal(false);
-      setSelectedResort(null);
-  };
+  // const closeModal = () => {
+  //     setShowModal(false);
+  //     setSelectedResort(null);
+  // };
 
-  const handleRadioChange = (resortName) => {
-      setSelectedResort(resortName);
-  };
+  // const handleRadioChange = (resortName) => {
+  //     setSelectedResort(resortName);
+  // };
 
-  const handleProceed = () => {
-      setShowModal(false); // Close first modal after selecting
-      setShowSecondModal(true); // Open second modal for purchase confirmation
-  };
+  // const handleProceed = () => {
+  //     setShowModal(false); // Close first modal after selecting
+  //     setShowSecondModal(true); // Open second modal for purchase confirmation
+  // };
 
   const openSecondModal = (actionType) => {
-      setShowModal(false);
+      //setShowModal(false);
       setShowSecondModal(true); // Pastikan modal kedua tertutup saat membuka modal pertama
       setModalActionType(actionType); // Simpan jenis tindakan untuk digunakan di dalam modal
   };
@@ -177,7 +177,7 @@ export default function visualartsDetail() {
                       <div className='addon_status visualarts'>
                         <h4>{visualartsAddon.addon_title}</h4>
                         <span>{visualartsAddon.addon_price}</span>
-                        <button onClick={openModal}>Buy Ticket</button>
+                        <button onClick={() => openSecondModal('add-ons')}>Buy Ticket</button>
                       </div>
                     </div>
                 </div>
@@ -202,7 +202,7 @@ export default function visualartsDetail() {
         </div>
       </div>
     </div>
-    {showModal && (
+    {/* {showModal && (
       <>
           <Modal isOpen={showModal} onClose={closeModal}>
               <h4>Where are you staying during <br/>Ombak Festival?</h4>
@@ -252,19 +252,48 @@ export default function visualartsDetail() {
               <p><strong>Exclusive Ticketed Events</strong> are only available to <strong>Stay Package</strong> ticket holders. You can book your Stay Package at any of our four 5-star resorts <Link href="/stay?tag=hard_rock_hotel">here</Link>.</p>
           </Modal>
       </>
-    )}
+    )} */}
     {showSecondModal && ( 
       <>
-          {/* Second modal for ticket purchase confirmation */}
           <Modal isOpen={showSecondModal} onClose={closeSecondModal}>
-            <div className='exclusive_ticket'>
-                <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
-                <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
-                <button className='next_btn'>
-                    <Link href="http://www.ticketmelon.com/event/ombakexclusives" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
-                </button>
-            </div>
-          </Modal>
+            {modalActionType === 'add-ons' ?
+                (
+                <div className='exclusive_ticket'>
+                    <h4>You'll be redirected to our ticketing partner Ticketmelon to complete your purchase</h4>
+                    <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
+                    <button className='next_btn'>
+                        <Link href="http://www.ticketmelon.com/event/ombakexclusives" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                    </button>
+                </div>
+                )
+                :
+                (
+                <>
+                    <h4>You’ll be redirected to our ticketing partner to complete your purchase</h4>
+                    <div className='ticket_flex'>
+                        <div className='ticket_box'>
+                            <span>For Malaysian and others</span>
+                            <div className='partners_image'>
+                                <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
+                            </div>
+                            <button className='next_btn'>
+                                <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
+                            </button>
+                        </div>
+                        <div className='ticket_box'>
+                            <span>For Singaporean</span>
+                            <div className='partners_image'>
+                                <Image className='ticketmelon' src={Sistic} width={97} height={45}></Image>
+                            </div>
+                            <button className='next_btn'>
+                                <Link href="https://sistic.com.sg/events/ombak0924" target='_blank' rel='noopener noreferrer'>Proceed to Sistic</Link>
+                            </button>
+                        </div>
+                    </div>
+                </>
+                )
+            }
+        </Modal>
       </>
     )}
   </>
