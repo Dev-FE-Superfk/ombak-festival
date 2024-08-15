@@ -89,7 +89,7 @@ export default function MediaRoom() {
                   </div>
                   <div className="smrt_box">
                     <h3>Media Accreditation</h3>
-                    <p>To apply for media accreditation, kindly fill up the application form <a href='https://www.figma.com/exit?url=https%3A%2F%2Fforms.gle%2FqPtnSbs8E9yknHwt6' target='_blank'>here</a>, and our communications team will review and respond.</p>
+                    <p>To apply for media accreditation, kindly fill up the application form <a href='https://docs.google.com/forms/d/e/1FAIpQLSfbPf0GpqG3ST2Z1MSPtBGeWOjTZxIS2xBpgasjW_JNKsw5Ow/viewform' target='_blank'>here</a>, and our communications team will review and respond.</p>
                   </div>
                 </div>
                 <div className="smr_mid">
