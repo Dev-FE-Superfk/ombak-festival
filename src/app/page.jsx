@@ -103,12 +103,6 @@ export default function Home() {
   return (
     <>
       <div className='section_one'>
-        <Image src="https://ombakfestival.com/ombak_meta.jpeg" width={600} height={600} alt='Ombak Festival' style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: -2,
-        }}></Image>
         <div className='mobile_text'>
           <Image src={LogoYellow} alt=''></Image>
           <div className='text_info'>

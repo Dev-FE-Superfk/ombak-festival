@@ -97,7 +97,7 @@ export default function MediaRoom() {
                   <div className="smrm_wrapper">
                     {mediaData.map((mediadata, index) => (
                       <div className="smrm_box" key={index}>
-                        <div className="smrm_image"><Image src={mediadata.image_article} width={400} height={200} alt='' /></div>
+                        <div className="smrm_image"><Image priority src={mediadata.image_article} width={400} height={200} alt='' /></div>
                         <div className="smrm_info">
                           <span>{mediadata.date_article}</span>
                           <h4>{mediadata.title_article}</h4>
@@ -126,7 +126,7 @@ export default function MediaRoom() {
                 <h3>Follow us on <span>Social Media</span></h3>
                 <div className="fu_wrapper">
                   {followUs.map((followus, index) => (
-                    <div className="fu_box">
+                    <div className="fu_box" key={index}>
                       <h4>{followus.title}</h4>
                       <ul>
                         {followus.facebook && <li className='facebook_btn'><Link target='_blank' rel='noopener noreferrer' href={followus.facebook}>Facebook</Link></li>}

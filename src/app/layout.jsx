@@ -3,13 +3,7 @@ import './globals.css';
 import '../fonts/style.css';
 import {Header, Footer} from '@/components';
 import Userback from '@userback/widget';
-
 Userback('A-xQ6x2VJaEspUVIlxcoH6tPkLd').then((ub) => {
-  // identify your logged-in users (optional)
-  ub.identify("123456", {
-    name: "someone",
-    email: "someone@example.com"
-  });
 });
 
 export default function RootLayout({children}) {
