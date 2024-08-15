@@ -1,12 +1,24 @@
 'use client';
 import './globals.css';
 import '../fonts/style.css';
+import { useEffect } from 'react';
 import {Header, Footer} from '@/components';
 import Userback from '@userback/widget';
-Userback('A-xQ6x2VJaEspUVIlxcoH6tPkLd').then((ub) => {
-});
 
 export default function RootLayout({children}) {
+  useEffect(() => {
+    // Initialize Userback widget
+    Userback('P-594QMpIk2nw42M7qspN1NIqAy').then((ub) => {
+      // identify your logged-in users (optional)
+      ub.identify("123456", {
+        name: "someone",
+        email: "someone@example.com"
+      });
+    });
+
+    // Add other client-side script integrations here
+    // For example, dynamically import other scripts or initialize analytics
+  }, []);
   return (
     <html lang='en'>
       <title>Ombak Festival At Desaru Coast Johor</title>
