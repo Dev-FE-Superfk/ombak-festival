@@ -49,7 +49,7 @@ export default function Header() {
       <div className='container'>
         <h1 id='logo'>
           <Link href='/'>
-            <Image src={LogoWhite} width={93} height={30} alt='Logo' />
+            <Image src={LogoWhite} width={186} height={60} alt='Ombak Festival' priority />
           </Link>
         </h1>
         <div
