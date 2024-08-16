@@ -47,9 +47,24 @@
             padding: 20px;
             border:1px solid #000;
             position: relative;
+            text-decoration: none;
+            color:#000;
             height: 550px;
             &:nth-child(3n){
                 margin-right: 0;
+            }
+            &:hover{
+                .smrm_image{
+                    img{
+                        transform: scale(1.1);
+                        transition: all 0.5s ease;
+                    }
+                }
+                .smrm_info{
+                    h4{
+                        text-decoration: underline;
+                    }
+                }
             }
         }
         .smrm_image{
@@ -64,6 +79,7 @@
                 object-fit: cover;
                 height: auto;
                 display: block;
+                transition: all 0.5s ease;
             }
         }
         .smrm_info{

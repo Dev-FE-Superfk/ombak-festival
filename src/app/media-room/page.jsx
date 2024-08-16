@@ -96,14 +96,16 @@ export default function MediaRoom() {
                   <h3>Press Coverage</h3>
                   <div className="smrm_wrapper">
                     {mediaData.map((mediadata, index) => (
-                      <div className="smrm_box" key={index}>
-                        <div className="smrm_image"><Image priority src={mediadata.image_article} width={400} height={200} alt='' /></div>
-                        <div className="smrm_info">
-                          <span>{mediadata.date_article}</span>
-                          <h4>{mediadata.title_article}</h4>
-                        </div>
-                        <div className='smrm_media'><Image src={mediadata.image_media} width={150} height={150} alt='' /></div>
-                      </div>
+                      <Link className="smrm_box" key={index} href={mediadata.link} target='_blank' rel='noopener noreferrer'>
+                        <>
+                            <div className="smrm_image"><Image priority src={mediadata.image_article} width={400} height={200} alt='' /></div>
+                            <div className="smrm_info">
+                              <span>{mediadata.date_article}</span>
+                              <h4>{mediadata.title_article}</h4>
+                            </div>
+                            <div className='smrm_media'><Image src={mediadata.image_media} width={150} height={150} alt='' /></div>
+                      </>
+                      </Link>
                     ))}
                   </div>
                   {loading && !loadingMore && (
