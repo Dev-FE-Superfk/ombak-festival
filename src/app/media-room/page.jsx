@@ -7,29 +7,30 @@ import '../../styles/mediaroom.scss';
 export default function MediaRoom() {
     const [mediaData, setMediaData] = useState([]);
     const [followUs, setFollowUs] = useState([]);
-    const [limit, setLimit] = useState(9); // Default limit
+    const [limit, setLimit] = useState(); // Default limit
     const [totalCount, setTotalCount] = useState(0);
     const [loading, setLoading] = useState(true); // Initial loading
     const [loadingMore, setLoadingMore] = useState(false); // Track loading more state
 
     // Detect screen size and set initial limit
     useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 767) { // Adjust this breakpoint as needed
-                setLimit(5); // Initial limit for mobile
-            } else {
-                setLimit(9); // Initial limit for desktop
-            }
-        };
+        // const handleResize = () => {
+        //     if (window.innerWidth <= 767) { // Adjust this breakpoint as needed
+        //         setLimit(5); // Initial limit for mobile
+        //     } else {
+        //         setLimit(9); // Initial limit for desktop
+        //     }
+        // };
 
         // Call on component mount
-        handleResize();
+        // handleResize();
 
         // Add event listener for window resize
-        window.addEventListener('resize', handleResize);
+        // window.addEventListener('resize', handleResize);
 
         // Cleanup event listener on component unmount
-        return () => window.removeEventListener('resize', handleResize);
+        // return () => window.removeEventListener('resize', handleResize);
+        setLimit(window.innerWidth <= 767 ? 5 : 9);
     }, []);
 
     useEffect(() => {
@@ -73,7 +74,7 @@ export default function MediaRoom() {
 
         setLoadingMore(true); // Show loading more message
         setLimit((prevLimit) => {
-            const newLimit = prevLimit + (window.innerWidth <= 768 ? 5 : 9); // Increment based on screen size
+            const newLimit = prevLimit + (window.innerWidth <= 767 ? 5 : 9); // Increment based on screen size
             return newLimit > totalCount ? totalCount : newLimit; // Cap limit at totalCount
         });
     };
@@ -117,7 +118,7 @@ export default function MediaRoom() {
                         <span>{Math.min(limit, totalCount)}</span> of {totalCount}
                       </div>
                       {limit < totalCount && (
-                        <button onClick={loadMore}>Load More</button>
+                        <button onClick={() => loadMore()}>Load More</button>
                       )}
                     </div>
                   )}
