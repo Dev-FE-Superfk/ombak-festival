@@ -3,22 +3,8 @@ import './globals.css';
 import '../fonts/style.css';
 import { useEffect } from 'react';
 import {Header, Footer} from '@/components';
-import Userback from '@userback/widget';
 
 export default function RootLayout({children}) {
-  useEffect(() => {
-    // Initialize Userback widget
-    Userback('P-594QMpIk2nw42M7qspN1NIqAy').then((ub) => {
-      // identify your logged-in users (optional)
-      ub.identify("123456", {
-        name: "someone",
-        email: "someone@example.com"
-      });
-    });
-
-    // Add other client-side script integrations here
-    // For example, dynamically import other scripts or initialize analytics
-  }, []);
   return (
     <html lang='en'>
       <title>Ombak Festival At Desaru Coast Johor</title>
@@ -49,7 +35,7 @@ export default function RootLayout({children}) {
       <meta name="twitter:description" content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"/>
       <meta name="twitter:title" content="Ombak Festival At Desaru Coast Johor" />
       <meta name="twitter:image" content="https://www.ombakfestival.com/ombak_meta.jpeg" />
-      {/* <script
+      <script
             dangerouslySetInnerHTML={{
               __html: `
                 (function(c,l,a,r,i,t,y){
@@ -86,19 +72,19 @@ export default function RootLayout({children}) {
               fbq('track', 'PageView');
             `,
           }}
-        /> */}
+        />
       <body>
         <Header />
         <section id='root'>{children}</section>
         <Footer />
-        {/* <noscript>
+        <noscript>
           <img
             height="1"
             width="1"
             style={{ display: 'none' }}
             src="https://www.facebook.com/tr?id=1451507682492885&ev=PageView&noscript=1"
           />
-        </noscript> */}
+        </noscript>
       </body>
     </html>
   );
