@@ -4,40 +4,160 @@
     align-items: center;
     .fm_box{
         border: 1px solid #000;
-        height: 56px;
-        padding: 0 10px;
+        height: 80px;
         display: flex;
         align-items: center;
-        margin-right: 20px;
-        min-width: 75px;
+        margin-right: 12px;
+        width: 110px;
         justify-content: center;
         cursor: pointer;
+        text-align: center;
         &:hover,
         &.active{
             background: #06484E;
             color: #fff;
+            img{
+                filter: invert(100%);
+                transition: all 0.5s ease;
+            }
         }
         img{
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 10px;
+            width: auto;
+            height: auto;
+            display: block;
+            transition: all 0.5s ease;
+        }
+    }
+}
+.legend_wrapper{
+    position: relative;
+    &.Overview{
+        .legend_box{
+            display: none;
+        }
+    }
+    .legend_box{
+        width: 160px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.8);
+        padding: 20px 12px 10px;
+        position: absolute;
+        top: 40px;
+        z-index: 10;
+        left: calc((100vw - 1130px)/2);
+        h3{
+            font-size: 16px;
+            font-family: 'Antique Olive Std Bold';
+            margin-bottom: 10px;
+        }
+        .legend{
+            padding-left: 30px;
+            height: 34px;
+            font-size: 14px;
+            font-family: 'Roboto';
+            line-height: normal;
+            margin-bottom: 3px;
+            &.music{
+                background: url('../assets/main/pin_music.png') no-repeat top left / 25px;
+            }
+            &.ombak-kids{
+                background: url('../assets/main/pin_ombak_kids.png') no-repeat top left / 25px;
+                line-height: 34px;
+            }
+            &.visual-arts{
+                background: url('../assets/main/pin_visual_arts.png') no-repeat top left / 25px;
+            }
+            &.fnb{
+                background: url('../assets/main/pin_fnb.png') no-repeat top left / 25px;
+                line-height: 34px;
+            }
+            &.parking{
+                background: url('../assets/main/pin_parking.png') no-repeat top left / 25px;
+                line-height: 34px;
+                margin-bottom: 0;
+            }
         }
     }
 }
 .map_image{
     width: 100%;
     position: relative;
+    &.HardRock{
+        .pin_modal{
+            &.parking {
+                .parking_image{
+                    margin-top: 20px;
+                    width: 70px;
+                    height: 42px;
+                    background: url('../assets/home/hardrock.png') no-repeat center / contain;
+                    filter: invert(100%);
+                }
+            }  
+        }
+    }
+    &.Riverside{
+        .pin_modal{
+            &.parking {
+                .parking_image{
+                    margin-top: 20px;
+                    width: 70px;
+                    height: 42px;
+                    background: url('../assets/home/adventure_waterpark.png') no-repeat center / contain;
+                    filter: invert(100%);
+                }
+            }  
+        }
+    }
+    &.Anantara{
+        .pin_modal{
+            &.parking {
+                .parking_image{
+                    margin-top: 20px;
+                    width: 70px;
+                    height: 42px;
+                    background: url('../assets/home/anantara.png') no-repeat center / contain;
+                    filter: invert(100%);
+                }
+            }  
+        }
+    }
+    &.TheWestin{
+        .pin_modal{
+            &.parking {
+                .parking_image{
+                    margin-top: 20px;
+                    width: 70px;
+                    height: 42px;
+                    background: url('../assets/home/thewestin.png') no-repeat center / contain;
+                    filter: invert(100%);
+                }
+            }  
+        }
+    }
+    &.OneandOnly{
+        .pin_modal{
+            &.parking {
+                .parking_image{
+                    margin-top: 20px;
+                    width: 70px;
+                    height: 42px;
+                    background: url('../assets/home/onenonly.png') no-repeat center / contain;
+                    filter: invert(100%);
+                }
+            }  
+        }
+    }
     .map_img{
         width: 100%;
         display: block;
     }
     .pin_image{
         position: absolute;
-        top: -43px;
+        //top: -(calc((100vw * 4.685)/100));
         left: 50%;
         transform: translateX(-50%);
-        width: 35px;
-        height: 43px;
+        //width: calc((100vw * 3.8)/100);
+        //height: calc((100vw * 4.685)/100);
         display: block;
         cursor: pointer;
         &.venue{
@@ -54,13 +174,14 @@
     }
     .pin_modal{
         width: 225px;
-        padding: 15px;
+        padding: 20px 15px;
         background: #FFFFFF;
         position: absolute;
-        top: calc(50% - 21.5px);
-        left: 30px;
+        top: calc(50% - 31.5px);
+        left: 44px;
         transform: translateY(-50%);
         z-index: 10;
+        font-family: 'Roboto';
         h4{
             font-size: 20px;
         }
@@ -68,13 +189,21 @@
             font-size: 14px;
             font-family: 'Roboto';
         }
+        ul{
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ol{
+            list-style: decimal;
+            padding-left: 20px;
+        }
         .img_detail{
             margin-top: 20px;
         }
-        &.parking_modal{
+        &.parking{
             padding-top: 25px;
-            background: #fff url('../assets/main/modal_wave_blue.png') no-repeat bottom left / contain;
-            padding-bottom: 35px;
+            background: #fff url('../assets/main/modal_wave_gray.png') no-repeat bottom left / contain;
+            padding-bottom: 40px;
             &::after{
                 content: '';
                 width: 12px;
@@ -98,10 +227,14 @@
                 left: 21px;
             }
         }
-        &.washroom_modal{
+        a{
+            color: #FF6255;
+            text-decoration: underline;
+        }
+        &.golf{
             padding-top: 25px;
-            background: #fff url('../assets/main/modal_wave_green.png') no-repeat bottom left / contain;
-            padding-bottom: 35px;
+            background: #fff url('../assets/main/modal_wave_darkgreen.png') no-repeat bottom left / contain;
+            padding-bottom: 40px;
             &::after{
                 content: '';
                 width: 12px;
@@ -119,7 +252,7 @@
                 width: 42px;
                 height: 42px;
                 display: block;
-                background: url('../assets/main/icon_washroom.png') no-repeat center / contain;
+                background: url('../assets/main/icon_golf.png') no-repeat center / contain;
                 position: absolute;
                 top: -21px;
                 left: 21px;
@@ -128,7 +261,7 @@
         &.medic_modal{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_orange.png') no-repeat bottom left / contain;
-            padding-bottom: 35px;
+            padding-bottom: 40px;
             &::after{
                 content: '';
                 width: 12px;
@@ -152,10 +285,10 @@
                 left: 21px;
             }
         }
-        &.fandb_modal{
+        &.f-b{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_yellow.png') no-repeat bottom left / contain;
-            padding-bottom: 35px;
+            padding-bottom: 40px;
             &::after{
                 content: '';
                 width: 12px;
@@ -179,20 +312,46 @@
                 left: 21px;
             }
         }
-        &.venue_modal{
-            background: #fff url('../assets/main/modal_wave_darkgreen.png') no-repeat bottom left / contain;
-            padding-bottom: 35px;
+        &.overview{
+            background: #06484E url('../assets/main/modal_wave_green.png') no-repeat bottom left / contain;
+            padding-bottom: 50px;
             top: calc(50% - 27px);
+            color:#fff;
             left: 50px;
+            &.terminal-feri{
+                left: auto;
+                right: 50px;
+                &::after{
+                    left: auto;
+                    right: -12px;
+                    background: url('../assets/main/icon_arrow_right_dark_green.png') no-repeat center / contain;
+                }
+            }
+            .pp_image{
+                width: 80px;
+                height: 48px;
+                display: block;
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: contain;
+                    filter: invert(100%);
+                }
+            }
             h4{
                 display: none;
             }
+            p{
+                margin: 20px 0;
+            }
             &::after{
                 content: '';
-                width: 12px;
-                height: 22px;
+                width: 16px;
+                height: 26px;
                 display: block;
-                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                background: url('../assets/main/icon_arrow_left_dark_green.png') no-repeat center / contain;
                 position: absolute;
                 top: 50%;
                 left: -12px;
@@ -200,10 +359,10 @@
                 z-index: -1;
             }
         }
-        &.toilet_modal{
+        &.ombak-kids{
             padding-top: 25px;
-            background: #fff url('../assets/main/modal_wave_purple.png') no-repeat bottom left / contain;
-            padding-bottom: 35px;
+            background: #fff url('../assets/main/modal_wave_blue.png') no-repeat bottom left / contain;
+            padding-bottom: 40px;
             &::after{
                 content: '';
                 width: 12px;
@@ -221,7 +380,7 @@
                 width: 42px;
                 height: 42px;
                 display: block;
-                background: url('../assets/main/icon_toilet.png') no-repeat center / contain;
+                background: url('../assets/main/icon_ombak.png') no-repeat center / contain;
                 position: absolute;
                 top: -21px;
                 left: 21px;
@@ -230,7 +389,7 @@
         &.surau_modal{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_gray.png') no-repeat bottom left / contain;
-            padding-bottom: 35px;
+            padding-bottom: 40px;
             &::after{
                 content: '';
                 width: 12px;
@@ -254,10 +413,37 @@
                 left: 21px;
             }
         }
-        &.art_modal{
+        &.music-performances{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_purple.png') no-repeat bottom left / contain;
+            padding-bottom: 40px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 42px;
+                height: 42px;
+                display: block;
+                background: url('../assets/main/icon_music.png') no-repeat center / contain;
+                position: absolute;
+                top: -21px;
+                left: 21px;
+            }
+        }
+        &.visual-arts-craft{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_green.png') no-repeat bottom left / contain;
-            padding-bottom: 35px;
+            padding-bottom: 40px;
             &::after{
                 content: '';
                 width: 12px;
@@ -283,9 +469,6 @@
         }
     }
 }
-.filter_btn{
-    display: none;
-}
 
 @media only screen and (max-width: 1129px) {
     .filter_btn{
@@ -295,7 +478,8 @@
         .si_nav{
             .container{
                 display: flex;
-                overflow-x: auto;
+                overflow-x: scroll;
+                overflow-y: auto;
                 white-space: nowrap;
             }
             .si_nav_box{
@@ -303,66 +487,77 @@
             }
         }
     }
+    .legend_wrapper{
+        .legend_box{
+            width: 350px;
+            height: 50px;
+            padding-top: 15px;
+            overflow: hidden;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.8) url('../assets/main/icon_arrow_bottom.png') no-repeat right 20px top 22px / 12px;
+            &.active{
+                height: auto;
+                background: rgba(255,255,255,0.8) url('../assets/main/icon_arrow_up.png') no-repeat right 20px top 22px / 12px;
+            }
+            .row_flex{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .legend{
+                width: calc(100% / 2);
+                padding-right: 20px;
+                margin-bottom: 5px;
+            }
+        }
+    }
     .map_image{
-        overflow-x: auto;
-        height: 640px;
+        overflow-x: scroll;
+        overflow-y: auto;
+        height: 716px;
         .map_img{
             height: 716px;
             max-width: none;
             width: 1366px;
         }
-        ul{
+        .pin_point_box{
             width: 1366px;
             height: 716px;
             top: 0;
             left: 0;
             position: absolute;
         }
+        .pin_modal{
+            h4{
+                font-size: 18px;
+            }
+            ul{
+                li{
+                    font-size: 14px;
+                }
+            }
+        }
     }
     .filter_map{
         padding: 0 40px;
+        display: block;
+        overflow-x: scroll;
+        white-space: nowrap;
         .fm_box{
-            display: flex;
+            display: inline-block;
+            position: relative;
+            img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
         }
     }
 }
 @media only screen and (max-width: 767px) {
-    .filter_btn{
-        padding: 0 20px;
-        display: block;
-        div{
-            display: flex;
-            padding: 0 10px;
-            border: 1px solid #000;
-            margin: 0 auto;
-            height: 56px;
-            align-items: center;
-            justify-content: start;
-            background: url('../assets/main/keyboard_arrow_down.png') no-repeat right 10px center / 24px;
-            &.active{
-                background: url('../assets/main/keyboard_arrow_up.png') no-repeat right 10px center / 24px;
-            }
-        }
-        img{
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-    }
     .filter_map{
         padding: 0 20px;
-        display: block;
-        text-align: left;
-        .fm_box{
-            margin-right: 0;
-            display: flex;
-            justify-content: start;
-        }
-    }
-    .filter_map{
-        display: none;
-        &.active{
-            display: block;
-        }
     }
 }

@@ -14,13 +14,18 @@ function Map() {
 
     const [maps, setMaps] = useState(null);
     const [location, setLocation] = useState(null);
+    const [categories, setCategories] = useState([]);
     const [activeModal, setActiveModal] = useState(null);
     const [activeFilter, setActiveFilter] = useState('All');
     const [isFilterMapVisible, setIsFilterMapVisible] = useState(false);
     const [filterBtnContent, setFilterBtnContent] = useState('All');
+    const [activeCategory, setActiveCategory] = useState('');
+    const [activeLegend, setActiveLegend] = useState(''); // State untuk menyimpan legend yang aktif
 
     const modalRef = useRef(null);
+    const mapImageRef = useRef(null);
 
+    //CEK PERTAMA KALI KETIKA PAGE DI LOAD
     useEffect(() => {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/map";
 
@@ -42,15 +47,23 @@ function Map() {
             const mapWidth = maps.map_width;
             const mapHeight = maps.map_height;
 
+            const isScreenSmall = window.innerWidth < 1366;
+
             const locationData = maps.map_locations.map(location => ({
                 ...location,
                 position_x: (location.position_x / mapWidth) * 100 + '%',
                 position_y: (location.position_y / mapHeight) * 100 + '%',
+                defWidth: isScreenSmall 
+                    ? (location.pin_point_image_width / 2) + 'px' 
+                    : (location.pin_point_image_width / mapWidth) * 100 + 'vw',
+                defHeight: isScreenSmall 
+                    ? (location.pin_point_image_height / 2) + 'px' 
+                    : (location.pin_point_image_height / mapWidth) * 100 + 'vw',
             }));
 
             setMaps(maps);
             setLocation(locationData);
-            console.log(locationData);
+            setCategories(data.categories); // Simpan data categories ke state
         })
         .catch((error) => {
             console.error("Error fetching data: ", error);
@@ -70,6 +83,92 @@ function Map() {
         };
     }, [modalRef]);
 
+    //INI CEK KALAU URL ADA PARAMETER TAG
+    useEffect(() => {
+        const currentTag = searchParams.get('tag');
+        if (currentTag) {
+            const category = categories.find(cat => cat.slug === currentTag);
+            if (category) {
+                setActiveFilter(category.name);
+                setFilterBtnContent(category.name);
+
+                // Panggil API berdasarkan slug category untuk mengubah map_img
+                const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/map?slug=${currentTag}`;
+                
+                fetch(apiUrl, {
+                    method: "GET",
+                    headers: {
+                        "x-api-key": "bda07dc4-cab9-4148-ac9c-7a44c3c55wqr9",
+                        "Content-Type": "application/json",
+                    },
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    const maps = data.data;
+                    const mapWidth = maps.map_width;
+                    const mapHeight = maps.map_height;
+
+                    const isScreenSmall = window.innerWidth < 1366;
+
+                    const locationData = maps.map_locations.map(location => ({
+                        ...location,
+                        position_x: (location.position_x / mapWidth) * 100 + '%',
+                        position_y: (location.position_y / mapHeight) * 100 + '%',
+                        defWidth: isScreenSmall 
+                            ? (location.pin_point_image_width / 2) + 'px' 
+                            : (location.pin_point_image_width / mapWidth) * 100 + 'vw',
+                        defHeight: isScreenSmall 
+                            ? (location.pin_point_image_height / 2) + 'px' 
+                            : (location.pin_point_image_height / mapWidth) * 100 + 'vw',
+                    }));
+
+                    setMaps(maps);
+                    setLocation(locationData);
+
+                    let scrollPositionX = 0;
+                    if (window.innerWidth < 1366 && mapImageRef.current) {
+                        switch (maps.map_name) {
+                            case 'Main Stage':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.48; // Geser ke 20% dari lebar total
+                                break;
+                            case 'Hard Rock':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.3; // Geser ke 50% dari lebar total
+                                break;
+                            case 'The Westin':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.3; // Geser ke 80% dari lebar total
+                                break;
+                            case 'Anantara':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.4; // Geser ke 80% dari lebar total
+                                break;
+                            case 'One and Only':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.4; // Geser ke 80% dari lebar total
+                                break;
+                            case 'Riverside':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.45; // Geser ke 80% dari lebar total
+                                break;
+                            case 'ELS':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.3; // Geser ke 80% dari lebar total
+                                break;
+                            default:
+                                scrollPositionX = 0; // Tidak digeser
+                                break;
+                        }
+                        mapImageRef.current.scrollLeft = scrollPositionX;
+                    }
+                })
+                .catch((error) => console.error("Error fetching map data: ", error));
+            }
+        }
+    }, [searchParams, categories]);
+
+    useEffect(() => {
+        if (!tag || tag === 'overview') {
+            setActiveCategory('overview');
+        } else {
+            setActiveCategory(tag);
+        }
+    }, [tag]);
+
     if (!maps) {
         return <div>Loading...</div>;
     }
@@ -78,19 +177,92 @@ function Map() {
         setActiveModal(index);
     };
 
-    const handleFilterClick = (category, content) => {
-        setActiveFilter(category);
-        setFilterBtnContent(content);
+    //INI KALAU CLICK CATEGORY NAME
+    const handleFilterClick = (categoryName, categorySlug, scrollPositionX) => {
+        setActiveFilter(categoryName);
+        setFilterBtnContent(categoryName);
         if (window.innerWidth < 768) { // Hanya sembunyikan di mobile
             setIsFilterMapVisible(false);
         }
+
+        // Update URL tanpa parameter tag jika categorySlug adalah 'overview'
+        if (categorySlug === 'overview') {
+            router.push('/festival-map', undefined, { shallow: true });
+        } else {
+            router.push(`/festival-map?tag=${categorySlug}`, undefined, { shallow: true });
+        }
+
+        // Panggil API berdasarkan slug category untuk mengubah map_img
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/map?slug=${categorySlug}`;
+        
+        fetch(apiUrl, {
+            method: "GET",
+            headers: {
+                "x-api-key": "bda07dc4-cab9-4148-ac9c-7a44c3c55wqr9",
+                "Content-Type": "application/json",
+            },
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            const maps = data.data;
+            const mapWidth = maps.map_width;
+            const mapHeight = maps.map_height;
+
+            const isScreenSmall = window.innerWidth < 1366;
+
+            const locationData = maps.map_locations.map(location => ({
+                ...location,
+                position_x: (location.position_x / mapWidth) * 100 + '%',
+                position_y: (location.position_y / mapHeight) * 100 + '%',
+                defWidth: isScreenSmall 
+                    ? (location.pin_point_image_width / 2) + 'px' 
+                    : (location.pin_point_image_width / mapWidth) * 100 + 'vw',
+                defHeight: isScreenSmall 
+                    ? (location.pin_point_image_height / 2) + 'px' 
+                    : (location.pin_point_image_height / mapWidth) * 100 + 'vw',
+            }));
+
+            setMaps(maps);
+            setLocation(locationData);
+
+            // Tentukan scrollPositionX secara dinamis berdasarkan map_name
+            let scrollPositionX = 0;
+            if (window.innerWidth < 1366 && mapImageRef.current) {
+                switch (maps.map_name) {
+                    case 'Main Stage':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.48; // Geser ke 20% dari lebar total
+                        break;
+                    case 'Hard Rock':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.3; // Geser ke 50% dari lebar total
+                        break;
+                    case 'The Westin':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.3; // Geser ke 80% dari lebar total
+                        break;
+                    case 'Anantara':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.4; // Geser ke 80% dari lebar total
+                        break;
+                    case 'One and Only':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.4; // Geser ke 80% dari lebar total
+                        break;
+                    case 'Riverside':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.45; // Geser ke 80% dari lebar total
+                        break;
+                    case 'ELS':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.3; // Geser ke 80% dari lebar total
+                        break;
+                    default:
+                        scrollPositionX = 0; // Tidak digeser
+                        break;
+                }
+                mapImageRef.current.scrollLeft = scrollPositionX;
+            }
+        })
+        .catch((error) => console.error("Error fetching map data: ", error));
     };
 
-    const toggleFilterMap = () => {
-        setIsFilterMapVisible(!isFilterMapVisible);
+    const handleLegendClick = () => {
+        setActiveLegend(!activeLegend); // Set legend yang aktif
     };
-
-    const filteredLocations = activeFilter === 'All' ? location : location.filter(loc => loc.category === activeFilter || loc.category === 'Venue' || loc.category === 'Surau' || loc.category === 'Medic');
 
     return (
         <div className='section_info'>
@@ -128,36 +300,63 @@ function Map() {
                     <div className='title_box'>
                         <h3 className='no_border'>Map</h3>
                     </div>
-                    <div className='filter_btn' onClick={toggleFilterMap}><div className={`${isFilterMapVisible ? 'active' : ''}`}>{filterBtnContent}</div></div>
                     <div className={`filter_map ${isFilterMapVisible ? 'active' : ''}`}>
-                        <div className={`fm_box ${activeFilter === 'All' ? 'active' : ''}`} onClick={() => handleFilterClick('All', 'All')}>All</div>
-                        <div className={`fm_box ${activeFilter === 'F&B' ? 'active' : ''}`} onClick={() => handleFilterClick('F&B', <><Image src={IconFnB} width={34} height={34} quality={100} /> F&B</>)}><Image src={IconFnB} width={34} height={34} quality={100} /> F&B</div>
-                        <div className={`fm_box ${activeFilter === 'Parking' ? 'active' : ''}`} onClick={() => handleFilterClick('Parking', <><Image src={IconParking} width={34} height={34} quality={100} /> Parking</>)}><Image src={IconParking} width={34} height={34} quality={100} /> Parking</div>
-                        {/* <div className={`fm_box ${activeFilter === 'Washroom' ? 'active' : ''}`} onClick={() => handleFilterClick('Washroom', <><Image src={IconWashroom} width={34} height={34} quality={100} /> Washroom</>)}><Image src={IconWashroom} width={34} height={34} quality={100} /> Washroom</div> */}
-                        <div className={`fm_box ${activeFilter === 'Toilet' ? 'active' : ''}`} onClick={() => handleFilterClick('Toilet', <><Image src={IconToilet} width={34} height={34} quality={100} /> Toilet</>)}><Image src={IconToilet} width={34} height={34} quality={100} /> Toilet</div>
-                        {/* <div className={`fm_box ${activeFilter === 'Medic' ? 'active' : ''}`} onClick={() => handleFilterClick('Medic', <><Image src={IconMedic} width={34} height={34} quality={100} /> Medic</>)}><Image src={IconMedic} width={34} height={34} quality={100} /> Medic</div> */}
-                        <div className={`fm_box ${activeFilter === 'Art Installation' ? 'active' : ''}`} onClick={() => handleFilterClick('Art Installation', <><Image src={IconArt} width={34} height={34} quality={100} /> Art Installation</>)}><Image src={IconArt} width={34} height={34} quality={100} /> Art Installation</div>
+                        {categories.map((category) => (
+                            <div key={category.slug} className={`fm_box ${category.slug} ${category.name} ${activeCategory === category.slug ? 'active' : ''} ${filterBtnContent === category.name ? 'active' : ''}`} onClick={() => handleFilterClick(category.name, category.slug, 500)}>
+                                <Image src={category.icon} width={80} height={80} quality={100} alt={category.name} />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
-            <div className='map_image'>
-                <Image className='map_img' src={maps.map_image} width={maps.map_width} height={maps.map_height} quality={100} />
-                <ul>
-                    {filteredLocations.map((maploc, index) => (
+            <div className={`container legend_wrapper ${maps.map_name.replace(/\s+/g, '')}`}>
+                <div className={`legend_box ${activeLegend ? 'active' : ''}`} onClick={handleLegendClick}>
+                    <h3>Legend</h3>
+                    <div className="row_flex">
+                        <div className="legend music">
+                            Music &amp; Performances
+                        </div>
+                        <div className="legend ombak-kids">
+                            Ombak Kids
+                        </div>
+                        <div className="legend visual-arts">
+                            Visual Arts &amp; Craft
+                        </div>
+                        <div className="legend fnb">
+                            F&amp;B
+                        </div>
+                        <div className="legend parking">
+                            Parking
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={`map_image ${maps.map_name.replace(/\s+/g, '')}`} ref={mapImageRef}>
+                <Image className='map_img' src={maps.map_image} width={maps.map_width} height={maps.map_height} quality={100} alt={maps.map_name} />
+                <ul className='pin_point_box'>
+                    {location && location.map((maploc, index) => (
                         <li key={index}>
-                            <div className={maploc.category} style={{left:maploc.position_x, top:maploc.position_y, position:'absolute'}}>
-                                <div className={`pin_image ${maploc.category === 'Venue' ? 'venue' : ''}`} onClick={() => handlePinClick(index)}>
-                                    <Image src={maploc.logo ? maploc.logo : maploc.category_image} width={100} height={100} />
-                                </div>
-                                {activeModal === index && (
-                                    <div ref={modalRef} className={`pin_modal ${maploc.category === 'Venue' ? 'venue_modal' : '' || maploc.category === 'Parking' ? 'parking_modal' : '' || maploc.category === 'Washroom' ? 'washroom_modal' : '' || maploc.category === 'F&B' ? 'fandb_modal' : '' || maploc.category === 'Medic' ? 'medic_modal' : '' || maploc.category === 'Toilet' ? 'toilet_modal' : '' || maploc.category === 'Surau' ? 'surau_modal' : '' || maploc.category === 'Art Installation' ? 'art_modal' : ''}`}>
-                                        {maploc.category === 'Venue' && maploc.image_detail && <Image style={{marginBottom: '10px'}} src={maploc.image_detail} width={100} height={100} />}
-                                        <h4>{maploc.title}</h4>
-                                        {maploc.description && <p>{maploc.description}</p>}
-                                        {maploc.category === 'Parking' && maploc.image_detail && <div className='img_detail'><Image src={maploc.image_detail} width={100} height={100} /></div>}
-                                        {maploc.category === 'F&B' && maploc.image_detail && <div className='img_detail'><Image src={maploc.image_detail} width={100} height={100} /></div>}
+                            <div className={maploc.category} style={{left: maploc.position_x, top: maploc.position_y, position:'absolute'}}>
+                            {maploc.link ? (
+                                <Link href={maploc.link}>
+                                    <div className={`pin_image ${maploc.title.replace(/\s+/g, '')}`} style={{width:maploc.defWidth, height:maploc.defHeight, top:'-'+maploc.defHeight }}>
+                                        <Image src={maploc.pin_point_image} width={100} height={100} alt={maploc.title} />
                                     </div>
-                                )}
+                                </Link>
+                        ) : (
+                            <div className={`pin_image ${maploc.title.replace(/\s+/g, '')}`} style={{width:maploc.defWidth, height:maploc.defHeight, top:'-'+maploc.defHeight }} onClick={() => handlePinClick(index)}>
+                                <Image src={maploc.pin_point_image} width={100} height={100} alt={maploc.title} />
+                            </div>
+                        )}
+                        {activeModal === index && (
+                            <div ref={modalRef} className={`pin_modal ${maploc.category_slug} ${maploc.title_slug}`}>
+                                {maploc.category_slug === 'overview' && maploc.pin_point_image && <div className='pp_image'><Image src={maploc.pin_point_image} width={100} height={100} /></div>}
+                                {maploc.image_detail && <Image style={{marginBottom: '10px'}} src={maploc.image_detail} width={100} height={100} />}
+                                <h4>{maploc.title}</h4>
+                                {maploc.description && <div dangerouslySetInnerHTML={{ __html: maploc.description }}></div>}
+                                {maploc.category_slug === 'parking' && <div className='parking_image'></div>}
+                            </div>
+                        )}
                             </div>
                         </li>
                     ))}
