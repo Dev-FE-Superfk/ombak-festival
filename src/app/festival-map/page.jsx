@@ -125,6 +125,17 @@ function Map() {
                     setMaps(maps);
                     setLocation(locationData);
 
+                    if (mapImageRef.current) {
+                        // Mendapatkan posisi top dari elemen
+                        const elementPosition = mapImageRef.current.getBoundingClientRect().top + window.scrollY;
+                        
+                        // Mengatur scroll ke posisi tersebut dengan offset -100px
+                        window.scrollTo({
+                            top: elementPosition - 145,
+                            behavior: 'smooth'
+                        });
+                    }                    
+
                     let scrollPositionX = 0;
                     if (window.innerWidth < 1366 && mapImageRef.current) {
                         switch (maps.map_name) {
@@ -224,6 +235,17 @@ function Map() {
 
             setMaps(maps);
             setLocation(locationData);
+
+            if (mapImageRef.current) {
+                // Mendapatkan posisi top dari elemen
+                const elementPosition = mapImageRef.current.getBoundingClientRect().top + window.scrollY;
+                
+                // Mengatur scroll ke posisi tersebut dengan offset -100px
+                window.scrollTo({
+                    top: elementPosition - 145,
+                    behavior: 'smooth'
+                });
+            }            
 
             // Tentukan scrollPositionX secara dinamis berdasarkan map_name
             let scrollPositionX = 0;
