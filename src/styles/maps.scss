@@ -184,6 +184,8 @@
         font-family: 'Roboto';
         h4{
             font-size: 20px;
+            font-family: 'Antique Olive Std Roman';
+            margin-bottom: 10px;
         }
         p{
             font-size: 14px;
@@ -203,7 +205,7 @@
         &.parking{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_gray.png') no-repeat bottom left / contain;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             &::after{
                 content: '';
                 width: 12px;
@@ -234,7 +236,7 @@
         &.golf{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_darkgreen.png') no-repeat bottom left / contain;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             &::after{
                 content: '';
                 width: 12px;
@@ -261,7 +263,7 @@
         &.medic_modal{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_orange.png') no-repeat bottom left / contain;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             &::after{
                 content: '';
                 width: 12px;
@@ -288,7 +290,7 @@
         &.f-b{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_yellow.png') no-repeat bottom left / contain;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             &::after{
                 content: '';
                 width: 12px;
@@ -362,7 +364,7 @@
         &.ombak-kids{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_blue.png') no-repeat bottom left / contain;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             &::after{
                 content: '';
                 width: 12px;
@@ -389,7 +391,7 @@
         &.surau_modal{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_gray.png') no-repeat bottom left / contain;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             &::after{
                 content: '';
                 width: 12px;
@@ -416,7 +418,7 @@
         &.music-performances{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_purple.png') no-repeat bottom left / contain;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             &::after{
                 content: '';
                 width: 12px;
@@ -443,7 +445,7 @@
         &.visual-arts-craft{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_green.png') no-repeat bottom left / contain;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             &::after{
                 content: '';
                 width: 12px;
@@ -493,8 +495,8 @@
             height: 50px;
             padding-top: 15px;
             overflow: hidden;
-            left: 50%;
-            transform: translateX(-50%);
+            top:20px;
+            left: 40px;
             background: rgba(255,255,255,0.8) url('../assets/main/icon_arrow_bottom.png') no-repeat right 20px top 22px / 12px;
             &.active{
                 height: auto;
@@ -541,6 +543,7 @@
     }
     .filter_map{
         padding: 0 40px;
+        height: 80px;
         display: block;
         overflow-x: scroll;
         overflow-y: hidden;
@@ -558,6 +561,17 @@
     }
 }
 @media only screen and (max-width: 767px) {
+    .section_info{
+        .info_middle{
+            padding-bottom: 20px;
+        }
+    }
+    .legend_wrapper{
+        .legend_box{
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
     .filter_map{
         padding: 0 20px;
     }
