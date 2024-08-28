@@ -360,6 +360,10 @@
       top:60px;
       .container {
         padding: 0 20px;
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
         .si_nav_box {
           &.active {
             a {

@@ -73,6 +73,9 @@ function Map() {
                 if (mapImageRef.current) {
                     if (window.innerWidth < 768) {
                         switch (maps.map_name) {
+                            case 'Overview':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.12;
+                                break;
                             case 'Main Stage':
                                 scrollPositionX = mapImageRef.current.scrollWidth * 0.48;
                                 break;
@@ -100,6 +103,9 @@ function Map() {
                         }
                     } else {
                         switch (maps.map_name) {
+                            case 'Overview':
+                                scrollPositionX = mapImageRef.current.scrollWidth * 0.12;
+                                break;
                             case 'Main Stage':
                                 scrollPositionX = mapImageRef.current.scrollWidth * 0.35;
                                 break;
