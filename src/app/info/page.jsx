@@ -92,7 +92,7 @@ function Info() {
             </Link>
           </div>
           <div className={`si_nav_box`}>
-            <Link scroll={false} href='/festival-map'>
+            <Link scroll={false} href='/festival-map?tag=overview'>
               Map
             </Link>
           </div>
