@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import '../../styles/info.scss';
 import '../../styles/maps.scss';
-import { IconArt, IconFnB, IconMedic, IconParking, IconToilet, IconWashroom } from '@/assets';
 
 function Map() {
     const searchParams = useSearchParams();
@@ -24,7 +23,8 @@ function Map() {
 
     const modalRef = useRef(null);
     const mapImageRef = useRef(null);
-    const filterRef = useRef(null);
+    const filterMapRef = useRef(null);
+
 
     useEffect(() => {
     if (!slug) {
@@ -213,7 +213,47 @@ function Map() {
         if (maps) {
             updateScrollPosition();
         }
-    }, [slug, maps, window.innerWidth]);
+    }, [slug, maps]);
+
+    const handleFilterMapScroll = (slug) => {
+        if (window.innerWidth < 1366 && filterMapRef.current) {
+            let scrollPositionX = 0;
+        
+            switch(slug) {
+            case 'the-westin':
+                scrollPositionX = 260; // Ganti dengan nilai yang sesuai
+                break;
+            case 'anantara':
+                scrollPositionX = 370; // Ganti dengan nilai yang sesuai
+                break;
+            case 'one-and-only':
+                scrollPositionX = 500; // Ganti dengan nilai yang sesuai
+                break;
+            case 'riverside':
+                scrollPositionX = 720; // Ganti dengan nilai yang sesuai
+                break;
+            case 'the-els-club':
+                scrollPositionX = 720; // Ganti dengan nilai yang sesuai
+                break;
+            // Tambahkan case untuk slug lainnya di sini
+            default:
+                scrollPositionX = 0;
+            }
+        
+            filterMapRef.current.scrollTo({
+            left: scrollPositionX
+            });
+        }
+    };
+
+    useEffect(() => {
+        const queryParams = new URLSearchParams(window.location.search);
+        const slug = queryParams.get('tag');
+        
+        if (slug) {
+            handleFilterMapScroll(slug);
+        }
+    }, [slug]);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -284,7 +324,7 @@ function Map() {
                     <div className='title_box'>
                         <h3 className='no_border'>Map</h3>
                     </div>
-                    <div className={`filter_map ${isFilterMapVisible ? 'active' : ''}`} ref={filterRef}>
+                    <div className={`filter_map ${isFilterMapVisible ? 'active' : ''}`} ref={filterMapRef}>
                         {categories.map((category) => (
                             <Link href={{pathname: '/festival-map',query: {tag: category.slug},}}scroll={false} passHref key={category.slug} className={`fm_box ${category.slug} ${category.name} ${activeCategory === category.slug ? 'active' : ''} ${filterBtnContent === category.name ? 'active' : ''}`}>
                                 <Image src={category.icon} width={80} height={80} quality={100} alt={category.name} />
