@@ -42,6 +42,6 @@ section{
 }
 @media only screen and (max-width: 1024px) {
   section{
-    min-height: unset;
+    min-height: 50vh;
   }
 }
