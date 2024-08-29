@@ -63,7 +63,7 @@ export default function Footer() {
                 <div className='fr_nav'>
                   <Link href='/info?tag=info'>Getting Here</Link>
                 </div>
-                <div className='fr_nav'><Link href={{pathname: '/festival-map',query: {tag: 'overview'},}}scroll={false} passHref>Maps</Link></div>
+                <div className='fr_nav'><Link href='/festival-map?tag=overview'>Maps</Link></div>
               </div>
               <div className='fr_box'>
                 <div className='fr_nav'><Link href='/contact-us'>Contact Us</Link></div>
@@ -75,8 +75,7 @@ export default function Footer() {
             <div className='fr_tablet'>
               <div className='fr_box'>
                 <div className='fr_nav'><Link href='/media-room'>Media Room</Link></div>
-                {/* <div className='fr_nav'><Link href='/partners'>Partners</Link></div> */}
-                <div className='fr_nav'>Partners</div>
+                <div className='fr_nav'><Link href='/sustainability'>Sustainability</Link></div>
               </div>
               <div className='fr_box'>
                 <div className='fr_nav'>
