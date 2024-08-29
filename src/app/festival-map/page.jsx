@@ -140,6 +140,82 @@ function Map() {
     }, [slug]);
 
     useEffect(() => {
+        const updateScrollPosition = () => {
+            let scrollPositionX = 0;
+    
+            if (window.innerWidth < 768) {
+                switch (maps.map_name) {
+                    case 'Overview':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.12;
+                        break;
+                    case 'Main Stage':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.48;
+                        break;
+                    case 'Hard Rock':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.3;
+                        break;
+                    case 'The Westin':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.3;
+                        break;
+                    case 'Anantara':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.4;
+                        break;
+                    case 'One and Only':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.4;
+                        break;
+                    case 'Riverside':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.45;
+                        break;
+                    case 'The ELS Club':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.3;
+                        break;
+                    default:
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.12;
+                        break;
+                }
+            } else {
+                switch (maps.map_name) {
+                    case 'Overview':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.12;
+                        break;
+                    case 'Main Stage':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.35;
+                        break;
+                    case 'Hard Rock':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.15;
+                        break;
+                    case 'The Westin':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.15;
+                        break;
+                    case 'Anantara':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.25;
+                        break;
+                    case 'One and Only':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.28;
+                        break;
+                    case 'Riverside':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.3;
+                        break;
+                    case 'The ELS Club':
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.15;
+                        break;
+                    default:
+                        scrollPositionX = mapImageRef.current.scrollWidth * 0.12;
+                        break;
+                }
+            }
+    
+            if (mapImageRef.current) {
+                mapImageRef.current.scrollLeft = scrollPositionX;
+            }
+        };
+    
+        if (maps) {
+            updateScrollPosition();
+        }
+    }, [slug, maps, window.innerWidth]);
+
+    useEffect(() => {
         const handleClickOutside = (event) => {
             if (modalRef.current && !modalRef.current.contains(event.target)) {
                 setActiveModal(null);
