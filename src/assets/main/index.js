@@ -16,3 +16,8 @@ export { default as TicketMelon } from './ticketmelon.png';
 export { default as Sistic } from './sistic.png';
 export { default as IconToilet } from './icon_toilet.png';
 export { default as IconArt } from './icon_art.png';
+export { default as LongWave } from './long_wave.png';
+export { default as LongWaveMobile } from './long_wave_mobile.png';
+export { default as IconCall } from './call.png';
+export { default as IconMail } from './mail.png';
+export { default as IconWhatsapp } from './WhatsApp.png';
