@@ -154,6 +154,15 @@ export default function Header() {
                   Info
                 </Link>
               </li>
+              <li>
+                <Link
+                  className={`golf ${isPathActive('/golf') ? 'active' : ''}`}
+                  href='/golf'
+                  onClick={hideNav}
+                >
+                  Golf
+                </Link>
+              </li>
             </ul>
           </nav>
           <div className='get_ticket_btn'>

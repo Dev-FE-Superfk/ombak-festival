@@ -53,6 +53,18 @@ nav {
         font-size: 18px;
         position: relative;
         display: block;
+        &.golf{
+          &::after{
+            content: '';
+            display: block;
+            width: 38px;
+            height: 13px;
+            background: url('../assets/main/flag_new.png') no-repeat center / contain;
+            position: absolute;
+            top: -15px;
+            left: 0;
+          }
+        }
         &.active {
           &:before {
             content: '';
@@ -231,6 +243,13 @@ nav {
               display: block;
               padding: 20px 0;
               color: #000;
+              &.golf{
+                &::after{
+                  top: 50%;
+                  transform: translateY(-50%);
+                  left: 45px;
+                }
+              }
               &.active {
                 &::before {
                   display: none !important;
