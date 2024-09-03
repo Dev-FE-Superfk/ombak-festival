@@ -76,7 +76,22 @@
                 }
             }
             strong{
-                font-family: 'Antique Olive Std Bold';
+                font-family: 'Roboto';
+                font-weight: bold;
+            }
+            table{
+                width:auto !important;
+                tr{
+                    td{
+                        width: auto !important;
+                        display: inline-block;
+                        margin-right: 10px;
+                        font-size: 16px;
+                        line-height: 20px;
+                        padding-bottom: 10px;
+                        font-family: 'Roboto';
+                    }
+                }
             }
         }
         .sb_image{
