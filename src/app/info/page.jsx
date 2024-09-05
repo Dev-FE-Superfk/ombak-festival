@@ -91,7 +91,7 @@ function Info() {
               General Info
             </Link>
           </div>
-          <div className={`si_nav_box`}>Map
+          <div className={`si_nav_box`}><span>Map</span>
             {/* <Link scroll={false} href='/festival-map?tag=overview'>
               Map
             </Link> */}
