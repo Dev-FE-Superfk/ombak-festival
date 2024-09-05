@@ -63,7 +63,8 @@ export default function Footer() {
                 <div className='fr_nav'>
                   <Link href='/info?tag=info'>Getting Here</Link>
                 </div>
-                <div className='fr_nav'><Link href='/festival-map?tag=overview'>Maps</Link></div>
+                {/* <div className='fr_nav'><Link href='/festival-map?tag=overview'>Maps</Link></div> */}
+                <div className='fr_nav'>Maps</div>
               </div>
               <div className='fr_box'>
                 <div className='fr_nav'><Link href='/contact-us'>Contact Us</Link></div>
