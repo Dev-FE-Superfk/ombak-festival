@@ -154,7 +154,7 @@ export default function Header() {
                   Info
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link
                   className={`golf ${isPathActive('/golf') ? 'active' : ''}`}
                   href='/golf'
@@ -162,7 +162,7 @@ export default function Header() {
                 >
                   Golf
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </nav>
           <div className='get_ticket_btn'>
