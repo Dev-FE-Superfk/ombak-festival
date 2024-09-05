@@ -76,8 +76,7 @@ export default function Footer() {
             <div className='fr_tablet'>
               <div className='fr_box'>
                 <div className='fr_nav'><Link href='/media-room'>Media Room</Link></div>
-                {/* <div className='fr_nav'><Link href='/sustainability'>Sustainability</Link></div> */}
-                <div className="fr_nav">Sustainability</div>
+                <div className='fr_nav'><Link href='/sustainability'>Sustainability</Link></div>
               </div>
               <div className='fr_box'>
                 <div className='fr_nav'>
