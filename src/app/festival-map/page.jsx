@@ -349,8 +349,15 @@ function Map() {
                         <div className="legend fnb">
                             F&amp;B
                         </div>
-                        <div className="legend parking">
-                            Parking
+                        <div className="legend reusable">
+                            Reusable Cups Sales Point
+                        </div>
+                        <div className="legend dispenser">
+                            Water Dispenser
+                        </div>
+                        <div className="legend shuttle">
+                            Shuttle Bus Drop Off Point
+                            (8am - 1am)
                         </div>
                     </div>
                 </div>
