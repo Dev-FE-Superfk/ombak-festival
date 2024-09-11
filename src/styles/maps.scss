@@ -323,6 +323,33 @@
                 left: 21px;
             }
         }
+        &.sustainability{
+            padding-top: 25px;
+            background: #fff url('../assets/main/modal_wave_darkgreen.png') no-repeat bottom left / contain;
+            padding-bottom: 50px;
+            &::after{
+                content: '';
+                width: 12px;
+                height: 22px;
+                display: block;
+                background: url('../assets/main/icon_arrow_left.png') no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                width: 42px;
+                height: 42px;
+                display: block;
+                background: url('../assets/main/icon_sustainability.png') no-repeat center / contain;
+                position: absolute;
+                top: -21px;
+                left: 21px;
+            }
+        }
         &.medic_modal{
             padding-top: 25px;
             background: #fff url('../assets/main/modal_wave_orange.png') no-repeat bottom left / contain;
