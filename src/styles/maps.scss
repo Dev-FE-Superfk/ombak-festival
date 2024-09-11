@@ -249,10 +249,18 @@
         ul{
             list-style: disc;
             padding-left: 20px;
+            li{
+                font-size: 14px;
+                font-family: 'Roboto';
+            }
         }
         ol{
             list-style: decimal;
             padding-left: 20px;
+            li{
+                font-size: 14px;
+                font-family: 'Roboto';
+            }
         }
         .img_detail{
             margin-top: 20px;
@@ -495,6 +503,15 @@
                 position: absolute;
                 top: -21px;
                 left: 21px;
+            }
+        }
+        &.performances-at-main-stage{
+            top: -100px;
+            left: 50px;
+            transform: none;
+            &::after{
+                transform: none;
+                top: 40px;
             }
         }
         &.visual-arts-craft{
