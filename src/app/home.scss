@@ -513,7 +513,7 @@ html {
     font-family: 'Antique Olive Std Black';
     position: relative;
     text-indent: -9999px;
-    &::before{
+    &::before {
       content: 'See More';
       width: 100%;
       display: block;
@@ -550,12 +550,13 @@ html {
     position: relative;
     padding-right: 60px;
     padding-bottom: 40px;
-    &:hover{
+    &:hover {
       background: $orange;
-      color:#fff;
-      .button{
-        border-color:#fff;
-        background: url('../assets/home/arrow_white.png') no-repeat center / 27px;
+      color: #fff;
+      .button {
+        border-color: #fff;
+        background: url('../assets/home/arrow_white.png') no-repeat center /
+          27px;
       }
     }
     h3 {
@@ -635,6 +636,11 @@ html {
         color: $darkgreen;
         transition: all 0.2s ease;
       }
+      &:disabled {
+        background: rgba(139, 139, 139, 1);
+        color: rgba(179, 179, 179, 1);
+        cursor: not-allowed;
+      }
     }
   }
 }
@@ -677,25 +683,25 @@ html {
     padding: 0 20px !important;
   }
 }
-.section_new_ticket{
+.section_new_ticket {
   background: $orange;
   padding: 40px 0 60px;
-  .container{
+  .container {
     max-width: 1130px;
     margin: 0 auto;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    .snt_box{
+    .snt_box {
       width: calc(100% / 2);
       position: relative;
-      &:first-child{
-        &:before{
+      &:first-child {
+        &:before {
           display: none;
         }
       }
-      &:before{
+      &:before {
         content: '';
         width: 1px;
         height: 100%;
@@ -706,13 +712,13 @@ html {
         display: block;
       }
     }
-    h3{
+    h3 {
       font-size: 40px;
       font-family: 'Antique Olive Std Black';
       margin-bottom: 20px;
-      color:#fff;
+      color: #fff;
     }
-    button{
+    button {
       width: 127px;
       background: $purple;
       color: #fff;
@@ -738,13 +744,13 @@ html {
     }
   }
 }
-.section_experience_img{
-  img{
+.section_experience_img {
+  img {
     width: 100%;
-    &.desktop{
+    &.desktop {
       display: block;
     }
-    &.mobile{
+    &.mobile {
       display: none;
     }
   }
@@ -777,11 +783,11 @@ html {
       padding: 0 40px;
     }
   }
-  .section_six{
+  .section_six {
     padding-bottom: 80px;
-    .misc_box{
+    .misc_box {
       padding-right: 25px;
-      h3{
+      h3 {
         font-size: 24px;
         line-height: 30px;
         margin-bottom: 15px;
@@ -793,12 +799,12 @@ html {
       padding: 0 40px;
     }
   }
-  .section_new_ticket{
-    .container{
-      h3{
+  .section_new_ticket {
+    .container {
+      h3 {
         font-size: 28px;
       }
-      button{
+      button {
         font-size: 16px;
       }
     }
@@ -968,14 +974,14 @@ html {
       }
     }
   }
-  .section_six{
-    .container{
+  .section_six {
+    .container {
       padding: 0 20px;
     }
-    .misc_box{
+    .misc_box {
       padding: 40px 20px;
-      .button{
-        top:auto;
+      .button {
+        top: auto;
         bottom: -20px;
         left: 20px;
         right: auto;
@@ -1223,7 +1229,7 @@ html {
       h3 {
         font-size: 28px;
       }
-      .button{
+      .button {
         width: 340px;
       }
     }
@@ -1246,71 +1252,71 @@ html {
       }
     }
   }
-  .section_six{
-    .container{
+  .section_six {
+    .container {
       padding: 0 20px;
     }
-    .misc_box{
+    .misc_box {
       padding: 40px 20px;
       padding-right: 50px;
       width: 100%;
       margin-right: 0;
-      h3{
+      h3 {
         font-size: 28px;
         line-height: 38px;
       }
-      .button{
-        top:35px;
+      .button {
+        top: 35px;
         bottom: auto;
         left: auto;
         right: 0px;
       }
     }
   }
-  .section_new_ticket{
+  .section_new_ticket {
     padding-bottom: 40px;
-    .container{
+    .container {
       display: block;
-      .snt_box{
+      .snt_box {
         width: 100%;
-        &:first-child{
-          &:before{
+        &:first-child {
+          &:before {
             display: none;
           }
         }
-        &:before{
-          width:calc(100% - 40px);
-          height:1px;
+        &:before {
+          width: calc(100% - 40px);
+          height: 1px;
           position: static;
           margin: 40px auto;
         }
       }
-      h3{
+      h3 {
         font-size: 28px;
       }
-      button{
+      button {
         font-size: 16px;
       }
     }
   }
-  .section_experience_img{
-    img{
+  .section_experience_img {
+    img {
       width: 100%;
-      &.desktop{
+      &.desktop {
         display: none;
       }
-      &.mobile{
+      &.mobile {
         display: block;
       }
     }
   }
 }
 @media only screen and (max-width: 359px) {
-  .section_seven{
-    .container{
-      .button{
+  .section_seven {
+    .container {
+      .button {
         width: calc(100% - 40px);
-        p{
+        p {
           font-size: 14px;
         }
       }

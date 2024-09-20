@@ -80,11 +80,11 @@ export default function Home() {
   }, []);
 
   const openSecondModal = () => {
-      setShowSecondModal(true); // Pastikan modal kedua tertutup saat membuka modal pertama
+    setShowSecondModal(true); // Pastikan modal kedua tertutup saat membuka modal pertama
   };
 
   const closeSecondModal = () => {
-      setShowSecondModal(false); // Function to close second modal
+    setShowSecondModal(false); // Function to close second modal
   };
 
   // Settings for the slider
@@ -127,20 +127,42 @@ export default function Home() {
         </div>
       </div>
       <RunningText></RunningText>
-      <div className="section_experience_img">
-        <Image className='desktop' src={OmbakExperience} width={1366} height={756} alt='' quality={100}></Image>
-        <Image className='mobile' src={OmbakExperienceMobile} width={375} height={453} alt='' quality={100}></Image>
+      <div className='section_experience_img'>
+        <Image
+          className='desktop'
+          src={OmbakExperience}
+          width={1366}
+          height={756}
+          alt=''
+          quality={100}
+        ></Image>
+        <Image
+          className='mobile'
+          src={OmbakExperienceMobile}
+          width={375}
+          height={453}
+          alt=''
+          quality={100}
+        ></Image>
       </div>
       <RunningText></RunningText>
-      <div className="section_new_ticket">
-        <div className="container">
-          <div className="snt_box">
-            <h3>Get your Festival Day <br/>Passes now</h3>
-            <button disabled onClick={openSecondModal}>Buy Pass</button>
+      <div className='section_new_ticket'>
+        <div className='container'>
+          <div className='snt_box'>
+            <h3>
+              Get your Festival Day <br />
+              Passes now
+            </h3>
+            <button disabled onClick={openSecondModal}>
+              Buy Pass
+            </button>
           </div>
-          <div className="snt_box">
-            <h3>Get your Stay <br/>Packages now</h3>
-            <Link href="/stay?tag=hard_rock_hotel">
+          <div className='snt_box'>
+            <h3>
+              Get your Stay <br />
+              Packages now
+            </h3>
+            <Link href='/stay?tag=hard_rock_hotel'>
               <button disabled>Book Now</button>
             </Link>
           </div>
@@ -339,42 +361,42 @@ export default function Home() {
         </div>
         <Image src={WaveGreenLong} alt='Ombak Wave Green'></Image>
       </div>
-      <div className="section_six">
-        <div className="container">
-          <div className="misc_box">
+      <div className='section_six'>
+        <div className='container'>
+          <div className='misc_box'>
             <Link href='/festival-map'>
-            <h3>
-              Navigate The <br />
-              Festival
-            </h3>
-            <p>
-              Explore our festival grounds and discover where you can find our
-              partnering resorts
-            </p>
-            <div className="button">Explore</div>
+              <h3>
+                Navigate The <br />
+                Festival
+              </h3>
+              <p>
+                Explore our festival grounds and discover where you can find our
+                partnering resorts
+              </p>
+              <div className='button'>Explore</div>
             </Link>
           </div>
-          <div className="misc_box">
-          <Link href='/schedule'>
-            <h3>
-              Plan Your <br />
-              Schedule
-            </h3>
-            <p>
-              View the full 3-day schedule to find out when and where your
-              favourite acts will be
-            </p>
-            <div className="button">Explore</div>
+          <div className='misc_box'>
+            <Link href='/schedule'>
+              <h3>
+                Plan Your <br />
+                Schedule
+              </h3>
+              <p>
+                View the full 3-day schedule to find out when and where your
+                favourite acts will be
+              </p>
+              <div className='button'>Explore</div>
             </Link>
           </div>
-          <div className="misc_box">
-          <Link href='/info?tag=general_info'>
-            <h3>
-              Get Help & <br />
-              Info
-            </h3>
-            <p>Find more information about Ombak Festival here</p>
-            <div className="button">Explore</div>
+          <div className='misc_box'>
+            <Link href='/info?tag=general_info'>
+              <h3>
+                Get Help & <br />
+                Info
+              </h3>
+              <p>Find more information about Ombak Festival here</p>
+              <div className='button'>Explore</div>
             </Link>
           </div>
         </div>
@@ -392,11 +414,11 @@ export default function Home() {
             alt='Memories Cover'
           ></Image>
           <h3>Get ready for an unforgettable weekend getaway</h3>
-          <div className='button'>
-            <Link href='/stay?tag=hard_rock_hotel'>
+          <Link href='/stay?tag=hard_rock_hotel'>
+            <button disabled className='button'>
               <p>BOOK YOUR STAY PACKAGES NOW</p>
-            </Link>
-          </div>
+            </button>
+          </Link>
         </div>
       </div>
       {/* <div className="section_eight">
@@ -405,34 +427,59 @@ export default function Home() {
           <PartnerSlider></PartnerSlider>
         </div>
       </div> */}
-      {showSecondModal && ( 
+      {showSecondModal && (
         <>
-            {/* Second modal for ticket purchase confirmation */}
-            <Modal isOpen={showSecondModal} onClose={closeSecondModal}>
+          {/* Second modal for ticket purchase confirmation */}
+          <Modal isOpen={showSecondModal} onClose={closeSecondModal}>
             <>
-              <h4>You’ll be redirected to our ticketing partner to complete your purchase</h4>
+              <h4>
+                You’ll be redirected to our ticketing partner to complete your
+                purchase
+              </h4>
               <div className='ticket_flex'>
-                  <div className='ticket_box'>
-                      <span>For Malaysian and others</span>
-                      <div className='partners_image'>
-                          <Image className='ticketmelon' src={TicketMelon} width={170} height={30}></Image>
-                      </div>
-                      <button className='next_btn'>
-                          <Link href="https://www.ticketmelon.com/ombakfestival/ombakfestival2024" target='_blank' rel='noopener noreferrer'>Proceed to Ticketmelon</Link>
-                      </button>
+                <div className='ticket_box'>
+                  <span>For Malaysian and others</span>
+                  <div className='partners_image'>
+                    <Image
+                      className='ticketmelon'
+                      src={TicketMelon}
+                      width={170}
+                      height={30}
+                    ></Image>
                   </div>
-                  <div className='ticket_box'>
-                      <span>For Singaporean</span>
-                      <div className='partners_image'>
-                          <Image className='ticketmelon' src={Sistic} width={97} height={45}></Image>
-                      </div>
-                      <button className='next_btn'>
-                          <Link href="https://sistic.com.sg/events/ombak0924" target='_blank' rel='noopener noreferrer'>Proceed to Sistic</Link>
-                      </button>
+                  <button className='next_btn'>
+                    <Link
+                      href='https://www.ticketmelon.com/ombakfestival/ombakfestival2024'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Proceed to Ticketmelon
+                    </Link>
+                  </button>
+                </div>
+                <div className='ticket_box'>
+                  <span>For Singaporean</span>
+                  <div className='partners_image'>
+                    <Image
+                      className='ticketmelon'
+                      src={Sistic}
+                      width={97}
+                      height={45}
+                    ></Image>
                   </div>
+                  <button className='next_btn'>
+                    <Link
+                      href='https://sistic.com.sg/events/ombak0924'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Proceed to Sistic
+                    </Link>
+                  </button>
+                </div>
               </div>
-          </>
-            </Modal>
+            </>
+          </Modal>
         </>
       )}
     </>
