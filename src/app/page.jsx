@@ -136,11 +136,13 @@ export default function Home() {
         <div className="container">
           <div className="snt_box">
             <h3>Get your Festival Day <br/>Passes now</h3>
-            <button onClick={openSecondModal}>Buy Pass</button>
+            <button disabled onClick={openSecondModal}>Buy Pass</button>
           </div>
           <div className="snt_box">
             <h3>Get your Stay <br/>Packages now</h3>
-            <button><Link href="/stay?tag=hard_rock_hotel">Book Now</Link></button>
+            <Link href="/stay?tag=hard_rock_hotel">
+              <button disabled>Book Now</button>
+            </Link>
           </div>
         </div>
       </div>

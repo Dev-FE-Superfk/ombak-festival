@@ -730,6 +730,11 @@ html {
         color: $darkgreen;
         transition: all 0.2s ease;
       }
+      &:disabled {
+        background: rgba(139, 139, 139, 1);
+        color: rgba(179, 179, 179, 1);
+        cursor: not-allowed;
+      }
     }
   }
 }
