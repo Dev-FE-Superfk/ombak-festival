@@ -165,11 +165,11 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <div className='get_ticket_btn'>
-            <Link href='/get-tickets' onClick={hideNav}>
-              Get Tickets
-            </Link>
-          </div>
+          <Link href='/get-tickets' onClick={hideNav}>
+            <button disabled className='get_ticket_btn'>
+                Get Tickets
+            </button>
+          </Link>
         </div>
         <div
           className={`burger_menu_btn ${isNavVisible ? 'active' : ''}`}

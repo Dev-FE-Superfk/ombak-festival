@@ -155,7 +155,7 @@ function Stay() {
                         }
                         target='_blank'
                       >
-                        <button>{pkg.name_button}</button>
+                        <button disabled>{pkg.name_button}</button>
                       </Link>
                     </div>
                   </div>
