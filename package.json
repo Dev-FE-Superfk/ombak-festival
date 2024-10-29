@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@userback/widget": "^0.3.7",
     "dompurify": "^3.1.5",
     "file-loader": "^6.2.0",
     "html-react-parser": "^5.1.10",

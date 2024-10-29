@@ -52,7 +52,8 @@ export default function Header() {
             <Image src={LogoWhite} width={186} height={60} alt='Ombak Festival' priority />
           </Link>
         </h1>
-        <div
+        {/* START NAV */}
+        {/* <div
           className={`nav_box ${isNavVisible ? 'active' : ''}`}
           // onMouseLeave={() => !showSubNav && setShowSubNav(true)}
         >
@@ -119,14 +120,6 @@ export default function Header() {
                 </div>
               </li>
               <li>
-                {/* <p
-                  className={`disabled ${
-                    isPathActive('/schedule') ? 'active' : ''
-                  } py-[20px] text-[#bbbcbc]`}
-                >
-                  Schedule
-                </p> */}
-                {/* Uncomment when is not use */}
                 <Link
                   className={`${
                     isPathActive("/schedule") ? "active" : ""
@@ -174,7 +167,8 @@ export default function Header() {
         <div
           className={`burger_menu_btn ${isNavVisible ? 'active' : ''}`}
           onClick={toggleNav}
-        ></div>
+        ></div> */}
+        {/* END NAV */}
       </div>
     </header>
   );
