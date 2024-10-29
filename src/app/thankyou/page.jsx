@@ -1,11 +1,12 @@
 'use client';
+import { Suspense } from 'react';
 import Image from 'next/image'; // pastikan mengimpor Image dari 'next/image'
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { MainStage, TheWestin, Anantara, HardRock, OneNOnly, Riverside, Els, Nile1, Nile2, Nile3, Nile4, Nile5, Nile6, Grace1, Grace2, Grace3, Grace4, Grace5, Grace6, Macy1, Macy2, Macy3, Macy4, Macy5, Macy6, TheCardigans1, TheCardigans2, TheCardigans3, TheCardigans4, TheCardigans5, TheCardigans6, Joe1, Joe2, Joe3, Joe4, Joe5, Joe6, Aisyah1, Aisyah2, Aisyah3, Aisyah4, Aisyah5, Aisyah6, Masdo1, Masdo2, Masdo3, Masdo4, Masdo5, Masdo6, Bunga1, Bunga2, Bunga3, Bunga4, Bunga5, Bunga6, Alena1, Alena2, Alena3, Alena4, Alena5, Alena6, Alextbh1, Alextbh2, Alextbh3, Alextbh4, Alextbh5, Alextbh6, Marloes1, Marloes2, Marloes3, Marloes4, Marloes5, Marloes6, BornZebra1, BornZebra2, BornZebra3, BornZebra4, BornZebra5, BornZebra6, MeeraFiz1, MeeraFiz2, MeeraFiz3, MeeraFiz4, MeeraFiz5, MeeraFiz6, MainStage1, MainStage2, MainStage3, MainStage4, MainStage5, MainStage6, MainStage7, MainStage8, ThankyouCover, BTS1, BTS2, BTS3, BTS4, BTS5, BTS6, BTS7, BTS8, BTS9, BTS10, Sweet1, Sweet2, Sweet3, Sweet4, Sweet5, Sweet6, Matilde1, Matilde3, Matilde2, Matilde4, Matilde5, Matilde6, Zainal1, Zainal2, Zainal3, Zainal4, Zainal5, Zainal6, ZebraFiz1, ZebraFiz2, ZebraFiz3, ZebraFiz4, ZebraFiz5, ZebraFiz6, MerekaGarden1, MerekaGarden2, MerekaGarden3, MerekaGarden4, MerekaGarden5, MerekaGarden6, Adrian1, Adrian2, Adrian3, Adrian4, Adrian5, Adrian6, Story2, Story3, Story4, Story1, Story5, Story6, Puppet1, Puppet2, Puppet3, Puppet4, Puppet6, Puppet5, Disco1, Disco2, Disco3, Disco4, Disco5, Disco6, Wayang1, Wayang2, Wayang3, Wayang4, Wayang5, Wayang6, BBQ1, BBQ2, BBQ3, BBQ4, BBQ5, BBQ6, Percussion1, Percussion2, Percussion3, Percussion4, Percussion5, Percussion6, WestinMeeraFiz1, WestinMeeraFiz2, WestinMeeraFiz3, WestinMeeraFiz4, WestinMeeraFiz5, WestinMeeraFiz6, WVC1, WVC2, WVC3, WVC4, WVC5, WVC6, Sisters1, Sisters2, Sisters3, Sisters4, Sisters5, Sisters6, Santan1, Santan2, Santan3, Santan4, Santan5, Santan6, School1, School2, School3, School4, School5, School6, Kites1, Kites2, Kites3, Kites4, Kites5, Kites6, Debris1, Debris2, Debris3, Debris4, Debris5, Debris6, Kitchen1, Kitchen2, Kitchen3, Kitchen4, Kitchen5, Kitchen6, Flavour1, Flavour2, Flavour3, Flavour4, Flavour5, Flavour6, Salsa1, Salsa2, Salsa3, Salsa4, Salsa5, Salsa6, Tumbao1, Tumbao2, Paint1, Paint2, Paint3, Paint4, Paint5, Paint6, Supper1, Supper2, Supper3, Supper4, Supper5, Supper6, Qued1, Qued2, Qued3, Qued4, Qued5, Qued6, Nusantara1, Nusantara2, Nusantara3, Nusantara4, Nusantara5, Nusantara6, Beats1, Beats2, Beats3, Beats4, Beats5, Beats6, FBorneo1, FBorneo2, FBorneo3, FBorneo4, Brunch1, Brunch2, Brunch3, Brunch4, Brunch5, Brunch6, SoundBar1, SoundBar2, SoundBar3, SoundBar4, SoundBar5, SoundBar6, Qureshi1, Qureshi2, Qureshi3, Qureshi4, Qureshi5, Qureshi6, Segaris1, Segaris2, Segaris3, Segaris4, Segaris5, Segaris6, Fiction1, Fiction2, Fiction3, Fiction4, Fiction5, Fiction6, Dia1, Dia2, Dia3, Dia4, Dia5, Dia6, Batik1, Batik2, Batik3, Batik4, Batik5, Batik6, Market1, Market2, Market3, Market4, Market5, Market6 } from '../../../public';
 import '../../styles/thankyou.scss';
 
-export default function Thankyou() {
+function Thankyou() {
     const galleryData = {
         main_stage: [
             { category: 'music', title: 'Nile Rodgers & CHIC', photos: [Nile1, Nile2, Nile3, Nile4, Nile5, Nile6] },
@@ -96,19 +97,19 @@ export default function Thankyou() {
     }, [tag]);
 
     const handleTabClick = (slug) => {
-        // Simpan posisi scroll saat ini sebelum update URL
-        setScrollPosition(window.scrollY);
-        
-        // Update URL tanpa reload menggunakan replaceState dari history API
-        window.history.replaceState(null, '', `/thankyou?tag=${slug}`);
-        
+        if (typeof window !== "undefined") {
+            setScrollPosition(window.scrollY);
+            window.history.replaceState(null, '', `/thankyou?tag=${slug}`);
+        }
         // Update state tempat saat ini untuk memperbarui galeri
         setCurrentPlace(slug);
     };
 
     useEffect(() => {
         // Kembali ke posisi scroll sebelumnya setiap kali currentPlace diperbarui
-        window.scrollTo(0, scrollPosition);
+        if (typeof window !== "undefined") {
+            window.scrollTo(0, scrollPosition);
+        }
     }, [currentPlace, scrollPosition]);
 
     return (
@@ -214,3 +215,11 @@ export default function Thankyou() {
         </div>
     );
 }
+export default function stayWrapper() {
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Thankyou />
+      </Suspense>
+    );
+  }
+  
