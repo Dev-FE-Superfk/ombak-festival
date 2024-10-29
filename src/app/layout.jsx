@@ -1,12 +1,16 @@
 'use client';
+import { useEffect } from 'react';
 import './globals.css';
 import '../fonts/style.css';
 import {Header, Footer} from '@/components';
 import Userback from "@userback/widget";
 
-Userback("P-594QMpIk2nw42M7qspN1NIqAy");
-
 export default function RootLayout({children}) {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      Userback("P-594QMpIk2nw42M7qspN1NIqAy");
+    }
+  }, []);
   return (
     <html lang='en'>
       <title>Ombak Festival At Desaru Coast Johor</title>
