@@ -31,7 +31,7 @@ function Thankyou() {
             { category: 'ombak', title: 'Mereka Garden Games', photos: [MerekaGarden1, MerekaGarden2, MerekaGarden3, MerekaGarden4, MerekaGarden5, MerekaGarden6] },
             { category: 'music', title: 'Adrian G', photos: [Adrian1, Adrian2, Adrian3, Adrian4, Adrian5, Adrian6] },
             { category: 'ombak', title: 'Storytelling SG', photos: [Story1, Story2, Story3, Story4, Story5, Story6] },
-            { category: 'ombak', title: 'Puppet-Making Workshop by Fusion wayang Kulit', photos: [Puppet1, Puppet2, Puppet3, Puppet4, Puppet5, Puppet6] },
+            { category: 'ombak', title: 'Puppet-Making Workshop by Fusion Wayang Kulit', photos: [Puppet1, Puppet2, Puppet3, Puppet4, Puppet5, Puppet6] },
             { category: 'ombak', title: 'Silent Disco Asia', photos: [Disco1, Disco2, Disco3, Disco4, Disco5, Disco6] },
             { category: 'ombak', title: 'Star Wars-inspired Wayang Kulit by Fusion Wayang Kulit', photos: [Wayang1, Wayang2, Wayang3, Wayang4, Wayang5, Wayang6] },
         ],
@@ -48,7 +48,7 @@ function Thankyou() {
             { category: 'food', title: 'Kitchen Takeover by Carbon KL', photos: [Kitchen1, Kitchen2, Kitchen3, Kitchen4, Kitchen5, Kitchen6] },
             { category: 'food', title: 'Latin Street Flavours by Feliz', photos: [Flavour1, Flavour2, Flavour3, Flavour4, Flavour5, Flavour6] },
             { category: 'music', title: 'Salsa Workshop by Güpson Pierre', photos: [Salsa1, Salsa2, Salsa3, Salsa4, Salsa5, Salsa6] },
-            { category: 'music', title: 'Havana Jazz Tumbao', photos: [Tumbao1, Tumbao2] },
+            //{ category: 'music', title: 'Havana Jazz Tumbao', photos: [Tumbao1, Tumbao2] },
             { category: 'art', title: 'Beachfront Sip & Paint', photos: [Paint1, Paint2, Paint3, Paint4, Paint5, Paint6] },
         ],
         anantara: [
@@ -56,7 +56,7 @@ function Thankyou() {
             { category: 'music', title: 'All Q’ued Up by Quantic', photos: [Qued1, Qued2, Qued3, Qued4, Qued5, Qued6] },
             { category: 'food', title: 'An Exploration of Nusantara Cuisine with Khir Johari & Chef Adu', photos: [Nusantara1, Nusantara2, Nusantara3, Nusantara4, Nusantara5, Nusantara6] },
             { category: 'food', title: 'Streets & Beats with Chef Adu and Kenji Law', photos: [Beats1, Beats2, Beats3, Beats4, Beats5, Beats6] },
-            { category: 'food', title: 'Flavours of Borneo by Reka:Bar, Vér & Chocha Foodstore', photos: [FBorneo1, FBorneo2, FBorneo3, FBorneo4] },
+            //{ category: 'food', title: 'Flavours of Borneo by Reka:Bar, Vér & Chocha Foodstore', photos: [FBorneo1, FBorneo2, FBorneo3, FBorneo4] },
         ],
         one_n_only: [
             { category: 'food', title: 'Ember Beach Club Brunch by Chef Andrew Walsh', photos: [Brunch1, Brunch2, Brunch3, Brunch4, Brunch5, Brunch6] },
