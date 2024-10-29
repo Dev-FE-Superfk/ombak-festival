@@ -46,7 +46,8 @@ footer {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 60px;
+      //margin-bottom: 60px;
+      margin-bottom: 30px;
     }
     .fr_tablet {
       width: 50%;
@@ -193,20 +194,28 @@ footer {
 }
 @media only screen and (max-width: 959px) {
   footer {
+    padding-bottom: 80px;
     .footer_left {
       width: 320px;
     }
     .footer_right {
       width: calc(100% - 320px);
       .fr_bottom {
-        width: calc(100% - 40px);
-        position: absolute;
-        left: 40px;
+        // width: calc(100% - 40px);
+        // position: absolute;
+        // left: 40px;
+        width: 100%;
+        position: static;
+        left: auto;
+        display: block;
         .pb_box {
-          width: 320px;
+          width: 100%;
+          margin-bottom: 50px;
+          //width: 320px;
         }
         .pr_box {
-          width: calc(100% - 340px);
+          //width: calc(100% - 340px);
+          width: 100%;
           ul {
             max-width: 300px;
             margin: 20px 0 0;
