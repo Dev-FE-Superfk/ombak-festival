@@ -24,9 +24,9 @@ function Thankyou() {
             { category: 'music', title: '\'Meera & Fiz\' by Nice Monster', photos: [MeeraFiz1, MeeraFiz2, MeeraFiz3, MeeraFiz4, MeeraFiz5, MeeraFiz6] },
         ],
         hard_rock: [
+            { category: 'music', title: 'Zainal Abidin', photos: [Zainal1, Zainal2, Zainal3, Zainal4, Zainal5, Zainal6] },
             { category: 'music', title: 'Sweet Nightmare', photos: [Sweet1, Sweet2, Sweet3, Sweet4, Sweet5, Sweet6] },
             { category: 'music', title: 'Matilde G', photos: [Matilde1, Matilde2, Matilde3, Matilde4, Matilde5, Matilde6] },
-            { category: 'music', title: 'Zainal Abidin', photos: [Zainal1, Zainal2, Zainal3, Zainal4, Zainal5, Zainal6] },
             { category: 'music', title: 'Born in a Taxi \'Zebras\' and \'Meera & Fiz\' by Nice Monster', photos: [ZebraFiz1, ZebraFiz2, ZebraFiz3, ZebraFiz4, ZebraFiz5, ZebraFiz6] },
             { category: 'ombak', title: 'Mereka Garden Games', photos: [MerekaGarden1, MerekaGarden2, MerekaGarden3, MerekaGarden4, MerekaGarden5, MerekaGarden6] },
             { category: 'music', title: 'Adrian G', photos: [Adrian1, Adrian2, Adrian3, Adrian4, Adrian5, Adrian6] },
