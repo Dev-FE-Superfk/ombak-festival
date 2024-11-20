@@ -14,6 +14,8 @@ export { default as FBorneo1 } from "./Flavours_of_Borneo_1.png";
 export { default as FBorneo2 } from "./Flavours_of_Borneo_2.png";
 export { default as FBorneo3 } from "./Flavours_of_Borneo_3.png";
 export { default as FBorneo4 } from "./Flavours_of_Borneo_4.png";
+export { default as FBorneo5 } from "./Flavours_of_Borneo_5.png";
+export { default as FBorneo6 } from "./Flavours_of_Borneo_6.png";
 export { default as Supper1 } from "./Ombak_Supper_Club_1.png";
 export { default as Supper2 } from "./Ombak_Supper_Club_2.png";
 export { default as Supper3 } from "./Ombak_Supper_Club_3.png";
