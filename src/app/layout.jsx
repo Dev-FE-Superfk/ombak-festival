@@ -46,18 +46,8 @@ export default function RootLayout({children}) {
               `,
             }}
           />
-      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-WXVWJTLM"></script> */}
-      {/* <script
-        dangerouslySetInnerHTML={{
-              __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GTM-WXVWJTLM');
-        `,
-        }}
-      /> */}
-      <script
+          {/* Google Tag Manager */}
+        <script
           id="gtm-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -70,6 +60,7 @@ export default function RootLayout({children}) {
             `,
           }}
         />
+        {/* End Google Tag Manager */}
       <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -87,8 +78,16 @@ export default function RootLayout({children}) {
           }}
         />
       <body>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXVWJTLM"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WXVWJTLM"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <Header />
         <section id='root'>{children}</section>
         <Footer />
