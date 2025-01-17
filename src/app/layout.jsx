@@ -46,14 +46,14 @@ export default function RootLayout({children}) {
               `,
             }}
           />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXVWJTLM"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-WXVWJTLM"></script>
       <script
         dangerouslySetInnerHTML={{
               __html: `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-WXVWJTLM');
+        gtag('config', 'GTM-WXVWJTLM');
         `,
         }}
       />
