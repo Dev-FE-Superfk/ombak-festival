@@ -53,7 +53,7 @@ export default function Header() {
           </Link>
         </h1>
         {/* START NAV */}
-        {/* <div
+        <div
           className={`nav_box ${isNavVisible ? 'active' : ''}`}
           // onMouseLeave={() => !showSubNav && setShowSubNav(true)}
         >
@@ -167,7 +167,7 @@ export default function Header() {
         <div
           className={`burger_menu_btn ${isNavVisible ? 'active' : ''}`}
           onClick={toggleNav}
-        ></div> */}
+        ></div>
         {/* END NAV */}
       </div>
     </header>
