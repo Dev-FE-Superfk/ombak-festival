@@ -5,8 +5,6 @@ import './home.scss';
 import {
   ImageOmbak,
   LogoYellow,
-  IconOmbakPurple,
-  IconOmbakOrange,
   Category1,
   Category2,
   Category3,
@@ -23,10 +21,10 @@ import {
   WaveGreenLong,
   MemoriesCover,
   MemoriesCoverM,
-  OmbakExperienceMobile,
   TicketMelon,
   Sistic,
   OmbakSaveTheDate,
+  OmbakSaveTheDateMobile,
 } from '@/assets';
 import {useEffect, useState} from 'react';
 import {VideoPlayer, PartnerSlider, RunningText, Modal, RunningTextBottom} from '@/components';
@@ -138,7 +136,7 @@ export default function Home() {
         ></Image>
         <Image
           className='mobile'
-          src={OmbakExperienceMobile}
+          src={OmbakSaveTheDateMobile}
           width={375}
           height={453}
           alt=''
