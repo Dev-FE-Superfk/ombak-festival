@@ -23,13 +23,13 @@ import {
   WaveGreenLong,
   MemoriesCover,
   MemoriesCoverM,
-  OmbakExperience,
   OmbakExperienceMobile,
   TicketMelon,
   Sistic,
+  OmbakSaveTheDate,
 } from '@/assets';
 import {useEffect, useState} from 'react';
-import {VideoPlayer, PartnerSlider, RunningText, Modal} from '@/components';
+import {VideoPlayer, PartnerSlider, RunningText, Modal, RunningTextBottom} from '@/components';
 import {VideoOmbak} from '../../public/videos';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -130,7 +130,7 @@ export default function Home() {
       <div className='section_experience_img'>
         <Image
           className='desktop'
-          src={OmbakExperience}
+          src={OmbakSaveTheDate}
           width={1366}
           height={756}
           alt=''
@@ -145,8 +145,8 @@ export default function Home() {
           quality={100}
         ></Image>
       </div>
-      <RunningText></RunningText>
-      <div className='section_new_ticket'>
+      <RunningTextBottom></RunningTextBottom>
+      {/* <div className='section_new_ticket'>
         <div className='container'>
           <div className='snt_box'>
             <h3>
@@ -167,7 +167,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <div className='section_two'>
         <div className='ornament_left'>
           <div className='ornament_1'></div>
@@ -413,10 +413,10 @@ export default function Home() {
             src={MemoriesCoverM}
             alt='Memories Cover'
           ></Image>
-          <h3>Get ready for an unforgettable weekend getaway</h3>
+          <h3>Get ready for an unforgettable <br/>weekend getaway!</h3>
           <Link href='/stay?tag=hard_rock_hotel'>
             <button disabled className='button'>
-              <p>BOOK YOUR STAY PACKAGES NOW</p>
+              <p>COMINGSOON</p>
             </button>
           </Link>
         </div>

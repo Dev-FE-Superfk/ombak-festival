@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
         <div className='footer_right'>
           <div className='fr_top'>
-            {/* <div className='fr_tablet'>
+            <div className='fr_tablet'>
               <div className='fr_box'>
                 <div className='fr_nav'>
                   <Link href='/info?tag=info'>Getting Here</Link>
@@ -71,20 +71,20 @@ export default function Footer() {
                   <Link href='/info?tag=faq'>FAQs</Link>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div className='fr_tablet'>
               <div className='fr_box'>
                 <div className='fr_nav'><Link href='/media-room'>Media Room</Link></div>
-                {/* <div className='fr_nav'><Link href='/sustainability'>Sustainability</Link></div> */}
+                <div className='fr_nav'><Link href='/sustainability'>Sustainability</Link></div>
               </div>
-              {/* <div className='fr_box'>
+              <div className='fr_box'>
                 <div className='fr_nav'>
                   <Link href='/privacy-statement'>Privacy Statement</Link>
                 </div>
                 <div className='fr_nav'>
                   <Link href='/terms'>Terms &amp; Conditions</Link>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
           <div className='fr_bottom'>

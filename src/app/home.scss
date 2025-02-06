@@ -612,7 +612,7 @@ html {
     .button {
       background: $purple;
       color: #fff;
-      width: 320px;
+      width: 165px;
       height: 45px;
       display: block;
       margin: 0 auto;
@@ -637,8 +637,10 @@ html {
         transition: all 0.2s ease;
       }
       &:disabled {
-        background: rgba(139, 139, 139, 1);
-        color: rgba(179, 179, 179, 1);
+        // background: rgba(139, 139, 139, 1);
+        // color: rgba(179, 179, 179, 1);
+        background: $purple;
+        color: rgba($color: #fff, $alpha: 0.2);
         cursor: not-allowed;
       }
     }

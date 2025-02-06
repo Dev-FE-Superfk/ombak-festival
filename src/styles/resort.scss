@@ -228,8 +228,11 @@
           color: $darkgreen;
         }
         &:disabled {
-          background: rgba(139, 139, 139, 1);
-          color: rgba(179, 179, 179, 1);
+          // background: rgba(139, 139, 139, 1);
+          // color: rgba(179, 179, 179, 1);
+          background: $orange;
+          color: rgba($color: #fff, $alpha: 0.2);
+          cursor: not-allowed;
         }
       }
     }

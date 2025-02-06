@@ -35,3 +35,4 @@ export { default as WayangKulit } from "./Wayang_Kulit.png";
 export { default as Rectangele } from "./Rectangle.png";
 export { default as OmbakExperience } from "./ombak_experience.png";
 export { default as OmbakExperienceMobile } from "./ombak_experience_mobile.png";
+export { default as OmbakSaveTheDate } from "./ombak_save_the_date.jpg";

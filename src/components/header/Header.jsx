@@ -53,7 +53,7 @@ export default function Header() {
           </Link>
         </h1>
         {/* START NAV */}
-        {/* <div
+        <div
           className={`nav_box ${isNavVisible ? 'active' : ''}`}
           // onMouseLeave={() => !showSubNav && setShowSubNav(true)}
         >
@@ -149,11 +149,20 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  className={`golf ${isPathActive('/golf') ? 'active' : ''}`}
+                  className={`${isPathActive('/golf') ? 'active' : ''}`}
                   href='/golf'
                   onClick={hideNav}
                 >
                   Golf
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${isPathActive('/thankyou') ? 'active' : ''}`}
+                  href='/thankyou'
+                  onClick={hideNav}
+                >
+                  Gallery 2024
                 </Link>
               </li>
             </ul>
@@ -167,7 +176,7 @@ export default function Header() {
         <div
           className={`burger_menu_btn ${isNavVisible ? 'active' : ''}`}
           onClick={toggleNav}
-        ></div> */}
+        ></div>
         {/* END NAV */}
       </div>
     </header>
