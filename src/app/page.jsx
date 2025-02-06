@@ -25,9 +25,11 @@ import {
   Sistic,
   OmbakSaveTheDate,
   OmbakSaveTheDateMobile,
+  OmbakExperience,
+  OmbakExperienceMobile,
 } from '@/assets';
 import {useEffect, useState} from 'react';
-import {VideoPlayer, PartnerSlider, RunningText, Modal, RunningTextBottom} from '@/components';
+import {VideoPlayer, PartnerSlider, RunningText, Modal} from '@/components';
 import {VideoOmbak} from '../../public/videos';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -128,7 +130,7 @@ export default function Home() {
       <div className='section_experience_img'>
         <Image
           className='desktop'
-          src={OmbakSaveTheDate}
+          src={OmbakExperience}
           width={1366}
           height={756}
           alt=''
@@ -136,14 +138,14 @@ export default function Home() {
         ></Image>
         <Image
           className='mobile'
-          src={OmbakSaveTheDateMobile}
+          src={OmbakExperienceMobile}
           width={375}
           height={453}
           alt=''
           quality={100}
         ></Image>
       </div>
-      <RunningTextBottom></RunningTextBottom>
+      <RunningText></RunningText>
       {/* <div className='section_new_ticket'>
         <div className='container'>
           <div className='snt_box'>
