@@ -416,7 +416,7 @@ export default function Home() {
           <h3>Get ready for an unforgettable <br/>weekend getaway!</h3>
           <Link href='/stay?tag=hard_rock_hotel'>
             <button disabled className='button'>
-              <p>COMINGSOON</p>
+              <p>COMING SOON</p>
             </button>
           </Link>
         </div>
