@@ -126,7 +126,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <RunningText></RunningText>
+      {/* <RunningText></RunningText> */}
       <div className='section_experience_img'>
         <Image
           className='desktop'
@@ -145,7 +145,7 @@ export default function Home() {
           quality={100}
         ></Image>
       </div>
-      <RunningText></RunningText>
+      {/* <RunningText></RunningText> */}
       {/* <div className='section_new_ticket'>
         <div className='container'>
           <div className='snt_box'>
