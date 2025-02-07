@@ -188,8 +188,10 @@ nav {
     color: rgb(6, 72, 78);
   }
   &:disabled {
-    background: rgba(139, 139, 139, 1);
-    color: rgba(179, 179, 179, 1);
+    // background: rgba(139, 139, 139, 1);
+    // color: rgba(179, 179, 179, 1);
+    background: $orange;
+    color: rgba($color: #fff, $alpha: 0.2);
     cursor: not-allowed;
   }
 }
@@ -214,6 +216,7 @@ nav {
       position: static;
       margin: 20px auto 60px;
       transform: none;
+      display: block;
     }
     #logo {
       left: 40px;
@@ -358,6 +361,7 @@ nav {
       position: static;
       margin: 20px auto 100px;
       transform: none;
+      display: block;
     }
     #logo {
       left: 20px;

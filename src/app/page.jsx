@@ -5,8 +5,6 @@ import './home.scss';
 import {
   ImageOmbak,
   LogoYellow,
-  IconOmbakPurple,
-  IconOmbakOrange,
   Category1,
   Category2,
   Category3,
@@ -23,10 +21,12 @@ import {
   WaveGreenLong,
   MemoriesCover,
   MemoriesCoverM,
-  OmbakExperience,
-  OmbakExperienceMobile,
   TicketMelon,
   Sistic,
+  OmbakSaveTheDate,
+  OmbakSaveTheDateMobile,
+  OmbakExperience,
+  OmbakExperienceMobile,
 } from '@/assets';
 import {useEffect, useState} from 'react';
 import {VideoPlayer, PartnerSlider, RunningText, Modal} from '@/components';
@@ -146,7 +146,7 @@ export default function Home() {
         ></Image>
       </div>
       <RunningText></RunningText>
-      <div className='section_new_ticket'>
+      {/* <div className='section_new_ticket'>
         <div className='container'>
           <div className='snt_box'>
             <h3>
@@ -167,7 +167,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <div className='section_two'>
         <div className='ornament_left'>
           <div className='ornament_1'></div>
@@ -413,10 +413,10 @@ export default function Home() {
             src={MemoriesCoverM}
             alt='Memories Cover'
           ></Image>
-          <h3>Get ready for an unforgettable weekend getaway</h3>
+          <h3>Get ready for an unforgettable <br/>weekend getaway!</h3>
           <Link href='/stay?tag=hard_rock_hotel'>
             <button disabled className='button'>
-              <p>BOOK YOUR STAY PACKAGES NOW</p>
+              <p>COMING SOON</p>
             </button>
           </Link>
         </div>

@@ -4,14 +4,14 @@ export function middleware(req) {
   const { pathname } = req.nextUrl;
 
   // Cek jika URL-nya adalah root (ombakfestival.com)
-  if (pathname === '/') {
-    // Redirect ke /thankyou
-    return NextResponse.redirect(new URL('/thankyou?tag=main_stage', req.url));
-  }
+  // if (pathname === '/') {
+  //   // Redirect ke /thankyou
+  //   return NextResponse.redirect(new URL('/thankyou?tag=main_stage', req.url));
+  // }
 
-  if(pathname !== '/thankyou'){
-    return NextResponse.redirect(new URL('/thankyou?tag=main_stage', req.url));
-  }
+  // if(pathname !== '/thankyou'){
+  //   return NextResponse.redirect(new URL('/thankyou?tag=main_stage', req.url));
+  // }
 
   // Jika bukan root, lanjutkan request seperti biasa
   return NextResponse.next();
