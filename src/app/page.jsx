@@ -106,10 +106,10 @@ export default function Home() {
         <div className='mobile_text'>
           <Image src={LogoYellow} alt=''></Image>
           <div className='text_info'>
-            13 - 15 September 2024
+            12 - 14 SEPTEMBER 2025
             <br />
-            Desaru Coast, Johor, Malaysia
-            <span>The Ultimate Weekend</span>
+            DESARU COAST, JOHOR, MALAYSIA
+            <span>SAVE THE DATE</span>
           </div>
         </div>
         <Image src={ImageOmbak} alt='' className='desktop'></Image>
@@ -118,15 +118,15 @@ export default function Home() {
           <div className='text'>
             <Image src={LogoYellow} alt=''></Image>
             <div className='text_info'>
-              13 - 15 September 2024
+              12 - 14 SEPTEMBER 2025
               <br />
-              Desaru Coast, Johor, Malaysia
-              <span>The Ultimate Weekend</span>
+              DESARU COAST, JOHOR, MALAYSIA
+              <span>SAVE THE DATE</span>
             </div>
           </div>
         </div>
       </div>
-      {/* <RunningText></RunningText> */}
+      <RunningText></RunningText>
       <div className='section_experience_img'>
         <Image
           className='desktop'

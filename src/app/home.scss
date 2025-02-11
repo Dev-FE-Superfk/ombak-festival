@@ -49,7 +49,7 @@ html {
   .text,
   .mobile_text {
     color: #fff;
-    margin-top: 9%;
+    margin-top: 10%;
     font-family: 'Roboto';
     font-weight: 500;
     ul {
@@ -64,19 +64,25 @@ html {
         }
       }
     }
+    .wkwk{
+      font-family: 'Antique Olive Bold Condensed';
+      font-size: 24px;
+    }
     .text_info {
-      font-size: 20px;
-      font-family: 'Antique Olive Std Bold';
+      font-size: 24px;
+      font-family: 'Antique Olive Std Bold Condensed';
       span {
         color: rgba(255, 225, 127, 1);
         display: block;
-        margin-top: 30px;
+        margin-top: 20px;
+        font-size: 36px;
+        font-family: 'Antique Olive Std Bold Condensed';
       }
     }
     img {
       width: 280px;
       display: block;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
       margin-left: -12px;
     }
   }
@@ -818,19 +824,19 @@ html {
   }
   .section_one {
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: 100px;
     &::before {
       display: none;
     }
     img {
       width: 100%;
       position: absolute;
-      top: 295px;
+      top: 335px;
       left: 0;
     }
     video {
-      height: calc(100vh - 300px);
-      top: 300px;
+      height: calc(100vh - 335px);
+      top: 335px;
     }
     .container {
       display: none;
@@ -840,18 +846,18 @@ html {
       display: block;
       margin: 0;
       text-align: center;
-      padding-top: 50px;
+      padding-top: 0;
       padding-bottom: 10px;
       img {
         position: static;
         width: 280px;
-        margin: 0 auto 10px;
+        margin: 0 auto 25px;
       }
       .text_info {
-        font-size: 18px;
+        font-size: 24px;
         span {
-          margin-top: 10px;
-          font-size: 18px;
+          margin-top: 12px;
+          font-size: 28px;
         }
       }
     }
@@ -998,7 +1004,7 @@ html {
     }
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 743px) {
   html {
     overflow-x: hidden;
   }
@@ -1032,13 +1038,14 @@ html {
       img {
         position: static;
         width: 280px;
-        margin: 0 auto 10px;
+        margin: 0 auto 20px;
       }
       .text_info {
-        font-size: 18px;
+        font-size: 24px;
+        line-height: 28px;
         span {
-          margin-top: 10px;
-          font-size: 18px;
+          margin-top: 20px;
+          font-size: 28px;
         }
       }
     }
@@ -1232,7 +1239,7 @@ html {
         font-size: 28px;
       }
       .button {
-        width: 340px;
+        width: 320px;
       }
     }
   }

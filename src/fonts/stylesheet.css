@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Antique Olive Bold Condensed';
+    src: url('AntiqueOliveBoldCondensed.woff2') format('woff2'),
+        url('AntiqueOliveBoldCondensed.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
