@@ -89,7 +89,7 @@ export default function Schedule() {
   return (
     <div className="section_schedule">
       <div className="schedule_top">
-            <h2>Schedule</h2>
+            <h2>Schedule 2024</h2>
       </div>
       <div className="schedule_nav">
         <ul>
