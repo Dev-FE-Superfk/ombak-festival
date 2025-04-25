@@ -1,0 +1,79 @@
+.home_ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  .video_intro_ctr {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home_content_ctr {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    video {
+      position: relative;
+      z-index: 1;
+    }
+    .main_content {
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      .inner_ctr {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .upper_ctr {
+          position: absolute;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          top: 20px;
+          padding: 0 100px;
+          .vpy_button {
+            border: 1px solid #faf4e8;
+            border-radius: 32px;
+            gap: 10px;
+            padding: 10px 16px 6px;
+
+            font-family: 'Antique Olive Std Bold';
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 95%;
+            color: #faf4e8;
+          }
+        }
+        .left_attr {
+          position: absolute;
+          left: 5%;
+          top: 10%;
+        }
+        .ult_weekend {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+        .ombak_2025_logo {
+          position: absolute;
+          left: 50%;
+          bottom: 10%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+        .right_attr {
+          position: absolute;
+          right: 5%;
+          bottom: 10%;
+        }
+      }
+    }
+  }
+}
