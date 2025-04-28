@@ -3,9 +3,21 @@ import './globals.css';
 import '../fonts/style.css';
 import {usePathname} from 'next/navigation';
 import {Header, Footer} from '@/components';
+import Userback from '@userback/widget';
 
 export default function RootLayout({children}) {
   const pathname = usePathname();
+  const options = {
+    user_data: {
+      id: '123456',
+      info: {
+        name: 'someone',
+        email: 'someone@example.com',
+      },
+    },
+  };
+
+  Userback('P-YOTLNL6Op10rg5UnNB3IiQvEN', options);
 
   if (pathname === '/') {
     return (
