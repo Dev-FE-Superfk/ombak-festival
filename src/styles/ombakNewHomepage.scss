@@ -239,6 +239,11 @@
 
 @media screen and (max-width: 1024px) {
   .home_ctr {
+    .background_video {
+      height: 100vh;
+      width: auto;
+      object-fit: contain;
+    }
     .home_content_ctr {
       .background_video {
         height: 100vh;

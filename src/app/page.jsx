@@ -19,9 +19,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '@/styles/ombakNewHomepage.scss';
+import {useRouter} from 'next/navigation';
 
 export default function page() {
-  const [showContent, setShowContent] = useState(true);
+  const router = useRouter();
+  const [showContent, setShowContent] = useState(false);
   const [widthScreen, setWidthScreen] = useState(0);
 
   const updateScreenWidth = () => {
@@ -80,7 +82,7 @@ export default function page() {
         </ul>
         <div
           className="arrows-container"
-          style={{position: 'absolute', left: '-10px', bottom: '-50px'}}
+          style={{position: 'absolute', left: '-5px', bottom: '-60px'}}
         >
           <button
             className="custom-arrow next-arrow"
@@ -204,7 +206,12 @@ export default function page() {
     <div className="home_ctr">
       {!showContent && (
         <div className="video_intro_ctr">
-          <VideoPlayer src={OmbakIntro2} type="video/mp4" loop={false} />
+          <VideoPlayer
+            src={OmbakIntro2}
+            type="video/mp4"
+            loop={false}
+            className="background_video"
+          />
         </div>
       )}
 
@@ -219,7 +226,14 @@ export default function page() {
             <div className="inner_ctr">
               <div className="upper_ctr">
                 <Image src={OmbakNewLogo} alt="ombak new logo" />
-                <button className="vpy_button">View Past Year</button>
+                <button
+                  className="vpy_button"
+                  onClick={() => {
+                    router.push('/2024');
+                  }}
+                >
+                  View Past Year
+                </button>
               </div>
               {widthScreen > 768 && (
                 <Image
