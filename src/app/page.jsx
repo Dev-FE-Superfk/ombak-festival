@@ -398,7 +398,7 @@ export default function page() {
                           className="right_attr"
                         />
                       </div>
-                      <div className="slider_box ">
+                      <div className="slider_box">
                         <div className="cream_bg">
                           <p className="main_text">Tickets Available Now</p>
                           <div>
