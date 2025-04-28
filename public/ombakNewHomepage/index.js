@@ -3,3 +3,9 @@ export {default as Ombak2025Logo} from './ombak_2025_logo.png';
 export {default as OmbakNewLogo} from './ombak_new_logo.png';
 export {default as RightAttribute} from './right_attribute.png';
 export {default as UltimateWeekend} from './ultiimate_weekend.png';
+// Slide 2 vector and image
+export {default as BlueVector} from './blue_vector.png';
+export {default as GreenVector} from './green_vector.png';
+export {default as MaskHugeImage} from './mask_huge_image.png';
+export {default as MaskSmallImage} from './mask_small_image.png';
+export {default as TimeTicket} from './time_ticket.png';
