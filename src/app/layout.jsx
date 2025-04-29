@@ -4,20 +4,36 @@ import '../fonts/style.css';
 import {usePathname} from 'next/navigation';
 import {Header, Footer} from '@/components';
 import Userback from '@userback/widget';
+import {useEffect} from 'react';
 
 export default function RootLayout({children}) {
   const pathname = usePathname();
-  const options = {
-    user_data: {
-      id: '123456',
-      info: {
-        name: 'someone',
-        email: 'someone@example.com',
-      },
-    },
-  };
+  // const options = {
+  //   user_data: {
+  //     id: '123456',
+  //     info: {
+  //       name: 'someone',
+  //       email: 'someone@example.com',
+  //     },
+  //   },
+  // };
 
-  Userback('P-YOTLNL6Op10rg5UnNB3IiQvEN', options);
+  // Userback('P-YOTLNL6Op10rg5UnNB3IiQvEN', options);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const options = {
+        user_data: {
+          id: '123456',
+          info: {
+            name: 'someone',
+            email: 'someone@example.com',
+          },
+        },
+      };
+      Userback('P-YOTLNL6Op10rg5UnNB3IiQvEN', options);
+    }
+  }, []);
 
   if (pathname === '/') {
     return (
@@ -99,14 +115,14 @@ export default function RootLayout({children}) {
         <Header />
         <section id="root">{children}</section>
         <Footer />
-        <noscript>
+        {/* <noscript>
           <img
             height="1"
             width="1"
             style={{display: 'none'}}
             src="https://www.facebook.com/tr?id=1451507682492885&ev=PageView&noscript=1"
           />
-        </noscript>
+        </noscript> */}
       </body>
     </html>
   );

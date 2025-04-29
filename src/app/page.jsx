@@ -251,15 +251,17 @@ export default function page() {
                           src={UltimateWeekend}
                           alt="ultimate weekend"
                           className="ult_weekend"
-                          width={150}
-                          height={150}
+                          width={300}
+                          height={300}
+                          quality={100}
                         />
                         <Image
                           src={Ombak2025Logo}
                           alt="ombak 2025 logo"
                           className="ombak_2025_logo"
-                          width={100}
-                          height={100}
+                          width={200}
+                          height={200}
+                          quality={100}
                         />
                       </div>
                       <div className="slider_box cream_bg">
@@ -293,15 +295,17 @@ export default function page() {
                           src={MaskSmallImage}
                           alt="mask small image"
                           className="mask_small_image"
-                          width={262}
-                          height={262}
+                          width={524}
+                          height={524}
+                          quality={100}
                         />
                         <Image
                           src={MaskHugeImage}
                           alt="mask huge image"
                           className="mask_huge_image"
-                          width={292}
-                          height={583}
+                          width={584}
+                          height={1166}
+                          quality={100}
                         />
                       </div>
                       <div className="slider_box cream_bg">
