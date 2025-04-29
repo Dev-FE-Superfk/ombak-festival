@@ -371,7 +371,7 @@ export default function page() {
           <div className="main_content">
             <div className="inner_ctr">
               <div className="upper_ctr">
-                <Image src={OmbakNewLogo} alt="ombak new logo" />
+                <Image src={OmbakNewLogo} alt="ombak new logo" quality={100} />
                 <button
                   className="vpy_button"
                   onClick={() => {
@@ -425,11 +425,20 @@ export default function page() {
                           src={TimeTicket}
                           alt="time ticket"
                           className="time_ticket"
+                          quality={100}
                         />
                         <p className="sub_text">
                           <span>Desaru Coast, Johor, Malaysia</span>
                         </p>
-                        <button className="buy_ticket">BUY TICKETS</button>
+                        <a
+                          className="buy_ticket"
+                          href={
+                            'https://www.ticketmelon.com/e/ombakfestival2025'
+                          }
+                          target="_blank"
+                        >
+                          BUY TICKETS
+                        </a>
                         <Image
                           src={GreenVector}
                           alt="green vector"
