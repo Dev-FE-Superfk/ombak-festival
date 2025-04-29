@@ -3,42 +3,37 @@ import './globals.css';
 import '../fonts/style.css';
 import {usePathname} from 'next/navigation';
 import {Header, Footer} from '@/components';
-import Userback from '@userback/widget';
+// import Userback from '@userback/widget';
 import {useEffect} from 'react';
 
 export default function RootLayout({children}) {
   const pathname = usePathname();
-  // const options = {
-  //   user_data: {
-  //     id: '123456',
-  //     info: {
-  //       name: 'someone',
-  //       email: 'someone@example.com',
-  //     },
-  //   },
-  // };
-
-  // Userback('P-YOTLNL6Op10rg5UnNB3IiQvEN', options);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      import('@userback/widget').then(({default: Userback}) => {
-        Userback('P-YOTLNL6Op10rg5UnNB3IiQvEN', {
-          user_data: {
-            id: '123456',
-            info: {
-              name: 'someone',
-              email: 'someone@example.com',
-            },
-          },
-        });
-      });
+      const userbackScript = document.createElement('script');
+      userbackScript.src = 'https://static.userback.io/widget/v1.js';
+      userbackScript.async = true;
+      userbackScript.setAttribute('data-token', 'P-YOTLNL6Op10rg5UnNB3IiQvEN');
+
+      document.body.appendChild(userbackScript);
+
+      return () => {
+        document.body.removeChild(userbackScript);
+      };
     }
   }, []);
 
   if (pathname === '/') {
     return (
       <html lang="en">
+        <head>
+          <script
+            src="https://static.userback.io/widget/v1.js"
+            data-token="P-YOTLNL6Op10rg5UnNB3IiQvEN"
+            async
+          ></script>
+        </head>
         <body>
           <section
             id="root"
@@ -112,6 +107,13 @@ export default function RootLayout({children}) {
         name="twitter:image"
         content="https://www.ombakfestival.com/ombak_meta.jpeg"
       />
+      <head>
+        <script
+          src="https://static.userback.io/widget/v1.js"
+          data-token="P-YOTLNL6Op10rg5UnNB3IiQvEN"
+          async
+        ></script>
+      </head>
       <body>
         <Header />
         <section id="root">{children}</section>
