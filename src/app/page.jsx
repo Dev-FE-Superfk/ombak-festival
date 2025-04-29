@@ -46,9 +46,40 @@ export default function page() {
     sliderRef.current.slickNext();
   };
 
-  // const prevSlide = () => {
-  //   sliderRef.current.slickPrev();
-  // };
+  const prevSlide = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  useEffect(() => {
+    let isScrolling = false;
+    let scrollTimeout = null;
+
+    const handleWheel = (event) => {
+      if (isScrolling) return; // Kalau lagi jeda, jangan lakukan apa-apa
+
+      if (event.deltaY > 0) {
+        // Scroll ke bawah
+        isScrolling = true;
+        nextSlide(); // Panggil next slide
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 1000); // jeda 1 detik, kamu bisa ubah 1000 ke lebih cepat atau lambat
+      } else if (event.deltaY < 0) {
+        isScrolling = true;
+        prevSlide();
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 1000);
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel);
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
+  }, []);
 
   var settings_desktop = {
     dots: true,
@@ -245,7 +276,7 @@ export default function page() {
               <div className="slider_container">
                 <div className="slider_wrapper">
                   {widthScreen > 1024 && (
-                    <Slider {...settings_desktop}>
+                    <Slider {...settings_desktop} ref={sliderRef}>
                       <div className="slider_box">
                         <Image
                           src={UltimateWeekend}
@@ -319,7 +350,7 @@ export default function page() {
                     </Slider>
                   )}
                   {widthScreen <= 1024 && widthScreen > 743 && (
-                    <Slider {...settings_tablet}>
+                    <Slider {...settings_tablet} ref={sliderRef}>
                       <div className="slider_box">
                         <Image
                           src={UltimateWeekend}
@@ -389,7 +420,7 @@ export default function page() {
                     </Slider>
                   )}
                   {widthScreen <= 743 && (
-                    <Slider {...settings_tablet}>
+                    <Slider {...settings_tablet} ref={sliderRef}>
                       <div className="slider_box">
                         <Image
                           src={LeftAttribute}

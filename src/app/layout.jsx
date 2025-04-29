@@ -3,48 +3,12 @@ import './globals.css';
 import '../fonts/style.css';
 import {usePathname} from 'next/navigation';
 import {Header, Footer} from '@/components';
+import Script from 'next/script';
 // import Userback from '@userback/widget';
-import {useEffect} from 'react';
+// import {useEffect} from 'react';
 
 export default function RootLayout({children}) {
   const pathname = usePathname();
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const userbackScript = document.createElement('script');
-      userbackScript.src = 'https://static.userback.io/widget/v1.js';
-      userbackScript.async = true;
-      userbackScript.setAttribute('data-token', 'P-YOTLNL6Op10rg5UnNB3IiQvEN');
-
-      document.body.appendChild(userbackScript);
-
-      return () => {
-        document.body.removeChild(userbackScript);
-      };
-    }
-  }, []);
-
-  if (pathname === '/') {
-    return (
-      <html lang="en">
-        <head>
-          <script
-            src="https://static.userback.io/widget/v1.js"
-            data-token="P-YOTLNL6Op10rg5UnNB3IiQvEN"
-            async
-          ></script>
-        </head>
-        <body>
-          <section
-            id="root"
-            style={{background: '#FAF4E8', minHeight: '100vh'}}
-          >
-            {children}
-          </section>
-        </body>
-      </html>
-    );
-  }
 
   return (
     <html lang="en">
@@ -107,17 +71,80 @@ export default function RootLayout({children}) {
         name="twitter:image"
         content="https://www.ombakfestival.com/ombak_meta.jpeg"
       />
+      {/* <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "mplxxqhpxr");
+              `,
+            }}
+          />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7KWRCJG83T"></script>
+      <script
+        dangerouslySetInnerHTML={{
+              __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7KWRCJG83T');
+        `,
+        }}
+      />
+      <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1451507682492885');
+              fbq('track', 'PageView');
+            `,
+          }}
+        /> */}
       <head>
-        <script
-          src="https://static.userback.io/widget/v1.js"
-          data-token="P-YOTLNL6Op10rg5UnNB3IiQvEN"
-          async
-        ></script>
+        <Script id="userback-script" strategy="afterInteractive">
+          {`
+            window.Userback = window.Userback || {};
+            Userback.access_token = 'P-YOTLNL6Op10rg5UnNB3IiQvEN';
+            Userback.user_data = {
+              id: "123456",
+              info: {
+                name: "someone",
+                email: "someone@example.com"
+              }
+            };
+            (function(d) {
+              var s = d.createElement('script');
+              s.async = true;
+              s.src = 'https://static.userback.io/widget/v1.js';
+              (d.head || d.body).appendChild(s);
+            })(document);
+          `}
+        </Script>
       </head>
       <body>
-        <Header />
-        <section id="root">{children}</section>
-        <Footer />
+        {pathname === '/' ? (
+          <section
+            id="root"
+            style={{background: '#FAF4E8', minHeight: '100vh'}}
+          >
+            {children}
+          </section>
+        ) : (
+          <>
+            <Header />
+            <section id="root">{children}</section>
+            <Footer />
+          </>
+        )}
         {/* <noscript>
           <img
             height="1"
