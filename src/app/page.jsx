@@ -295,16 +295,16 @@ export default function page() {
                           src={MaskSmallImage}
                           alt="mask small image"
                           className="mask_small_image"
-                          width={524}
-                          height={524}
+                          width={262}
+                          height={262}
                           quality={100}
                         />
                         <Image
                           src={MaskHugeImage}
                           alt="mask huge image"
                           className="mask_huge_image"
-                          width={584}
-                          height={1166}
+                          width={292}
+                          height={583}
                           quality={100}
                         />
                       </div>
