@@ -80,55 +80,6 @@ export default function page() {
         window.removeEventListener('wheel', handleWheel);
         if (scrollTimeout) clearTimeout(scrollTimeout);
       };
-    } else if (widthScreen <= 1024) {
-      const sliderElement = document.querySelector('.slick-list');
-      let startY = 0;
-      let isScrolling = false;
-
-      const handleTouchStart = (e) => {
-        startY = e.touches[0].clientY;
-        e.preventDefault(); // Mencegah default behavior
-      };
-
-      const handleTouchMove = (e) => {
-        if (isScrolling) {
-          e.preventDefault();
-          return;
-        }
-
-        const y = e.touches[0].clientY;
-        const diff = startY - y;
-
-        // Hanya proses jika pergerakan vertikal dominan
-        if (Math.abs(diff) > 10) {
-          e.preventDefault(); // Blokir scroll horizontal
-          isScrolling = true;
-
-          if (diff > 0) {
-            nextSlide(); // Swipe ke atas -> next
-          } else {
-            prevSlide(); // Swipe ke bawah -> prev
-          }
-
-          setTimeout(() => {
-            isScrolling = false;
-          }, 800);
-        }
-      };
-
-      if (sliderElement) {
-        sliderElement.addEventListener('touchstart', handleTouchStart, {
-          passive: false,
-        });
-        sliderElement.addEventListener('touchmove', handleTouchMove, {
-          passive: false,
-        });
-
-        return () => {
-          sliderElement.removeEventListener('touchstart', handleTouchStart);
-          sliderElement.removeEventListener('touchmove', handleTouchMove);
-        };
-      }
     }
   }, [widthScreen]);
 
