@@ -45,6 +45,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cms-api-ombakx.reviewstagepro.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   // images: {
