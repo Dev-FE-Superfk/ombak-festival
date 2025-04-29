@@ -237,6 +237,29 @@
           }
         }
 
+        .slider_container {
+          overflow: hidden;
+          touch-action: pan-y; // Memastikan touch vertikal bekerja
+          -webkit-overflow-scrolling: touch; // Untuk smooth scrolling di iOS
+
+          .slider_wrapper {
+            // height: 100vh; // Pastikan slider mengambil tinggi penuh viewport
+            touch-action: pan-y;
+          }
+
+          .slick-list,
+          .slick-track {
+            height: 100%;
+            touch-action: pan-y;
+          }
+
+          .slick-slide {
+            // height: 100vh;
+            touch-action: pan-y;
+            overflow: hidden;
+          }
+        }
+
         .right_attr {
           position: absolute;
           right: 5%;
@@ -270,6 +293,12 @@
           .slider_wrapper {
             width: 623px;
             height: 80vh;
+            .slick-slider {
+              touch-action: pan-y !important;
+              .slick-list {
+                height: 100% !important;
+              }
+            }
             .slider_box {
               width: 623px;
               min-height: 759px;

@@ -51,35 +51,86 @@ export default function page() {
   };
 
   useEffect(() => {
-    let isScrolling = false;
-    let scrollTimeout = null;
+    if (widthScreen > 1024) {
+      let isScrolling = false;
+      let scrollTimeout = null;
 
-    const handleWheel = (event) => {
-      if (isScrolling) return; // Kalau lagi jeda, jangan lakukan apa-apa
+      const handleWheel = (event) => {
+        if (isScrolling) return; // Kalau lagi jeda, jangan lakukan apa-apa
 
-      if (event.deltaY > 0) {
-        // Scroll ke bawah
-        isScrolling = true;
-        nextSlide(); // Panggil next slide
-        scrollTimeout = setTimeout(() => {
-          isScrolling = false;
-        }, 1000); // jeda 1 detik, kamu bisa ubah 1000 ke lebih cepat atau lambat
-      } else if (event.deltaY < 0) {
-        isScrolling = true;
-        prevSlide();
-        scrollTimeout = setTimeout(() => {
-          isScrolling = false;
-        }, 1000);
+        if (event.deltaY > 0) {
+          // Scroll ke bawah
+          isScrolling = true;
+          nextSlide(); // Panggil next slide
+          scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+          }, 1000); // jeda 1 detik, kamu bisa ubah 1000 ke lebih cepat atau lambat
+        } else if (event.deltaY < 0) {
+          isScrolling = true;
+          prevSlide();
+          scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+          }, 1000);
+        }
+      };
+
+      window.addEventListener('wheel', handleWheel);
+
+      return () => {
+        window.removeEventListener('wheel', handleWheel);
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+      };
+    } else if (widthScreen <= 1024) {
+      const sliderElement = document.querySelector('.slick-list');
+      let startY = 0;
+      let isScrolling = false;
+
+      const handleTouchStart = (e) => {
+        startY = e.touches[0].clientY;
+        e.preventDefault(); // Mencegah default behavior
+      };
+
+      const handleTouchMove = (e) => {
+        if (isScrolling) {
+          e.preventDefault();
+          return;
+        }
+
+        const y = e.touches[0].clientY;
+        const diff = startY - y;
+
+        // Hanya proses jika pergerakan vertikal dominan
+        if (Math.abs(diff) > 10) {
+          e.preventDefault(); // Blokir scroll horizontal
+          isScrolling = true;
+
+          if (diff > 0) {
+            nextSlide(); // Swipe ke atas -> next
+          } else {
+            prevSlide(); // Swipe ke bawah -> prev
+          }
+
+          setTimeout(() => {
+            isScrolling = false;
+          }, 800);
+        }
+      };
+
+      if (sliderElement) {
+        sliderElement.addEventListener('touchstart', handleTouchStart, {
+          passive: false,
+        });
+        sliderElement.addEventListener('touchmove', handleTouchMove, {
+          passive: false,
+        });
+
+        return () => {
+          sliderElement.removeEventListener('touchstart', handleTouchStart);
+          sliderElement.removeEventListener('touchmove', handleTouchMove);
+        };
       }
-    };
-
-    window.addEventListener('wheel', handleWheel);
-
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-    };
-  }, []);
+    }
+  }, [widthScreen]);
 
   var settings_desktop = {
     dots: true,
@@ -89,8 +140,9 @@ export default function page() {
     slidesToShow: 1,
     slidesToScroll: 1,
     loop: true,
-    vertical: true, // Tambahkan ini untuk slider vertikal
-    verticalSwiping: true, // Aktifkan swipe vertikal
+    vertical: true,
+    verticalSwiping: true,
+    horizontalSwiping: false,
     ref: sliderRef,
     appendDots: (dots) => (
       <div
@@ -158,8 +210,11 @@ export default function page() {
     slidesToShow: 1,
     slidesToScroll: 1,
     loop: true,
-    vertical: true, // Tambahkan ini untuk slider vertikal
-    verticalSwiping: true, // Aktifkan swipe vertikal
+    vertical: true,
+    verticalSwiping: true,
+    horizontalSwiping: false,
+    touchThreshold: 10,
+    swipeToSlide: false,
     ref: sliderRef,
     appendDots: (dots) => (
       <div
@@ -177,6 +232,84 @@ export default function page() {
             position: 'absolute',
             left: '50%',
             bottom: '40px',
+            transform: 'translateX(-50%)',
+          }}
+        >
+          <button
+            className="custom-arrow next-arrow"
+            onClick={nextSlide}
+            style={{
+              border: '1px solid #FAF4E8',
+              borderRadius: '50%',
+              transform: 'rotate(90deg)',
+            }}
+          >
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 12h14M12 5l7 7-7 7"
+                stroke="#faf4e8"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <ul
+          style={{
+            margin: '0',
+            display: 'flex',
+            gap: '10px',
+            alignItems: 'center',
+          }}
+        >
+          {dots}
+        </ul>
+      </div>
+    ),
+    customPaging: (i) => (
+      <div
+        style={{
+          width: '10px',
+          height: '10px',
+          borderRadius: '50%',
+          backgroundColor: i === 0 ? '#faf4e8' : 'rgba(250, 244, 232, 0.5)',
+          transition: 'all 0.3s ease',
+        }}
+      />
+    ),
+  };
+
+  var settings_mobile = {
+    dots: true,
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    loop: true,
+    vertical: true,
+    verticalSwiping: true,
+    horizontalSwiping: false,
+    touchThreshold: 15,
+    swipeToSlide: false,
+    ref: sliderRef,
+    appendDots: (dots) => (
+      <div
+        style={{
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          bottom: '-70px',
+          zIndex: 10,
+        }}
+      >
+        <div
+          className="arrows-container"
+          style={{
+            position: 'absolute',
+            left: '50%',
+            bottom: '20px',
             transform: 'translateX(-50%)',
           }}
         >
@@ -266,7 +399,7 @@ export default function page() {
                   View Past Year
                 </button>
               </div>
-              {widthScreen > 768 && (
+              {widthScreen > 743 && (
                 <Image
                   src={LeftAttribute}
                   alt="left attribute"
@@ -420,7 +553,7 @@ export default function page() {
                     </Slider>
                   )}
                   {widthScreen <= 743 && (
-                    <Slider {...settings_tablet} ref={sliderRef}>
+                    <Slider {...settings_mobile} ref={sliderRef}>
                       <div className="slider_box">
                         <Image
                           src={LeftAttribute}
@@ -496,7 +629,7 @@ export default function page() {
                   )}
                 </div>
               </div>
-              {widthScreen > 768 && (
+              {widthScreen > 743 && (
                 <Image
                   src={RightAttribute}
                   alt="right attribute"
