@@ -4,6 +4,7 @@ export default function VideoPlayer({
   autoPlay = true,
   loop = true,
   className,
+  controls = false,
 }) {
   return (
     <video
@@ -12,6 +13,7 @@ export default function VideoPlayer({
       loop={loop}
       playsInline
       className={className}
+      controls={controls}
     >
       <source src={src} type={type} />
       Your browser does not support the video tag.

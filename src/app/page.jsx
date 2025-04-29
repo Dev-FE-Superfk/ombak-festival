@@ -64,8 +64,8 @@ export default function page() {
     appendDots: (dots) => (
       <div
         style={{
-          position: 'absolute',
-          left: '-200px',
+          position: 'fixed',
+          left: '-30px',
           bottom: '0px',
           zIndex: 10,
         }}
@@ -318,7 +318,7 @@ export default function page() {
                       </div>
                     </Slider>
                   )}
-                  {widthScreen < 1024 && widthScreen > 768 && (
+                  {widthScreen <= 1024 && widthScreen > 743 && (
                     <Slider {...settings_tablet}>
                       <div className="slider_box">
                         <Image
@@ -388,7 +388,7 @@ export default function page() {
                       </div>
                     </Slider>
                   )}
-                  {widthScreen < 768 && (
+                  {widthScreen <= 743 && (
                     <Slider {...settings_tablet}>
                       <div className="slider_box">
                         <Image

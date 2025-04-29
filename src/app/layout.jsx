@@ -22,16 +22,17 @@ export default function RootLayout({children}) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const options = {
-        user_data: {
-          id: '123456',
-          info: {
-            name: 'someone',
-            email: 'someone@example.com',
+      import('@userback/widget').then(({default: Userback}) => {
+        Userback('P-YOTLNL6Op10rg5UnNB3IiQvEN', {
+          user_data: {
+            id: '123456',
+            info: {
+              name: 'someone',
+              email: 'someone@example.com',
+            },
           },
-        },
-      };
-      Userback('A-xQ6x2VJaEspUVIlxcoH6tPkLd', options);
+        });
+      });
     }
   }, []);
 
