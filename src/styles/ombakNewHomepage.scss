@@ -430,7 +430,7 @@
 
 @media screen and (max-width: 743px) {
   body {
-    // overflow-y: hidden !important;
+    overflow-y: hidden !important;
   }
   .home_ctr {
     height: 100vh;
@@ -456,9 +456,10 @@
             transform: translate(-50%, 0%);
             width: 100%;
             padding: 0 20px;
-            height: calc(100% - 150px);
+            height: calc(100% - 200px);
             .slick-slider .slick-list .slick-track .slick-slide {
               height: 100%;
+              padding: 0px 0;
               div {
                 height: 100%;
               }
@@ -470,10 +471,10 @@
 
               .ult_weekend {
                 max-width: 304px;
-                top: 223px;
+                top: 50%;
               }
               .ombak_2025_logo {
-                top: 434px;
+                top: 90%;
                 bottom: auto;
                 max-width: 171px;
               }
@@ -483,7 +484,7 @@
               .left_attr {
                 width: 60px;
                 height: 60px;
-                top: 30px;
+                top: 0px;
               }
               .right_attr {
                 width: 60px;
@@ -494,10 +495,10 @@
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
-                gap: 25px;
+                gap: 11px;
                 padding-left: 30px;
-                padding-top: 70px;
-                height: 90% !important;
+                padding-top: 28px;
+                height: calc(90% - 10px) !important;
 
                 .main_text {
                   position: unset;
@@ -505,28 +506,31 @@
                 }
                 .blue_vector {
                   position: unset;
-                  padding-bottom: 6.86px;
+                  // padding-bottom: 6.86px;
                 }
                 .time_ticket {
                   position: unset;
                   width: 218px;
                   height: 27.5px;
+                  margin-top: 6.8px;
                   padding-bottom: 5.5px;
                 }
                 .sub_text {
                   position: unset;
                   left: 30px;
                   top: 237px;
-
                   font-size: 18px;
-                  width: auto;
+                  width: 256px;
                 }
                 .green_vector {
                   bottom: 15px;
+                  right: 210px;
                 }
                 .mask_huge_image {
                   right: 0px;
                   bottom: -200px;
+                  width: 200px;
+                  height: auto;
                 }
               }
               .buy_ticket {
