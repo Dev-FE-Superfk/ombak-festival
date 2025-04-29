@@ -80,6 +80,35 @@ export default function page() {
         window.removeEventListener('wheel', handleWheel);
         if (scrollTimeout) clearTimeout(scrollTimeout);
       };
+    } else if (widthScreen <= 743) {
+      let startY = 0;
+      let endY = 0;
+      const threshold = 50;
+
+      const handleTouchStart = (e) => {
+        startY = e.touches[0].clientY;
+      };
+
+      const handleTouchEnd = (e) => {
+        endY = e.changedTouches[0].clientY;
+        const diff = startY - endY;
+
+        if (Math.abs(diff) > threshold) {
+          if (diff > 0) {
+            nextSlide(); // Ganti jQuery dengan function biasa
+          } else {
+            prevSlide();
+          }
+        }
+      };
+
+      document.addEventListener('touchstart', handleTouchStart);
+      document.addEventListener('touchend', handleTouchEnd);
+
+      return () => {
+        document.removeEventListener('touchstart', handleTouchStart);
+        document.removeEventListener('touchend', handleTouchEnd);
+      };
     }
   }, [widthScreen]);
 
@@ -162,10 +191,11 @@ export default function page() {
     slidesToScroll: 1,
     loop: true,
     vertical: true,
-    verticalSwiping: true,
-    horizontalSwiping: false,
-    touchThreshold: 10,
-    swipeToSlide: false,
+    // verticalSwiping: false,
+    // horizontalSwiping: false,
+    // touchThreshold: 10,
+    // swipeToSlide: false,
+    swipe: false,
     ref: sliderRef,
     appendDots: (dots) => (
       <div
@@ -240,10 +270,11 @@ export default function page() {
     slidesToScroll: 1,
     loop: true,
     vertical: true,
-    verticalSwiping: true,
-    horizontalSwiping: false,
-    touchThreshold: 15,
-    swipeToSlide: false,
+    swipe: false,
+    // verticalSwiping: true,
+    // swipeToSlide: true,
+    // horizontalSwiping: false,
+    // touchThreshold: 5,
     ref: sliderRef,
     appendDots: (dots) => (
       <div
