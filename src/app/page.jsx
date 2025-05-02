@@ -340,25 +340,29 @@ export default function page() {
     ),
   };
 
-  const handleTestClick = async () => {
+  const handleTestClick = async (payload) => {
       const response =await fetch(process.env.NEXT_PUBLIC_API_URL +
 '/track', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          event: 'cta_click',
-          url: window.location.href,
-        }),
+        body: JSON.stringify(payload),
       });
       if(response.ok){
-        router.push('/2024');
+        if(payload.event === 'cta_click'){
+          router.push('/2024');
+        }
       }
   }
 
   
   useEffect(() => {
+    handleTestClick({
+      event: 'page_view',
+      referer: document.referrer,
+      url: window.location.href,
+    })
     const timer = setTimeout(() => {
       setShowContent(true);
     }, 4000);
@@ -394,7 +398,10 @@ export default function page() {
                   className="vpy_button"
                   onClick={() => {
                     // router.push('/2024');
-                    handleTestClick();
+                  handleTestClick({
+                    event: 'cta_click',
+                    url: window.location.href,
+                  });
                   }}
                 >
                   View Past Year
