@@ -340,6 +340,24 @@ export default function page() {
     ),
   };
 
+  const handleTestClick = async () => {
+      const response =await fetch(process.env.NEXT_PUBLIC_API_URL +
+'/track', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          event: 'cta_click',
+          url: window.location.href,
+        }),
+      });
+      if(response.ok){
+        router.push('/2024');
+      }
+  }
+
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
@@ -375,7 +393,8 @@ export default function page() {
                 <button
                   className="vpy_button"
                   onClick={() => {
-                    router.push('/2024');
+                    // router.push('/2024');
+                    handleTestClick();
                   }}
                 >
                   View Past Year
