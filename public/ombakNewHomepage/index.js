@@ -3,6 +3,10 @@ export {default as Ombak2025Logo} from './ombak_2025_logo.png';
 export {default as OmbakNewLogo} from './ombak_new_logo.png';
 export {default as RightAttribute} from './right_attribute.png';
 export {default as UltimateWeekend} from './ultiimate_weekend.png';
+export {default as DesaruCoast} from './presented_desaru_coast.png';
+export {default as Partner} from './partners.png';
+export {default as AnnouncementArtists} from './announcement_artist.png';
+export {default as DayPass} from './day_pass.png';
 // Slide 2 vector and image
 export {default as BlueVector} from './blue_vector.png';
 export {default as GreenVector} from './green_vector.png';

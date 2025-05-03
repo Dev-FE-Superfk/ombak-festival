@@ -133,9 +133,7 @@ export default function RootLayout({children}) {
       <body>
         {pathname === '/' ? (
           <section
-            id="root"
-            style={{background: '#FAF4E8', minHeight: '100vh'}}
-          >
+            id="root">
             {children}
           </section>
         ) : (

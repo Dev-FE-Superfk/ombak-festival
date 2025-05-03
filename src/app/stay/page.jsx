@@ -98,22 +98,17 @@ function Stay() {
         </div>
         <div className="resorts_middle" ref={pkgPriceRef}>
           <div className="rm_box">
-            {listresorts.map((resort, index) => (
+          {listresorts.map((resort, index) => {
+            const isLast = index === listresorts.length - 1;
+            const cardClass = `resorts_card ${resort.is_active ? 'active' : ''} ${isLast ? 'disabled' : ''}`;
+
+            return (
               <Link
-                className={`resorts_card ${resort.is_active ? 'active' : ''} ${
-                  listresorts.length - 1 === index ? 'disabled' : ''
-                }`}
                 key={resort.slug}
-                href={
-                  !listresorts.length - 1 === index
-                    ? {
-                        pathname: '/stay',
-                        query: {tag: resort.tag},
-                      }
-                    : ''
-                }
+                href={isLast ? '#' : { pathname: '/stay', query: { tag: resort.tag } }}
                 scroll={false}
                 passHref
+                className={cardClass}
               >
                 <div>
                   <Image
@@ -121,13 +116,12 @@ function Stay() {
                     alt={resort.name}
                     width={200}
                     height={72}
-                    title={`${
-                      listresorts.length - 1 === index && 'Hotel is unavailable'
-                    }`}
-                  ></Image>
+                    title={isLast ? 'Hotel is unavailable' : resort.name}
+                  />
                 </div>
               </Link>
-            ))}
+            );
+          })}
           </div>
         </div>
         <div className="resorts_bottom">

@@ -6,14 +6,16 @@ import Image from 'next/image';
 import {
   BlueVector,
   GreenVector,
-  LeftAttribute,
+  DesaruCoast,
+  Partner,
   MaskHugeImage,
   MaskSmallImage,
   Ombak2025Logo,
   OmbakNewLogo,
-  RightAttribute,
   TimeTicket,
   UltimateWeekend,
+  AnnouncementArtists,
+  DayPass,
 } from '../../public';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -125,14 +127,7 @@ export default function page() {
     horizontalSwiping: false,
     ref: sliderRef,
     appendDots: (dots) => (
-      <div
-        style={{
-          position: 'fixed',
-          left: '-30px',
-          bottom: '0px',
-          zIndex: 10,
-        }}
-      >
+      <div className='custom_dots'>
         <ul
           style={{
             margin: '0',
@@ -407,94 +402,54 @@ export default function page() {
                   View Past Year
                 </button>
               </div>
-              {widthScreen > 743 && (
-                <Image
-                  src={LeftAttribute}
-                  alt="left attribute"
-                  className="left_attr"
-                />
-              )}
               <div className="slider_container">
                 <div className="slider_wrapper">
                   {widthScreen > 1024 && (
                     <Slider {...settings_desktop} ref={sliderRef}>
                       <div className="slider_box">
-                        <Image
-                          src={UltimateWeekend}
-                          alt="ultimate weekend"
-                          className="ult_weekend"
-                          width={300}
-                          height={300}
-                          quality={100}
-                        />
-                        <Image
-                          src={Ombak2025Logo}
-                          alt="ombak 2025 logo"
-                          className="ombak_2025_logo"
-                          width={200}
-                          height={200}
-                          quality={100}
-                        />
+                        <div className='slider_intro'>
+                          <div className="si_box">
+                            <Image
+                              src={UltimateWeekend}
+                              alt="ultimate weekend"
+                              className="ult_weekend"
+                              width={300}
+                              height={300}
+                              quality={100}
+                            />
+                            <Image
+                              src={Ombak2025Logo}
+                              alt="ombak 2025 logo"
+                              className="ombak_2025_logo"
+                              width={305}
+                              height={44}
+                              quality={100}
+                            />
+                            <Image src={DesaruCoast} alt="Desaru Coast" className="presented_desaru_coast" width={255} height={20} quality={100}/>
+                            <Image src={Partner} alt="Partner" className="partner" width={648} height={41} quality={100}/>
+                          </div>
+                        </div>
                       </div>
                       <div className="slider_box cream_bg">
-                        <p className="main_text">
-                          Tickets <br /> Available Now
-                        </p>
-                        <Image
-                          src={BlueVector}
-                          alt="blue vector"
-                          className="blue_vector"
-                          width={32}
-                          height={32}
-                        />
-                        <Image
-                          src={TimeTicket}
-                          alt="time ticket"
-                          className="time_ticket"
-                          quality={100}
-                        />
-                        <p className="sub_text">
-                          <span>Desaru Coast, Johor, Malaysia</span>
-                        </p>
-                        <a
-                          className="buy_ticket"
-                          href={
-                            'https://www.ticketmelon.com/e/ombakfestival2025'
-                          }
-                          target="_blank"
-                        >
-                          BUY TICKETS
-                        </a>
-                        <Image
-                          src={GreenVector}
-                          alt="green vector"
-                          className="green_vector"
-                          width={55}
-                          height={55}
-                        />
-                        <Image
-                          src={MaskSmallImage}
-                          alt="mask small image"
-                          className="mask_small_image"
-                          width={262}
-                          height={262}
-                          quality={100}
-                        />
-                        <Image
-                          src={MaskHugeImage}
-                          alt="mask huge image"
-                          className="mask_huge_image"
-                          width={292}
-                          height={583}
-                          quality={100}
-                        />
-                      </div>
-                      <div className="slider_box cream_bg">
-                        <div className="bg_silver_ctr"></div>
+                        <div className="bg_silver_ctr">
+                          <Image src={AnnouncementArtists} alt="announcement artists" className="announcement_artists" width={1140} height={550} quality={100}/>
+                        </div>
                         <div className="buy_ticket_ctr">
-                          <button className="buy_ticket slide_3">
+                          <button className="buy_ticket">
                             BUY TICKETS
                           </button>
+                        </div>
+                      </div>
+
+                      <div className="slider_box cream_bg custom">
+                        <div className='day_pass_ctr'>
+                          <h3 className="main_text">
+                            Early Bird Tickets <br/>
+                            Available Now
+                          </h3>
+                          <Image src={DayPass} width={810} height={260} alt='Day Pass' quality={100} />
+                          <span className='orangeText'>Don’t miss out! Book your spot now!</span>
+                          <button className='buy_ticket'>BUY TICKETS</button>
                         </div>
                       </div>
                     </Slider>
@@ -646,13 +601,6 @@ export default function page() {
                   )}
                 </div>
               </div>
-              {widthScreen > 743 && (
-                <Image
-                  src={RightAttribute}
-                  alt="right attribute"
-                  className="right_attr"
-                />
-              )}
             </div>
           </div>
         </div>
