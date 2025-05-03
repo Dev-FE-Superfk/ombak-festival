@@ -528,11 +528,6 @@ export default function page() {
                     <Slider {...settings_mobile} ref={sliderRef}>
                       <div className="slider_box">
                         <Image
-                          src={LeftAttribute}
-                          alt="left attribute"
-                          className="left_attr"
-                        />
-                        <Image
                           src={UltimateWeekend}
                           alt="ultimate weekend"
                           className="ult_weekend"
@@ -545,11 +540,6 @@ export default function page() {
                           className="ombak_2025_logo"
                           width={100}
                           height={100}
-                        />
-                        <Image
-                          src={RightAttribute}
-                          alt="right attribute"
-                          className="right_attr"
                         />
                       </div>
                       <div className="slider_box">
