@@ -11,3 +11,8 @@ export {default as GreenVector} from './green_vector.png';
 export {default as MaskHugeImage} from './mask_huge_image.png';
 export {default as MaskSmallImage} from './mask_small_image.png';
 export {default as TimeTicket} from './time_ticket.png';
+
+export {default as AnnouncementArtistTablet} from './announcementArtistTablet.png';
+export {default as EarlyBirdTicketTablet} from './earlyBirdTicketTablet.png';
+export {default as AnnouncementArtistMobile} from './announcementArtistMobile.png';
+export {default as EarlyBirdTicketMobile} from './earlyBirdTicketMobile.png';

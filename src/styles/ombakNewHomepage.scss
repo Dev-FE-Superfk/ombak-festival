@@ -63,7 +63,7 @@
           top: 20px;
           left: 0;
           justify-content: space-between;
-          img{
+          img {
             width: 110px;
             height: 36px;
             display: block;
@@ -92,16 +92,17 @@
           margin: 0 auto;
           height: 644px;
           z-index: 10;
-          &:before{
+          &:before {
             content: '';
             width: 166px;
             height: 166px;
             position: absolute;
             left: -50px;
             top: -20px;
-            background: url('../../public/ombakNewHomepage/left_attribute.png') no-repeat center center / contain;
+            background: url('../../public/ombakNewHomepage/left_attribute.png')
+              no-repeat center center / contain;
           }
-          &:after{
+          &:after {
             content: '';
             width: 166px;
             height: 166px;
@@ -109,7 +110,8 @@
             right: -50px;
             bottom: -40px;
             z-index: -1;
-            background: url('../../public/ombakNewHomepage/right_attribute.png') no-repeat center center / contain;
+            background: url('../../public/ombakNewHomepage/right_attribute.png')
+              no-repeat center center / contain;
           }
 
           .slick-slider {
@@ -133,23 +135,25 @@
             height: 644px; // Tentukan tinggi supaya slider tidak collapse
             // background: rgba(255, 255, 255, 0.1); // Optional: buat keliatan
             position: relative;
-            &.custom{
-              &::before{
+            &.custom {
+              &::before {
                 content: '';
                 width: 240px;
                 height: 310px;
                 display: block;
-                background: url('../../public/ombakNewHomepage/mask_one.png') no-repeat center center / contain;
+                background: url('../../public/ombakNewHomepage/mask_one.png')
+                  no-repeat center center / contain;
                 position: absolute;
                 top: 8px;
                 left: 5px;
               }
-              &::after{
+              &::after {
                 content: '';
                 width: 294px;
                 height: 367px;
                 display: block;
-                background: url('../../public/ombakNewHomepage/mask_two.png') no-repeat center center / contain;
+                background: url('../../public/ombakNewHomepage/mask_two.png')
+                  no-repeat center center / contain;
                 position: absolute;
                 bottom: 8px;
                 right: 5px;
@@ -187,14 +191,14 @@
                 margin: 10px auto 0;
               }
             }
-            .orangeText{
-              color: #FD581C;
+            .orangeText {
+              color: #fd581c;
               font-family: 'Blaine Retro SemBd';
               font-size: 28px;
               display: block;
               margin-bottom: 20px;
             }
-            .slider_intro{
+            .slider_intro {
               width: 100%;
               height: 644px;
               display: flex;
@@ -215,21 +219,21 @@
               display: block;
               margin: 0 auto 20px;
             }
-            .presented_desaru_coast{
+            .presented_desaru_coast {
               display: block;
               margin: 0 auto 60px;
             }
-            .partner{
+            .partner {
               display: block;
               margin: 0 auto;
             }
           }
-          .day_pass_ctr{
-            padding:40px 20px 0;
+          .day_pass_ctr {
+            padding: 40px 20px 0;
             text-align: center;
             position: relative;
             z-index: 1;
-            img{
+            img {
               display: block;
               margin: 0 auto 50px;
             }
@@ -275,7 +279,7 @@
             overflow: hidden;
           }
         }
-        .slick-dots{
+        .slick-dots {
           position: absolute;
           bottom: 0;
           left: -45px;
@@ -368,7 +372,7 @@
 
                 .bg_silver_ctr {
                   height: 550px !important;
-                  img{
+                  img {
                     width: 100%;
                     display: block;
                   }
@@ -422,7 +426,7 @@
                 &.slide_3 {
                   position: absolute;
                   top: auto;
-                  bottom: -80px;
+                  bottom: -55px;
                   left: 50%;
                   transform: translateX(-50%);
                   z-index: 2;
@@ -470,6 +474,21 @@
             width: 100%;
             padding: 0 20px;
             height: calc(100% - 200px);
+
+            &::before {
+              width: 36px;
+              height: 36px;
+              left: 20px;
+              top: 0px;
+            }
+
+            &::after {
+              width: 36px;
+              height: 36px;
+              right: 20px;
+              bottom: 0px;
+            }
+
             .slick-slider .slick-list .slick-track .slick-slide {
               height: 100%;
               padding: 0px 0;
@@ -509,9 +528,17 @@
                 display: flex;
                 flex-direction: column;
                 gap: 11px;
-                padding-left: 30px;
-                padding-top: 28px;
+
                 height: calc(90% - 10px) !important;
+
+                .bg_silver_ctr {
+                  height: 100% !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                    max-height: 400px;
+                  }
+                }
 
                 .main_text {
                   position: unset;
