@@ -4,22 +4,18 @@ import {OmbakIntro2, OmbakOpening2} from '../../public/videos';
 import {useState, useEffect, useRef} from 'react';
 import Image from 'next/image';
 import {
-  BlueVector,
-  GreenVector,
   DesaruCoast,
   Partner,
-  MaskHugeImage,
-  MaskSmallImage,
   Ombak2025Logo,
   OmbakNewLogo,
-  TimeTicket,
   UltimateWeekend,
   AnnouncementArtists,
+  AnnouncementArtistsTablet,
+  AnnouncementArtistsMobile,
   DayPass,
-  AnnouncementArtistTablet,
-  EarlyBirdTicketTablet,
-  EarlyBirdTicketMobile,
-  AnnouncementArtistMobile,
+  PartnerMobile,
+  DayPassMobile,
+  DayPassMobile2,
 } from '../../public';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -406,7 +402,6 @@ export default function page() {
               </div>
               <div className="slider_container">
                 <div className="slider_wrapper">
-                  {widthScreen > 1024 && (
                     <Slider {...settings_desktop} ref={sliderRef}>
                       <div className="slider_box">
                         <div className="slider_intro">
@@ -443,17 +438,41 @@ export default function page() {
                               height={41}
                               quality={100}
                             />
+                            <Image
+                              src={PartnerMobile}
+                              alt="Partner"
+                              className="partner_mobile"
+                              width={362}
+                              height={55}
+                              quality={100}
+                            />
                           </div>
                         </div>
                       </div>
                       <div className="slider_box cream_bg">
-                        <div className="bg_silver_ctr">
+                        <div className="slider_box_mobile">
                           <Image
                             src={AnnouncementArtists}
                             alt="announcement artists"
                             className="announcement_artists"
                             width={1140}
                             height={550}
+                            quality={100}
+                          />
+                          <Image
+                            src={AnnouncementArtistsTablet}
+                            alt="announcement artists"
+                            className="announcement_artists_tablet"
+                            width={588}
+                            height={720}
+                            quality={100}
+                          />
+                          <Image
+                            src={AnnouncementArtistsMobile}
+                            alt="announcement artists"
+                            className="announcement_artists_mobile"
+                            width={378}
+                            height={362}
                             quality={100}
                           />
                         </div>
@@ -463,178 +482,44 @@ export default function page() {
                       </div>
 
                       <div className="slider_box cream_bg custom">
-                        <div className="day_pass_ctr">
-                          <h3 className="main_text">
-                            Early Bird Tickets <br />
-                            Available Now
-                          </h3>
-                          <Image
-                            src={DayPass}
-                            width={810}
-                            height={260}
-                            alt="Day Pass"
-                            quality={100}
-                          />
-                          <span className="orangeText">
-                            Don’t miss out! Book your spot now!
-                          </span>
-                          <button className="buy_ticket">BUY TICKETS</button>
-                        </div>
+                        <div className="slider_box_mobile">
+                          <div className="day_pass_ctr">
+                            <h3 className="main_text">
+                              Early Bird Tickets <br />
+                              Available Now
+                            </h3>
+                            <Image
+                              src={DayPass}
+                              width={810}
+                              height={260}
+                              alt="Day Pass"
+                              quality={100}
+                              className="day_pass"
+                            />
+                            <Image
+                              src={DayPassMobile}
+                              width={378}
+                              height={362}
+                              alt="Day Pass"
+                              quality={100}
+                              className="day_pass_mobile"
+                            />
+                            <Image
+                              src={DayPassMobile2}
+                              width={263}
+                              height={332}
+                              alt="Day Pass"
+                              quality={100}
+                              className="day_pass_mobile2"
+                            />
+                            <span className="orangeText">
+                              Don’t miss out! <span>Book your spot now!</span>
+                            </span>
+                          </div>
+                          </div>
+                        <button className="buy_ticket">BUY TICKETS</button>
                       </div>
                     </Slider>
-                  )}
-                  {widthScreen <= 1024 && widthScreen > 743 && (
-                    <Slider {...settings_tablet} ref={sliderRef}>
-                      <div className="slider_box">
-                        <div className="slider_intro">
-                          <div className="si_box">
-                            <Image
-                              src={UltimateWeekend}
-                              alt="ultimate weekend"
-                              className="ult_weekend"
-                              width={300}
-                              height={300}
-                              quality={100}
-                            />
-                            <Image
-                              src={Ombak2025Logo}
-                              alt="ombak 2025 logo"
-                              className="ombak_2025_logo"
-                              width={305}
-                              height={44}
-                              quality={100}
-                            />
-                            <Image
-                              src={DesaruCoast}
-                              alt="Desaru Coast"
-                              className="presented_desaru_coast"
-                              width={255}
-                              height={20}
-                              quality={100}
-                            />
-                            <Image
-                              src={Partner}
-                              alt="Partner"
-                              className="partner"
-                              width={648}
-                              height={41}
-                              quality={100}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="slider_box ">
-                        <div className="cream_bg">
-                          <div className="bg_silver_ctr">
-                            <Image
-                              src={AnnouncementArtistTablet}
-                              alt="announcement artists"
-                              className="announcement_artists"
-                              width={587}
-                              height={716}
-                              quality={100}
-                            />
-                          </div>
-                        </div>
-                        <button className="buy_ticket slide_3">
-                          BUY TICKETS
-                        </button>
-                      </div>
-                      <div className="slider_box">
-                        <div className="cream_bg">
-                          <div className="bg_silver_ctr">
-                            <Image
-                              src={EarlyBirdTicketTablet}
-                              alt="early bird ticket"
-                              className="announcement_artists"
-                              width={587}
-                              height={716}
-                              quality={100}
-                            />
-                          </div>
-                        </div>
-                        <button className="buy_ticket slide_3">
-                          BUY TICKETS
-                        </button>
-                      </div>
-                    </Slider>
-                  )}
-                  {widthScreen <= 743 && (
-                    <Slider {...settings_mobile} ref={sliderRef}>
-                      <div className="slider_box">
-                        <div className="slider_intro">
-                          <div className="si_box">
-                            <Image
-                              src={UltimateWeekend}
-                              alt="ultimate weekend"
-                              className="ult_weekend"
-                              width={300}
-                              height={192}
-                              quality={100}
-                            />
-                            <Image
-                              src={Ombak2025Logo}
-                              alt="ombak 2025 logo"
-                              className="ombak_2025_logo"
-                              width={305}
-                              height={44}
-                              quality={100}
-                            />
-                            <Image
-                              src={DesaruCoast}
-                              alt="Desaru Coast"
-                              className="presented_desaru_coast"
-                              width={255}
-                              height={20}
-                              quality={100}
-                            />
-                            <Image
-                              src={Partner}
-                              alt="Partner"
-                              className="partner"
-                              width={648}
-                              height={41}
-                              quality={100}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="slider_box">
-                        <div className="cream_bg">
-                          <div className="bg_silver_ctr">
-                            <Image
-                              src={AnnouncementArtistMobile}
-                              alt="announcement artists"
-                              className="announcement_artists"
-                              width={335}
-                              height={400}
-                              quality={100}
-                            />
-                          </div>
-                        </div>
-                        <button className="buy_ticket slide_3">
-                          BUY TICKETS
-                        </button>
-                      </div>
-                      <div className="slider_box">
-                        <div className="cream_bg">
-                          <div className="bg_silver_ctr">
-                            <Image
-                              src={EarlyBirdTicketMobile}
-                              alt="early bird ticket"
-                              className="announcement_artists"
-                              width={335}
-                              height={400}
-                              quality={100}
-                            />
-                          </div>
-                        </div>
-                        <button className="buy_ticket slide_3">
-                          BUY TICKETS
-                        </button>
-                      </div>
-                    </Slider>
-                  )}
                 </div>
               </div>
             </div>

@@ -227,15 +227,30 @@
               display: block;
               margin: 0 auto;
             }
+            .partner_mobile{
+              display: none;
+            }
+            .announcement_artists_tablet{
+              display: none;
+            }
+            .announcement_artists_mobile{
+              display: none;
+            }
           }
           .day_pass_ctr {
             padding: 40px 20px 0;
             text-align: center;
             position: relative;
             z-index: 1;
-            img {
+            .day_pass {
               display: block;
               margin: 0 auto 50px;
+            }
+            .day_pass_mobile {
+              display: none;
+            }
+            .day_pass_mobile2 {
+              display: none;
             }
           }
 
@@ -289,303 +304,290 @@
     }
   }
 }
-
-@media screen and (max-width: 1024px) {
-  .home_ctr {
-    .video_intro_ctr {
-      width: 100%;
-      height: 100vh;
-      .background_video {
-        height: 100vh;
-        width: auto;
-        object-fit: contain;
-      }
-    }
-    .home_content_ctr {
-      .background_video {
-        height: 100vh;
-        width: auto;
-        object-fit: cover;
-      }
-
-      .main_content {
-        .inner_ctr {
-          .slider_wrapper {
-            width: 623px;
-            height: 80vh;
-            .slick-slider {
-              touch-action: pan-y !important;
-              .slick-list {
-                height: 100% !important;
+@media only screen and (max-width:1024px){
+  .home_ctr{
+    .home_content_ctr{
+      .main_content{
+        .inner_ctr{
+          .slick-dots{
+            bottom: 65px;
+          }
+          .upper_ctr{
+            padding:0 40px;
+          }
+          .slider_wrapper{
+            padding:0 40px;
+            height: 780px;
+            &:before{
+              width: 75px;
+              height: 75px;
+              left: 40px;
+            }
+            &:after{
+              width: 75px;
+              height: 75px;
+              right: 40px;
+              bottom: 8px;
+            }
+            .slider_box{
+              height: 780px;
+              &.cream_bg{
+                background:none;
+                border-radius: 0;
+                .main_text{
+                  font-size: 48px;
+                  margin-bottom: 20px;
+                }
+                .buy_ticket{
+                  width: 324px;
+                  font-size: 18px;
+                  height: 45px;;
+                  line-height: 45px;
+                  border-radius: 10px;
+                }
+              }
+              &.custom{
+                &:before{
+                  display: none;
+                }
+                &:after{
+                  display: none;
+                }
+              }
+              .orangeText{
+                font-size: 24px;
+                line-height: 32px;
+                span{
+                  display: block;
+                }
+              }
+              .slider_intro{
+                height: 780px;
+              }
+              .ult_weekend{
+                width: 416px;
+              }
+              .ombak_2025_logo{
+                width: 272px;
+                margin-bottom: 30px;
+              }
+              .presented_desaru_coast{
+                width: 228px;
+              }
+              .partner{
+                display: none;
+              }
+              .partner_mobile{
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+              .announcement_artists{
+                display: none;
+              }
+              .announcement_artists_tablet{
+                width:100%;
+                height: 100%;
+                display: block;
+                object-fit: contain;
               }
             }
-            .slider_box {
-              width: 623px;
-              min-height: 759px;
-              height: auto;
-
-              .cream_bg {
-                position: relative;
-                height: 759px;
-                border-radius: 15px;
-                background-color: #faf4e8;
-
-                .main_text {
-                  text-align: center;
-                  font-family: 'Blaine Retro SemBd';
-                  font-size: 60px;
-                  color: #3f53b4;
-                  margin-bottom: 10px;
-                }
-
-                .blue_vector {
-                  position: absolute;
-                  left: 40px;
-                  top: 333px;
-
-                  width: 16px;
-                  height: 16px;
-                }
-
-                .time_ticket {
-                  position: absolute;
-                  top: 356px;
-                  left: 38px;
-
-                  width: 323px;
-                  height: 41px;
-                }
-
-                .sub_text {
-                  position: absolute;
-                  top: 405px;
-                  left: 38px;
-                  width: 339px;
-                  font-family: 'Blaine Retro SemBd';
-                  font-size: 27px;
-                  line-height: 27px;
-                  color: #fd581c;
-                  span {
-                    font-size: 24px;
-                  }
-                }
-
-                .bg_silver_ctr {
-                  height: 550px !important;
-                  img {
-                    width: 100%;
-                    display: block;
-                  }
-                }
-
-                .green_vector {
-                  position: absolute;
-                  right: 256px;
-                  bottom: 240px;
-
-                  width: 45px;
-                  height: 45px;
-                }
-
-                .mask_small_image {
-                  position: absolute;
-                  right: 256px;
-                  bottom: 10px;
-
-                  width: 214.48px;
-                  height: 214.48px;
-                }
-
-                .mask_huge_image {
-                  position: absolute;
-                  right: 10px;
-                  bottom: 10px;
-
-                  width: 239px;
-                  height: 477px;
-                }
+            .day_pass_ctr{
+              padding: 60px 60px 0;
+              .day_pass{
+                display: none;
               }
-              .buy_ticket {
-                position: absolute;
-                top: 492px;
-                left: 68px;
-
-                width: 217px;
-                height: 51px;
-                background: #e82464;
-                border-radius: 46px;
-
-                font-family: 'Antique Olive Std Black';
-                font-size: 24px;
-                line-height: 51px;
-                text-align: center;
-                vertical-align: middle;
-                text-transform: uppercase;
-                color: #fff;
-
-                &.slide_3 {
-                  position: absolute;
-                  top: auto;
-                  bottom: -55px;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  z-index: 2;
-                }
+              .day_pass_mobile{
+                display: block;
+                margin-bottom: 40px;
               }
+              .day_pass_mobile2{
+                display: none;
+              }
+            }
+            .slick-dots{
+              left: 0;
+            }
+            .slider_box_mobile{
+              width: 588px;
+              height: 716px;
+              margin:0 auto;
+              background: #faf4e8;
+              border-radius: 12px;
             }
           }
         }
-      }
-
-      .slick-dots {
-        width: auto;
-        bottom: 0px;
       }
     }
   }
 }
-
-@media screen and (max-width: 743px) {
-  body {
-    overflow-y: hidden !important;
-  }
-  .home_ctr {
-    height: 100vh;
-    .video_intro_ctr {
-      height: 100vh;
-      .background_video {
-        height: 100vh;
-      }
-    }
-    .home_content_ctr {
-      min-height: 100vh;
-      .background_video {
-        height: 100vh;
-      }
-      .main_content {
-        .inner_ctr {
-          .upper_ctr {
-            padding: 0 20px;
-            position: unset;
+@media only screen and (max-width:743px){
+  .home_ctr{
+    .home_content_ctr{
+      .main_content{
+        .inner_ctr{
+          .slick-dots{
+            bottom: 0;
           }
-          .slider_wrapper {
+          .upper_ctr{
+            padding:0 20px;
+            img{
+              width: 86px;
+              height: 28px;
+            }
+            .vpy_button{
+              position: relative;
+              top: -4px;
+            }
+          }
+          .slider_wrapper{
+            padding:0 20px;
+            height: 565px;
             top: 60px;
-            transform: translate(-50%, 0%);
-            width: 100%;
-            padding: 0 20px;
-            height: calc(100% - 200px);
-
-            &::before {
+            left: 50%;
+            transform: translateX(-50%);
+            .slick-slider{
+              .slick-list{
+                position: relative;
+                z-index: 10;
+              }
+            }
+            &:before{
               width: 36px;
               height: 36px;
               left: 20px;
-              top: 0px;
+              top: 20px;
             }
-
-            &::after {
+            &:after{
               width: 36px;
               height: 36px;
               right: 20px;
-              bottom: 0px;
+              bottom: 0;
             }
-
-            .slick-slider .slick-list .slick-track .slick-slide {
-              height: 100%;
-              padding: 0px 0;
-              div {
+            .slider_box{
+              height: 565px;
+              &.cream_bg{
+                background:none;
+                border-radius: 0;
+                .main_text{
+                  font-size: 28px;
+                  line-height: 32px;
+                  margin-bottom: 10px;
+                }
+                .buy_ticket{
+                  width: 324px;
+                  font-size: 18px;
+                  height: 45px;;
+                  line-height: 45px;
+                  border-radius: 10px;
+                }
+              }
+              &.custom{
+                &:before{
+                  display: none;
+                }
+                &:after{
+                  display: none;
+                }
+              }
+              .orangeText{
+                font-size: 20px;
+                line-height: 26px;
+                span{
+                  display: block;
+                }
+              }
+              .slider_intro{
+                height: 565px;
+              }
+              .ult_weekend{
+                width: 220px;
+                margin-bottom: 100px;
+              }
+              .ombak_2025_logo{
+                width: 170px;
+                margin-bottom: 30px;
+              }
+              .presented_desaru_coast{
+                width: 142px;
+                margin-bottom: 80px;
+              }
+              .partner{
+                display: none;
+              }
+              .partner_mobile{
+                display: block;
+                position: static;
+                bottom: 0;
+                left: 0;
+                transform: none;
+                width: 264px;
+              }
+              .announcement_artists{
+                display: none;
+              }
+              .announcement_artists_tablet{
+                display: none;
+              }
+              .announcement_artists_mobile{
+                width:100%;
                 height: 100%;
+                display: block;
+                object-fit: contain;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
               }
             }
-
-            .slider_box {
-              height: 100%;
-              min-height: 0px;
-
-              .ult_weekend {
-                max-width: 304px;
-                top: 50%;
+            .day_pass_ctr{
+              padding: 30px 0px 0;
+              .day_pass{
+                display: none;
               }
-              .ombak_2025_logo {
-                top: 90%;
-                bottom: auto;
-                max-width: 171px;
+              .day_pass_mobile{
+                display: none;
               }
-              .slick-list {
-                height: 100% !important;
+              .day_pass_mobile2{
+                width: 260px;
+                margin: 0 auto;
+                display: block;
+                margin-bottom: 15px;
               }
-              .left_attr {
-                width: 60px;
-                height: 60px;
-                top: 0px;
+            }
+            .slick-dots{
+              bottom: -25px;
+              left: 50%;
+              transform: translateX(-50%);
+              ul{
+                flex-direction: row !important;
               }
-              .right_attr {
-                width: 60px;
-                height: 60px;
-                bottom: 0px;
-              }
-              .cream_bg {
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                gap: 11px;
-
-                height: calc(90% - 10px) !important;
-
-                .bg_silver_ctr {
-                  height: 100% !important;
-                  img {
-                    width: 100%;
-                    display: block;
-                    max-height: 400px;
+              .arrows-container{
+                width: 24px;
+                height: 24px;
+                bottom: 30px !important;
+                left: 50% !important;
+                transform: translateX(-50%);
+                button{
+                  svg{
+                    width: 24px;
+                    height: 24px;
                   }
                 }
-
-                .main_text {
-                  position: unset;
-                  font-size: 40px;
-                }
-                .blue_vector {
-                  position: unset;
-                  // padding-bottom: 6.86px;
-                }
-                .time_ticket {
-                  position: unset;
-                  width: 218px;
-                  height: 27.5px;
-                  margin-top: 6.8px;
-                  padding-bottom: 5.5px;
-                }
-                .sub_text {
-                  position: unset;
-                  left: 30px;
-                  top: 237px;
-                  font-size: 18px;
-                  width: 256px;
-                }
-                .green_vector {
-                  bottom: 15px;
-                  right: 210px;
-                }
-                .mask_huge_image {
-                  right: 0px;
-                  bottom: -200px;
-                  width: 200px;
-                  height: auto;
-                }
               }
-              .buy_ticket {
-                width: 100%;
-                border-radius: 10px;
-                &.slide_3 {
-                  bottom: 0px;
-                }
-              }
+            }
+            .slider_box_mobile{
+              width: 100%;
+              height: 510px;
+              margin:0 auto;
+              background: #faf4e8;
+              border-radius: 12px;
+              position: relative;
             }
           }
         }
-      }
-      .slick-dots {
-        bottom: -100px;
       }
     }
   }
