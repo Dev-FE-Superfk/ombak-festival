@@ -22,8 +22,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '@/styles/ombakNewHomepage.scss';
-import {useRouter} from 'next/navigation';
-import Link from 'next/link';
 
 export default function page() {
   const router = useRouter();
@@ -194,7 +192,7 @@ export default function page() {
           payload.remarks === 'buy_ticket_1' ||
           payload.remarks === 'buy_ticket_2'
         )
-          window.open('https://www.ticketmelon.com');
+          window.open('https://www.ticketmelon.com/e/ombakfestival2025');
       }
     }
   };
@@ -333,10 +331,10 @@ export default function page() {
                       <div className='slider_intro'>
                         <div className='si_box'>
                           <Image
-                            src={UltimateWeekend}
+                            src={UltimateWeekendHD}
                             alt='ultimate weekend'
                             className='ult_weekend'
-                            width={300}
+                            width={645}
                             height={300}
                             quality={100}
                           />
