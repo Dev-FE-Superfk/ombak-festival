@@ -22,6 +22,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '@/styles/ombakNewHomepage.scss';
+import Link from 'next/link';
 
 export default function page() {
   const router = useRouter();
@@ -283,6 +284,7 @@ export default function page() {
             <div className='inner_ctr'>
               <div className='upper_ctr'>
                 <Image src={OmbakNewLogo} alt='ombak new logo' quality={100} />
+                <Link href='/2024'>
                 <button
                   className='vpy_button'
                   // onClick={() =>
@@ -295,6 +297,7 @@ export default function page() {
                 >
                   View Past Year
                 </button>
+                </Link>
               </div>
               <div className='slider_container'>
                 <div className='slider_wrapper'>
