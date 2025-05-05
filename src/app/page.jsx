@@ -17,17 +17,18 @@ import {
   DayPassMobile,
   DayPassMobile2,
 } from '../../public';
+import {useRouter} from 'next/navigation';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '@/styles/ombakNewHomepage.scss';
-import {useRouter} from 'next/navigation';
 
 export default function page() {
   const router = useRouter();
   const [showContent, setShowContent] = useState(false);
   const [widthScreen, setWidthScreen] = useState(0);
-
+  const [percentage, setPercentage] = useState(0);
+  const [firstLoad, setFirstLoad] = useState(true);
   const updateScreenWidth = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -186,23 +187,77 @@ export default function page() {
     });
     if (response.ok) {
       if (payload.event === 'cta_click') {
-        router.push('/2024');
+        if (payload.remarks === 'past_year') router.push('/2024');
+        else if (
+          payload.remarks === 'buy_ticket_1' ||
+          payload.remarks === 'buy_ticket_2'
+        )
+          window.open('https://www.ticketmelon.com');
       }
     }
   };
 
-  useEffect(() => {
-    handleTracking({
-      event: 'page_view',
-      referer: document.referrer,
-      url: window.location.href,
+  const handleFormatSessionStart = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(date.getDate()).padStart(2, '0');
+    const hour = String(date.getHours()).padStart(2, '0');
+    const minute = String(date.getMinutes()).padStart(2, '0');
+    const second = String(date.getSeconds()).padStart(2, '0');
+    return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+  };
+
+  const generateUUID = () => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+      const r = (Math.random() * 16) | 0;
+      const v = c === 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
     });
+  };
+
+  useEffect(() => {
+    if (!localStorage.getItem('unique_id')) {
+      localStorage.setItem('unique_id', generateUUID());
+    }
+
+    if (sessionStorage.getItem('session_id')) {
+      sessionStorage.removeItem('session_id');
+      sessionStorage.removeItem('session_start');
+    } else {
+      sessionStorage.setItem('session_id', generateUUID());
+      sessionStorage.setItem('session_start', handleFormatSessionStart());
+    }
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
     }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (
+      localStorage.getItem('unique_id') &&
+      sessionStorage.getItem('session_id') &&
+      firstLoad
+    ) {
+      setFirstLoad(false);
+      handleTracking({
+        event: 'page_view',
+        referer: document.referrer,
+        url: window.location.href,
+        unique_id: localStorage.getItem('unique_id'),
+        session_id: sessionStorage.getItem('session_id'),
+      });
+    }
+  }, [
+    localStorage.getItem('unique_id'),
+    sessionStorage.getItem('session_id'),
+    firstLoad,
+  ]);
 
   return (
     <div className='home_ctr'>
@@ -243,7 +298,35 @@ export default function page() {
               </div>
               <div className='slider_container'>
                 <div className='slider_wrapper'>
-                  <Slider {...settings_desktop} ref={sliderRef}>
+                  <Slider
+                    {...settings_desktop}
+                    ref={sliderRef}
+                    afterChange={(currentSlide) => {
+                      if (currentSlide === 1 && percentage < 0.66) {
+                        setPercentage(0.66);
+                        handleTracking({
+                          event: 'scroll',
+                          remarks: '66%',
+                          url: window.location.href,
+                          unique_id: localStorage.getItem('unique_id'),
+                          session_id: sessionStorage.getItem('session_id'),
+                        });
+                      } else if (
+                        currentSlide === 2 &&
+                        percentage >= 0.66 &&
+                        percentage < 1
+                      ) {
+                        setPercentage(1);
+                        handleTracking({
+                          event: 'scroll',
+                          remarks: '100%',
+                          url: window.location.href,
+                          unique_id: localStorage.getItem('unique_id'),
+                          session_id: sessionStorage.getItem('session_id'),
+                        });
+                      }
+                    }}
+                  >
                     <div className='slider_box'>
                       <div className='slider_intro'>
                         <div className='si_box'>
@@ -325,6 +408,10 @@ export default function page() {
                               event: 'cta_click',
                               url: window.location.href,
                               remarks: 'buy_ticket_1',
+                              session_start:
+                                sessionStorage.getItem('session_start'),
+                              unique_id: localStorage.getItem('unique_id'),
+                              session_id: sessionStorage.getItem('session_id'),
                             })
                           }
                         >
@@ -376,6 +463,10 @@ export default function page() {
                             event: 'cta_click',
                             url: window.location.href,
                             remarks: 'buy_ticket_2',
+                            session_start:
+                              sessionStorage.getItem('session_start'),
+                            unique_id: localStorage.getItem('unique_id'),
+                            session_id: sessionStorage.getItem('session_id'),
                           })
                         }
                       >
