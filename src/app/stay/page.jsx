@@ -1,6 +1,6 @@
 'use client';
 import {useSearchParams, useRouter} from 'next/navigation';
-import { Suspense, useRef, useEffect, useState} from 'react';
+import {Suspense, useRef, useEffect, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import '../../styles/resort.scss';
@@ -53,12 +53,20 @@ function Stay() {
   }, [tag]);
 
   useEffect(() => {
-    if (resorts && pkgPriceRef.current && typeof window !== 'undefined' && hasPackageParam) {
+    if (
+      resorts &&
+      pkgPriceRef.current &&
+      typeof window !== 'undefined' &&
+      hasPackageParam
+    ) {
       // Adding a slight delay to ensure all elements are rendered
       setTimeout(() => {
         const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
-        const topOffset = pkgPriceRef.current.getBoundingClientRect().top + window.pageYOffset - (isMobile ? 80 : 100);
-        window.scrollTo({ top: topOffset, behavior: 'smooth' });
+        const topOffset =
+          pkgPriceRef.current.getBoundingClientRect().top +
+          window.pageYOffset -
+          (isMobile ? 80 : 100);
+        window.scrollTo({top: topOffset, behavior: 'smooth'});
       }, 500); // Adjust the delay as needed
     }
   }, [resorts, hasPackageParam]);
@@ -68,10 +76,10 @@ function Stay() {
   }
 
   return (
-    <div className='section_resorts'>
-      <div className='container'>
-        <div className='nav_title'>Stay</div>
-        <div className='resorts_top'>
+    <div className="section_resorts">
+      <div className="container">
+        <div className="nav_title">Stay</div>
+        <div className="resorts_top">
           <h3>{resorts.title}</h3>
           <p
             dangerouslySetInnerHTML={{
@@ -79,27 +87,28 @@ function Stay() {
             }}
           ></p>
         </div>
-        <div className='pb-[20px]'>
+        <div className="pb-[20px]">
           <Image
             src={resorts.banner}
             alt={resorts.name}
-            className='banner-image'
+            className="banner-image"
             width={600}
             height={400}
           />
         </div>
-        <div className='resorts_middle' ref={pkgPriceRef}>
-          <div className='rm_box'>
-            {listresorts.map((resort) => (
+        <div className="resorts_middle" ref={pkgPriceRef}>
+          <div className="rm_box">
+          {listresorts.map((resort, index) => {
+            const isLast = index === listresorts.length - 1;
+            const cardClass = `resorts_card ${resort.is_active ? 'active' : ''} ${isLast ? 'disabled' : ''}`;
+
+            return (
               <Link
-                className={`resorts_card ${resort.is_active ? 'active' : ''}`}
                 key={resort.slug}
-                href={{
-                  pathname: '/stay',
-                  query: {tag: resort.tag},
-                }}
+                href={isLast ? '#' : { pathname: '/stay', query: { tag: resort.tag } }}
                 scroll={false}
                 passHref
+                className={cardClass}
               >
                 <div>
                   <Image
@@ -107,16 +116,18 @@ function Stay() {
                     alt={resort.name}
                     width={200}
                     height={72}
-                  ></Image>
+                    title={isLast ? 'Hotel is unavailable' : resort.name}
+                  />
                 </div>
               </Link>
-            ))}
+            );
+          })}
           </div>
         </div>
-        <div className='resorts_bottom'>
-          <div className='rb_right'>
-            <div className='rbr_top'>
-              <Link target='_blank' href={resorts.link}>
+        <div className="resorts_bottom">
+          <div className="rb_right">
+            <div className="rbr_top">
+              <Link target="_blank" href={resorts.link}>
                 <h3
                   dangerouslySetInnerHTML={{
                     __html: resorts.name,
@@ -130,7 +141,7 @@ function Stay() {
               ></p>
             </div>
             {packages.length !== 0 && (
-              <div className='rbr_bottom'>
+              <div className="rbr_bottom">
                 {packages.map((pkg) => (
                   <div key={pkg.id}>
                     <h4>{pkg.name}</h4>
@@ -139,21 +150,22 @@ function Stay() {
                         __html: pkg.description,
                       }}
                     ></p>
-                    <div className='pkg_price'>
+                    <div className="pkg_price">
                       {tag !== 'one_and_only' && (
-                        <>Packages start from
-                        <span>{pkg.price}</span>
+                        <>
+                          Packages start from
+                          <span>{pkg.price}</span>
                         </>
                       )}
                     </div>
-                    <div className='button_box'>
+                    <div className="button_box">
                       <Link
                         href={
                           tag == 'one_and_only'
                             ? `mailto:${pkg.link}`
                             : pkg.link
                         }
-                        target='_blank'
+                        target="_blank"
                       >
                         <button disabled>{pkg.name_button}</button>
                       </Link>
@@ -163,28 +175,28 @@ function Stay() {
               </div>
             )}
           </div>
-          <div className='rb_left'>
-            <div className='big_image'>
+          <div className="rb_left">
+            <div className="big_image">
               <img src={resorts.image1} alt={resorts.name} />
               {/* <Image src={resorts.image1} width={200} height={100}></Image> */}
             </div>
-            <div className='small_image'>
-              <div className='si_box'>
-              <img src={resorts.image2} alt={resorts.name} />
+            <div className="small_image">
+              <div className="si_box">
+                <img src={resorts.image2} alt={resorts.name} />
                 {/* <Image src={resorts.image2} width={200} height={100}></Image> */}
               </div>
-              <div className='si_box'>
-              <img src={resorts.image3} alt={resorts.name} />
+              <div className="si_box">
+                <img src={resorts.image3} alt={resorts.name} />
                 {/* <Image src={resorts.image3} width={200} height={100}></Image> */}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='faq_info'>
+      <div className="faq_info">
         <h4>Have questions and want to know more?</h4>
         <button>
-          <Link href='/info?tag=faq'>Check Out FAQ</Link>
+          <Link href="/info?tag=faq">Check Out FAQ</Link>
         </button>
       </div>
     </div>

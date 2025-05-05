@@ -1,0 +1,594 @@
+.home_ctr {
+  width: 100%;
+  height: 100vh;
+  .video_intro_ctr {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .background_video {
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+
+  .home_content_ctr {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .background_video {
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .main_content {
+      .inner_ctr {
+        width: 100%;
+        position: fixed;
+        width: 100%;
+        max-width: 1245px;
+        height: 100vh;
+        overflow: hidden;
+        top: 0;
+        left: 50%;
+        padding: 0;
+        transform: translateX(-50%);
+        .upper_ctr {
+          width: 100%;
+          display: flex;
+          position: absolute;
+          top: 20px;
+          left: 0;
+          justify-content: space-between;
+          img {
+            width: 110px;
+            height: 36px;
+            display: block;
+          }
+          .vpy_button {
+            border: 1px solid #faf4e8;
+            border-radius: 32px;
+            width: 153px;
+            height: 36px;
+            line-height: 36px;
+            font-family: 'Antique Olive Std Bold';
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 95%;
+            color: #faf4e8;
+          }
+        }
+
+        .slider_wrapper {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: 1140px;
+          width: 100%;
+          margin: 0 auto;
+          height: 644px;
+          z-index: 10;
+          &:before {
+            content: '';
+            width: 166px;
+            height: 166px;
+            position: absolute;
+            left: -50px;
+            top: -20px;
+            background: url('../../public/ombakNewHomepage/left_attribute.png')
+              no-repeat center center / contain;
+          }
+          &:after {
+            content: '';
+            width: 166px;
+            height: 166px;
+            position: absolute;
+            right: -50px;
+            bottom: -40px;
+            z-index: -1;
+            background: url('../../public/ombakNewHomepage/right_attribute.png')
+              no-repeat center center / contain;
+          }
+
+          .slick-slider {
+            height: 100%;
+            .slick-list {
+              height: 100%;
+              .slick-track {
+                height: 100% !important;
+                .slick-slide {
+                  height: 100%;
+                }
+              }
+            }
+          }
+
+          .slider_box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1140px;
+            height: 644px; // Tentukan tinggi supaya slider tidak collapse
+            // background: rgba(255, 255, 255, 0.1); // Optional: buat keliatan
+            position: relative;
+            &.custom {
+              &::before {
+                content: '';
+                width: 240px;
+                height: 310px;
+                display: block;
+                background: url('../../public/ombakNewHomepage/mask_one.png')
+                  no-repeat center center / contain;
+                position: absolute;
+                top: 8px;
+                left: 5px;
+              }
+              &::after {
+                content: '';
+                width: 294px;
+                height: 367px;
+                display: block;
+                background: url('../../public/ombakNewHomepage/mask_two.png')
+                  no-repeat center center / contain;
+                position: absolute;
+                bottom: 8px;
+                right: 5px;
+              }
+            }
+            &.cream_bg {
+              background-color: #faf4e8;
+              border-radius: 12px;
+
+              .main_text {
+                text-align: center;
+                font-family: 'Blaine Retro SemBd';
+                font-size: 60px;
+                line-height: 65px;
+                color: #3f53b4;
+                margin-bottom: 10px;
+              }
+
+              .buy_ticket_ctr {
+                position: relative;
+              }
+
+              .buy_ticket {
+                width: 217px;
+                height: 51px;
+                display: block;
+                background: #e82464;
+                border-radius: 46px;
+                font-family: 'Antique Olive Std Black';
+                font-size: 24px;
+                line-height: 51px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #fff;
+                margin: 10px auto 0;
+              }
+            }
+            .orangeText {
+              color: #fd581c;
+              font-family: 'Blaine Retro SemBd';
+              font-size: 28px;
+              display: block;
+              margin-bottom: 20px;
+            }
+            .slider_intro {
+              width: 100%;
+              height: 644px;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+            }
+            .ult_weekend {
+              width: 646px;
+              height: auto;
+              display: block;
+              margin: 0 auto 120px;
+            }
+            .ombak_2025_logo {
+              width: 295px;
+              height: auto;
+              display: block;
+              margin: 0 auto 20px;
+            }
+            .presented_desaru_coast {
+              display: block;
+              margin: 0 auto 60px;
+            }
+            .partner {
+              display: block;
+              margin: 0 auto;
+            }
+            .partner_mobile{
+              display: none;
+            }
+            .announcement_artists_tablet{
+              display: none;
+            }
+            .announcement_artists_mobile{
+              display: none;
+            }
+          }
+          .day_pass_ctr {
+            padding: 40px 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            .day_pass {
+              display: block;
+              margin: 0 auto 50px;
+            }
+            .day_pass_mobile {
+              display: none;
+            }
+            .day_pass_mobile2 {
+              display: none;
+            }
+          }
+
+          .slick-dots {
+            li {
+              position: relative;
+              div {
+                background-color: rgba(250, 244, 232, 0.5) !important;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+              }
+            }
+            .slick-active {
+              transform: scale(1.5);
+              div {
+                background-color: #fff !important;
+              }
+            }
+          }
+        }
+
+        .slider_container {
+          overflow: hidden;
+          touch-action: pan-y; // Memastikan touch vertikal bekerja
+          -webkit-overflow-scrolling: touch; // Untuk smooth scrolling di iOS
+
+          .slider_wrapper {
+            touch-action: pan-y;
+          }
+
+          .slick-list,
+          .slick-track {
+            height: 100%;
+            touch-action: pan-y;
+          }
+
+          .slick-slide {
+            touch-action: pan-y;
+            overflow: hidden;
+          }
+        }
+        .slick-dots {
+          position: absolute;
+          bottom: 0;
+          left: -45px;
+          width: auto !important;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width:1024px){
+  .home_ctr{
+    .home_content_ctr{
+      .main_content{
+        .inner_ctr{
+          .slick-dots{
+            bottom: 65px;
+          }
+          .upper_ctr{
+            padding:0 40px;
+          }
+          .slider_wrapper{
+            padding:0 40px;
+            height: 780px;
+            &:before{
+              width: 75px;
+              height: 75px;
+              left: 40px;
+            }
+            &:after{
+              width: 75px;
+              height: 75px;
+              right: 40px;
+              bottom: 8px;
+            }
+            .slider_box{
+              height: 780px;
+              &.cream_bg{
+                background:none;
+                border-radius: 0;
+                .main_text{
+                  font-size: 48px;
+                  margin-bottom: 20px;
+                }
+                .buy_ticket{
+                  width: 324px;
+                  font-size: 18px;
+                  height: 45px;;
+                  line-height: 45px;
+                  border-radius: 10px;
+                }
+              }
+              &.custom{
+                &:before{
+                  display: none;
+                }
+                &:after{
+                  display: none;
+                }
+              }
+              .orangeText{
+                font-size: 24px;
+                line-height: 32px;
+                span{
+                  display: block;
+                }
+              }
+              .slider_intro{
+                height: 780px;
+              }
+              .ult_weekend{
+                width: 416px;
+              }
+              .ombak_2025_logo{
+                width: 272px;
+                margin-bottom: 30px;
+              }
+              .presented_desaru_coast{
+                width: 228px;
+              }
+              .partner{
+                display: none;
+              }
+              .partner_mobile{
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+              .announcement_artists{
+                display: none;
+              }
+              .announcement_artists_tablet{
+                width:100%;
+                height: 100%;
+                display: block;
+                object-fit: contain;
+              }
+            }
+            .day_pass_ctr{
+              padding: 60px 60px 0;
+              .day_pass{
+                display: none;
+              }
+              .day_pass_mobile{
+                display: block;
+                margin:0 auto 40px;
+              }
+              .day_pass_mobile2{
+                display: none;
+              }
+            }
+            .slick-dots{
+              left: 0;
+            }
+            .slider_box_mobile{
+              width: 588px;
+              height: 716px;
+              margin:0 auto;
+              background: #faf4e8;
+              border-radius: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width:743px){
+  .home_ctr{
+    .home_content_ctr{
+      .main_content{
+        .inner_ctr{
+          .slick-dots{
+            bottom: 0;
+          }
+          .upper_ctr{
+            padding:0 20px;
+            img{
+              width: 86px;
+              height: 28px;
+            }
+            .vpy_button{
+              position: relative;
+              top: -4px;
+            }
+          }
+          .slider_wrapper{
+            padding:0 20px;
+            height: 565px;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            .slick-slider{
+              .slick-list{
+                position: relative;
+                z-index: 10;
+              }
+            }
+            &:before{
+              width: 36px;
+              height: 36px;
+              left: 20px;
+              top: 20px;
+            }
+            &:after{
+              width: 36px;
+              height: 36px;
+              right: 20px;
+              bottom: 0;
+            }
+            .slider_box{
+              height: 565px;
+              &.cream_bg{
+                background:none;
+                border-radius: 0;
+                .main_text{
+                  font-size: 28px;
+                  line-height: 32px;
+                  margin-bottom: 10px;
+                }
+                .buy_ticket{
+                  width: 324px;
+                  font-size: 18px;
+                  height: 45px;;
+                  line-height: 45px;
+                  border-radius: 10px;
+                }
+              }
+              &.custom{
+                &:before{
+                  display: none;
+                }
+                &:after{
+                  display: none;
+                }
+              }
+              .orangeText{
+                font-size: 20px;
+                line-height: 26px;
+                span{
+                  display: block;
+                }
+              }
+              .slider_intro{
+                height: 565px;
+              }
+              .ult_weekend{
+                width: 220px;
+                margin-bottom: 100px;
+              }
+              .ombak_2025_logo{
+                width: 170px;
+                margin-bottom: 30px;
+              }
+              .presented_desaru_coast{
+                width: 142px;
+                margin-bottom: 80px;
+              }
+              .partner{
+                display: none;
+              }
+              .partner_mobile{
+                display: block;
+                position: static;
+                bottom: 0;
+                left: 0;
+                transform: none;
+                width: 264px;
+              }
+              .announcement_artists{
+                display: none;
+              }
+              .announcement_artists_tablet{
+                display: none;
+              }
+              .announcement_artists_mobile{
+                width:100%;
+                height: 100%;
+                display: block;
+                object-fit: contain;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+            .day_pass_ctr{
+              padding: 30px 0px 0;
+              .day_pass{
+                display: none;
+              }
+              .day_pass_mobile{
+                display: none;
+              }
+              .day_pass_mobile2{
+                width: 260px;
+                margin: 0 auto;
+                display: block;
+                margin-bottom: 15px;
+              }
+            }
+            .slick-dots{
+              bottom: -25px;
+              left: 50%;
+              transform: translateX(-50%);
+              ul{
+                flex-direction: row !important;
+              }
+              .arrows-container{
+                width: 24px;
+                height: 24px;
+                bottom: 30px !important;
+                left: 50% !important;
+                transform: translateX(-50%);
+                button{
+                  svg{
+                    width: 24px;
+                    height: 24px;
+                  }
+                }
+              }
+            }
+            .slider_box_mobile{
+              width: 100%;
+              height: 510px;
+              margin:0 auto;
+              background: #faf4e8;
+              border-radius: 12px;
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+  }
+}
