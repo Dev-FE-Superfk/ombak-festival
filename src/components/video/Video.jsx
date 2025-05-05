@@ -1,22 +1,10 @@
-export default function VideoPlayer({
-  src,
-  type,
-  autoPlay = true,
-  loop = true,
-  className,
-  controls = false,
-}) {
+export default function Videolayer({ src, type }) {
   return (
-    <video
-      autoPlay={autoPlay}
-      muted={true}
-      loop={loop}
-      playsInline
-      className={className}
-      controls={controls}
-    >
-      <source src={src} type={type} />
-      Your browser does not support the video tag.
-    </video>
+    <>
+      <video autoPlay muted loop playsInline>
+        <source src={src} type={type} />
+        Your browser does not support the video tag.
+      </video>
+    </>
   );
 }

@@ -1,76 +1,40 @@
 'use client';
 import './globals.css';
 import '../fonts/style.css';
-import {usePathname} from 'next/navigation';
 import {Header, Footer} from '@/components';
-import Script from 'next/script';
-// import Userback from '@userback/widget';
-// import {useEffect} from 'react';
 
 export default function RootLayout({children}) {
-  const pathname = usePathname();
-
   return (
-    <html lang="en">
+    <html lang='en'>
       <title>Ombak Festival At Desaru Coast Johor</title>
       <meta
-        name="description"
-        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"
+        name='description'
+        content='A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now'
       />
       <meta
-        name="keywords"
-        content="Ombak festival, Family friendly activities, Music festival, Music festival in Johor, Arts and Crafts, Beach festival, Weekend getaway ideas, Events for family, Malaysia festivals, Upcoming concerts 2024, Resort activities"
+        name='keywords'
+        content='Ombak festival, Family friendly activities, Music festival, Music festival in Johor, Arts and Crafts, Beach festival, Weekend getaway ideas, Events for family, Malaysia festivals, Upcoming concerts 2024, Resort activities'
       />
       <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name='viewport'
+        content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'
       />
-      <meta
-        name="google-site-verification"
-        content="YwnFshZHbbZvYVv14csblPX68aD9jT1FWoWyYqpR02s"
-      />
-      <meta
-        name="thumbnail"
-        content="https://www.ombakfestival.com/ombak_meta.jpeg"
-      />
+      <meta name="google-site-verification" content="YwnFshZHbbZvYVv14csblPX68aD9jT1FWoWyYqpR02s" />
+      <meta name="thumbnail" content="https://www.ombakfestival.com/ombak_meta.jpeg" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
-      <meta
-        property="og:title"
-        content="Ombak Festival At Desaru Coast Johor"
-      />
-      <meta
-        property="og:description"
-        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"
-      />
+      <meta property="og:title" content="Ombak Festival At Desaru Coast Johor"/>
+      <meta property="og:description" content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"/>
       <meta property="og:url" content="https://www.ombakfestival.com/" />
-      <meta
-        property="og:site_name"
-        content="Ombak Festival At Desaru Coast Johor"
-      />
-      <meta
-        property="og:image"
-        content="https://www.ombakfestival.com/ombak_meta.jpeg"
-      />
-      <meta property="og:image:width" content="600" />
-      <meta property="og:image:height" content="600" />
-      <meta
-        property="og:site_name"
-        content="Ombak Festival At Desaru Coast Johor"
-      />
+      <meta property="og:site_name" content="Ombak Festival At Desaru Coast Johor" />
+      <meta property="og:image" content="https://www.ombakfestival.com/ombak_meta.jpeg" />
+      <meta property='og:image:width' content='600' />
+      <meta property='og:image:height' content='600' />
+      <meta property='og:site_name' content='Ombak Festival At Desaru Coast Johor' />
       <meta name="twitter:card" content="summary" />
-      <meta
-        name="twitter:description"
-        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"
-      />
-      <meta
-        name="twitter:title"
-        content="Ombak Festival At Desaru Coast Johor"
-      />
-      <meta
-        name="twitter:image"
-        content="https://www.ombakfestival.com/ombak_meta.jpeg"
-      />
+      <meta name="twitter:description" content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"/>
+      <meta name="twitter:title" content="Ombak Festival At Desaru Coast Johor" />
+      <meta name="twitter:image" content="https://www.ombakfestival.com/ombak_meta.jpeg" />
       <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -107,47 +71,17 @@ export default function RootLayout({children}) {
               fbq('init', '1451507682492885');
               fbq('track', 'PageView');
             `,
-          }}
-        />
-      <head>
-        {/* <Script id="userback-script" strategy="afterInteractive">
-          {`
-            window.Userback = window.Userback || {};
-            Userback.access_token = 'P-YOTLNL6Op10rg5UnNB3IiQvEN';
-            Userback.user_data = {
-              id: "123456",
-              info: {
-                name: "someone",
-                email: "someone@example.com"
-              }
-            };
-            (function(d) {
-              var s = d.createElement('script');
-              s.async = true;
-              s.src = 'https://static.userback.io/widget/v1.js';
-              (d.head || d.body).appendChild(s);
-            })(document);
-          `}
-        </Script> */}
-      </head>
+          }}
+        />
       <body>
-        {pathname === '/' ? (
-          <section
-            id="root">
-            {children}
-          </section>
-        ) : (
-          <>
-            <Header />
-            <section id="root">{children}</section>
-            <Footer />
-          </>
-        )}
+        <Header />
+        <section id='root'>{children}</section>
+        <Footer />
         <noscript>
           <img
             height="1"
             width="1"
-            style={{display: 'none'}}
+            style={{ display: 'none' }}
             src="https://www.facebook.com/tr?id=1451507682492885&ev=PageView&noscript=1"
           />
         </noscript>
