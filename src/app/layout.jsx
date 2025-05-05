@@ -15,7 +15,7 @@ export default function RootLayout({children}) {
       <title>Ombak Festival At Desaru Coast Johor</title>
       <meta
         name="description"
-        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"
+        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your tickets now"
       />
       <meta
         name="keywords"
