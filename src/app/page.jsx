@@ -28,7 +28,7 @@ export default function page() {
   const [showContent, setShowContent] = useState(false);
   const [widthScreen, setWidthScreen] = useState(0);
   const [percentage, setPercentage] = useState(0);
-  const [firstLoad, setFirstLoad] = useState(true);
+  const firstLoad = useRef();
   const updateScreenWidth = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -178,23 +178,25 @@ export default function page() {
   };
 
   const handleTracking = async (payload) => {
-    const response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/track', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    });
-    if (response.ok) {
-      if (payload.event === 'cta_click') {
-        if (payload.remarks === 'past_year') router.push('/2024');
-        else if (
-          payload.remarks === 'buy_ticket_1' ||
-          payload.remarks === 'buy_ticket_2'
-        )
-          window.open('https://www.ticketmelon.com/e/ombakfestival2025');
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/track', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      if (response.ok) {
+        if (payload.event === 'cta_click') {
+          if (payload.remarks === 'past_year') router.push('/2024');
+          else if (
+            payload.remarks === 'buy_ticket_1' ||
+            payload.remarks === 'buy_ticket_2'
+          )
+            window.open('https://www.ticketmelon.com/e/ombakfestival2025');
+        }
       }
-    }
+    } catch (error) {}
   };
 
   const handleFormatSessionStart = () => {
@@ -216,19 +218,23 @@ export default function page() {
     });
   };
 
-  // useEffect(() => {
-  //   if (!localStorage.getItem('unique_id')) {
-  //     localStorage.setItem('unique_id', generateUUID());
-  //   }
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (!localStorage.getItem('unique_id')) {
+        localStorage.setItem('unique_id', generateUUID());
+      }
 
-  //   if (sessionStorage.getItem('session_id')) {
-  //     sessionStorage.removeItem('session_id');
-  //     sessionStorage.removeItem('session_start');
-  //   } else {
-  //     sessionStorage.setItem('session_id', generateUUID());
-  //     sessionStorage.setItem('session_start', handleFormatSessionStart());
-  //   }
-  // }, []);
+      if (sessionStorage.getItem('session_id')) {
+        sessionStorage.removeItem('session_id');
+        sessionStorage.removeItem('session_start');
+        sessionStorage.setItem('session_id', generateUUID());
+        sessionStorage.setItem('session_start', handleFormatSessionStart());
+      } else {
+        sessionStorage.setItem('session_id', generateUUID());
+        sessionStorage.setItem('session_start', handleFormatSessionStart());
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -238,26 +244,24 @@ export default function page() {
     return () => clearTimeout(timer);
   }, []);
 
-  // useEffect(() => {
-  //   if (
-  //     localStorage.getItem('unique_id') &&
-  //     sessionStorage.getItem('session_id') &&
-  //     firstLoad
-  //   ) {
-  //     setFirstLoad(false);
-  //     handleTracking({
-  //       event: 'page_view',
-  //       referer: document.referrer,
-  //       url: window.location.href,
-  //       unique_id: localStorage.getItem('unique_id'),
-  //       session_id: sessionStorage.getItem('session_id'),
-  //     });
-  //   }
-  // }, [
-  //   localStorage.getItem('unique_id'),
-  //   sessionStorage.getItem('session_id'),
-  //   firstLoad,
-  // ]);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (
+        localStorage.getItem('unique_id') &&
+        sessionStorage.getItem('session_id') &&
+        !firstLoad.current
+      ) {
+        firstLoad.current = true;
+        handleTracking({
+          event: 'page_view',
+          referer: document.referrer,
+          url: window.location.href,
+          unique_id: localStorage.getItem('unique_id'),
+          session_id: sessionStorage.getItem('session_id'),
+        });
+      }
+    }
+  }, [firstLoad]);
 
   return (
     <div className='home_ctr'>
@@ -285,13 +289,13 @@ export default function page() {
                 <Image src={OmbakNewLogo} alt='ombak new logo' quality={100} />
                 <button
                   className='vpy_button'
-                  // onClick={() =>
-                  //   handleTracking({
-                  //     event: 'cta_click',
-                  //     url: window.location.href,
-                  //     remarks: 'past_year',
-                  //   })
-                  // }
+                  onClick={() =>
+                    handleTracking({
+                      event: 'cta_click',
+                      url: window.location.href,
+                      remarks: 'past_year',
+                    })
+                  }
                 >
                   View Past Year
                 </button>
@@ -301,31 +305,31 @@ export default function page() {
                   <Slider
                     {...settings_desktop}
                     ref={sliderRef}
-                    // afterChange={(currentSlide) => {
-                    //   if (currentSlide === 1 && percentage < 0.66) {
-                    //     setPercentage(0.66);
-                    //     handleTracking({
-                    //       event: 'scroll',
-                    //       remarks: '66%',
-                    //       url: window.location.href,
-                    //       unique_id: localStorage.getItem('unique_id'),
-                    //       session_id: sessionStorage.getItem('session_id'),
-                    //     });
-                    //   } else if (
-                    //     currentSlide === 2 &&
-                    //     percentage >= 0.66 &&
-                    //     percentage < 1
-                    //   ) {
-                    //     setPercentage(1);
-                    //     handleTracking({
-                    //       event: 'scroll',
-                    //       remarks: '100%',
-                    //       url: window.location.href,
-                    //       unique_id: localStorage.getItem('unique_id'),
-                    //       session_id: sessionStorage.getItem('session_id'),
-                    //     });
-                    //   }
-                    // }}
+                    afterChange={(currentSlide) => {
+                      if (currentSlide === 1 && percentage < 0.66) {
+                        setPercentage(0.66);
+                        handleTracking({
+                          event: 'scroll',
+                          remarks: '66%',
+                          url: window.location.href,
+                          unique_id: localStorage.getItem('unique_id'),
+                          session_id: sessionStorage.getItem('session_id'),
+                        });
+                      } else if (
+                        currentSlide === 2 &&
+                        percentage >= 0.66 &&
+                        percentage < 1
+                      ) {
+                        setPercentage(1);
+                        handleTracking({
+                          event: 'scroll',
+                          remarks: '100%',
+                          url: window.location.href,
+                          unique_id: localStorage.getItem('unique_id'),
+                          session_id: sessionStorage.getItem('session_id'),
+                        });
+                      }
+                    }}
                   >
                     <div className='slider_box'>
                       <div className='slider_intro'>
@@ -401,25 +405,22 @@ export default function page() {
                         />
                       </div>
                       <div className='buy_ticket_ctr'>
-                        <a
-                          href='https://www.ticketmelon.com/e/ombakfestival2025'
-                          target='_blank'
-                          rel='noopener noreferrer'
+                        <button
                           className='buy_ticket'
-                          // onClick={() =>
-                          //   handleTracking({
-                          //     event: 'cta_click',
-                          //     url: window.location.href,
-                          //     remarks: 'buy_ticket_1',
-                          //     session_start:
-                          //       sessionStorage.getItem('session_start'),
-                          //     unique_id: localStorage.getItem('unique_id'),
-                          //     session_id: sessionStorage.getItem('session_id'),
-                          //   })
-                          // }
+                          onClick={() =>
+                            handleTracking({
+                              event: 'cta_click',
+                              url: window.location.href,
+                              remarks: 'buy_ticket_1',
+                              session_start:
+                                sessionStorage.getItem('session_start'),
+                              unique_id: localStorage.getItem('unique_id'),
+                              session_id: sessionStorage.getItem('session_id'),
+                            })
+                          }
                         >
                           BUY TICKETS
-                        </a>
+                        </button>
                       </div>
                     </div>
 
@@ -459,25 +460,22 @@ export default function page() {
                           </span>
                         </div>
                       </div>
-                      <a
-                        href='https://www.ticketmelon.com/e/ombakfestival2025'
-                        target='_blank'
-                        rel='noopener noreferrer'
+                      <button
                         className='buy_ticket'
-                        // onClick={() =>
-                        //   handleTracking({
-                        //     event: 'cta_click',
-                        //     url: window.location.href,
-                        //     remarks: 'buy_ticket_2',
-                        //     session_start:
-                        //       sessionStorage.getItem('session_start'),
-                        //     unique_id: localStorage.getItem('unique_id'),
-                        //     session_id: sessionStorage.getItem('session_id'),
-                        //   })
-                        // }
+                        onClick={() =>
+                          handleTracking({
+                            event: 'cta_click',
+                            url: window.location.href,
+                            remarks: 'buy_ticket_2',
+                            session_start:
+                              sessionStorage.getItem('session_start'),
+                            unique_id: localStorage.getItem('unique_id'),
+                            session_id: sessionStorage.getItem('session_id'),
+                          })
+                        }
                       >
                         BUY TICKETS
-                      </a>
+                      </button>
                     </div>
                   </Slider>
                 </div>
