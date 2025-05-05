@@ -54,18 +54,19 @@ export default function page() {
 
   useEffect(() => {
     if (widthScreen > 1024) {
+      // Desktop behavior
       let isScrolling = false;
       let scrollTimeout = null;
-
+  
       const handleWheel = (event) => {
         // Cegah scroll horizontal
         if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-          event.preventDefault(); // Mencegah scroll horizontal
+          event.preventDefault();
           return;
         }
-
+  
         if (isScrolling) return;
-
+  
         if (event.deltaY > 0) {
           isScrolling = true;
           nextSlide();
@@ -80,44 +81,51 @@ export default function page() {
           }, 1000);
         }
       };
-
+  
       window.addEventListener('wheel', handleWheel, { passive: false });
-
+  
       return () => {
         window.removeEventListener('wheel', handleWheel);
         if (scrollTimeout) clearTimeout(scrollTimeout);
       };
-    } else if (widthScreen <= 1024) {
+    } else {
+      // Mobile behavior
       let startY = 0;
-      let endY = 0;
+      let startX = 0;
       const threshold = 50;
-
+  
       const handleTouchStart = (e) => {
         startY = e.touches[0].clientY;
+        startX = e.touches[0].clientX;
       };
-
+  
       const handleTouchEnd = (e) => {
-        endY = e.changedTouches[0].clientY;
-        const diff = startY - endY;
-
-        if (Math.abs(diff) > threshold) {
-          if (diff > 0) {
-            nextSlide(); // Ganti jQuery dengan function biasa
+        const endY = e.changedTouches[0].clientY;
+        const endX = e.changedTouches[0].clientX;
+  
+        const diffY = startY - endY;
+        const diffX = endX - startX;
+  
+        // Hanya deteksi jika dominan vertical
+        if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > threshold) {
+          if (diffY > 0) {
+            nextSlide(); // swipe up
           } else {
-            prevSlide();
+            prevSlide(); // swipe down
           }
         }
       };
-
+  
       document.addEventListener('touchstart', handleTouchStart);
       document.addEventListener('touchend', handleTouchEnd);
-
+  
       return () => {
         document.removeEventListener('touchstart', handleTouchStart);
         document.removeEventListener('touchend', handleTouchEnd);
       };
     }
   }, [widthScreen]);
+  
 
   var settings_desktop = {
     dots: true,
