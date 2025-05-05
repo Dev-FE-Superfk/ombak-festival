@@ -58,15 +58,20 @@ export default function page() {
       let scrollTimeout = null;
 
       const handleWheel = (event) => {
-        if (isScrolling) return; // Kalau lagi jeda, jangan lakukan apa-apa
+        // Cegah scroll horizontal
+        if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+          event.preventDefault(); // Mencegah scroll horizontal
+          return;
+        }
+
+        if (isScrolling) return;
 
         if (event.deltaY > 0) {
-          // Scroll ke bawah
           isScrolling = true;
-          nextSlide(); // Panggil next slide
+          nextSlide();
           scrollTimeout = setTimeout(() => {
             isScrolling = false;
-          }, 1000); // jeda 1 detik, kamu bisa ubah 1000 ke lebih cepat atau lambat
+          }, 1000);
         } else if (event.deltaY < 0) {
           isScrolling = true;
           prevSlide();
@@ -76,7 +81,7 @@ export default function page() {
         }
       };
 
-      window.addEventListener('wheel', handleWheel);
+      window.addEventListener('wheel', handleWheel, { passive: false });
 
       return () => {
         window.removeEventListener('wheel', handleWheel);
