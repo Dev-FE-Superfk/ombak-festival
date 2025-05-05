@@ -23,7 +23,7 @@ body {
 
 *,
 *::before,
-*::after{
+*::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -31,7 +31,7 @@ body {
   padding: 0;
 }
 
-section{
+section {
   min-height: calc(100vh - 244px);
 }
 
@@ -41,7 +41,7 @@ section{
   }
 }
 @media only screen and (max-width: 1024px) {
-  section{
+  section {
     min-height: 50vh;
   }
 }
