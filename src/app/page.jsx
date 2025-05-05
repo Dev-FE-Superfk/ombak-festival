@@ -401,7 +401,10 @@ export default function page() {
                         />
                       </div>
                       <div className='buy_ticket_ctr'>
-                        <button
+                        <a
+                          href='https://www.ticketmelon.com/e/ombakfestival2025'
+                          target='_blank'
+                          rel='noopener noreferrer'
                           className='buy_ticket'
                           // onClick={() =>
                           //   handleTracking({
@@ -416,7 +419,7 @@ export default function page() {
                           // }
                         >
                           BUY TICKETS
-                        </button>
+                        </a>
                       </div>
                     </div>
 
@@ -456,7 +459,10 @@ export default function page() {
                           </span>
                         </div>
                       </div>
-                      <button
+                      <a
+                        href='https://www.ticketmelon.com/e/ombakfestival2025'
+                        target='_blank'
+                        rel='noopener noreferrer'
                         className='buy_ticket'
                         // onClick={() =>
                         //   handleTracking({
@@ -471,7 +477,7 @@ export default function page() {
                         // }
                       >
                         BUY TICKETS
-                      </button>
+                      </a>
                     </div>
                   </Slider>
                 </div>
