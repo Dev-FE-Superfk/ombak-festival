@@ -180,15 +180,9 @@
                 width: 217px;
                 height: 51px;
                 display: block;
-                background: #e82464;
-                border-radius: 46px;
-                font-family: 'Antique Olive Std Black';
-                font-size: 24px;
-                line-height: 51px;
-                text-align: center;
-                text-transform: uppercase;
-                color: #fff;
+                background: url('../../public/ombakNewHomepage/buy_ticket_desktop.png') no-repeat center center / contain;
                 margin: 10px auto 0;
+                text-indent: -9999px;
               }
             }
             .orangeText {
@@ -340,10 +334,9 @@
                 }
                 .buy_ticket{
                   width: 324px;
-                  font-size: 18px;
                   height: 45px;;
-                  line-height: 45px;
                   border-radius: 10px;
+                  background: url('../../public/ombakNewHomepage/buy_ticket_mobile.png') no-repeat center center / contain;
                 }
               }
               &.custom{
@@ -444,7 +437,7 @@
           }
           .slider_wrapper{
             padding:0 20px;
-            height: 565px;
+            height: 575px;
             top: 60px;
             left: 50%;
             transform: translateX(-50%);
@@ -467,7 +460,7 @@
               bottom: 0;
             }
             .slider_box{
-              height: 565px;
+              height: 575px;
               &.cream_bg{
                 background:none;
                 border-radius: 0;
@@ -478,10 +471,8 @@
                 }
                 .buy_ticket{
                   width: 324px;
-                  font-size: 18px;
                   height: 45px;;
-                  line-height: 45px;
-                  border-radius: 10px;
+                  background: url('../../public/ombakNewHomepage/buy_ticket_mobile.png') no-repeat center center / contain;
                 }
               }
               &.custom{
@@ -500,7 +491,7 @@
                 }
               }
               .slider_intro{
-                height: 565px;
+                height: 575px;
               }
               .ult_weekend{
                 width: 220px;
@@ -558,7 +549,7 @@
               }
             }
             .slick-dots{
-              bottom: -25px;
+              bottom: -15px;
               left: 50%;
               transform: translateX(-50%);
               ul{

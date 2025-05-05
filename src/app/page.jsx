@@ -8,7 +8,6 @@ import {
   Partner,
   Ombak2025Logo,
   OmbakNewLogo,
-  UltimateWeekend,
   AnnouncementArtists,
   AnnouncementArtistsTablet,
   AnnouncementArtistsMobile,
@@ -16,6 +15,7 @@ import {
   PartnerMobile,
   DayPassMobile,
   DayPassMobile2,
+  UltimateWeekendHD,
 } from '../../public';
 import {useRouter} from 'next/navigation';
 import Slider from 'react-slick';
@@ -192,7 +192,7 @@ export default function page() {
           payload.remarks === 'buy_ticket_1' ||
           payload.remarks === 'buy_ticket_2'
         )
-          window.open('https://www.ticketmelon.com');
+          window.open('https://www.ticketmelon.com/e/ombakfestival2025');
       }
     }
   };
@@ -331,10 +331,10 @@ export default function page() {
                       <div className='slider_intro'>
                         <div className='si_box'>
                           <Image
-                            src={UltimateWeekend}
+                            src={UltimateWeekendHD}
                             alt='ultimate weekend'
                             className='ult_weekend'
-                            width={300}
+                            width={645}
                             height={300}
                             quality={100}
                           />
