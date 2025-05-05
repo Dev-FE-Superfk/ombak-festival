@@ -52,17 +52,11 @@ export default function page() {
     sliderRef.current.slickPrev();
   };
   useEffect(() => {
-    if (widthScreen > 1024) {
+    if (widthScreen > 743) { // Updated from 1024 to 743
       let isScrolling = false;
       let scrollTimeout = null;
   
       const handleWheel = (event) => {
-        // Cegah scroll horizontal
-        if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-          event.preventDefault();
-          return;
-        }
-  
         if (isScrolling) return;
   
         if (event.deltaY > 0) {
@@ -80,41 +74,32 @@ export default function page() {
         }
       };
   
-      window.addEventListener('wheel', handleWheel, { passive: false });
+      window.addEventListener('wheel', handleWheel);
   
       return () => {
         window.removeEventListener('wheel', handleWheel);
         if (scrollTimeout) clearTimeout(scrollTimeout);
       };
     } else {
-      // Tablet or mobile
-      let startX = 0;
       let startY = 0;
-      let endX = 0;
       let endY = 0;
       const threshold = 50;
   
       const handleTouchStart = (e) => {
-        startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
       };
   
       const handleTouchEnd = (e) => {
-        endX = e.changedTouches[0].clientX;
         endY = e.changedTouches[0].clientY;
+        const diff = startY - endY;
   
-        const diffX = startX - endX;
-        const diffY = startY - endY;
-  
-        // Cek kalau swipe dominan vertikal
-        if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > threshold) {
-          if (diffY > 0) {
+        if (Math.abs(diff) > threshold) {
+          if (diff > 0) {
             nextSlide();
           } else {
             prevSlide();
           }
         }
-        // Kalau swipe ke samping, tidak lakukan apa-apa
       };
   
       document.addEventListener('touchstart', handleTouchStart);
@@ -126,7 +111,6 @@ export default function page() {
       };
     }
   }, [widthScreen]);
-  
 
   var settings_desktop = {
     dots: true,

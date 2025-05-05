@@ -71,7 +71,7 @@ export default function RootLayout({children}) {
         name="twitter:image"
         content="https://www.ombakfestival.com/ombak_meta.jpeg"
       />
-      {/* <script
+      <script
             dangerouslySetInnerHTML={{
               __html: `
                 (function(c,l,a,r,i,t,y){
@@ -108,9 +108,9 @@ export default function RootLayout({children}) {
               fbq('track', 'PageView');
             `,
           }}
-        /> */}
+        />
       <head>
-        <Script id="userback-script" strategy="afterInteractive">
+        {/* <Script id="userback-script" strategy="afterInteractive">
           {`
             window.Userback = window.Userback || {};
             Userback.access_token = 'P-YOTLNL6Op10rg5UnNB3IiQvEN';
@@ -128,7 +128,7 @@ export default function RootLayout({children}) {
               (d.head || d.body).appendChild(s);
             })(document);
           `}
-        </Script>
+        </Script> */}
       </head>
       <body>
         {pathname === '/' ? (
@@ -143,14 +143,14 @@ export default function RootLayout({children}) {
             <Footer />
           </>
         )}
-        {/* <noscript>
+        <noscript>
           <img
             height="1"
             width="1"
             style={{display: 'none'}}
             src="https://www.facebook.com/tr?id=1451507682492885&ev=PageView&noscript=1"
           />
-        </noscript> */}
+        </noscript>
       </body>
     </html>
   );
