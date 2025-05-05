@@ -51,10 +51,8 @@ export default function page() {
   const prevSlide = () => {
     sliderRef.current.slickPrev();
   };
-
   useEffect(() => {
     if (widthScreen > 1024) {
-      // Desktop behavior
       let isScrolling = false;
       let scrollTimeout = null;
   
@@ -89,31 +87,34 @@ export default function page() {
         if (scrollTimeout) clearTimeout(scrollTimeout);
       };
     } else {
-      // Mobile behavior
-      let startY = 0;
+      // Tablet or mobile
       let startX = 0;
+      let startY = 0;
+      let endX = 0;
+      let endY = 0;
       const threshold = 50;
   
       const handleTouchStart = (e) => {
-        startY = e.touches[0].clientY;
         startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
       };
   
       const handleTouchEnd = (e) => {
-        const endY = e.changedTouches[0].clientY;
-        const endX = e.changedTouches[0].clientX;
+        endX = e.changedTouches[0].clientX;
+        endY = e.changedTouches[0].clientY;
   
+        const diffX = startX - endX;
         const diffY = startY - endY;
-        const diffX = endX - startX;
   
-        // Hanya deteksi jika dominan vertical
+        // Cek kalau swipe dominan vertikal
         if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > threshold) {
           if (diffY > 0) {
-            nextSlide(); // swipe up
+            nextSlide();
           } else {
-            prevSlide(); // swipe down
+            prevSlide();
           }
         }
+        // Kalau swipe ke samping, tidak lakukan apa-apa
       };
   
       document.addEventListener('touchstart', handleTouchStart);
