@@ -41,7 +41,7 @@ export default function RootLayout({children}) {
       />
       <meta
         property="og:description"
-        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"
+        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your tickets now"
       />
       <meta property="og:url" content="https://www.ombakfestival.com/" />
       <meta
@@ -61,7 +61,7 @@ export default function RootLayout({children}) {
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:description"
-        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your ticket with our partnering hotels now"
+        content="A luxurious weekend getaway filled with music, arts, culture and family fun! Get your tickets now"
       />
       <meta
         name="twitter:title"
