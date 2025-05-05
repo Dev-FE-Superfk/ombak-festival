@@ -583,3 +583,23 @@
     }
   }
 }
+@media only screen and (max-height: 800px){
+  .home_ctr{
+    .home_content_ctr{
+      .main_content{
+        .inner_ctr{
+          .slider_wrapper{
+            &::before{
+              width: 108px;
+              height: 108px;
+            }
+            &::after{
+              width: 108px;
+              height: 108px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
