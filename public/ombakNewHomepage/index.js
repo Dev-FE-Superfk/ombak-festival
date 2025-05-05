@@ -1,6 +1,8 @@
 export {default as Ombak2025Logo} from './ombak_2025_logo.png';
 export {default as OmbakNewLogo} from './ombak_new_logo.png';
 export {default as UltimateWeekend} from './ultiimate_weekend.png';
+export {default as UltimateWeekendHD} from './ultimate_weekendHD.png';
+export {default as UltimateWeekendSvg} from './ultimate_weekend.svg';
 export {default as DesaruCoast} from './presented_desaru_coast.png';
 export {default as Partner} from './partners.png';
 export {default as PartnerMobile} from './partners_mobile.png';

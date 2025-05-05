@@ -8,7 +8,6 @@ import {
   Partner,
   Ombak2025Logo,
   OmbakNewLogo,
-  UltimateWeekend,
   AnnouncementArtists,
   AnnouncementArtistsTablet,
   AnnouncementArtistsMobile,
@@ -16,12 +15,14 @@ import {
   PartnerMobile,
   DayPassMobile,
   DayPassMobile2,
+  UltimateWeekendHD,
 } from '../../public';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '@/styles/ombakNewHomepage.scss';
 import {useRouter} from 'next/navigation';
+import Link from 'next/link';
 
 export default function page() {
   const router = useRouter();
@@ -247,10 +248,10 @@ export default function page() {
                         <div className="slider_intro">
                           <div className="si_box">
                             <Image
-                              src={UltimateWeekend}
+                              src={UltimateWeekendHD}
                               alt="ultimate weekend"
                               className="ult_weekend"
-                              width={300}
+                              width={646}
                               height={300}
                               quality={100}
                             />
@@ -317,7 +318,7 @@ export default function page() {
                           />
                         </div>
                         <div className="buy_ticket_ctr">
-                          <button className="buy_ticket">BUY TICKETS</button>
+                        <a href="https://www.ticketmelon.com/e/ombakfestival2025" target="_blank" rel="noopener noreferrer" className="buy_ticket">Buy Ticket</a>
                         </div>
                       </div>
 
@@ -353,11 +354,11 @@ export default function page() {
                               className="day_pass_mobile2"
                             />
                             <span className="orangeText">
-                              Don’t miss out! <span>Book your spot now!</span>
+                              Don’t miss out! <span>Book your spot now.</span>
                             </span>
                           </div>
                           </div>
-                        <button className="buy_ticket">BUY TICKETS</button>
+                          <a href="https://www.ticketmelon.com/e/ombakfestival2025" target="_blank" rel="noopener noreferrer" className="buy_ticket">Buy Ticket</a>
                       </div>
                     </Slider>
                 </div>
